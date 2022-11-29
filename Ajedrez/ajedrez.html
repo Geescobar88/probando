@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablero de Ajedrez</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+</head>
+<body> 
+    <div class="fondo">
+        <div class="tablero">
+            <!-- FILA 1 -->
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/torre.png" alt="" draggable="true" ondragstart="drag(event)" id="drag1">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/caballo.png" alt=""draggable="true" ondragstart="drag(event)" id="drag2">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/alfil.png" alt=""draggable="true" ondragstart="drag(event)" id="drag3">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/reina.png" alt=""draggable="true" ondragstart="drag(event)" id="drag4">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/rey.png" alt=""draggable="true" ondragstart="drag(event)" id="drag5">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/alfil.png" alt=""draggable="true" ondragstart="drag(event)" id="drag6">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/caballo.png" alt=""draggable="true" ondragstart="drag(event)" id="drag7">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/torre.png" alt=""draggable="true" ondragstart="drag(event)" id="drag8">
+                </div>
+
+            <!-- FILA 2 -->
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag9">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag10">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag11">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag12">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag13">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag14">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag15">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/peon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag16">
+                </div>
+
+            <!-- FILA 3 -->
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <!-- FILA 4 -->
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <!-- FILA 5 -->
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <!-- FILA 6 -->
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <!-- FILA 7 -->
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag17">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag18">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag19">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag20">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag21">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag22">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag23">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bpeon.png" alt=""draggable="true" ondragstart="drag(event)" id="drag24">
+                </div>
+
+            <!-- FILA 8 -->
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Btorre.png" alt=""draggable="true" ondragstart="drag(event)" id="drag25">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bcaballo.png" alt=""draggable="true" ondragstart="drag(event)" id="drag26">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Balfil.png" alt=""draggable="true" ondragstart="drag(event)" id="drag27">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Breina.png" alt=""draggable="true" ondragstart="drag(event)" id="drag28">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Brey.png" alt=""draggable="true" ondragstart="drag(event)" id="drag29">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Balfil.png" alt=""draggable="true" ondragstart="drag(event)" id="drag30">
+                </div>
+
+                <div class="celda blnc" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Bcaballo.png" alt=""draggable="true" ondragstart="drag(event)" id="drag31">
+                </div>
+
+                <div class="celda neg" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="./IMG/Btorre.png" alt=""draggable="true" ondragstart="drag(event)" id="drag32">
+                </div>
+                
+        </div>
+    </div>
+</body>
+</html>

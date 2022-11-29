@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="estilos.css">
+
+    <script src="./calculadora.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    
+    <title>Calculadora</title>
+
+</head>
+<body>
+
+    <div class="calculadora">
+        <div>
+            <input class="pantallaEstilo" id="pantalla" type="text" readonly value="">
+        </div>
+
+    <br>
+
+        <div class="marca">
+            <hr>
+            <p>Oriwi .</p>
+        </div>
+
+        <div>
+
+            <div class="hilera">
+                <button onclick="imprimir('1')">1</button>
+                <button onclick="imprimir('2')">2</button>
+                <button onclick="imprimir('3')">3</button>
+                <button onclick="imprimirU('+')">+</button>
+            </div>
+
+            <div class="hilera">
+                <button onclick="imprimir('4')">4</button>
+                <button onclick="imprimir('5')">5</button>
+                <button onclick="imprimir('6')">6</button>
+                <button onclick="imprimirU('-')">-</button>
+            </div>
+
+            <div class="hilera">
+                <button onclick="imprimir('7')">7</button>
+                <button onclick="imprimir('8')">8</button>
+                <button onclick="imprimir('9')">9</button>
+                <button onclick="imprimirU('*')">x</button>
+            </div>
+
+            <div class="hilera">
+                <button class="cColor" onclick="borrar()">C</button>
+                <button onclick="imprimir('0')">0</button>
+                <button onclick="calcular()">=</button>
+                <button onclick="imprimirU('/')">÷</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

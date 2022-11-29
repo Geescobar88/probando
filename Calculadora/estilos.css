@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px;
+}
+
+button:hover {
+    background-color: darkgray;
+}
+
+hr {
+    border: 1px solid;
+    filter: drop-shadow(1px 1px 2px black);
+}
+
+input {
+    border: 2px solid;
+    margin-top: 30px;
+    height: 50px;
+    width: 320px;   
+}
+
+.calculadora {
+    margin-top: 30px;
+    background-image: url(./img/textura_calc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    width: 400px;
+    height: 560px;   
+    box-shadow: 4px 4px 5px black;
+}
+
+
+.cColor {
+    background-color: orangered;
+    color: white;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+}
+
+.cColor:hover {
+    background-color: red;
+}
+
+.marca {
+    width: 320px;
+    text-align: right;
+    font-family: 'Kanit', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    filter: drop-shadow(2px 2px black);
+}
+
+.pantallaEstilo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+
+}

@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fondo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./IMG/fondo_tablero.jpg");
+    background-position: center;
+    width: 566px;
+    background-size: cover;
+    border: solid 1px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px;
+
+}
+.tablero {
+
+    margin: 30px;
+    border: 5px solid white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 496px;
+
+
+}
+
+.celda {
+
+    width: 60px;
+    height: 60px;
+    border: solid 1px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.neg{
+    background-color: rgb(133, 31, 0);
+
+}
+
+.blnc {
+    background-color: white;
+
+}
+body{
+    background-image: url(./IMG/fondo_mesa.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    height: 100vh;
+}
+
+img {
+    width: 80%;
+}
