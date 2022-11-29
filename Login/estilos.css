@@ -53,14 +53,8 @@ input {
     margin: 20px 0;
 }
 
-button {
-    width: 15px;
-    height: 15px;
-    background-color: #279d2e;
-    border: 1px solid #279d2e;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
+input:focus {
+    outline: none;
 }
 
 a {
@@ -69,6 +63,18 @@ a {
     font-weight: lighter;
     text-align: center;
     margin: 10px 0;
+}
+
+button {
+    background-color: #279d2e;
+    color: white;
+    font-weight: bold;
+    width: 16px;
+    border: 1px solid #279d2e;
+    border-radius: 8px;
+    position: absolute;
+    top: 56px;
+    right: 38px;
 }
 
 span {
@@ -108,11 +114,17 @@ hr {
     flex-direction: column;
 }
 
-.usuario {
-    display: flex;
-
-}
-
 .h4inf {
     text-align: center;
 }
+
+
+
+.volver {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 50px;
+}
+

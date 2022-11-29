@@ -63,3 +63,11 @@ body{
 img {
     width: 80%;
 }
+
+.volver {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 50px;
+}

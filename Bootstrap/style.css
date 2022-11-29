@@ -99,3 +99,11 @@ color: white;
     background-position: 0px -100px;
     background-size: cover;
 }
+
+.volver {
+    width: 100px;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    border-radius: 50px;
+}

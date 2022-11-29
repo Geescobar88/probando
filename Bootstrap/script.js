@@ -12,9 +12,10 @@ const alert = (message, type) => {
   alertPlaceholder.append(wrapper)
 }
 
-const alertTrigger = document.getElementById('liveAlertBtn')
+const alertTrigger = document.getElementById('liveAlertBtn');
 if (alertTrigger) {
   alertTrigger.addEventListener('click', () => {
     alert('Agregado al carro!', 'success')
+    console.log("hola");
   })
 }

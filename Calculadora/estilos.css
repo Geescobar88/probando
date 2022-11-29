@@ -83,3 +83,11 @@ input {
     font-weight: bold;
 
 }
+
+.volver {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 50px;
+}
