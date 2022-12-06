@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); </style>
+    <title>Goteos</title>
+
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Calculo de goteos</h1>
+        <hr>
+        <!-- <form> -->
+            Ingrese goteo <input type="text" name="goteo" id="goteo"> ml/h.
+            <br>
+            <label for="medicacion">Seleccionar medicacion:</label>
+            <select name="medicacion" id="medicacion">
+                <option value="60">Midazolam</option>
+                <option value="50">Fentanilo</option>
+                <option value="110">Mida+Fenta</option>
+                <option value="20">Propofol</option>
+            </select>
+            <br>
+            <label for="duracion">Seleccionar medicacion:</label>
+            <select name="duracion" id="duracion">
+                <option value="24">24 Hs.</option>
+                <option value="12">12 Hs.</option>
+            </select>
+            <br>
+            <label for="volumen">Seleccionar medicacion:</label>
+            <select name="volumen" id="volumen">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="250">250</option>
+                <option value="500">500</option>
+                <option value="20">Puro(Propofol)</option>
+            </select>
+
+            <button onclick="calcular()">Calcular</button>
+
+            <p id="volTotal"></p>
+            
+        <!-- </form> -->
+    </div>
+
+    
+</body>
+</html>
