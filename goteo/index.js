@@ -4,7 +4,12 @@
      let duracion = document.getElementById('duracion').value;
      let volumen = document.getElementById('volumen').value;
 
-     let volTotal = (Number(goteo) * Number(duracion)) / (Number(volumen) + Number(medicacion));
+    if (goteo == "") {
+        alert("El campo goteo no puede quedar vacio.")
+    } else {
+        let volTotal = (Number(goteo) * Number(duracion)) / (Number(volumen) + Number(medicacion));
+        let baxter = Math.ceil(volTotal);
 
-     document.getElementById('volTotal').innerHTML = volTotal;
+        document.getElementById('volTotal').innerHTML = "La cantidad de baxter que usaran es: " + baxter;
+    }
  }

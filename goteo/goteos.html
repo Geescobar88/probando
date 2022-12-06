@@ -18,13 +18,13 @@
         <h1>Calculo de goteos</h1>
         <hr>
         <!-- <form> -->
-            Ingrese goteo <input type="text" name="goteo" id="goteo"> ml/h.
+            Ingrese goteo <input type="text" name="goteo" id="goteo" class="goteo"> ml/h.
             <br>
             <label for="medicacion">Seleccionar medicacion:</label>
             <select name="medicacion" id="medicacion">
-                <option value="60">Midazolam</option>
-                <option value="50">Fentanilo</option>
-                <option value="110">Mida+Fenta</option>
+                <option value="60">20 amp de Midazolam</option>
+                <option value="50">10 amp de Fentanilo</option>
+                <option value="110">20 amp Mida + 10 amp Fenta</option>
                 <option value="20">Propofol</option>
             </select>
             <br>
@@ -40,12 +40,12 @@
                 <option value="200">200</option>
                 <option value="250">250</option>
                 <option value="500">500</option>
-                <option value="20">Puro(Propofol)</option>
+                <option value="0">Puro(Propofol)</option>
             </select>
 
             <button onclick="calcular()">Calcular</button>
 
-            <p id="volTotal"></p>
+            <p id="volTotal" class="respuesta"></p>
             
         <!-- </form> -->
     </div>
