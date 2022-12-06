@@ -6,7 +6,7 @@ function saludar() {
         alert(`Bienvenido ${name}.`);
         document.getElementById('usuario').value = "";
     } else {
-        alert("El Usuario debe contener mas de 6 caracteres.")
+        alert("El Usuario debe contener por lo menos 6 caracteres.")
         document.getElementById('usuario').value = "";
     }
 }
