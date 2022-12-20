@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="./script.js"></script>
+
     <title>Gaston Escobar</title>
 
 </head>
@@ -18,23 +20,28 @@
         </div>
         <nav>
             <input type="checkbox" id="menu">
-            <label for="menu" class="menu_open"> ☰ </label>
-            <ul>
+            <!-- <label for="menu" class="menu_open"> ☰ </label> -->
+            <label for="menu" class="menu_open"> MENU </label>
+            <label for="menu" class="menu_close"> X </label>
+            <ul class="menu">
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Acerca de mi</a></li>
                 <li><a href="">Proyectos</a></li>
                 <li><a href="">Contacto</a></li>
             </ul>
-            <label for="menu" class="menu_close"> X </label>
+
         </nav>
     </header>
 
-    <section class="about">
+    <section class="inicio">
         <div>
             <img src="./img/Foto.jpeg" alt="Mi foto" class="foto">
         </div>
+        <h2>Hola! Soy Gaston y estoy aprendiendo.</h2>
+    </section>
+
+    <section class="about">
         <div>
-            <h2>Hola! Soy Gaston y estoy aprendiendo.</h2>
             <h3>Acerca de mi.</h3>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus similique rerum sapiente nemo non, voluptas voluptate quibusdam voluptatem ut. Numquam dolores repellendus atque aut dolore, in animi tempore laboriosam.
@@ -43,8 +50,11 @@
         </div>
     </section>
 
-    <section>
+    <section class="projects">
         <h3>Proyectos</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non consequuntur itaque incidunt! Ipsa repellendus excepturi voluptatibus nam exercitationem, incidunt fugiat laborum rerum, natus dolorem sapiente culpa, perspiciatis adipisci facilis vitae.
+        </p>
         <ul>
             <li><a href="./Login/loginBP.html" target="_blank">Copia Login BIP</a></li>
             <li><a href="./Ajedrez/ajedrez.html" target="_blank">Ajedrez</a></li>
@@ -52,6 +62,23 @@
             <li><a href="./Calculadora/calculadora.html" target="_blank">Calculadora</a></li>
             <li><a href="./goteo/goteos.html" target="_blank">Goteos</a></li>
         </ul>
+
+        <h3>Otros Proyectos</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, sunt est fugiat enim doloremque odit quod blanditiis unde vero voluptate. Harum est nemo obcaecati, doloribus eaque perspiciatis culpa reprehenderit. Aut?
+        </p>
+        <ul>
+            <li>Hi-score</li>
+            <li>Trifecta</li>
+            <li>10Fx1P</li>
+        </ul>
     </section>
+    <footer>
+        <ul>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>Youtube</li>
+        </ul>
+    </footer>
 </body>
 </html>
