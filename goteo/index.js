@@ -13,3 +13,58 @@
         document.getElementById('volTotal').innerHTML = "La cantidad de baxter que usaran es: " + baxter;
     }
  }
+
+// ------------------------------------EJEMPLO------------------------------------
+
+
+//  const person = [
+//     {
+//       firstName: "John",
+//       lastName : "Doe",
+//       id     :  5566
+//     },
+//     {
+//       firstName: "Jo2n",
+//       lastName : "D2e",
+//       id     :  5567
+//     },
+//     {
+//       firstName: "John",
+//       lastName : "Doe",
+//       id     :  5568
+//     },
+//     ];
+    
+//     document.getElementById("demo").innerHTML =
+//     person[1].firstName + " " + person[1].lastName;
+
+
+
+//     ------------------------------------EJEMPLO------------------------------------
+
+const medicacion = [
+    {
+      articulo : "Midazolam",
+      presentacion :  "Ampolla",
+      concentracion : 3,
+      contenido : 3,
+      baxter : 250,
+      cantidad : 20
+    },
+    {
+        articulo : "Fentanilo",
+        presentacion :  "Ampolla",
+        concentracion : 0.05,
+        contenido : 5,
+        baxter : 100,
+        cantidad : 10
+      },
+      {
+        articulo : "Remifentanilo",
+        presentacion :  "Frasco-Ampolla",
+        concentracion : 5,
+        contenido : 0,
+        baxter : 200,
+        cantidad : 4
+      },
+    ];
