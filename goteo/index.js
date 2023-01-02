@@ -1,18 +1,18 @@
- function calcular() {
-     let goteo = document.getElementById('goteo').value;
-     let medicacion = document.getElementById('medicacion').value;
-     let duracion = document.getElementById('duracion').value;
-     let volumen = document.getElementById('volumen').value;
+//  function calcular() {
+//      let goteo = document.getElementById('goteo').value;
+//      let medicacion = document.getElementById('medicacion').value;
+//      let duracion = document.getElementById('duracion').value;
+//      let volumen = document.getElementById('volumen').value;
 
-    if (goteo == "") {
-        alert("El campo goteo no puede quedar vacio.")
-    } else {
-        let volTotal = (Number(goteo) * Number(duracion)) / (Number(volumen) + Number(medicacion));
-        let baxter = Math.ceil(volTotal);
+//     if (goteo == "") {
+//         alert("El campo goteo no puede quedar vacio.")
+//     } else {
+//         let volTotal = (Number(goteo) * Number(duracion)) / (Number(volumen) + Number(medicacion));
+//         let baxter = Math.ceil(volTotal);
 
-        document.getElementById('volTotal').innerHTML = "La cantidad de baxter que usaran es: " + baxter;
-    }
- }
+//         document.getElementById('volTotal').innerHTML = "La cantidad de baxter que usaran es: " + baxter;
+//     }
+//  }
 
 // ------------------------------------EJEMPLO------------------------------------
 
@@ -68,3 +68,20 @@ const medicacion = [
         cantidad : 4
       },
     ];
+
+    function cargar() {
+      const elegir = document.querySelectorAll("#lista option");
+      for (i = 0 ; i < elegir.length ; i++) {
+        elegir[i].value = medicacion[i].articulo;
+      }
+      console.log(elegir);
+
+    }
+
+    function seleccionar() {
+      let indice = document.getElementById('lista').selectedIndex;
+      console.log(indice);
+      
+    }
+
+

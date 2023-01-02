@@ -13,22 +13,27 @@
     <title>Goteos</title>
 
 </head>
-<body>
+<body onload="cargar()">
     <div class="contenedor">
         <h1>Calculo de goteos</h1>
         <hr>
-        <input type="text" list="lista">
+        <input onchange="seleccionar()" type="text" list="lista" placeholder="Elija">
             <datalist id="lista">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
             </datalist>
-        <label for=""></label><label for=""></label>
-        <input type="text">
-        <button></button><input type="text"><button></button>
-        <input type="text">
+        <hr>
+        <label for="" id="presentacion"></label><label for="" id="concentracion"></label>
+        <input type="text" id="baxter">
+        <div>
+            <button class="botonCAmp">-</button>
+            <input type="text" class="cAmp">
+            <button class="botonCAmp">+</button>
+        </div>
+        <input type="text" class="goteo">
         <button>Calcular</button>
-        <label for=""></label>
+        <label for="" class="goteoFinal"></label>
     </div>
 
     
