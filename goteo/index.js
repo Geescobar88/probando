@@ -78,10 +78,22 @@ const medicacion = [
 
     }
 
-    function seleccionar() {
-      let indice = document.getElementById('lista').selectedIndex;
-      console.log(indice);
-      
-    }
+    // Select a fruit and click the button:
+    // <select id="mySelect">
+    //   <option>Apple</option>
+    //   <option>Orange</option>
+    //   <option>Pineapple</option>
+    //   <option>Banana</option>
+    // </select>
+    
+    // <button type="button" onclick="myFunction()">Display index</button>
+    
+    // <script>
+    // function myFunction() {
+    //   var x = document.getElementById("mySelect").selectedIndex;
+    //   var y = document.getElementById("mySelect").options;
+    // y[2].text = "atun";
+    // }
+    // </script>
 
 
