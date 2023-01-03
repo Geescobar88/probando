@@ -17,25 +17,35 @@
     <div class="contenedor">
         <h1>Calculo de goteos</h1>
         <hr>
-        <input onchange="seleccionar()" type="text" list="lista" placeholder="Elija">
-            <datalist id="lista">
-                <option value="1"></option>
-                <option value="2"></option>
-                <option value="3"></option>
-            </datalist>
-        <hr>
-        <label for="" id="presentacion"></label><label for="" id="concentracion"></label>
-        <input type="text" id="baxter">
+        <select id="lista" onchange="cambiar()">
+             <option value="0"></option>
+             <option value="1"></option>
+             <option value="2"></option>
+        </select>
         <div>
-            <button class="botonCAmp">-</button>
-            <input type="text" class="cAmp">
-            <button class="botonCAmp">+</button>
+            <label for="" id="presentacion">-</label> :
+            <label for="" id="concentracion">-</label> <label for="">mg/ml</label> x 
+            <label for="" id="contenido">-</label> <label for="">ml</label>
+        </div>
+        <div>
+            <label for="">Baxter: </label>
+            <select class="baxter" id="baxter">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="250">250</option>
+                <option value="500">500</option>
+            </select>
+            <!-- <input type="text" class="baxter" id="baxter"> -->
+        </div>
+        <div class="calculo">
+            <button class="botonCAmp" id="btnDecre" onclick="restar()">-</button>
+            <input type="text" class="cAmp" id="cAmp">
+            <button class="botonCAmp" id="btnIncre" onclick="sumar()">+</button>
         </div>
         <input type="text" class="goteo">
         <button>Calcular</button>
         <label for="" class="goteoFinal"></label>
     </div>
 
-    
 </body>
 </html>

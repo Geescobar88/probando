@@ -46,54 +46,58 @@ const medicacion = [
     {
       articulo : "Midazolam",
       presentacion :  "Ampolla",
-      concentracion : 3,
+      concentracion : 5,
       contenido : 3,
       baxter : 250,
       cantidad : 20
     },
     {
-        articulo : "Fentanilo",
-        presentacion :  "Ampolla",
-        concentracion : 0.05,
-        contenido : 5,
-        baxter : 100,
-        cantidad : 10
-      },
-      {
-        articulo : "Remifentanilo",
-        presentacion :  "Frasco-Ampolla",
-        concentracion : 5,
-        contenido : 0,
-        baxter : 200,
-        cantidad : 4
-      },
+      articulo : "Fentanilo",
+      presentacion :  "Ampolla",
+      concentracion : 0.05,
+      contenido : 5,
+      baxter : 100,
+      cantidad : 10
+     },
+     {
+      articulo : "Remifentanilo",
+      presentacion :  "Frasco-Ampolla",
+      concentracion : 5,
+      contenido : 0,
+      baxter : 200,
+      cantidad : 4
+     },
     ];
 
     function cargar() {
+      document.getElementById('lista').value = "";
+      document.getElementById('baxter').value = "";
       const elegir = document.querySelectorAll("#lista option");
       for (i = 0 ; i < elegir.length ; i++) {
-        elegir[i].value = medicacion[i].articulo;
+        elegir[i].text = medicacion[i].articulo;
       }
-      console.log(elegir);
 
     }
 
-    // Select a fruit and click the button:
-    // <select id="mySelect">
-    //   <option>Apple</option>
-    //   <option>Orange</option>
-    //   <option>Pineapple</option>
-    //   <option>Banana</option>
-    // </select>
-    
-    // <button type="button" onclick="myFunction()">Display index</button>
-    
-    // <script>
-    // function myFunction() {
-    //   var x = document.getElementById("mySelect").selectedIndex;
-    //   var y = document.getElementById("mySelect").options;
-    // y[2].text = "atun";
-    // }
-    // </script>
+    function cambiar() {
+    var valor = document.getElementById('lista').value;
+    document.getElementById('presentacion').innerHTML = medicacion[valor].presentacion;
+    document.getElementById('concentracion').innerHTML = medicacion[valor].concentracion;
+    document.getElementById('contenido').innerHTML = medicacion[valor].contenido;
+    document.getElementById('baxter').value = medicacion[valor].baxter;
+    document.getElementById('cAmp').value = medicacion[valor].cantidad;
 
+    }
 
+    function sumar() {
+      let ampollas = document.getElementById('cAmp').value;
+        document.getElementById('cAmp').value = Number(ampollas) + 10;
+    }
+
+    function restar() {
+      let ampollas = document.getElementById('cAmp').value;
+      if (ampollas > 0) {
+        document.getElementById('cAmp').value = Number(ampollas) - 10;
+      }
+
+    }
