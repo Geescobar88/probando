@@ -51,3 +51,7 @@ label {
 .botonCAmp {
     width: 10%;
 }
+
+.resultado {
+    text-align: left;
+}

@@ -80,7 +80,7 @@ const medicacion = [
 
     }
 
-    function cambiar() {
+  function cambiar() {
     var valor = document.getElementById('lista').value;
     document.getElementById('presentacion').innerHTML = medicacion[valor].presentacion;
     document.getElementById('concentracion').innerHTML = medicacion[valor].concentracion;
@@ -90,27 +90,30 @@ const medicacion = [
     
     let aux = document.getElementById('lista').value;
     let btnAux = document.getElementById('btnCalcular');
-    if (aux != "") (
-      btnAux.disabled = false
-    )
+    let etiquetaElegir = document.getElementById('elegirTxt');
+    if (aux != "") {
+      btnAux.disabled = false;
+      etiquetaElegir.style.display = "none";
     }
+  }
 
-    function sumar() {
+  function sumar() {
       let ampollas = document.getElementById('cAmp').value;
         document.getElementById('cAmp').value = Number(ampollas) + 10;
     }
 
-    function restar() {
+  function restar() {
       let ampollas = document.getElementById('cAmp').value;
       if (ampollas > 0) {
         document.getElementById('cAmp').value = Number(ampollas) - 10;
       }
-    }
+  }
 
-    function calcular() {
+  function calcular() {
       let goteo = document.getElementById('goteo').value;
       let baxter = document.getElementById('baxter').value;
       let cAmp = document.getElementById('cAmp').value;
+      let presentacion = document.getElementById('presentacion').innerText;
       let contenido = document.getElementById('contenido').innerText;
 
       let baxterTotal = Math.ceil((goteo * 24) / ((Number(baxter)) + (Number(cAmp) * Number(contenido))));
@@ -120,6 +123,6 @@ const medicacion = [
       // console.log((Number(baxter) + (Number(cAmp) * Number(contenido))));
       // console.log(ampTotal);
 
-    let msjFinal = "baxter total = " + baxterTotal + ". Ampollas totales = " + ampTotal;
+    let msjFinal = "Se utilizaran " + baxterTotal + " baxter,\n enviar " + ampTotal + " " +presentacion+"s";
     document.getElementById('resultado').innerText = msjFinal;
-    }
+  }
