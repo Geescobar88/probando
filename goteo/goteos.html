@@ -28,8 +28,8 @@
             <label for="" id="concentracion">-</label> <label for="">mg/ml</label> x 
             <label for="" id="contenido">-</label> <label for="">ml</label>
         </div>
-        <div>
-            <label for="">Baxter: </label>
+        <div class="contBaxter">
+            <label for="">Volumen de baxter: </label>
             <select class="baxter" id="baxter">
                 <option value="100">100</option>
                 <option value="200">200</option>
@@ -39,11 +39,12 @@
             <!-- <input type="text" class="baxter" id="baxter"> -->
         </div>
         <div class="calculo">
+            <label for="">Cantidad</label>
             <button class="botonCAmp" id="btnDecre" onclick="restar()">-</button>
             <input type="text" class="cAmp" id="cAmp">
             <button class="botonCAmp" id="btnIncre" onclick="sumar()">+</button>
         </div>
-        <input type="text" class="goteo" id="goteo">
+        <input type="text" class="goteo" id="goteo" placeholder="Ingrese goteo">
         <button onclick="calcular()" id="btnCalcular" disabled>Calcular</button>
         <label for="" class="resultado" id="resultado"></label>
     </div>
