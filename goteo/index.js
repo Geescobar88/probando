@@ -77,6 +77,7 @@ const medicacion = [
         elegir[i].text = medicacion[i].articulo;
       }
 
+
     }
 
     function cambiar() {
@@ -86,7 +87,12 @@ const medicacion = [
     document.getElementById('contenido').innerHTML = medicacion[valor].contenido;
     document.getElementById('baxter').value = medicacion[valor].baxter;
     document.getElementById('cAmp').value = medicacion[valor].cantidad;
-
+    
+    let aux = document.getElementById('lista').value;
+    let btnAux = document.getElementById('btnCalcular');
+    if (aux != "") (
+      btnAux.disabled = false
+    )
     }
 
     function sumar() {
@@ -99,5 +105,21 @@ const medicacion = [
       if (ampollas > 0) {
         document.getElementById('cAmp').value = Number(ampollas) - 10;
       }
+    }
 
+    function calcular() {
+      let goteo = document.getElementById('goteo').value;
+      let baxter = document.getElementById('baxter').value;
+      let cAmp = document.getElementById('cAmp').value;
+      let contenido = document.getElementById('contenido').innerText;
+
+      let baxterTotal = Math.ceil((goteo * 24) / ((Number(baxter)) + (Number(cAmp) * Number(contenido))));
+      let ampTotal = baxterTotal * Number(cAmp);
+
+      // console.log(goteo * 24);
+      // console.log((Number(baxter) + (Number(cAmp) * Number(contenido))));
+      // console.log(ampTotal);
+
+    let msjFinal = "baxter total = " + baxterTotal + ". Ampollas totales = " + ampTotal;
+    document.getElementById('resultado').innerText = msjFinal;
     }

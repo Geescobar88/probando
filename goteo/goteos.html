@@ -17,7 +17,7 @@
     <div class="contenedor">
         <h1>Calculo de goteos</h1>
         <hr>
-        <select id="lista" onchange="cambiar()">
+        <select class="seleccion" id="lista" onchange="cambiar()">
              <option value="0"></option>
              <option value="1"></option>
              <option value="2"></option>
@@ -42,9 +42,9 @@
             <input type="text" class="cAmp" id="cAmp">
             <button class="botonCAmp" id="btnIncre" onclick="sumar()">+</button>
         </div>
-        <input type="text" class="goteo">
-        <button>Calcular</button>
-        <label for="" class="goteoFinal"></label>
+        <input type="text" class="goteo" id="goteo">
+        <button onclick="calcular()" id="btnCalcular" disabled>Calcular</button>
+        <label for="" class="resultado" id="resultado"></label>
     </div>
 
 </body>

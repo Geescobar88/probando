@@ -18,6 +18,10 @@ input {
     text-align: center;
 }
 
+label {
+    font-size: 1.2rem;
+}
+
 .contenedor {
     width: 90%;
     padding: 10px;
@@ -29,6 +33,13 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
+}
+
+.seleccion {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .calculo {
