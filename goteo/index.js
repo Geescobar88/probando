@@ -28,9 +28,11 @@ const medicacion = [
     function cargar() {
       document.getElementById('lista').value = "";
       document.getElementById('baxter').value = "";
+      let btnAux = document.getElementById('btnCalcular')
+      btnAux.disabled = true
       const elegir = document.querySelectorAll("#lista option");
-      for (i = 0 ; i < elegir.length ; i++) {
-        elegir[i].text = medicacion[i].articulo;
+      for (i = 1 ; i < elegir.length ; i++) {
+        elegir[i].text = medicacion[i-1].articulo;
       }
 
 
@@ -46,11 +48,9 @@ const medicacion = [
     
     let aux = document.getElementById('lista').value;
     let btnAux = document.getElementById('btnCalcular');
-    let etiquetaElegir = document.getElementById('elegirTxt');
     if (aux != "") {
       btnAux.disabled = false;
-      etiquetaElegir.style.display = "none";
-    }
+    } 
   }
 
   function sumar() {

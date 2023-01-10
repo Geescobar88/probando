@@ -17,11 +17,11 @@
     <div class="contenedor">
         <h1>Calculo de goteos</h1>
         <hr>
-        <label for="" id="elegirTxt">Elija una medicacion:</label>
-        <select class="seleccion" id="lista" onchange="cambiar()">
-             <option value="0"></option>
-             <option value="1"></option>
-             <option value="2"></option>
+        <select class="seleccion" id="lista" onchange="cambiar()"> 
+            <option value="" disabled>Elija medicacion</option>
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
         </select>
         <div>
             <label for="" id="presentacion">-</label> :
@@ -39,13 +39,13 @@
             <!-- <input type="text" class="baxter" id="baxter"> -->
         </div>
         <div class="calculo">
-            <label for="">Cantidad</label>
+            <label for="">Ampollas:</label>
             <button class="botonCAmp" id="btnDecre" onclick="restar()">-</button>
-            <input type="text" class="cAmp" id="cAmp">
+            <input type="number" class="cAmp" id="cAmp">
             <button class="botonCAmp" id="btnIncre" onclick="sumar()">+</button>
         </div>
-        <input type="text" class="goteo" id="goteo" placeholder="Ingrese goteo">
-        <button onclick="calcular()" id="btnCalcular" disabled>Calcular</button>
+        <input type="number" class="goteo" id="goteo" placeholder="Ingrese goteo">
+        <button onclick="calcular()" id="btnCalcular">Calcular</button>
         <label for="" class="resultado" id="resultado"></label>
     </div>
 

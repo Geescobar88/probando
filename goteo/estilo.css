@@ -9,6 +9,10 @@
 
 body {
     height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 h1 {
@@ -24,13 +28,13 @@ label {
 }
 
 .contenedor {
+    margin-top: 5%;
     width: 90%;
     max-width: 400px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 1px 1px 1px;
-    margin: auto auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,4 +86,11 @@ label {
 
 .resultado {
     text-align: left;
+}
+
+/* Quita las flechas de los input:number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
