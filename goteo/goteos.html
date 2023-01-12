@@ -30,7 +30,7 @@
         </div>
         <div class="contBaxter">
             <label for="">Volumen de baxter: </label>
-            <select class="baxter" id="baxter">
+            <select class="baxter" id="baxter" disabled>
                 <option value="100">100</option>
                 <option value="200">200</option>
                 <option value="250">250</option>
@@ -40,11 +40,11 @@
         </div>
         <div class="calculo">
             <label for="">Ampollas:</label>
-            <button class="botonCAmp" id="btnDecre" onclick="restar()">-</button>
-            <input type="number" class="cAmp" id="cAmp">
-            <button class="botonCAmp" id="btnIncre" onclick="sumar()">+</button>
+            <button class="botonCAmp" id="btnDecre" onclick="restar()" disabled>-</button>
+            <input type="number" class="cAmp" id="cAmp" disabled>
+            <button class="botonCAmp" id="btnIncre" onclick="sumar()" disabled>+</button>
         </div>
-        <input type="number" class="goteo" id="goteo" placeholder="Ingrese goteo">
+        <input type="number" class="goteo" id="goteo" placeholder="Ingrese goteo" disabled>
         <button onclick="calcular()" id="btnCalcular">Calcular</button>
         <label for="" class="resultado" id="resultado"></label>
     </div>

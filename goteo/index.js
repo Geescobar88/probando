@@ -49,7 +49,14 @@ const medicacion = [
     let aux = document.getElementById('lista').value;
     let btnAux = document.getElementById('btnCalcular');
     if (aux != "") {
-      btnAux.disabled = false;
+      // btnAux.disabled = false;
+      document.getElementById('btnCalcular').disabled = false;
+      document.getElementById('contenido').disabled = false;
+      document.getElementById('baxter').disabled = false;
+      document.getElementById('cAmp').disabled = false;
+      document.getElementById('btnIncre').disabled = false;
+      document.getElementById('btnDecre').disabled = false;
+      document.getElementById('goteo').disabled = false;
     } 
   }
 
