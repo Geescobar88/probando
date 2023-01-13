@@ -11,3 +11,6 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
+
+let prueba = document.getElementById('celdaPrueba');
+  console.log(prueba.childNodes);
