@@ -12,5 +12,9 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 
-let prueba = document.getElementById('celdaPrueba');
-  console.log(prueba.childNodes);
+var x = document.getElementById("prueba");
+if (x.children.length > 0) {
+  console.log("El elemento tiene hijos.")
+} else {
+  console.log("El elemento no tiene hijos.")
+}
