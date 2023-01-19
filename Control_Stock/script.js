@@ -20,6 +20,14 @@ function elegir() {
         return object.DESCRIPCION === articulo;
     })
     console.log(index);
+    document.getElementById('codArt').innerText = articulos[index].CODARTICULO;
     document.getElementById('cantDepo').innerText = articulos[index].STOCKENDEPOSITO;
     document.getElementById('cantFarm').innerText = articulos[index].STOCKENDISPENSACION;
+}
+
+function borrar() {
+    document.getElementById('listaArt').value = "";
+    document.getElementById('codArt').innerText = "";
+    document.getElementById('cantDepo').innerText = "";
+    document.getElementById('cantFarm').innerText = "";
 }
