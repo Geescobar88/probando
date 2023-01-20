@@ -24,9 +24,19 @@ label {
     margin: 5px 0;
 }
 
+input {
+    height: 40px;
+}
+
+.fecha {
+    font-size: small;
+    font-style: italic;
+
+}
+
 .contenedor {
     max-width: 800px;
-    padding: 5%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     border: 1px solid black;

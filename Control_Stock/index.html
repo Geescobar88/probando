@@ -13,7 +13,8 @@
 
 <body>
     <div id="contenedor" class="contenedor">
-        <h1>STOCK</h1>
+        <h1>STOCK CONTROL</h1>
+
         <input type="text" list="medicacion" id="listaArt" onchange="elegir()">
         <datalist id="medicacion">
         </datalist>
@@ -21,6 +22,7 @@
         <label for="">Cantidad en Deposito: </label><label for="" id="cantDepo" class="respuesta"></label>
         <label for="">Cantidad en Farmacia: </label><label for="" id="cantFarm" class="respuesta"></label>
         <button onclick="borrar()">Borrar</button>
+        <label for="" class="fecha">Actualizado al ...</label>
     </div>
 </body>
 
