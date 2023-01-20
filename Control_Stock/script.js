@@ -1,6 +1,5 @@
 
 window.addEventListener('load', function () {
-    console.log(articulos[1].DESCRIPCION);
     for (i = 0; i < articulos.length; i++) {
         const newOption = document.createElement("option");
         const lista = document.getElementById('medicacion');
