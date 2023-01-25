@@ -26,6 +26,7 @@ label {
 
 input {
     height: 40px;
+    text-transform: capitalize;
 }
 
 .fecha {
