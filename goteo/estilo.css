@@ -31,7 +31,7 @@ label {
     margin-top: 5%;
     width: 90%;
     max-width: 400px;
-    padding: 10px;
+    padding: 5%;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 1px 1px 1px;
@@ -76,6 +76,7 @@ label {
 }
 
 .goteo {
+    width: 80%;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -86,6 +87,10 @@ label {
 
 .resultado {
     text-align: left;
+}
+
+.btnCalcular {
+    width: 100%;
 }
 
 /* Quita las flechas de los input:number */

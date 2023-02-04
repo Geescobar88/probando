@@ -3,13 +3,19 @@
     padding: 0;
 }
 
+html {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
 body {
+    height: 100vh;
     background-image: url(./img/fondo.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 10% 5%;
 }
 
 button {
@@ -40,7 +46,6 @@ input {
 }
 
 .calculadora {
-    margin-top: 30px;
     background-image: url(./img/textura_calc.jpg);
     background-repeat: no-repeat;
     background-size: cover;
