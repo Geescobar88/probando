@@ -21,10 +21,6 @@ body {
     gap: 10px;
 }
 
-li {
-    list-style: none;
-}
-
 /* ----------------------------------------HEADER---------------------------------------- */
 
 header {
@@ -49,7 +45,6 @@ footer {
     background-color: black; 
     color: white;   
 }
-
 
 /* ----------------------------------------INICIO---------------------------------------- */
 
@@ -85,6 +80,13 @@ footer {
         margin-left: 20px;
     }
 
+    .muestra {
+        padding: 2px;
+        margin: 2px;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+    }
 
 }
 
