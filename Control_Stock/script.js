@@ -22,6 +22,7 @@ function elegir() {
     document.getElementById('codArt').innerText = articulos[index].CODARTICULO;
     document.getElementById('cantDepo').innerText = articulos[index].STOCKENDEPOSITO;
     document.getElementById('cantFarm').innerText = articulos[index].STOCKENDISPENSACION;
+
 }
 
 function borrar() {
