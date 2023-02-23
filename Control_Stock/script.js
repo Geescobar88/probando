@@ -1,15 +1,18 @@
 
 window.addEventListener('load', function () {
     for (i = 0; i < articulos.length; i++) {
-        const newOption = document.createElement("option");
-        const lista = document.getElementById('medicacion');
-        const atribId = document.createAttribute("id");
-        atribId.value = "option" + i;
-        const atribValue = document.createAttribute("value");
-        atribValue.value = articulos[i].DESCRIPCION;
-        newOption.setAttributeNode(atribId);
-        newOption.setAttributeNode(atribValue);
-        lista.appendChild(newOption);
+
+    if (articulos[i].DESCRIPCION != "ANULAR") {
+            const newOption = document.createElement("option");
+            const lista = document.getElementById('medicacion');
+            const atribId = document.createAttribute("id");
+            atribId.value = "option" + i;
+            const atribValue = document.createAttribute("value");
+            atribValue.value = articulos[i].DESCRIPCION;
+            newOption.setAttributeNode(atribId);
+            newOption.setAttributeNode(atribValue);
+            lista.appendChild(newOption);
+        }
     }
 });
 
