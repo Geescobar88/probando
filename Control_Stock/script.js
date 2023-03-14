@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function () {
     for (i = 0; i < articulos.length; i++) {
 
