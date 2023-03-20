@@ -13,17 +13,17 @@
 <body>
     <div id="contenedor" class="contenedor">
         <h1>STOCK CONTROL</h1>
-        <form autocomplete="off">
+        <form autocomplete="off" class="contenedor">
         <input type="file" id="archivo" accept=".xls">
         <input type="button" value="Cargar" onclick="cargarArchivo()">
         <div class="autocompletar">
-            <input type="text" id="listaArt" name="listaArt" onchange="elegir()" autofocus>
+            <input type="text" class="listaArt" id="listaArt" name="listaArt" onselect="elegir()" autofocus>
         </div>
         <label for="">Codigo: </label><label for="" id="codArt" class="respuesta"></label>
         <label for="">Cantidad en Deposito: </label><label for="" id="cantDepo" class="respuesta"></label>
         <label for="">Cantidad en Farmacia: </label><label for="" id="cantFarm" class="respuesta"></label>
-        <button onclick="borrar()">Borrar</button>
     </form>
+    <button class="buscar" onclick="buscar()">Buscar</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </body>

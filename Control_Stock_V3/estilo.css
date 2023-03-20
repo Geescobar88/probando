@@ -32,6 +32,8 @@ input {
 .autocompletar {
     position: relative;
     display: inline-block;
+    width: 100%;
+    margin:10px 0;
   }
   .autocompletar-items {
     position: absolute;
@@ -79,4 +81,13 @@ input {
 .respuesta {
     font-weight: bold;
     margin-left: 20px;
+}
+
+.listaArt {
+  width: 100%;
+}
+
+.buscar {
+  margin: 10px 0;
+  height: 40px;
 }
