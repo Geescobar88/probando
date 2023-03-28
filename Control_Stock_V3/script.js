@@ -10,34 +10,19 @@ function cargarArchivo() {
     const workbook = XLSX.read(data, { type: 'binary' });
     const sheet_name_list = workbook.SheetNames;
     const json = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+    if (json != []) {
+    alert("Stock cargado correctamente");}
     datos = JSON.stringify(json);
     articulos = JSON.parse(datos);
     const listado = Object.values(articulos).map(item => item.DESCRIPCION)
-    // Aquí puedes trabajar con los datos en formato JSON en la variable "json"
-    // for (const articulos of json) {
-    //     if (articulos.DESCRIPCION != "ANULAR") {
-    //         const newOption = document.createElement("option");
-    //         const lista = document.getElementById('medicacion');
-    //         const atribValue = document.createAttribute("value");
-    //         atribValue.value = articulos.DESCRIPCION;
-    //         newOption.setAttributeNode(atribValue);
-    //         lista.appendChild(newOption);
-
-    //     }
-    // }
-
     autocomplete(document.getElementById("listaArt"), listado);
   };
   reader.readAsBinaryString(file);
 }
 
-
-
-
 function buscar() {
   let articulo = document.getElementById('listaArt').value;
-  // console.log(articulos)
-  for (i = 0; i < articulos.length ; i++ ) {
+  for (i = 0; i < articulos.length; i++) {
     if (articulo == articulos[i].DESCRIPCION) {
       document.getElementById('codArt').innerText = articulos[i].CODARTICULO;
       document.getElementById('cantDepo').innerText = articulos[i].STOCKENDEPOSITO;
@@ -45,14 +30,6 @@ function buscar() {
     }
   }
 }
-
-
-// function borrar() {
-//     document.getElementById('listaArt').value = "";
-//     document.getElementById('codArt').innerText = "";
-//     document.getElementById('cantDepo').innerText = "";
-//     document.getElementById('cantFarm').innerText = "";
-// }
 
 function autocomplete(inp, arr) {
   var currentFocus;
@@ -79,6 +56,7 @@ function autocomplete(inp, arr) {
       }
     }
   });
+
   inp.addEventListener("keydown", function (e) {
     var x = document.getElementById(this.id + "autocompletar-list");
     if (x) x = x.getElementsByTagName("div");
@@ -95,6 +73,13 @@ function autocomplete(inp, arr) {
       }
     }
   });
+
+  inp.addEventListener("dblclick", () => {
+    const borrar = document.getElementById("listaArt");
+    borrar.value = "";
+  })
+
+
   function addActive(x) {
     if (!x) return false;
     removeActive(x);
@@ -102,11 +87,13 @@ function autocomplete(inp, arr) {
     if (currentFocus < 0) currentFocus = (x.length - 1);
     x[currentFocus].classList.add("autocompletar-active");
   }
+
   function removeActive(x) {
     for (var i = 0; i < x.length; i++) {
       x[i].classList.remove("autocompletar-active");
     }
   }
+
   function closeAllLists(elmnt) {
     var x = document.getElementsByClassName("autocompletar-items");
     for (var i = 0; i < x.length; i++) {
@@ -115,6 +102,7 @@ function autocomplete(inp, arr) {
       }
     }
   }
+
   document.addEventListener("click", function (e) {
     closeAllLists(e.target);
   });
