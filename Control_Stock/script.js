@@ -1,19 +1,24 @@
-window.addEventListener('load', function () {
-    for (i = 0; i < articulos.length; i++) {
+var articulos;
 
-    if (articulos[i].DESCRIPCION != "ANULAR") {
-            const newOption = document.createElement("option");
-            const lista = document.getElementById('medicacion');
-            const atribId = document.createAttribute("id");
-            atribId.value = "option" + i;
-            const atribValue = document.createAttribute("value");
-            atribValue.value = articulos[i].DESCRIPCION;
-            newOption.setAttributeNode(atribId);
-            newOption.setAttributeNode(atribValue);
-            lista.appendChild(newOption);
+window.addEventListener('load', async function CargarData() {
+    const response = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/Stock.json')
+    const data = await response.json()
+    articulos = data
+    for (i = 0; i < articulos.length; i++) {
+    
+        if (articulos[i].DESCRIPCION != "ANULAR") {
+                const newOption = document.createElement("option");
+                const lista = document.getElementById('medicacion');
+                const atribId = document.createAttribute("id");
+                atribId.value = "option" + i;
+                const atribValue = document.createAttribute("value");
+                atribValue.value = articulos[i].DESCRIPCION;
+                newOption.setAttributeNode(atribId);
+                newOption.setAttributeNode(atribValue);
+                lista.appendChild(newOption);
+            }
         }
-    }
-});
+    });
 
 function elegir() {
     let articulo = document.getElementById('listaArt').value;
