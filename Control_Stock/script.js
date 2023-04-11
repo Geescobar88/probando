@@ -50,6 +50,7 @@ recognition.interimResults = false;
 
 recognition.onresult = function (event) {
     const texto = event.results[0][0].transcript;
+    console.log(texto);
 
     input.value = texto;
 };
