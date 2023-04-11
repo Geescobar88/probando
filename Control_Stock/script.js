@@ -5,20 +5,20 @@ window.addEventListener('load', async function CargarData() {
     const data = await response.json()
     articulos = data
     for (i = 0; i < articulos.length; i++) {
-    
+
         if (articulos[i].DESCRIPCION != "ANULAR") {
-                const newOption = document.createElement("option");
-                const lista = document.getElementById('medicacion');
-                const atribId = document.createAttribute("id");
-                atribId.value = "option" + i;
-                const atribValue = document.createAttribute("value");
-                atribValue.value = articulos[i].DESCRIPCION;
-                newOption.setAttributeNode(atribId);
-                newOption.setAttributeNode(atribValue);
-                lista.appendChild(newOption);
-            }
+            const newOption = document.createElement("option");
+            const lista = document.getElementById('medicacion');
+            const atribId = document.createAttribute("id");
+            atribId.value = "option" + i;
+            const atribValue = document.createAttribute("value");
+            atribValue.value = articulos[i].DESCRIPCION;
+            newOption.setAttributeNode(atribId);
+            newOption.setAttributeNode(atribValue);
+            lista.appendChild(newOption);
         }
-    });
+    }
+});
 
 function elegir() {
     let articulo = document.getElementById('listaArt').value;
@@ -40,21 +40,20 @@ function borrar() {
 }
 
 const input = document.getElementById('listaArt');
-const boton = document.getElementById('btnGrabar');
+const grabar = document.getElementById('btnGrabar');
 
-if ('webkitSpeechRecognition' in window) {
-    const recognition = new WebSpeechRecognition();
-    recognition.lang = 'es-ES';
-    recognition.continuos = false;
-    recognition.interimResults = false;
 
-    recognition.onresult = function(event) {
-        const texto = event.results[0][0].transcript;
+const recognition = new webkitSpeechRecognition();
+recognition.lang = 'es-ES';
+recognition.continuos = false;
+recognition.interimResults = false;
 
-        input.value = texto;
-    }
+recognition.onresult = function (event) {
+    const texto = event.results[0][0].transcript;
 
-    boton.addEventListener('click', function() {
-        recognition.start();
-    })
+    input.value = texto;
+};
+
+function grabando() {
+    recognition.start();
 }
