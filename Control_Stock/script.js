@@ -38,23 +38,3 @@ function borrar() {
     document.getElementById('cantDepo').innerText = "";
     document.getElementById('cantFarm').innerText = "";
 }
-
-// const input = document.getElementById('listaArt');
-// const grabar = document.getElementById('btnGrabar');
-
-
-// const recognition = new webkitSpeechRecognition();
-// recognition.lang = 'es-ES';
-// recognition.continuos = false;
-// recognition.interimResults = false;
-
-// recognition.onresult = function (event) {
-//     const texto = event.results[0][0].transcript;
-//     console.log(texto);
-
-//     input.value = texto;
-// };
-
-// function grabando() {
-//     recognition.start();
-// }
