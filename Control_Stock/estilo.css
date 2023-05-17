@@ -49,3 +49,13 @@ input {
     font-weight: bold;
     margin-left: 20px;
 }
+
+@media (min-width: 768px) {
+
+.contenedor {
+    width: 90%;
+    height: 90%;
+    justify-content: space-between;
+}
+
+}
