@@ -2,6 +2,7 @@ var articulos;
 
 window.addEventListener('load', async function CargarData() {
     const response = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/stock.json')
+
     const data = await response.json()
     articulos = data
     for (i = 0; i < articulos.length; i++) {
