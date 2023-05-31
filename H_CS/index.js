@@ -68,10 +68,11 @@ function carga(total) {
     })
 }
 
-function elegir(total) {
+function elegir() {
     const articulo = document.getElementById('entrada')
+    console.log(total)
     
-}
+    }
 
 
 
