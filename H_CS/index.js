@@ -23,6 +23,7 @@ window.addEventListener('load', async function () {
     filtroArt = document.getElementById('fNombre')
     filtroCM = document.getElementById('fCodigoMin')
 
+
     carga(total)
 });
 
@@ -68,11 +69,19 @@ function carga(total) {
     })
 }
 
-function elegir() {
-    const articulo = document.getElementById('entrada')
-    console.log(total)
-    
-    }
+function cambio() {
+    articuloBuscado = document.getElementById('entrada').value
+    articuloBuscado.addEventListener('change', function () {
+        console.log("total")
+    })
+}
+
+cambio();
+
+
+
+
+
 
 
 
