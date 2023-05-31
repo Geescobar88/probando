@@ -1,15 +1,11 @@
-var listado;
-var database;
-var total;
 
+//Fetch de datos
 window.addEventListener('load', async function () {
     const stockResponse = await fetch('./data/stock.json');
-    const stockData = await stockResponse.json();
-    listado = stockData;
+    const listado = await stockResponse.json();
 
     const dbResponse = await fetch('./data/DB.json');
-    const dbData = await dbResponse.json();
-    database = dbData;
+    const database = await dbResponse.json();
 
     const total = listado.map(obj1 => {
         const matchingObj2 = database.find(obj2 => obj2.CODARTICULO === obj1.CODARTICULO);
@@ -22,11 +18,9 @@ window.addEventListener('load', async function () {
 
     filtroArt = document.getElementById('fNombre')
     filtroCM = document.getElementById('fCodigoMin')
-
-
     carga(total)
-});
 
+});
 
 function carga(total) {
 
@@ -69,14 +63,13 @@ function carga(total) {
     })
 }
 
-function cambio() {
-    articuloBuscado = document.getElementById('entrada').value
-    articuloBuscado.addEventListener('change', function () {
-        console.log("total")
-    })
-}
 
-cambio();
+
+function cambio(total) {
+    const articuloBuscado = document.getElementById('entrada').value
+    console.log(articuloBuscado)
+    console.log(total)
+}
 
 
 
