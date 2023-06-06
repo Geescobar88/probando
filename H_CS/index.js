@@ -1,14 +1,17 @@
+async function fetchDatos() {
+    const listadoResponse = await fetch('./data/stock.json')
+    const dbResponse = await fetch('./data/DB.json')
 
-//Fetch de datos
-window.addEventListener('load', async function () {
-    const stockResponse = await fetch('./data/stock.json');
-    const listado = await stockResponse.json();
+    const listadoData = await listadoResponse.json()
+    const dbData = await dbResponse.json()
 
-    const dbResponse = await fetch('./data/DB.json');
-    const database = await dbResponse.json();
+    generarArray(listadoData, dbData);
+}
 
-    const total = listado.map(obj1 => {
-        const matchingObj2 = database.find(obj2 => obj2.CODARTICULO === obj1.CODARTICULO);
+function generarArray(listadoData, dbData) {
+
+    const total = listadoData.map(obj1 => {
+        const matchingObj2 = dbData.find(obj2 => obj2.CODARTICULO === obj1.CODARTICULO);
         if (matchingObj2) {
             return { ...obj1, ...matchingObj2 };
         } else {
@@ -16,13 +19,15 @@ window.addEventListener('load', async function () {
         }
     });
 
-    filtroArt = document.getElementById('fNombre')
-    filtroCM = document.getElementById('fCodigoMin')
-    carga(total)
+    carga(total);
+    cambio(total)
+}
 
-});
+fetchDatos()
 
 function carga(total) {
+    filtroArt = document.getElementById('fNombre')
+    filtroCM = document.getElementById('fCodigoMin')
 
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
@@ -61,15 +66,16 @@ function carga(total) {
             }
         }
     })
+
 }
-
-
 
 function cambio(total) {
-    const articuloBuscado = document.getElementById('entrada').value
-    console.log(articuloBuscado)
-    console.log(total)
+    let articuloBuscado = document.getElementById('entrada')
+    articuloBuscado.addEventListener('change', function () {
+        console.log(articuloBuscado.value)
+    })
 }
+
 
 
 
