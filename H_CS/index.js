@@ -71,17 +71,36 @@ function carga(total) {
 
 function cambio(total) {
     let articuloBuscado = document.getElementById('entrada')
+    const nomArticulo = document.getElementById('nombreArticulo')
+    const codMinisterial = document.getElementById('codMinisterial')
+    const estado = document.getElementById('estadoStock')
+    const stockDeposito = document.getElementById('stockDeposito')
+    const stockFarmacia = document.getElementById('stockFarmacia')
     articuloBuscado.addEventListener('change', function () {
-        console.log(articuloBuscado.value)
+        const objEncontrado = total.find( obj => {
+            return obj.CODARTICULO === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
+        })
+        console.log(objEncontrado)
+    nomArticulo.textContent = objEncontrado.MEDICACION
+    codMinisterial.textContent = objEncontrado.CODARTICULO
+    stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
+    stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
+    
+    if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
+        console.log("stock critico")
+        estadoStock.style.backgroundColor = "Red";
+        estadoStock.style.color = "White";
+
+    }   else if 
+        (objEncontrado.STOCKENDEPOSITO > (objEncontrado.STOCK_MIN*2)) {
+        console.log("stock normal")
+        estadoStock.style.backgroundColor = "Green";
+        estadoStock.style.color = "White";
+        }
+        else {
+            console.log("stock minimo")
+            estadoStock.style.backgroundColor = "Yellow";
+            estadoStock.style.color = "Black";
+        }
     })
 }
-
-
-
-
-
-
-
-
-
-
