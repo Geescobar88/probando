@@ -116,13 +116,38 @@ function listar(total) {
     const listaCompleta = document.getElementById('listaCompleta');
 
     enCero.addEventListener('click', () => {
-        
+        const lista = document.getElementById('lista')
+        lista.textContent = ""
+        const itemsFiltrados = total.filter( (item) => {
+            return item.STOCKENDEPOSITO === 0;
+        })
+        console.log(itemsFiltrados)
     })
+
     minimo.addEventListener('click', () => {
-        console.log("minimo")
+        const lista = document.getElementById('lista')
+        lista.textContent = ""
+        const itemsFiltrados = total.filter( (item) => {
+            return item.STOCKENDEPOSITO < item.STOCK_MIN * 2;
+        })
+        console.log(itemsFiltrados)
     })
+
     listaCompleta.addEventListener('click', () => {
-        console.log("completo")
+        let lista = document.getElementById('lista')
+        lista.textContent = ""
+        total.forEach(item => {
+            const newItem = document.createElement('li');
+            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+            if (item.STOCKENDEPOSITO === 0) {
+                newItem.style.color = "red"
+            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                newItem.style.color = "yellow"
+            } else {
+                newItem.style.color = "green"
+            }
+            lista.appendChild(newItem)
+        });
     })
 
 
