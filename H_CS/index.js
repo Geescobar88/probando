@@ -10,22 +10,24 @@ async function fetchDatos() {
 
 function generarArray(listadoData, dbData) {
 
-    const total = listadoData.map(obj1 => {
-        const matchingObj2 = dbData.find(obj2 => obj2.CODARTICULO === obj1.CODARTICULO);
-        if (matchingObj2) {
-            return { ...obj1, ...matchingObj2 };
+    const total = listadoData.map(listado1 => {
+        const coincidencia = dbData.find(listado2 => listado2.CODARTICULO === listado1.CODARTICULO);
+        if (coincidencia) {
+            return { ...listado1, ...coincidencia };
         } else {
-            return obj1;
+            return listado1;
         }
     });
 
-    carga(total);
-    cambio(total)
+    cargar(total);
+    cambiar(total);
+    listar(total);
+
 }
 
 fetchDatos()
 
-function carga(total) {
+function cargar(total) {
     filtroArt = document.getElementById('fNombre')
     filtroCM = document.getElementById('fCodigoMin')
 
@@ -69,7 +71,7 @@ function carga(total) {
 
 }
 
-function cambio(total) {
+function cambiar(total) {
     let articuloBuscado = document.getElementById('entrada')
     const nomArticulo = document.getElementById('nombreArticulo')
     const codMinisterial = document.getElementById('codMinisterial')
@@ -77,30 +79,64 @@ function cambio(total) {
     const stockDeposito = document.getElementById('stockDeposito')
     const stockFarmacia = document.getElementById('stockFarmacia')
     articuloBuscado.addEventListener('change', function () {
-        const objEncontrado = total.find( obj => {
+        const objEncontrado = total.find(obj => {
             return obj.CODARTICULO === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
         })
         console.log(objEncontrado)
-    nomArticulo.textContent = objEncontrado.MEDICACION
-    codMinisterial.textContent = objEncontrado.CODARTICULO
-    stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
-    stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
-    
-    if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
-        console.log("stock critico")
-        estadoStock.style.backgroundColor = "Red";
-        estadoStock.style.color = "White";
+        nomArticulo.textContent = objEncontrado.MEDICACION
+        codMinisterial.textContent = objEncontrado.CODARTICULO
+        stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
+        stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
 
-    }   else if 
-        (objEncontrado.STOCKENDEPOSITO > (objEncontrado.STOCK_MIN*2)) {
-        console.log("stock normal")
-        estadoStock.style.backgroundColor = "Green";
-        estadoStock.style.color = "White";
+        if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
+            console.log("stock critico")
+            estadoStock.style.backgroundColor = "Red";
+            estadoStock.style.color = "White";
+            estadoStock.textContent = "Critico"
+
+        } else if
+            (objEncontrado.STOCKENDEPOSITO > (objEncontrado.STOCK_MIN * 2)) {
+            console.log("stock normal")
+            estadoStock.style.backgroundColor = "Green";
+            estadoStock.style.color = "White";
+            estadoStock.textContent = "Normal"
         }
         else {
             console.log("stock minimo")
             estadoStock.style.backgroundColor = "Yellow";
             estadoStock.style.color = "Black";
+            estadoStock.textContent = "Minimo"
         }
     })
+}
+
+function listar(total) {
+    const enCero = document.getElementById('enCero');
+    const minimo = document.getElementById('stockMinimo');
+    const listaCompleta = document.getElementById('listaCompleta');
+
+    enCero.addEventListener('click', () => {
+        const listaStock = document.getElementById('listaStock')
+        const comprobar = listaStock.querySelector("li")
+        console.log(comprobar)
+        if (comprobar == null) {
+        const newLista = document.createElement("li");
+        const atriIdLista = document.createAttribute("id");
+        newLista.setAttributeNode(atriIdLista);
+        listaStock.appendChild(newLista);
+        
+        }
+
+        
+        
+    })
+    minimo.addEventListener('click', () => {
+        console.log("minimo")
+    })
+    listaCompleta.addEventListener('click', () => {
+        console.log("completo")
+    })
+
+
+
 }
