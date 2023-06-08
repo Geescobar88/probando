@@ -116,27 +116,7 @@ function listar(total) {
     const listaCompleta = document.getElementById('listaCompleta');
 
     enCero.addEventListener('click', () => {
-        const listaStock = document.getElementById('listaStock')
-        const comprobar = listaStock.querySelector("ul")
-        console.log(comprobar)
-        if (comprobar == null) {
-            const newLista = document.createElement("ul");
-            const atriIdLista = document.createAttribute("id");
-            newLista.setAttributeNode(atriIdLista);
-            listaStock.appendChild(newLista);
-            const listaFiltrada = total.filter(function (num) {
-                return num.STOCKENDEPOSITO === 0;
-            });
-            listaFiltrada.forEach(item => {
-                const newItem = document.createElement("li");
-                newLista.appendChild(newItem);
-                newItem.textContent = item
-
-            });
-        }
-
-
-
+        
     })
     minimo.addEventListener('click', () => {
         console.log("minimo")
