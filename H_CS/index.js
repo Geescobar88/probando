@@ -114,24 +114,27 @@ function listar(total) {
     const enCero = document.getElementById('enCero');
     const minimo = document.getElementById('stockMinimo');
     const listaCompleta = document.getElementById('listaCompleta');
+    const btnCerrar = document.getElementById('btnCerrar')
 
     enCero.addEventListener('click', () => {
         const lista = document.getElementById('lista')
         lista.textContent = ""
         total.forEach(item => {
             if (item.STOCKENDEPOSITO === 0) {
-            const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
-            if (item.STOCKENDEPOSITO === 0) {
-                newItem.style.color = "red"
-            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                newItem.style.color = "yellow"
-            } else {
-                newItem.style.color = "green"
+                const newItem = document.createElement('li');
+                newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+                if (item.STOCKENDEPOSITO === 0) {
+                    newItem.style.color = "#b83564"
+                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    newItem.style.color = "#ffb350"
+                } else {
+                    newItem.style.color = "#4d8f81"
+                }
+                lista.appendChild(newItem)
             }
-            lista.appendChild(newItem)
-        }
         });
+        let msjLista = document.getElementById('listaStock')
+        msjLista.style.display = "inline"
     })
 
     minimo.addEventListener('click', () => {
@@ -139,18 +142,20 @@ function listar(total) {
         lista.textContent = ""
         total.forEach(item => {
             if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-            const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
-            if (item.STOCKENDEPOSITO === 0) {
-                newItem.style.color = "red"
-            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                newItem.style.color = "yellow"
-            } else {
-                newItem.style.color = "green"
+                const newItem = document.createElement('li');
+                newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+                if (item.STOCKENDEPOSITO === 0) {
+                    newItem.style.color = "#b83564"
+                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    newItem.style.color = "#ffb350"
+                } else {
+                    newItem.style.color = "#4d8f81"
+                }
+                lista.appendChild(newItem)
             }
-            lista.appendChild(newItem)
-        }
         });
+        let msjLista = document.getElementById('listaStock')
+        msjLista.style.display = "inline"
     })
 
     listaCompleta.addEventListener('click', () => {
@@ -160,13 +165,20 @@ function listar(total) {
             const newItem = document.createElement('li');
             newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
             if (item.STOCKENDEPOSITO === 0) {
-                newItem.style.color = "red"
+                newItem.style.color = "#b83564"
             } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                newItem.style.color = "yellow"
+                newItem.style.color = "#ffb350"
             } else {
-                newItem.style.color = "green"
+                newItem.style.color = "#4d8f81"
             }
             lista.appendChild(newItem)
         });
+        let msjLista = document.getElementById('listaStock')
+        msjLista.style.display = "inline"
+    })
+
+    btnCerrar.addEventListener('click', () => {
+        let msjLista = document.getElementById('listaStock')
+        msjLista.style.display = "none"
     })
 }
