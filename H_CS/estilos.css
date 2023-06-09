@@ -102,3 +102,10 @@ margin: 15px;
     color: white;
     background-color: black;
 } */
+
+.listaStock {
+    background-color: white;
+    height: 60%;
+    width: 60%;
+    border: 3px solid black;
+}

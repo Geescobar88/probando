@@ -118,19 +118,39 @@ function listar(total) {
     enCero.addEventListener('click', () => {
         const lista = document.getElementById('lista')
         lista.textContent = ""
-        const itemsFiltrados = total.filter( (item) => {
-            return item.STOCKENDEPOSITO === 0;
-        })
-        console.log(itemsFiltrados)
+        total.forEach(item => {
+            if (item.STOCKENDEPOSITO === 0) {
+            const newItem = document.createElement('li');
+            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+            if (item.STOCKENDEPOSITO === 0) {
+                newItem.style.color = "red"
+            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                newItem.style.color = "yellow"
+            } else {
+                newItem.style.color = "green"
+            }
+            lista.appendChild(newItem)
+        }
+        });
     })
 
     minimo.addEventListener('click', () => {
         const lista = document.getElementById('lista')
         lista.textContent = ""
-        const itemsFiltrados = total.filter( (item) => {
-            return item.STOCKENDEPOSITO < item.STOCK_MIN * 2;
-        })
-        console.log(itemsFiltrados)
+        total.forEach(item => {
+            if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+            const newItem = document.createElement('li');
+            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+            if (item.STOCKENDEPOSITO === 0) {
+                newItem.style.color = "red"
+            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                newItem.style.color = "yellow"
+            } else {
+                newItem.style.color = "green"
+            }
+            lista.appendChild(newItem)
+        }
+        });
     })
 
     listaCompleta.addEventListener('click', () => {
@@ -149,7 +169,4 @@ function listar(total) {
             lista.appendChild(newItem)
         });
     })
-
-
-
 }
