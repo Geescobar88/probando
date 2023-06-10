@@ -1,5 +1,5 @@
 async function fetchDatos() {
-    const listadoResponse = await fetch('./data/stock.json')
+    const listadoResponse = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/stock.json')
     const dbResponse = await fetch('./data/DB.json')
 
     const listadoData = await listadoResponse.json()
@@ -29,12 +29,13 @@ fetchDatos()
 
 function cargar(total) {
     filtroArt = document.getElementById('fNombre')
-    filtroCM = document.getElementById('fCodigoMin')
+    filtroCM = document.getElementById('fCodigoMin')    
 
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
             const datalist = document.getElementById('medicacion');
             const entrada = document.getElementById('entrada')
+            entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';
             for (let i = 0; i < total.length; i++) {
@@ -42,7 +43,7 @@ function cargar(total) {
                     const newOption = document.createElement("option");
                     const lista = document.getElementById('medicacion');
                     const atribValue = document.createAttribute("value");
-                    atribValue.value = total[i].MEDICACION;
+                    atribValue.value = total[i].DESCRIPCION; 
                     newOption.setAttributeNode(atribValue);
                     lista.appendChild(newOption);
                 }
@@ -54,6 +55,7 @@ function cargar(total) {
         if (filtroCM.checked) {
             const datalist = document.getElementById('medicacion');
             const entrada = document.getElementById('entrada')
+            entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';
             for (let i = 0; i < total.length; i++) {
@@ -75,15 +77,14 @@ function cambiar(total) {
     let articuloBuscado = document.getElementById('entrada')
     const nomArticulo = document.getElementById('nombreArticulo')
     const codMinisterial = document.getElementById('codMinisterial')
-    const estado = document.getElementById('estadoStock')
     const stockDeposito = document.getElementById('stockDeposito')
     const stockFarmacia = document.getElementById('stockFarmacia')
     articuloBuscado.addEventListener('change', function () {
         const objEncontrado = total.find(obj => {
-            return obj.CODARTICULO === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
+            return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value
         })
         console.log(objEncontrado)
-        nomArticulo.textContent = objEncontrado.MEDICACION
+        nomArticulo.textContent = objEncontrado.DESCRIPCION
         codMinisterial.textContent = objEncontrado.CODARTICULO
         stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
         stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
@@ -122,7 +123,7 @@ function listar(total) {
         total.forEach(item => {
             if (item.STOCKENDEPOSITO === 0) {
                 const newItem = document.createElement('li');
-                newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+                newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
                 if (item.STOCKENDEPOSITO === 0) {
                     newItem.style.color = "#b83564"
                 } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
@@ -143,7 +144,7 @@ function listar(total) {
         total.forEach(item => {
             if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
                 const newItem = document.createElement('li');
-                newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+                newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
                 if (item.STOCKENDEPOSITO === 0) {
                     newItem.style.color = "#b83564"
                 } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
@@ -163,7 +164,7 @@ function listar(total) {
         lista.textContent = ""
         total.forEach(item => {
             const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " : " + item.MEDICACION + " = " + item.STOCKENDEPOSITO
+            newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
             if (item.STOCKENDEPOSITO === 0) {
                 newItem.style.color = "#b83564"
             } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
