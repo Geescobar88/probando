@@ -116,6 +116,7 @@ function listar(total) {
     const minimo = document.getElementById('stockMinimo');
     const listaCompleta = document.getElementById('listaCompleta');
     const btnCerrar = document.getElementById('btnCerrar')
+    const btnDescargar = document.getElementById('btnDescargar')
 
     enCero.addEventListener('click', () => {
         const lista = document.getElementById('lista')
@@ -181,5 +182,9 @@ function listar(total) {
     btnCerrar.addEventListener('click', () => {
         let msjLista = document.getElementById('listaStock')
         msjLista.style.display = "none"
+    })
+
+    btnDescargar.addEventListener('click', () => {
+        alert("Proximamente...")
     })
 }
