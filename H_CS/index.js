@@ -30,9 +30,17 @@ fetchDatos()
 function cargar(total) {
     filtroArt = document.getElementById('fNombre')
     filtroCM = document.getElementById('fCodigoMin')    
+    let filtroCheckArt = document.getElementById('filtroCheckArt')
+    let filtroCheckCm = document.getElementById('filtroCheckCm')
 
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
+
+            filtroCheckArt.style.color = "white"
+            filtroCheckArt.style.backgroundColor = "green"
+            filtroCheckCm.style.color = "black"
+            filtroCheckCm.style.backgroundColor = "white"
+
             const datalist = document.getElementById('medicacion');
             const entrada = document.getElementById('entrada')
             entrada.disabled = false
@@ -53,6 +61,10 @@ function cargar(total) {
 
     filtroCM.addEventListener('change', function () {
         if (filtroCM.checked) {
+            filtroCheckCm.style.color = "white"
+            filtroCheckCm.style.backgroundColor = "green"
+            filtroCheckArt.style.color = "black"
+            filtroCheckArt.style.backgroundColor = "white"
             const datalist = document.getElementById('medicacion');
             const entrada = document.getElementById('entrada')
             entrada.disabled = false
@@ -117,9 +129,11 @@ function listar(total) {
     const listaCompleta = document.getElementById('listaCompleta');
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
+    
 
     enCero.addEventListener('click', () => {
         const lista = document.getElementById('lista')
+
         lista.textContent = ""
         total.forEach(item => {
             if (item.STOCKENDEPOSITO === 0) {

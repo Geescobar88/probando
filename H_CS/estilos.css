@@ -133,8 +133,43 @@ margin: 15px;
     padding: 5%;
     margin: auto auto;
     box-shadow: 3px 3px 10px;
+
 }
 
 .botoneraLista {
     margin: 20px 0;
 }
+
+.divLista {
+    overflow-y: scroll;
+    height: 500px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .filtroCheck {
+    padding: 15px;
+    border-radius: 5px;
+  }
