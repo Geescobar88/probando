@@ -28,10 +28,12 @@ function generarArray(listadoData, dbData) {
 fetchDatos()
 
 function cargar(total) {
-    filtroArt = document.getElementById('fNombre')
-    filtroCM = document.getElementById('fCodigoMin')    
-    let filtroCheckArt = document.getElementById('filtroCheckArt')
-    let filtroCheckCm = document.getElementById('filtroCheckCm')
+    const filtroArt = document.getElementById('fNombre')
+    const filtroCM = document.getElementById('fCodigoMin')    
+    const filtroCheckArt = document.getElementById('filtroCheckArt')
+    const filtroCheckCm = document.getElementById('filtroCheckCm')
+    const datalist = document.getElementById('medicacion');
+    const entrada = document.getElementById('entrada')
 
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
@@ -40,9 +42,6 @@ function cargar(total) {
             filtroCheckArt.style.backgroundColor = "green"
             filtroCheckCm.style.color = "black"
             filtroCheckCm.style.backgroundColor = "white"
-
-            const datalist = document.getElementById('medicacion');
-            const entrada = document.getElementById('entrada')
             entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';
@@ -65,8 +64,6 @@ function cargar(total) {
             filtroCheckCm.style.backgroundColor = "green"
             filtroCheckArt.style.color = "black"
             filtroCheckArt.style.backgroundColor = "white"
-            const datalist = document.getElementById('medicacion');
-            const entrada = document.getElementById('entrada')
             entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';
@@ -86,11 +83,12 @@ function cargar(total) {
 }
 
 function cambiar(total) {
-    let articuloBuscado = document.getElementById('entrada')
+    const articuloBuscado = document.getElementById('entrada')
     const nomArticulo = document.getElementById('nombreArticulo')
     const codMinisterial = document.getElementById('codMinisterial')
     const stockDeposito = document.getElementById('stockDeposito')
     const stockFarmacia = document.getElementById('stockFarmacia')
+
     articuloBuscado.addEventListener('change', function () {
         const objEncontrado = total.find(obj => {
             return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value
@@ -129,11 +127,10 @@ function listar(total) {
     const listaCompleta = document.getElementById('listaCompleta');
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
+    const lista = document.getElementById('lista')
+    const msjLista = document.getElementById('listaStock')
     
-
     enCero.addEventListener('click', () => {
-        const lista = document.getElementById('lista')
-
         lista.textContent = ""
         total.forEach(item => {
             if (item.STOCKENDEPOSITO === 0) {
@@ -149,12 +146,10 @@ function listar(total) {
                 lista.appendChild(newItem)
             }
         });
-        let msjLista = document.getElementById('listaStock')
         msjLista.style.display = "inline"
     })
 
     minimo.addEventListener('click', () => {
-        const lista = document.getElementById('lista')
         lista.textContent = ""
         total.forEach(item => {
             if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
@@ -170,12 +165,10 @@ function listar(total) {
                 lista.appendChild(newItem)
             }
         });
-        let msjLista = document.getElementById('listaStock')
         msjLista.style.display = "inline"
     })
 
     listaCompleta.addEventListener('click', () => {
-        let lista = document.getElementById('lista')
         lista.textContent = ""
         total.forEach(item => {
             const newItem = document.createElement('li');
@@ -189,12 +182,10 @@ function listar(total) {
             }
             lista.appendChild(newItem)
         });
-        let msjLista = document.getElementById('listaStock')
         msjLista.style.display = "inline"
     })
 
     btnCerrar.addEventListener('click', () => {
-        let msjLista = document.getElementById('listaStock')
         msjLista.style.display = "none"
     })
 
