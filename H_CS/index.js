@@ -38,10 +38,10 @@ function cargar(total) {
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
 
-            filtroCheckArt.style.color = "white"
-            filtroCheckArt.style.backgroundColor = "green"
+            filtroCheckArt.style.color = "var(--claro)"
+            filtroCheckArt.style.backgroundColor = "var(--fuerte)"
             filtroCheckCm.style.color = "black"
-            filtroCheckCm.style.backgroundColor = "white"
+            filtroCheckCm.style.backgroundColor = "var(--claro)"
             entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';
@@ -60,10 +60,10 @@ function cargar(total) {
 
     filtroCM.addEventListener('change', function () {
         if (filtroCM.checked) {
-            filtroCheckCm.style.color = "white"
-            filtroCheckCm.style.backgroundColor = "green"
+            filtroCheckCm.style.color = "var(--claro)"
+            filtroCheckCm.style.backgroundColor = "var(--fuerte)"
             filtroCheckArt.style.color = "black"
-            filtroCheckArt.style.backgroundColor = "white"
+            filtroCheckArt.style.backgroundColor = "var(--claro)"
             entrada.disabled = false
             datalist.innerHTML = '';
             entrada.value = '';

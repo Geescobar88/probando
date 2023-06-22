@@ -8,14 +8,31 @@
     font-size:14px;
 }
 
+/* :root {
+    --primario: #61ada0;
+    --secundario: #b2d5ba;
+    --fuerte: #248f8d;
+    --claro: #eff3cd;
+} */
+
+:root {
+    --primario: #c6d4e1;
+    --secundario: #ebe7e0;
+    --fuerte: #44749d;
+    --claro: #ffffff;
+    --oscuro: #bdb8ad;
+}
+
 body {
     width: 100%;
     height: 100vh;
+    background-color: var(--claro);
 }
 
 .titulo {
     width: 90%;
     font-size: 2rem;
+    color: black;
 }
 
 .contenedor {
@@ -30,6 +47,7 @@ body {
     text-align: center;
     position: relative;
     box-shadow: 3px 3px 10px;
+    background-color: var(--primario);
 }
 
 .filtro {
@@ -37,18 +55,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 1px solid black;
     border-radius: 5px;
     padding: 25px;
-}   
+    background-color: var(--secundario);
+}
 
 .tituloBuscar {
     margin-bottom: 30px;
+    text-align: start;
 }
 
 .radioBtn{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .busqueda {
@@ -62,6 +81,7 @@ body {
     font-size:larger;
     text-transform: uppercase;
     padding: 10px;
+    background-color: var(--secundario);
 }
 
 .linea {
@@ -99,13 +119,13 @@ text-align:center;
 }
 
 .estadoStock {
-    border: 2px solid black;
     border-radius: 5px;
     height: 50px;
     width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--secundario);
 }
 
 .stock {
@@ -113,8 +133,8 @@ text-align:center;
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
-    border: 1px solid black;
     border-radius: 5px;
+    background-color: var(--secundario);
 }
 
 .stock>span {
@@ -130,10 +150,13 @@ margin: 15px;
 .bbutton {
     padding: 10px;
     border-radius: 5px;
+    background-color: var(--fuerte);
+    color: var(--claro);
+    border: none;
 }
 
 .listaStock {
-    background-color: white;
+    background-color: var(--claro);
     left: 10%;
     width: 80%;
     border: 3px solid black;
@@ -160,17 +183,17 @@ margin: 15px;
 ::-webkit-scrollbar {
     width: 20px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
@@ -181,10 +204,10 @@ margin: 15px;
   }
 
   .filtroCheck {
-    padding: 15px;
-    border: 1px solid green;
+    padding: 15px 40px;
     border-radius: 5px;
-
+    background-color: var(--claro);
+    border: 1px solid var(--fuerte)
   }
 
   @media (min-width: 1024px){
@@ -196,7 +219,7 @@ margin: 15px;
     .contenedor {
         margin: 2% 10%;
     }
-    
+
     .filtro {
         flex-direction:row;
         justify-content: space-around;
@@ -211,6 +234,6 @@ margin: 15px;
 
     .radioBtn {
         width: 50%;
-        
+
     }
   }
