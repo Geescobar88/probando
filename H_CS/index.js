@@ -22,7 +22,6 @@ function generarArray(listadoData, dbData) {
     cargar(total);
     cambiar(total);
     listar(total);
-
 }
 
 fetchDatos()
@@ -46,14 +45,18 @@ function cargar(total) {
             datalist.innerHTML = '';
             entrada.value = '';
             for (let i = 0; i < total.length; i++) {
-                if (total[i].HABILITADO != "NO") {
+                
                     const newOption = document.createElement("option");
                     const lista = document.getElementById('medicacion');
                     const atribValue = document.createAttribute("value");
-                    atribValue.value = total[i].DESCRIPCION; 
+                    if (total[i].MEDICACION === undefined){
+                        atribValue.value = total[i].DESCRIPCION;
+                    } else {
+                        atribValue.value = total[i].MEDICACION;    
+                    } 
                     newOption.setAttributeNode(atribValue);
                     lista.appendChild(newOption);
-                }
+                
             }
         }
     })
@@ -91,29 +94,38 @@ function cambiar(total) {
 
     articuloBuscado.addEventListener('change', function () {
         const objEncontrado = total.find(obj => {
-            return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value
+            return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
         })
         console.log(objEncontrado)
-        nomArticulo.textContent = objEncontrado.DESCRIPCION
+        if (objEncontrado.MEDICACION === undefined) {
+            nomArticulo.textContent = objEncontrado.DESCRIPCION
+        } else {
+            nomArticulo.textContent = objEncontrado.MEDICACION
+        }
         codMinisterial.textContent = objEncontrado.CODARTICULO
         stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
         stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
+        console.log('Stock Minino establecido: ' + objEncontrado.STOCK_MIN + ' Si el stock en depo es mas de: ' + objEncontrado.STOCK_MIN * 2 + ' deberia ser verde. Si es menos deberia ser rojo. Si esta entre ' + objEncontrado.STOCK_MIN + ' y ' + objEncontrado.STOCK_MIN * 2 + 'Deberia ser amarillo')
 
         if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
-            console.log("stock critico")
             estadoStock.style.backgroundColor = "Red";
             estadoStock.style.color = "White";
             estadoStock.textContent = "Critico"
 
         } else if
             (objEncontrado.STOCKENDEPOSITO > (objEncontrado.STOCK_MIN * 2)) {
-            console.log("stock normal")
             estadoStock.style.backgroundColor = "Green";
             estadoStock.style.color = "White";
             estadoStock.textContent = "Normal"
         }
-        else {
-            console.log("stock minimo")
+        else if 
+            (objEncontrado.STOCK_MIN === undefined) {
+            estadoStock.style.backgroundColor = "Gray";
+            estadoStock.style.color = "White";
+            estadoStock.textContent = "No definido"
+            }
+            else
+        {
             estadoStock.style.backgroundColor = "Yellow";
             estadoStock.style.color = "Black";
             estadoStock.textContent = "Minimo"
@@ -169,10 +181,10 @@ function listar(total) {
         msjLista.style.display = "inline"
     })
 
-    listaPrioridad.addEventListener('click', () => {
+    // listaPrioridad.addEventListener('click', () => {
         
 
-    })
+    // })
 
     listaCompleta.addEventListener('click', () => {
         lista.textContent = ""
