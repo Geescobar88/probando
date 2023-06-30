@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="./index.js"></script>
     <title>Control de Stock</title>
 </head>
 
 <body>
-    <div id="contenedor" class="contenedor">
-        <h1>STOCK CONTROL</h1>
+    <div class="contenedor">
 
-        <input type="text" list="medicacion" id="listaArt" onchange="elegir()" autofocus>
-        <datalist id="medicacion">
-        </datalist>
-        <label for="">Codigo: </label><label for="" id="codArt" class="respuesta"></label>
-        <label for="">Cantidad en Deposito: </label><label for="" id="cantDepo" class="respuesta"></label>
-        <label for="">Cantidad en Farmacia: </label><label for="" id="cantFarm" class="respuesta"></label>
-        <button onclick="borrar()">Borrar</button>
-        <label for="" class="fecha">Actualizado al 29/06/23</label>
-        <a href="../H_CS/index.html">Prueba de la nueva version</a>
+        <h1 class="titulo">Control de stock</h1>
+
+        <div class="filtro">
+            <label class="tituloBuscar">Buscar articulo por :</label>
+            <div class="radioBtn">
+                <div>
+                <input type="radio" name="filtro" id="fNombre" class="filtro" value="Articulos"><label
+                    for="fNombre" class="filtroCheck" id="filtroCheckArt">Nombre</label>
+                </div>
+                <div>
+                <input type="radio" name="filtro" id="fCodigoMin" class="filtro" value="Codigo Ministerial"><label
+                    for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Codigo</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="busqueda">
+            <input type="text" list="medicacion" id="entrada" class="entrada" disabled>
+            <datalist id="medicacion"></datalist>
+        </div>
+
+        <hr class="linea">
+
+        <div class="datos">
+            <span id="nombreArticulo" class="nombreArticulo">Descripcion: <a href="">No disponible</a></span>
+            <div class="descripcion">
+                <span id="codMinisterial" class="codMinisterial">
+                    <h2>#M0000000</h2>
+                </span>
+                <span id="estadoStock" class="estadoStock">Estado</span>
+            </div>
+
+            <div class="contenedorStock">
+                <div class="stock">
+                    <span>Stock en Deposito</span>
+                    <span id="stockDeposito">00000</span>
+                </div>
+
+                <div class="stock">
+                    <span>Stock en Farmacia</span>
+                    <span id="stockFarmacia">00000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="botonera" class="botonera">
+            <button name="En 0" id="enCero" class="bbutton">Stock 0</button>
+            <button name="Minimo" id="stockMinimo" class="bbutton">Stock Minimo</button>
+            <!-- <button name="Lista" id="listaPrioridad" class="bbutton">Prioridad</button> -->
+            <button name="Lista" id="listaCompleta" class="bbutton">Lista Completa</button>
+        </div>
+
+        <div class="listaStock" id="listaStock">
+            <div class="divLista">
+            <ul class="lista" id="lista"></ul>
+            </div>
+
+            <div class="botoneraLista">
+                <button class="bbutton" id="btnDescargar">Descargar</button>
+                <button class="bbutton" id="btnCerrar">Cerrar</button>
+            </div>
+
+        </div>
+
     </div>
+
 </body>
 
 </html>
