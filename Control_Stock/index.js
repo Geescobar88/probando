@@ -28,11 +28,12 @@ fetchDatos()
 
 function cargar(total) {
     const filtroArt = document.getElementById('fNombre')
-    const filtroCM = document.getElementById('fCodigoMin')    
+    const filtroCM = document.getElementById('fCodigoMin')
     const filtroCheckArt = document.getElementById('filtroCheckArt')
     const filtroCheckCm = document.getElementById('filtroCheckCm')
     const datalist = document.getElementById('medicacion');
     const entrada = document.getElementById('entrada')
+    const busqueda = document.getElementById('busqueda')
 
     filtroArt.addEventListener('change', function () {
         if (filtroArt.checked) {
@@ -45,24 +46,25 @@ function cargar(total) {
             datalist.innerHTML = '';
             entrada.value = '';
             for (let i = 0; i < total.length; i++) {
-                
-                    const newOption = document.createElement("option");
-                    const lista = document.getElementById('medicacion');
-                    const atribValue = document.createAttribute("value");
-                    if (total[i].MEDICACION === undefined){
-                        atribValue.value = total[i].DESCRIPCION;
-                    } else {
-                        atribValue.value = total[i].MEDICACION;    
-                    } 
-                    newOption.setAttributeNode(atribValue);
-                    lista.appendChild(newOption);
-                
+
+                const newOption = document.createElement("option");
+                const lista = document.getElementById('medicacion');
+                const atribValue = document.createAttribute("value");
+                if (total[i].MEDICACION === undefined) {
+                    atribValue.value = total[i].DESCRIPCION;
+                } else {
+                    atribValue.value = total[i].MEDICACION;
+                }
+                newOption.setAttributeNode(atribValue);
+                lista.appendChild(newOption);
+
             }
         }
     })
 
     filtroCM.addEventListener('change', function () {
         if (filtroCM.checked) {
+
             filtroCheckCm.style.color = "var(--claro)"
             filtroCheckCm.style.backgroundColor = "var(--fuerte)"
             filtroCheckArt.style.color = "black"
@@ -80,6 +82,12 @@ function cargar(total) {
                     lista.appendChild(newOption);
                 }
             }
+        }
+    })
+
+    busqueda.addEventListener('click', () => {
+        if (entrada.disabled) {
+            alert("Seleccione forma de busqueda.")
         }
     })
 
@@ -118,14 +126,13 @@ function cambiar(total) {
             estadoStock.style.color = "White";
             estadoStock.textContent = "Normal"
         }
-        else if 
+        else if
             (objEncontrado.STOCK_MIN === undefined) {
             estadoStock.style.backgroundColor = "Gray";
             estadoStock.style.color = "White";
             estadoStock.textContent = "No definido"
-            }
-            else
-        {
+        }
+        else {
             estadoStock.style.backgroundColor = "Yellow";
             estadoStock.style.color = "Black";
             estadoStock.textContent = "Minimo"
@@ -142,7 +149,7 @@ function listar(total) {
     const lista = document.getElementById('lista')
     const msjLista = document.getElementById('listaStock')
     const listaPrioridad = document.getElementById('listaPrioridad')
-    
+
     enCero.addEventListener('click', () => {
         lista.textContent = ""
         total.forEach(item => {
@@ -182,7 +189,7 @@ function listar(total) {
     })
 
     // listaPrioridad.addEventListener('click', () => {
-        
+
 
     // })
 
@@ -190,7 +197,7 @@ function listar(total) {
         lista.textContent = ""
         total.forEach(item => {
             const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
+            newItem.textContent = item.CODARTICULO + " " + item.DESCRIPCION + " " + item.STOCKENDEPOSITO
             if (item.STOCKENDEPOSITO === 0) {
                 newItem.style.color = "#b83564"
             } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {

@@ -179,6 +179,23 @@ margin: 15px;
     height: 500px;
 }
 
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+li {
+    font-size:13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* li::first-word {
+    font-size: 20px;
+} */
+
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
