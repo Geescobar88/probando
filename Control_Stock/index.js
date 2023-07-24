@@ -85,9 +85,30 @@ function cargar(total) {
         }
     })
 
-    busqueda.addEventListener('click', () => {
+    busqueda.addEventListener('click', function () {
         if (entrada.disabled) {
-            alert("Seleccione forma de busqueda.")
+
+            filtroCheckArt.style.color = "var(--claro)"
+            filtroCheckArt.style.backgroundColor = "var(--fuerte)"
+            filtroCheckCm.style.color = "black"
+            filtroCheckCm.style.backgroundColor = "var(--claro)"
+            entrada.disabled = false
+            datalist.innerHTML = '';
+            entrada.value = '';
+            for (let i = 0; i < total.length; i++) {
+
+                const newOption = document.createElement("option");
+                const lista = document.getElementById('medicacion');
+                const atribValue = document.createAttribute("value");
+                if (total[i].MEDICACION === undefined) {
+                    atribValue.value = total[i].DESCRIPCION;
+                } else {
+                    atribValue.value = total[i].MEDICACION;
+                }
+                newOption.setAttributeNode(atribValue);
+                lista.appendChild(newOption);
+
+            }
         }
     })
 

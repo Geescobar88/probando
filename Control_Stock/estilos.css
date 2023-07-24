@@ -227,6 +227,10 @@ li {
     border: 1px solid var(--fuerte)
   }
 
+  .textoInferior {
+    display: none;
+  }
+
   @media (min-width: 1024px){
 
     * {
@@ -253,4 +257,11 @@ li {
         width: 50%;
 
     }
+
+    .textoInferior {
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
   }
