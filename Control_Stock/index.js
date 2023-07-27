@@ -1,14 +1,17 @@
 async function fetchDatos() {
     const listadoResponse = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/stock.json')
     const dbResponse = await fetch('./data/DB.json')
+    const vto = await fetch('./data/vto.json')
 
     const listadoData = await listadoResponse.json()
     const dbData = await dbResponse.json()
+    const listadoVto = await vto.json()
 
-    generarArray(listadoData, dbData);
+    generarArray(listadoData, dbData, listadoVto);
 }
 
-function generarArray(listadoData, dbData) {
+
+function generarArray(listadoData, dbData, listadoVto) {
 
     const total = listadoData.map(listado1 => {
         const coincidencia = dbData.find(listado2 => listado2.CODARTICULO === listado1.CODARTICULO);
@@ -20,11 +23,13 @@ function generarArray(listadoData, dbData) {
     });
 
     cargar(total);
-    cambiar(total);
+    cambiar(total, listadoVto);
     listar(total);
 }
 
 fetchDatos()
+
+//CARGA DE DATOS
 
 function cargar(total) {
     const filtroArt = document.getElementById('fNombre')
@@ -114,18 +119,30 @@ function cargar(total) {
 
 }
 
-function cambiar(total) {
+//ELECCION DE ARTICULO
+
+function cambiar(total, listadoVto) {
     const articuloBuscado = document.getElementById('entrada')
     const nomArticulo = document.getElementById('nombreArticulo')
     const codMinisterial = document.getElementById('codMinisterial')
     const stockDeposito = document.getElementById('stockDeposito')
-    const stockFarmacia = document.getElementById('stockFarmacia')
+    const proxVtoLote = document.getElementById('proxVtoLote')
+    const proxVtoVto = document.getElementById('proxVtoVto')
+    const proxVtoCant = document.getElementById('proxVtoCant')
 
     articuloBuscado.addEventListener('change', function () {
+        proxVtoLote.textContent = "";
+        proxVtoVto.textContent = "";
+        proxVtoCant.textContent = "";
+
         const objEncontrado = total.find(obj => {
             return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
         })
-        console.log(objEncontrado)
+
+        const objFiltroVto = listadoVto.filter( obj => {
+            return objEncontrado.CODARTICULO === obj.CODARTICULO
+        })
+
         if (objEncontrado.MEDICACION === undefined) {
             nomArticulo.textContent = objEncontrado.DESCRIPCION
         } else {
@@ -133,7 +150,6 @@ function cambiar(total) {
         }
         codMinisterial.textContent = objEncontrado.CODARTICULO
         stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO
-        stockFarmacia.textContent = objEncontrado.STOCKENDISPENSACION
         console.log('Stock Minino establecido: ' + objEncontrado.STOCK_MIN + ' Si el stock en depo es mas de: ' + objEncontrado.STOCK_MIN * 2 + ' deberia ser verde. Si es menos deberia ser rojo. Si esta entre ' + objEncontrado.STOCK_MIN + ' y ' + objEncontrado.STOCK_MIN * 2 + 'Deberia ser amarillo')
 
         if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
@@ -158,8 +174,24 @@ function cambiar(total) {
             estadoStock.style.color = "Black";
             estadoStock.textContent = "Minimo"
         }
+
+        objFiltroVto.forEach( item => {
+            const newLote = document.createElement('li');
+            newLote.textContent = item.NROLOTE
+            const newVto = document.createElement('li');
+            newVto.textContent = item.FECHAVTO
+            const newCant = document.createElement('li');
+            newCant.textContent = item.STOCKEXISTENTE
+            proxVtoLote.appendChild(newLote)
+            proxVtoVto.appendChild(newVto)
+            proxVtoCant.appendChild(newCant)
+
+
+    })
     })
 }
+
+//LISTADOS
 
 function listar(total) {
     const enCero = document.getElementById('enCero');

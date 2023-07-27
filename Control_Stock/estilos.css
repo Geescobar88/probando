@@ -141,6 +141,26 @@ text-align:center;
 margin: 15px;
 }
 
+.vto {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: var(--secundario);
+}
+
+.vto>h2 {
+    margin-bottom: 20px;
+}
+
+.vtoInner {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    width: 90%;
+}
+
 .botonera {
     width: 90%;
     display: flex;
