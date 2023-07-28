@@ -142,23 +142,49 @@ margin: 15px;
 }
 
 .vto {
-    display: flex;
-    flex-direction: column;
     margin: 10px 0;
     padding: 10px 0;
     border-radius: 5px;
     background-color: var(--secundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vto>h2 {
     margin-bottom: 20px;
 }
 
-.vtoInner {
+.vtoContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.vtoInner {
+    display: flex;
+    flex-direction: column;
     padding: 5px 0;
-    width: 90%;
+    width: 95%;
+    text-align: center;
+}
+
+.vtoInner>span {
+    text-align: left;
+    margin-bottom: 5px;
+
+}
+
+.vtoInner>ul {
+    display: inline-block;
+    text-align: left;
+}
+
+.vtoInner>ul>li {
+    border-bottom: 1px solid var(--fuerte);
+    margin-bottom: 5px;
+
 }
 
 .botonera {
@@ -250,6 +276,7 @@ li {
   .textoInferior {
     display: none;
   }
+
 
   @media (min-width: 1024px){
 

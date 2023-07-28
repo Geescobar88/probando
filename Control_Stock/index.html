@@ -19,12 +19,12 @@
             <label class="tituloBuscar">Buscar articulo por :</label>
             <div class="radioBtn">
                 <div>
-                <input type="radio" name="filtro" id="fNombre" class="filtro" value="Articulos"><label
-                    for="fNombre" class="filtroCheck" id="filtroCheckArt">Nombre</label>
+                    <input type="radio" name="filtro" id="fNombre" class="filtro" value="Articulos"><label for="fNombre"
+                        class="filtroCheck" id="filtroCheckArt">Nombre</label>
                 </div>
                 <div>
-                <input type="radio" name="filtro" id="fCodigoMin" class="filtro" value="Codigo Ministerial"><label
-                    for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Codigo</label>
+                    <input type="radio" name="filtro" id="fCodigoMin" class="filtro" value="Codigo Ministerial"><label
+                        for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Codigo</label>
                 </div>
             </div>
         </div>
@@ -52,24 +52,29 @@
                 </div>
 
                 <div class="vto">
-                    <h2>Proximo vencimiento en Farmacia</h2>
 
-                    <div class="vtoInner">
-                        <span>Lote</span>
-                        <span>Vto</span>
-                        <span>Cant</span>
-                    </div>
+                    <h2>Proximo vencimiento hasta 07/24</h2>
 
-                    <div class="vtoInner">
-                        <ul id="proxVtoLote">
-                            <Li>1</Li>
-                        </ul>
-                        <ul id="proxVtoVto">
-                            <li>2</li>
-                        </ul>
-                        <ul id="proxVtoCant">
-                            <li>3</li>
-                        </ul>
+                    <div class="vtoContainer">
+
+                        <div class="vtoInner">
+                            <span>Lote</span>
+                            <ul id="proxVtoLote">
+                            </ul>
+                        </div>
+
+                        <div class="vtoInner">
+                            <span>Vto</span>
+                            <ul id="proxVtoVto">
+                            </ul>
+                        </div>
+
+                        <div class="vtoInner">
+                            <span>Cant</span>
+                            <ul id="proxVtoCant">
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 
@@ -80,13 +85,12 @@
         <div id="botonera" class="botonera">
             <button name="En 0" id="enCero" class="bbutton">Stock 0</button>
             <button name="Minimo" id="stockMinimo" class="bbutton">Stock Minimo</button>
-            <!-- <button name="Lista" id="listaPrioridad" class="bbutton">Prioridad</button> -->
             <button name="Lista" id="listaCompleta" class="bbutton">Lista Completa</button>
         </div>
 
         <div class="listaStock" id="listaStock">
             <div class="divLista">
-            <ul class="lista" id="lista"></ul>
+                <ul class="lista" id="lista"></ul>
             </div>
 
             <div class="botoneraLista">
@@ -97,7 +101,7 @@
         </div>
 
     </div>
-    <p class="textoInferior">Ultima actualizacion: 27/07/23 11:05 hs</p>
+    <p class="textoInferior">Ultima actualizacion: 28/07/23 12:35 hs</p>
 </body>
 
 </html>

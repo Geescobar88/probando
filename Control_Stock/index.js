@@ -241,11 +241,6 @@ function listar(total) {
         msjLista.style.display = "inline"
     })
 
-    // listaPrioridad.addEventListener('click', () => {
-
-
-    // })
-
     listaCompleta.addEventListener('click', () => {
         lista.textContent = ""
         total.forEach(item => {
