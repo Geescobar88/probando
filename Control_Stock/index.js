@@ -201,7 +201,6 @@ function listar(total) {
     const btnDescargar = document.getElementById('btnDescargar')
     const lista = document.getElementById('lista')
     const msjLista = document.getElementById('listaStock')
-    const listaPrioridad = document.getElementById('listaPrioridad')
 
     enCero.addEventListener('click', () => {
         lista.textContent = ""
