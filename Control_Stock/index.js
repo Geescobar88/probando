@@ -189,6 +189,19 @@ function cambiar(total, listadoVto) {
 
     })
     })
+
+    articuloBuscado.addEventListener("dblclick", () => {
+        proxVtoLote.textContent = "";
+        proxVtoVto.textContent = "";
+        proxVtoCant.textContent = "";
+        nomArticulo.textContent = "Descripcion: No disponible"
+        codMinisterial.textContent = "#0000000";
+        stockDeposito.textContent = "00000";
+        articuloBuscado.value = "";
+        estadoStock.style.backgroundColor = "Gray";
+        estadoStock.style.color = "White";
+        estadoStock.textContent = "No definido"
+        })
 }
 
 //LISTADOS
