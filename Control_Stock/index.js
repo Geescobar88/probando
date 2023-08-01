@@ -2,16 +2,19 @@ async function fetchDatos() {
     const listadoResponse = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/stock.json')
     const dbResponse = await fetch('./data/DB.json')
     const vto = await fetch('./data/vto.json')
+    const stock_esterilizacion = await fetch('./data/cod_esterilizacion.json')
 
     const listadoData = await listadoResponse.json()
     const dbData = await dbResponse.json()
     const listadoVto = await vto.json()
+    const listadoStrlzn = await stock_esterilizacion.json()
 
-    generarArray(listadoData, dbData, listadoVto);
+
+    generarArray(listadoData, dbData, listadoVto,listadoStrlzn);
 }
 
 
-function generarArray(listadoData, dbData, listadoVto) {
+function generarArray(listadoData, dbData, listadoVto, listadoStrlzn) {
 
     const total = listadoData.map(listado1 => {
         const coincidencia = dbData.find(listado2 => listado2.CODARTICULO === listado1.CODARTICULO);
@@ -24,7 +27,7 @@ function generarArray(listadoData, dbData, listadoVto) {
 
     cargar(total);
     cambiar(total, listadoVto);
-    listar(total);
+    listar(total, listadoStrlzn);
 }
 
 fetchDatos()
@@ -206,10 +209,11 @@ function cambiar(total, listadoVto) {
 
 //LISTADOS
 
-function listar(total) {
+function listar(total, listadoStrlzn) {
     const enCero = document.getElementById('enCero');
     const minimo = document.getElementById('stockMinimo');
     const listaCompleta = document.getElementById('listaCompleta');
+     const esterilizacion = document.getElementById('esterilizacion')
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
     const lista = document.getElementById('lista')
@@ -268,6 +272,19 @@ function listar(total) {
             lista.appendChild(newItem)
         });
         msjLista.style.display = "inline"
+    })
+
+    esterilizacion.addEventListener('click', () => {
+        lista.textContent = ""
+        const stockEsterilizacion = total.filter(item => {
+            return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO);
+        });
+        stockEsterilizacion.forEach(item => {
+        const newItem = document.createElement('li');
+        newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
+        lista.appendChild(newItem)
+    });
+    msjLista.style.display = "inline"
     })
 
     btnCerrar.addEventListener('click', () => {
