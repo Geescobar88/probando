@@ -83,13 +83,14 @@
         </div>
 
         <div id="botonera" class="botonera">
-            <button name="En 0" id="enCero" class="bbutton">Stock 0</button>
-            <button name="Minimo" id="stockMinimo" class="bbutton">Stock Minimo</button>
-            <button name="Lista" id="listaCompleta" class="bbutton">Lista Completa</button>
-            <button name="Esterilizacion" id="esterilizacion" class="bbutton">Esterilizacion</button>
+            <button name="En 0" id="enCero" class="bbutton nodisp">Stock 0</button>
+            <button name="Minimo" id="stockMinimo" class="bbutton nodisp">Stock Minimo</button>
+            <button name="Lista" id="listaCompleta" class="bbutton nodisp">Lista Completa</button>
+            <button name="Esterilizacion" id="esterilizacion" class="bbutton nodisp">Esterilizacion</button>
+            <button name="filtros" id="filtros" class="bbutton">Filtrar</button>
         </div>
 
-        <div class="listaStock" id="listaStock">
+        <!-- <div class="listaStock" id="listaStock">
             <div class="divLista">
                 <ul class="lista" id="lista"></ul>
             </div>
@@ -98,6 +99,65 @@
                 <button class="bbutton" id="btnDescargar">Descargar</button>
                 <button class="bbutton" id="btnCerrar">Cerrar</button>
             </div>
+
+        </div> -->
+
+        <div class="listaStock" id="listaFiltrar">
+
+            <div class="botoneraFiltros">
+                <select name="tipoFiltros" id="seleccionFiltros">
+                    <option value="Stock">Stock</option>
+                    <option value="Servicio">Servicio</option>
+                    <option value="vencimiento">Vencimiento</option>
+                </select>
+
+                <select name="filtrosStock" id="filtrosStock">
+                    <option value="Lista completa" id="lCompleta">Lista Completa</option>
+                    <option value="En Stock minimo">En Stock minimo</option>
+                    <option value="Agotados">Agotados</option>
+                </select>
+
+                <select name="filtrosServicio" id="filtrosServicio">
+                    <option value="Esterilizacion">Esterilizacion</option>
+                    <option value="Alimentacion">Alimentacion</option>
+                    <option value="Sueros">Sueros</option>
+                </select>
+
+                <input type="text" placeholder="Ej: 07/2024">
+
+            </div>
+
+            <div class="divLista">
+            
+                <h2 class="tituloLista">Stock</h2>
+            
+                <div class="filtroContainer">
+            
+                    <div class="filtrarInner">
+                        <span>C. Ministerial</span>
+                        <ul id="filtroCodigo">
+                        </ul>
+                    </div>
+            
+                    <div class="filtrarInner">
+                        <span>Medicacion</span>
+                        <ul id="filtroNombre">
+                        </ul>
+                    </div>
+            
+                    <div class="filtrarInner">
+                        <span>Stock</span>
+                        <ul id="filtroStockDepo">
+                        </ul>
+                    </div>
+            
+                </div>
+            </div>
+
+            <div class="botoneraLista">
+                <button class="bbutton" id="btnDescargar">Descargar</button>
+                <button class="bbutton" id="btnCerrar">Cerrar</button>
+            </div> 
 
         </div>
 

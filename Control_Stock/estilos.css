@@ -201,6 +201,10 @@ margin: 15px;
     border: none;
 }
 
+.nodisp {
+    display: none;
+}
+
 .listaStock {
     background-color: var(--claro);
     left: 10%;
@@ -216,13 +220,35 @@ margin: 15px;
 
 }
 
+
+
 .botoneraLista {
     margin: 20px 0;
 }
 
 .divLista {
-    overflow-y: scroll;
     height: 500px;
+    border: 1px solid;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tituloLista {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtroContainer {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .lista {

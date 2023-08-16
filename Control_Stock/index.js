@@ -213,11 +213,30 @@ function listar(total, listadoStrlzn) {
     const enCero = document.getElementById('enCero');
     const minimo = document.getElementById('stockMinimo');
     const listaCompleta = document.getElementById('listaCompleta');
-     const esterilizacion = document.getElementById('esterilizacion')
+    const esterilizacion = document.getElementById('esterilizacion')
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
     const lista = document.getElementById('lista')
-    const msjLista = document.getElementById('listaStock')
+    const msjLista = document.getElementById('listaFiltrar')
+    const filtros = document.getElementById('filtros')
+    
+    const lCompleta = document.getElementById('filtrosStock')
+
+
+    filtros.addEventListener('click', () => {
+        msjLista.style.display = "inline"
+    })
+
+    lCompleta.addEventListener('change', (event) => {
+        alert(event.target.selectedIndex)
+    })
+
+
+
+
+
+
+
 
     enCero.addEventListener('click', () => {
         lista.textContent = ""
