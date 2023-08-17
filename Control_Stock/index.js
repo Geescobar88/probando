@@ -10,7 +10,7 @@ async function fetchDatos() {
     const listadoStrlzn = await stock_esterilizacion.json()
 
 
-    generarArray(listadoData, dbData, listadoVto,listadoStrlzn);
+    generarArray(listadoData, dbData, listadoVto, listadoStrlzn);
 }
 
 
@@ -143,7 +143,7 @@ function cambiar(total, listadoVto) {
             return obj.CODARTICULO === articuloBuscado.value || obj.DESCRIPCION === articuloBuscado.value || obj.MEDICACION === articuloBuscado.value
         })
 
-        const objFiltroVto = listadoVto.filter( obj => {
+        const objFiltroVto = listadoVto.filter(obj => {
             return objEncontrado.CODARTICULO === obj.CODARTICULO
         })
 
@@ -179,7 +179,7 @@ function cambiar(total, listadoVto) {
             estadoStock.textContent = "Minimo"
         }
 
-        objFiltroVto.forEach( item => {
+        objFiltroVto.forEach(item => {
             const newLote = document.createElement('li');
             newLote.textContent = item.NROLOTE
             const newVto = document.createElement('li');
@@ -191,34 +191,27 @@ function cambiar(total, listadoVto) {
             proxVtoCant.appendChild(newCant)
 
 
-    })
+        })
     })
 
-    articuloBuscado.addEventListener("dblclick", () => {
+
+
+    bBorrar.addEventListener("click", () => {
         proxVtoLote.textContent = "";
         proxVtoVto.textContent = "";
         proxVtoCant.textContent = "";
-        nomArticulo.textContent = "Descripcion: No disponible"
+        nomArticulo.textContent = "Descripción: No disponible"
         codMinisterial.textContent = "#0000000";
         stockDeposito.textContent = "00000";
         articuloBuscado.value = "";
         estadoStock.style.backgroundColor = "Gray";
         estadoStock.style.color = "White";
         estadoStock.textContent = "No definido"
-        })
+    })
 
-        bBorrar.addEventListener("click", () => {
-            proxVtoLote.textContent = "";
-            proxVtoVto.textContent = "";
-            proxVtoCant.textContent = "";
-            nomArticulo.textContent = "Descripcion: No disponible"
-            codMinisterial.textContent = "#0000000";
-            stockDeposito.textContent = "00000";
-            articuloBuscado.value = "";
-            estadoStock.style.backgroundColor = "Gray";
-            estadoStock.style.color = "White";
-            estadoStock.textContent = "No definido"
-            })
+    articuloBuscado.addEventListener("dblclick", () => {
+        bBorrar.click()
+        })
 }
 
 //LISTADOS
@@ -233,7 +226,7 @@ function listar(total, listadoStrlzn) {
     const lista = document.getElementById('lista')
     const msjLista = document.getElementById('listaFiltrar')
     const filtros = document.getElementById('filtros')
-    
+
     const lPrincipal = document.getElementById('seleccionFiltros')
     const filtrosStock = document.getElementById('filtrosStock')
     const filtrosServicio = document.getElementById('filtrosServicio')
@@ -273,14 +266,19 @@ function listar(total, listadoStrlzn) {
 
     filtrosStock.addEventListener('change', (event) => {
         // alert(event.target.selectedIndex)
-        if ( event.target.selectedIndex == "0") {
-            filtroCodigo.textContent =""
+        if (event.target.selectedIndex == "0") {
+            filtroCodigo.textContent = ""
             total.forEach(item => {
                 const newCMinis = document.createElement("li")
                 const newNombre = document.createElement("li")
                 const newSDepo = document.createElement("li")
                 newCMinis.textContent = item.CODARTICULO;
-                newNombre.textContent = item.DESCRIPCION;
+                if (item.DESCRIPCION.length > 100) {
+                    const descCorta = item.DESCRIPCION;
+                    newNombre.textContent = descCorta.substring(0, 50) + '...';
+                } else {
+                    newNombre.textContent = item.DESCRIPCION;
+                }
                 newSDepo.textContent = item.STOCKENDEPOSITO;
                 if (item.STOCKENDEPOSITO === 0) {
                     newCMinis.style.color = "#b83564"
@@ -298,7 +296,7 @@ function listar(total, listadoStrlzn) {
                 filtroCodigo.appendChild(newCMinis)
                 filtroNombre.appendChild(newNombre)
                 filtroStockDepo.appendChild(newSDepo)
-                
+
             })
         }
     })
@@ -364,11 +362,11 @@ function listar(total, listadoStrlzn) {
             return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO);
         });
         stockEsterilizacion.forEach(item => {
-        const newItem = document.createElement('li');
-        newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
-        lista.appendChild(newItem)
-    });
-    msjLista.style.display = "inline"
+            const newItem = document.createElement('li');
+            newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
+            lista.appendChild(newItem)
+        });
+        msjLista.style.display = "inline"
     })
 
     btnCerrar.addEventListener('click', () => {

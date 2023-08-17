@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="./index.js"></script>
     <title>Control de Stock</title>
 </head>
@@ -16,7 +19,7 @@
         <h1 class="titulo">Control de stock</h1>
 
         <div class="filtro">
-            <label class="tituloBuscar">Buscar articulo por :</label>
+            <label class="tituloBuscar">Buscar articulo por:</label>
             <div class="radioBtn">
                 <div>
                     <input type="radio" name="filtro" id="fNombre" class="filtro" value="Articulos"><label for="fNombre"
@@ -24,7 +27,7 @@
                 </div>
                 <div>
                     <input type="radio" name="filtro" id="fCodigoMin" class="filtro" value="Codigo Ministerial"><label
-                        for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Codigo</label>
+                        for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Código</label>
                 </div>
             </div>
         </div>
@@ -38,7 +41,7 @@
         <hr class="linea">
 
         <div class="datos">
-            <span id="nombreArticulo" class="nombreArticulo">Descripcion: <a href="">No disponible</a></span>
+            <span id="nombreArticulo" class="nombreArticulo">Descripción: <a href="">No disponible</a></span>
             <div class="descripcion">
                 <span id="codMinisterial" class="codMinisterial">
                     <h2>#M0000000</h2>
@@ -54,7 +57,7 @@
 
                 <div class="vto">
 
-                    <h2>Proximo vencimiento hasta 07/24</h2>
+                    <h2>Próximo  vencimiento hasta 07/24</h2>
 
                     <div class="vtoContainer">
 
@@ -85,10 +88,10 @@
 
         <div id="botonera" class="botonera">
             <button name="En 0" id="enCero" class="bbutton nodisp">Stock 0</button>
-            <button name="Minimo" id="stockMinimo" class="bbutton nodisp">Stock Minimo</button>
+            <button name="Minimo" id="stockMinimo" class="bbutton nodisp">Stock Mínimo</button>
             <button name="Lista" id="listaCompleta" class="bbutton nodisp">Lista Completa</button>
-            <button name="Esterilizacion" id="esterilizacion" class="bbutton nodisp">Esterilizacion</button>
-            <button name="filtros" id="filtros" class="bbutton">Filtrar</button>
+            <button name="Esterilizacion" id="esterilizacion" class="bbutton nodisp">Esterilización</button>
+            <button name="filtros" id="filtros" class="bbutton btnFiltros">Filtrar</button>
         </div>
 
         <!-- <div class="listaStock" id="listaStock">
@@ -114,13 +117,13 @@
 
                 <select name="filtrosStock" id="filtrosStock">
                     <option value="Lista completa" id="lCompleta">Lista Completa</option>
-                    <option value="En Stock minimo">En Stock minimo</option>
+                    <option value="En Stock minimo">En Stock mínimo</option>
                     <option value="Agotados">Agotados</option>
                 </select>
 
                 <select name="filtrosServicio" id="filtrosServicio">
-                    <option value="Esterilizacion">Esterilizacion</option>
-                    <option value="Alimentacion">Alimentacion</option>
+                    <option value="Esterilizacion">Esterilización</option>
+                    <option value="Alimentacion">Alimentación</option>
                     <option value="Sueros">Sueros</option>
                 </select>
 
@@ -129,41 +132,41 @@
             </div>
 
             <div class="divLista">
-            
+
                 <h2 class="tituloLista">Stock</h2>
-            
+
                 <div class="filtroContainer">
-            
+
                     <div class="filtrarInner">
-                        <span>Codigo</span>
+                        <span>Código</span>
                         <ul id="filtroCodigo" class="filtroLista">
                         </ul>
                     </div>
-            
+
                     <div class="filtrarInner">
-                        <span>Medicacion</span>
+                        <span>Medicación</span>
                         <ul id="filtroNombre" class="filtroLista">
                         </ul>
                     </div>
-            
+
                     <div class="filtrarInner">
                         <span>Stock</span>
                         <ul id="filtroStockDepo" class="filtroLista">
                         </ul>
                     </div>
-            
+
                 </div>
             </div>
 
             <div class="botoneraLista">
                 <button class="bbutton" id="btnDescargar">Descargar</button>
                 <button class="bbutton" id="btnCerrar">Cerrar</button>
-            </div> 
+            </div>
 
         </div>
 
     </div>
-    <p class="textoInferior">Ultima actualizacion: 17/08/23 10:40 hs</p>
+    <p class="textoInferior">Ultima actualización: 17/08/23 10:40 hs</p>
 </body>
 
 </html>

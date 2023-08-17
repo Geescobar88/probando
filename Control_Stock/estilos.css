@@ -1,7 +1,7 @@
 * {
     margin : 0;
     padding : 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     /* border: 1px solid red; */
     box-sizing: border-box;
@@ -310,12 +310,16 @@ li {
   .filtroLista {
     display: flex;
     flex-direction: column;
-justify-content: center;
+    justify-content: center; 
+    
   }
 
   .filtroLista>li {
     height: 25px;
+  }
 
+  .btnFiltros {
+    display: none;
   }
 
 
@@ -351,5 +355,9 @@ justify-content: center;
         justify-content: center;
         width: 100%;
         text-align: center;
+      }
+
+      .btnFiltros {
+        display: inline;
       }
   }
