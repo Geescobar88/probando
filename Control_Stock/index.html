@@ -32,6 +32,7 @@
         <div class="busqueda" id="busqueda">
             <input type="text" list="medicacion" id="entrada" class="entrada" disabled>
             <datalist id="medicacion"></datalist>
+            <button class="bbutton" id="bBorrar">Borrar</button>
         </div>
 
         <hr class="linea">
@@ -106,7 +107,7 @@
 
             <div class="botoneraFiltros">
                 <select name="tipoFiltros" id="seleccionFiltros">
-                    <option value="Stock">Stock</option>
+                    <option value="Stock" id="optionselect">Stock</option>
                     <option value="Servicio">Servicio</option>
                     <option value="vencimiento">Vencimiento</option>
                 </select>
@@ -123,7 +124,7 @@
                     <option value="Sueros">Sueros</option>
                 </select>
 
-                <input type="text" placeholder="Ej: 07/2024">
+                <input type="text" placeholder="Ej: 07/2024" id="filtrosVencimiento">
 
             </div>
 
@@ -134,20 +135,20 @@
                 <div class="filtroContainer">
             
                     <div class="filtrarInner">
-                        <span>C. Ministerial</span>
-                        <ul id="filtroCodigo">
+                        <span>Codigo</span>
+                        <ul id="filtroCodigo" class="filtroLista">
                         </ul>
                     </div>
             
                     <div class="filtrarInner">
                         <span>Medicacion</span>
-                        <ul id="filtroNombre">
+                        <ul id="filtroNombre" class="filtroLista">
                         </ul>
                     </div>
             
                     <div class="filtrarInner">
                         <span>Stock</span>
-                        <ul id="filtroStockDepo">
+                        <ul id="filtroStockDepo" class="filtroLista">
                         </ul>
                     </div>
             
@@ -162,7 +163,7 @@
         </div>
 
     </div>
-    <p class="textoInferior">Ultima actualizacion: 16/08/23 08:40 hs</p>
+    <p class="textoInferior">Ultima actualizacion: 17/08/23 10:40 hs</p>
 </body>
 
 </html>

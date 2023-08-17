@@ -132,6 +132,7 @@ function cambiar(total, listadoVto) {
     const proxVtoLote = document.getElementById('proxVtoLote')
     const proxVtoVto = document.getElementById('proxVtoVto')
     const proxVtoCant = document.getElementById('proxVtoCant')
+    const bBorrar = document.getElementById('bBorrar')
 
     articuloBuscado.addEventListener('change', function () {
         proxVtoLote.textContent = "";
@@ -205,6 +206,19 @@ function cambiar(total, listadoVto) {
         estadoStock.style.color = "White";
         estadoStock.textContent = "No definido"
         })
+
+        bBorrar.addEventListener("click", () => {
+            proxVtoLote.textContent = "";
+            proxVtoVto.textContent = "";
+            proxVtoCant.textContent = "";
+            nomArticulo.textContent = "Descripcion: No disponible"
+            codMinisterial.textContent = "#0000000";
+            stockDeposito.textContent = "00000";
+            articuloBuscado.value = "";
+            estadoStock.style.backgroundColor = "Gray";
+            estadoStock.style.color = "White";
+            estadoStock.textContent = "No definido"
+            })
 }
 
 //LISTADOS
@@ -220,23 +234,74 @@ function listar(total, listadoStrlzn) {
     const msjLista = document.getElementById('listaFiltrar')
     const filtros = document.getElementById('filtros')
     
-    const lCompleta = document.getElementById('filtrosStock')
+    const lPrincipal = document.getElementById('seleccionFiltros')
+    const filtrosStock = document.getElementById('filtrosStock')
+    const filtrosServicio = document.getElementById('filtrosServicio')
+    const filtrosVencimiento = document.getElementById('filtrosVencimiento')
+    const optionselect = document.getElementById('optionselect')
 
+    const filtroCodigo = document.getElementById('filtroCodigo')
+
+    filtrosStock.style.display = "none"
+    filtrosServicio.style.display = "none"
+    filtrosVencimiento.style.display = "none"
 
     filtros.addEventListener('click', () => {
         msjLista.style.display = "inline"
+        filtrosStock.style.display = "inline"
+        optionselect.selected = "true"
+
     })
 
-    lCompleta.addEventListener('change', (event) => {
-        alert(event.target.selectedIndex)
+    lPrincipal.addEventListener('change', (event) => {
+        // alert(event.target.selectedIndex)
+        if (event.target.selectedIndex == "0") {
+            filtrosStock.style.display = "inline"
+            filtrosServicio.style.display = "none"
+            filtrosVencimiento.style.display = "none"
+        } else if (event.target.selectedIndex == "1") {
+            filtrosStock.style.display = "none"
+            filtrosServicio.style.display = "inline"
+            filtrosVencimiento.style.display = "none"
+        } else {
+            filtrosStock.style.display = "none"
+            filtrosServicio.style.display = "none"
+            filtrosVencimiento.style.display = "inline"
+        }
+
     })
 
-
-
-
-
-
-
+    filtrosStock.addEventListener('change', (event) => {
+        // alert(event.target.selectedIndex)
+        if ( event.target.selectedIndex == "0") {
+            filtroCodigo.textContent =""
+            total.forEach(item => {
+                const newCMinis = document.createElement("li")
+                const newNombre = document.createElement("li")
+                const newSDepo = document.createElement("li")
+                newCMinis.textContent = item.CODARTICULO;
+                newNombre.textContent = item.DESCRIPCION;
+                newSDepo.textContent = item.STOCKENDEPOSITO;
+                if (item.STOCKENDEPOSITO === 0) {
+                    newCMinis.style.color = "#b83564"
+                    newNombre.style.color = "#b83564"
+                    newSDepo.style.color = "#b83564"
+                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    newCMinis.style.color = "#ffb350"
+                    newNombre.style.color = "#ffb350"
+                    newSDepo.style.color = "#ffb350"
+                } else {
+                    newCMinis.style.color = "#4d8f81"
+                    newNombre.style.color = "#4d8f81"
+                    newSDepo.style.color = "#4d8f81"
+                }
+                filtroCodigo.appendChild(newCMinis)
+                filtroNombre.appendChild(newNombre)
+                filtroStockDepo.appendChild(newSDepo)
+                
+            })
+        }
+    })
 
     enCero.addEventListener('click', () => {
         lista.textContent = ""
