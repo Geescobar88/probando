@@ -261,12 +261,12 @@ margin: 15px;
     justify-content: space-between;
 }
 
-li {
+/* li {
     font-size:13px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid;
-}
+} */
 
 /* li::first-word {
     font-size: 20px;
@@ -311,11 +311,16 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    
+  }
+
+    li {
+    font-size: 13px;
+    height: 25px;
+    list-style-type: none;
   }
 
   .filtroLista>li {
-    height: 25px;
+    border-bottom: 1px solid;
   }
 
   .btnFiltros {

@@ -211,7 +211,7 @@ function cambiar(total, listadoVto) {
 
     articuloBuscado.addEventListener("dblclick", () => {
         bBorrar.click()
-        })
+    })
 }
 
 //LISTADOS
@@ -234,6 +234,8 @@ function listar(total, listadoStrlzn) {
     const optionselect = document.getElementById('optionselect')
 
     const filtroCodigo = document.getElementById('filtroCodigo')
+    const filtroNombre = document.getElementById('filtroNombre')
+    const filtroStockDepo = document.getElementById('filtroStockDepo')
 
     filtrosStock.style.display = "none"
     filtrosServicio.style.display = "none"
@@ -268,6 +270,8 @@ function listar(total, listadoStrlzn) {
         // alert(event.target.selectedIndex)
         if (event.target.selectedIndex == "0") {
             filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
             total.forEach(item => {
                 const newCMinis = document.createElement("li")
                 const newNombre = document.createElement("li")
@@ -296,8 +300,78 @@ function listar(total, listadoStrlzn) {
                 filtroCodigo.appendChild(newCMinis)
                 filtroNombre.appendChild(newNombre)
                 filtroStockDepo.appendChild(newSDepo)
-
             })
+        } else if ((event.target.selectedIndex == "1")) {
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
+            total.forEach(item => {
+                if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    const newCMinis = document.createElement("li")
+                    const newNombre = document.createElement("li")
+                    const newSDepo = document.createElement("li")
+                    newCMinis.textContent = item.CODARTICULO;
+                    if (item.DESCRIPCION.length > 100) {
+                        const descCorta = item.DESCRIPCION;
+                        newNombre.textContent = descCorta.substring(0, 50) + '...';
+                    } else {
+                        newNombre.textContent = item.DESCRIPCION;
+                    }
+                    newSDepo.textContent = item.STOCKENDEPOSITO;
+                    if (item.STOCKENDEPOSITO === 0) {
+                        newCMinis.style.color = "#b83564"
+                        newNombre.style.color = "#b83564"
+                        newSDepo.style.color = "#b83564"
+                    } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                        newCMinis.style.color = "#ffb350"
+                        newNombre.style.color = "#ffb350"
+                        newSDepo.style.color = "#ffb350"
+                    } else {
+                        newCMinis.style.color = "#4d8f81"
+                        newNombre.style.color = "#4d8f81"
+                        newSDepo.style.color = "#4d8f81"
+                    }
+                    filtroCodigo.appendChild(newCMinis)
+                    filtroNombre.appendChild(newNombre)
+                    filtroStockDepo.appendChild(newSDepo)
+                }
+            });
+
+        } else {
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
+            total.forEach(item => {
+                if (item.STOCKENDEPOSITO === 0) {
+                    const newCMinis = document.createElement("li")
+                    const newNombre = document.createElement("li")
+                    const newSDepo = document.createElement("li")
+                    newCMinis.textContent = item.CODARTICULO;
+                    if (item.DESCRIPCION.length > 100) {
+                        const descCorta = item.DESCRIPCION;
+                        newNombre.textContent = descCorta.substring(0, 50) + '...';
+                    } else {
+                        newNombre.textContent = item.DESCRIPCION;
+                    }
+                    newSDepo.textContent = item.STOCKENDEPOSITO;
+                    if (item.STOCKENDEPOSITO === 0) {
+                        newCMinis.style.color = "#b83564"
+                        newNombre.style.color = "#b83564"
+                        newSDepo.style.color = "#b83564"
+                    } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                        newCMinis.style.color = "#ffb350"
+                        newNombre.style.color = "#ffb350"
+                        newSDepo.style.color = "#ffb350"
+                    } else {
+                        newCMinis.style.color = "#4d8f81"
+                        newNombre.style.color = "#4d8f81"
+                        newSDepo.style.color = "#4d8f81"
+                    }
+                    filtroCodigo.appendChild(newCMinis)
+                    filtroNombre.appendChild(newNombre)
+                    filtroStockDepo.appendChild(newSDepo)
+                }
+            });
         }
     })
 
@@ -316,42 +390,6 @@ function listar(total, listadoStrlzn) {
                 }
                 lista.appendChild(newItem)
             }
-        });
-        msjLista.style.display = "inline"
-    })
-
-    minimo.addEventListener('click', () => {
-        lista.textContent = ""
-        total.forEach(item => {
-            if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                const newItem = document.createElement('li');
-                newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
-                if (item.STOCKENDEPOSITO === 0) {
-                    newItem.style.color = "#b83564"
-                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                    newItem.style.color = "#ffb350"
-                } else {
-                    newItem.style.color = "#4d8f81"
-                }
-                lista.appendChild(newItem)
-            }
-        });
-        msjLista.style.display = "inline"
-    })
-
-    listaCompleta.addEventListener('click', () => {
-        lista.textContent = ""
-        total.forEach(item => {
-            const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " " + item.DESCRIPCION + " " + item.STOCKENDEPOSITO
-            if (item.STOCKENDEPOSITO === 0) {
-                newItem.style.color = "#b83564"
-            } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                newItem.style.color = "#ffb350"
-            } else {
-                newItem.style.color = "#4d8f81"
-            }
-            lista.appendChild(newItem)
         });
         msjLista.style.display = "inline"
     })
