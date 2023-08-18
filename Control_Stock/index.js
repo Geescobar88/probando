@@ -1,6 +1,6 @@
 async function fetchDatos() {
     const listadoResponse = await fetch('https://geescobar88.github.io/probando/Control_Stock/data/stock.json')
-    const dbResponse = await fetch('./data/DB.json')
+    const dbResponse = await fetch('./data/DB2.json')
     const vto = await fetch('./data/vto.json')
     const stock_esterilizacion = await fetch('./data/cod_esterilizacion.json')
 
@@ -243,13 +243,10 @@ function listar(total, listadoStrlzn) {
 
     filtros.addEventListener('click', () => {
         msjLista.style.display = "inline"
-        filtrosStock.style.display = "inline"
-        optionselect.selected = "true"
 
     })
 
     lPrincipal.addEventListener('change', (event) => {
-        // alert(event.target.selectedIndex)
         if (event.target.selectedIndex == "0") {
             filtrosStock.style.display = "inline"
             filtrosServicio.style.display = "none"
@@ -267,7 +264,6 @@ function listar(total, listadoStrlzn) {
     })
 
     filtrosStock.addEventListener('change', (event) => {
-        // alert(event.target.selectedIndex)
         if (event.target.selectedIndex == "0") {
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
@@ -375,37 +371,37 @@ function listar(total, listadoStrlzn) {
         }
     })
 
-    enCero.addEventListener('click', () => {
-        lista.textContent = ""
-        total.forEach(item => {
-            if (item.STOCKENDEPOSITO === 0) {
-                const newItem = document.createElement('li');
-                newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
-                if (item.STOCKENDEPOSITO === 0) {
-                    newItem.style.color = "#b83564"
-                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                    newItem.style.color = "#ffb350"
-                } else {
-                    newItem.style.color = "#4d8f81"
-                }
-                lista.appendChild(newItem)
-            }
-        });
-        msjLista.style.display = "inline"
-    })
+    // enCero.addEventListener('click', () => {
+    //     lista.textContent = ""
+    //     total.forEach(item => {
+    //         if (item.STOCKENDEPOSITO === 0) {
+    //             const newItem = document.createElement('li');
+    //             newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
+    //             if (item.STOCKENDEPOSITO === 0) {
+    //                 newItem.style.color = "#b83564"
+    //             } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+    //                 newItem.style.color = "#ffb350"
+    //             } else {
+    //                 newItem.style.color = "#4d8f81"
+    //             }
+    //             lista.appendChild(newItem)
+    //         }
+    //     });
+    //     msjLista.style.display = "inline"
+    // })
 
-    esterilizacion.addEventListener('click', () => {
-        lista.textContent = ""
-        const stockEsterilizacion = total.filter(item => {
-            return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO);
-        });
-        stockEsterilizacion.forEach(item => {
-            const newItem = document.createElement('li');
-            newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
-            lista.appendChild(newItem)
-        });
-        msjLista.style.display = "inline"
-    })
+    // esterilizacion.addEventListener('click', () => {
+    //     lista.textContent = ""
+    //     const stockEsterilizacion = total.filter(item => {
+    //         return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO);
+    //     });
+    //     stockEsterilizacion.forEach(item => {
+    //         const newItem = document.createElement('li');
+    //         newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
+    //         lista.appendChild(newItem)
+    //     });
+    //     msjLista.style.display = "inline"
+    // })
 
     btnCerrar.addEventListener('click', () => {
         msjLista.style.display = "none"
