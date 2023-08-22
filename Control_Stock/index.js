@@ -27,7 +27,7 @@ function generarArray(listadoData, dbData, listadoVto, listadoStrlzn) {
 
     cargar(total);
     cambiar(total, listadoVto);
-    listar(total, listadoStrlzn);
+    listar(total, listadoStrlzn, listadoVto);
 }
 
 fetchDatos()
@@ -216,23 +216,21 @@ function cambiar(total, listadoVto) {
 
 //LISTADOS
 
-function listar(total, listadoStrlzn) {
-    const enCero = document.getElementById('enCero');
-    const minimo = document.getElementById('stockMinimo');
-    const listaCompleta = document.getElementById('listaCompleta');
-    const esterilizacion = document.getElementById('esterilizacion')
+function listar(total, listadoStrlzn, listadoVto) {
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
-    const lista = document.getElementById('lista')
     const msjLista = document.getElementById('listaFiltrar')
     const filtros = document.getElementById('filtros')
+    const btnFiltroVto = document.getElementById('btnFiltroVto')
+    
+    const filtroTodos = document.getElementById('filtroTodos')
+    const lblfiltroTodos = document.getElementById('lblfiltroTodos')
 
     const lPrincipal = document.getElementById('seleccionFiltros')
     const filtrosStock = document.getElementById('filtrosStock')
     const filtrosServicio = document.getElementById('filtrosServicio')
     const filtrosVencimiento = document.getElementById('filtrosVencimiento')
-    const optionselect = document.getElementById('optionselect')
-
+    const filtrosVencimientoY = document.getElementById('filtrosVencimientoY')
     const filtroCodigo = document.getElementById('filtroCodigo')
     const filtroNombre = document.getElementById('filtroNombre')
     const filtroStockDepo = document.getElementById('filtroStockDepo')
@@ -240,6 +238,10 @@ function listar(total, listadoStrlzn) {
     filtrosStock.style.display = "none"
     filtrosServicio.style.display = "none"
     filtrosVencimiento.style.display = "none"
+    filtrosVencimientoY.style.display = "none"
+    btnFiltroVto.style.display = "none"
+    filtroTodos.style.display = "none"    
+    lblfiltroTodos.style.display = "none"
 
     filtros.addEventListener('click', () => {
         msjLista.style.display = "inline"
@@ -251,14 +253,26 @@ function listar(total, listadoStrlzn) {
             filtrosStock.style.display = "inline"
             filtrosServicio.style.display = "none"
             filtrosVencimiento.style.display = "none"
+            filtrosVencimientoY.style.display = "none"
+            btnFiltroVto.style.display = "none"
+            filtroTodos.style.display = "none"
+            lblfiltroTodos.style.display = "none"
         } else if (event.target.selectedIndex == "1") {
             filtrosStock.style.display = "none"
             filtrosServicio.style.display = "inline"
             filtrosVencimiento.style.display = "none"
+            filtrosVencimientoY.style.display = "none"
+            btnFiltroVto.style.display = "none"
+            filtroTodos.style.display = "none"
+            lblfiltroTodos.style.display = "none"
         } else {
             filtrosStock.style.display = "none"
             filtrosServicio.style.display = "none"
             filtrosVencimiento.style.display = "inline"
+            filtrosVencimientoY.style.display = "inline"
+            btnFiltroVto.style.display = "inline"
+            filtroTodos.style.display = "inline"
+            lblfiltroTodos.style.display = "inline"
         }
 
     })
@@ -281,16 +295,10 @@ function listar(total, listadoStrlzn) {
                 }
                 newSDepo.textContent = item.STOCKENDEPOSITO;
                 if (item.STOCKENDEPOSITO === 0) {
-                    newCMinis.style.color = "#b83564"
-                    newNombre.style.color = "#b83564"
                     newSDepo.style.color = "#b83564"
                 } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                    newCMinis.style.color = "#ffb350"
-                    newNombre.style.color = "#ffb350"
                     newSDepo.style.color = "#ffb350"
                 } else {
-                    newCMinis.style.color = "#4d8f81"
-                    newNombre.style.color = "#4d8f81"
                     newSDepo.style.color = "#4d8f81"
                 }
                 filtroCodigo.appendChild(newCMinis)
@@ -315,16 +323,10 @@ function listar(total, listadoStrlzn) {
                     }
                     newSDepo.textContent = item.STOCKENDEPOSITO;
                     if (item.STOCKENDEPOSITO === 0) {
-                        newCMinis.style.color = "#b83564"
-                        newNombre.style.color = "#b83564"
                         newSDepo.style.color = "#b83564"
                     } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-                        newCMinis.style.color = "#ffb350"
-                        newNombre.style.color = "#ffb350"
                         newSDepo.style.color = "#ffb350"
                     } else {
-                        newCMinis.style.color = "#4d8f81"
-                        newNombre.style.color = "#4d8f81"
                         newSDepo.style.color = "#4d8f81"
                     }
                     filtroCodigo.appendChild(newCMinis)
@@ -371,25 +373,39 @@ function listar(total, listadoStrlzn) {
         }
     })
 
-    // enCero.addEventListener('click', () => {
-    //     lista.textContent = ""
-    //     total.forEach(item => {
-    //         if (item.STOCKENDEPOSITO === 0) {
-    //             const newItem = document.createElement('li');
-    //             newItem.textContent = item.CODARTICULO + " : " + item.DESCRIPCION + " = " + item.STOCKENDEPOSITO
-    //             if (item.STOCKENDEPOSITO === 0) {
-    //                 newItem.style.color = "#b83564"
-    //             } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-    //                 newItem.style.color = "#ffb350"
-    //             } else {
-    //                 newItem.style.color = "#4d8f81"
-    //             }
-    //             lista.appendChild(newItem)
-    //         }
-    //     });
-    //     msjLista.style.display = "inline"
-    // })
+    btnFiltroVto.addEventListener('click', () => {
+        filtroCodigo.textContent = ""
+        filtroNombre.textContent = ""
+        filtroStockDepo.textContent = ""
+        const day = filtrosVencimiento.value
+        const year = filtrosVencimientoY.value
+        const coincidencia = listadoVto.filter(item => {
+            // if (filtroTodos.checked){
+            // return item.FECHAVTO <= day+year
+            //     }else {
+            return item.FECHAVTO == day+year        
+            // }
+        })
+        console.log(coincidencia)
+        coincidencia.forEach (item => {
+                const newCMinis = document.createElement("li")
+                const newNombre = document.createElement("li")
+                const newSDepo = document.createElement("li")
+                newCMinis.textContent = item.CODARTICULO;
+                if (item.NOMBREGENERICO.length > 100) {
+                    const descCorta = item.NOMBREGENERICO;
+                    newNombre.textContent = descCorta.substring(0, 50) + '...';
+                } else {
+                    newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION + " " + item.FORMA + " " + item.FECHAVTO;
+                }
+                    newSDepo.textContent = item.STOCKEXISTENTE;
 
+                filtroCodigo.appendChild(newCMinis)
+                filtroNombre.appendChild(newNombre)
+                filtroStockDepo.appendChild(newSDepo)
+        })
+    })
+    
     // esterilizacion.addEventListener('click', () => {
     //     lista.textContent = ""
     //     const stockEsterilizacion = total.filter(item => {

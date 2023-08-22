@@ -92,6 +92,8 @@
 
         <div class="listaStock" id="listaFiltrar">
 
+            <h2>Listados</h2>
+
             <div class="botoneraFiltros">
                 <select name="tipoFiltros" id="seleccionFiltros">
                     <option value="Stock" id="optionselect">Stock</option>
@@ -111,7 +113,28 @@
                     <option value="Sueros">Sueros</option>
                 </select>
 
-                <input type="text" placeholder="Ej: 07/2024" id="filtrosVencimiento">
+                <select name="filtrosVencimiento" id="filtrosVencimiento">
+                    <option value="31/01">Enero</option>
+                    <option value="29/02">Febrero</option>
+                    <option value="31/03">Marzo</option>
+                    <option value="30/04">Abril</option>
+                    <option value="31/05">Mayo</option>
+                    <option value="30/06">Junio</option>
+                    <option value="31/07">Julio</option>
+                    <option value="31/08">Agosto</option>
+                    <option value="30/09">Septiembre</option>
+                    <option value="31/10">Octubre</option>
+                    <option value="30/11">Noviembre</option>
+                    <option value="31/12">Diciembre</option>
+                </select>
+                <select name="filtrosVencimientoY" id="filtrosVencimientoY">
+                    <option value="/2023">2023</option>
+                    <option value="/2024">2024</option>
+                    <option value="/2025">2025</option>
+                </select>
+                <input type="checkbox" id="filtroTodos">
+                <label for="filtroTodos" id="lblfiltroTodos">Incluir anteriores.</label>
+                <button class="bbutton" id="btnFiltroVto">Seleccionar</button>
 
             </div>
 
