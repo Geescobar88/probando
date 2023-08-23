@@ -3,18 +3,21 @@ async function fetchDatos() {
     const dbResponse = await fetch('./data/DB2.json')
     const vto = await fetch('./data/vto.json')
     const stock_esterilizacion = await fetch('./data/cod_esterilizacion.json')
+    const stock_alimentacion = await fetch('./data/cod_alimentacion.json')
 
     const listadoData = await listadoResponse.json()
     const dbData = await dbResponse.json()
     const listadoVto = await vto.json()
     const listadoStrlzn = await stock_esterilizacion.json()
+    const listadoAlimentacion = await stock_alimentacion.json()
+   
 
 
-    generarArray(listadoData, dbData, listadoVto, listadoStrlzn);
+    generarArray(listadoData, dbData, listadoVto, listadoStrlzn, listadoAlimentacion);
 }
 
 
-function generarArray(listadoData, dbData, listadoVto, listadoStrlzn) {
+function generarArray(listadoData, dbData, listadoVto, listadoStrlzn, listadoAlimentacion) {
 
     const total = listadoData.map(listado1 => {
         const coincidencia = dbData.find(listado2 => listado2.CODARTICULO === listado1.CODARTICULO);
@@ -27,7 +30,7 @@ function generarArray(listadoData, dbData, listadoVto, listadoStrlzn) {
 
     cargar(total);
     cambiar(total, listadoVto);
-    listar(total, listadoStrlzn, listadoVto);
+    listar(total, listadoStrlzn, listadoVto, listadoAlimentacion);
 }
 
 fetchDatos()
@@ -216,7 +219,7 @@ function cambiar(total, listadoVto) {
 
 //LISTADOS
 
-function listar(total, listadoStrlzn, listadoVto) {
+function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     const btnCerrar = document.getElementById('btnCerrar')
     const btnDescargar = document.getElementById('btnDescargar')
     const msjLista = document.getElementById('listaFiltrar')
@@ -373,18 +376,86 @@ function listar(total, listadoStrlzn, listadoVto) {
         }
     })
 
+    filtrosServicio.addEventListener('change', (event) => {
+        if (event.target.selectedIndex == "0") {
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
+
+            const stockEsterilizacion = total.filter(item => {
+                return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO)
+            });
+            stockEsterilizacion.forEach(item => {
+                const newCMinis = document.createElement("li")
+                const newNombre = document.createElement("li")
+                const newSDepo = document.createElement("li")
+                newCMinis.textContent = item.CODARTICULO;
+                if (item.DESCRIPCION.length > 100) {
+                    const descCorta = item.DESCRIPCION;
+                    newNombre.textContent = descCorta.substring(0, 50) + '...';
+                } else {
+                    newNombre.textContent = item.DESCRIPCION;
+                }
+                newSDepo.textContent = item.STOCKENDEPOSITO;
+                if (item.STOCKENDEPOSITO === 0) {
+                    newSDepo.style.color = "#b83564"
+                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    newSDepo.style.color = "#ffb350"
+                } else {
+                    newSDepo.style.color = "#4d8f81"
+                }
+                filtroCodigo.appendChild(newCMinis)
+                filtroNombre.appendChild(newNombre)
+                filtroStockDepo.appendChild(newSDepo)
+            })
+        }
+
+        else if (event.target.selectedIndex == "1") {
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
+
+            const stockAlimentacion = total.filter(item => {
+                return listadoAlimentacion.some(totalItem => totalItem.CODIGO === item.CODARTICULO)
+            });
+            stockAlimentacion.forEach(item => {
+                const newCMinis = document.createElement("li")
+                const newNombre = document.createElement("li")
+                const newSDepo = document.createElement("li")
+                newCMinis.textContent = item.CODARTICULO;
+                if (item.DESCRIPCION.length > 100) {
+                    const descCorta = item.DESCRIPCION;
+                    newNombre.textContent = descCorta.substring(0, 50) + '...';
+                } else {
+                    newNombre.textContent = item.DESCRIPCION;
+                }
+                newSDepo.textContent = item.STOCKENDEPOSITO;
+                if (item.STOCKENDEPOSITO === 0) {
+                    newSDepo.style.color = "#b83564"
+                } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                    newSDepo.style.color = "#ffb350"
+                } else {
+                    newSDepo.style.color = "#4d8f81"
+                }
+                filtroCodigo.appendChild(newCMinis)
+                filtroNombre.appendChild(newNombre)
+                filtroStockDepo.appendChild(newSDepo)
+            })
+        }
+    })
+
     btnFiltroVto.addEventListener('click', () => {
         filtroCodigo.textContent = ""
         filtroNombre.textContent = ""
         filtroStockDepo.textContent = ""
-        const day = filtrosVencimiento.value
-        const year = filtrosVencimientoY.value
+        const fecha = filtrosVencimiento.value + filtrosVencimientoY.value
+        fechaobjeto = fecha;
         const coincidencia = listadoVto.filter(item => {
-            // if (filtroTodos.checked){
-            // return item.FECHAVTO <= day+year
-            //     }else {
-            return item.FECHAVTO == day+year        
-            // }
+            if (filtroTodos.checked){
+            return item.FECHAVTO <= fecha
+                } else {
+            return item.FECHAVTO == fecha        
+            }
         })
         console.log(coincidencia)
         coincidencia.forEach (item => {
@@ -396,7 +467,7 @@ function listar(total, listadoStrlzn, listadoVto) {
                     const descCorta = item.NOMBREGENERICO;
                     newNombre.textContent = descCorta.substring(0, 50) + '...';
                 } else {
-                    newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION + " " + item.FORMA + " " + item.FECHAVTO;
+                    newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION;
                 }
                     newSDepo.textContent = item.STOCKEXISTENTE;
 
@@ -405,19 +476,6 @@ function listar(total, listadoStrlzn, listadoVto) {
                 filtroStockDepo.appendChild(newSDepo)
         })
     })
-    
-    // esterilizacion.addEventListener('click', () => {
-    //     lista.textContent = ""
-    //     const stockEsterilizacion = total.filter(item => {
-    //         return listadoStrlzn.some(totalItem => totalItem.CODIGO === item.CODARTICULO);
-    //     });
-    //     stockEsterilizacion.forEach(item => {
-    //         const newItem = document.createElement('li');
-    //         newItem.textContent = item.CODARTICULO + " -- " + item.DESCRIPCION + " == " + item.STOCKENDEPOSITO
-    //         lista.appendChild(newItem)
-    //     });
-    //     msjLista.style.display = "inline"
-    // })
 
     btnCerrar.addEventListener('click', () => {
         msjLista.style.display = "none"

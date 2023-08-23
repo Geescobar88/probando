@@ -188,7 +188,6 @@ margin: 15px;
 .vtoInner>ul>li {
     border-bottom: 1px solid var(--fuerte);
     margin-bottom: 5px;
-
 }
 
 .botonera {
@@ -331,7 +330,6 @@ margin: 15px;
   .btnFiltros {
     display: none;
   }
-
 
   @media (min-width: 1024px){
 
