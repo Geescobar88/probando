@@ -10,7 +10,7 @@ async function fetchDatos() {
     const listadoVto = await vto.json()
     const listadoStrlzn = await stock_esterilizacion.json()
     const listadoAlimentacion = await stock_alimentacion.json()
-   
+
 
 
     generarArray(listadoData, dbData, listadoVto, listadoStrlzn, listadoAlimentacion);
@@ -225,7 +225,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     const msjLista = document.getElementById('listaFiltrar')
     const filtros = document.getElementById('filtros')
     const btnFiltroVto = document.getElementById('btnFiltroVto')
-    
+
     const filtroTodos = document.getElementById('filtroTodos')
     const lblfiltroTodos = document.getElementById('lblfiltroTodos')
 
@@ -243,7 +243,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     filtrosVencimiento.style.display = "none"
     filtrosVencimientoY.style.display = "none"
     btnFiltroVto.style.display = "none"
-    filtroTodos.style.display = "none"    
+    filtroTodos.style.display = "none"
     lblfiltroTodos.style.display = "none"
 
     filtros.addEventListener('click', () => {
@@ -451,29 +451,29 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
         const fecha = filtrosVencimiento.value + filtrosVencimientoY.value
         fechaobjeto = fecha;
         const coincidencia = listadoVto.filter(item => {
-            if (filtroTodos.checked){
-            return item.FECHAVTO <= fecha
-                } else {
-            return item.FECHAVTO == fecha        
+            if (filtroTodos.checked) {
+                return item.FECHAVTO <= fecha
+            } else {
+                return item.FECHAVTO == fecha
             }
         })
         console.log(coincidencia)
-        coincidencia.forEach (item => {
-                const newCMinis = document.createElement("li")
-                const newNombre = document.createElement("li")
-                const newSDepo = document.createElement("li")
-                newCMinis.textContent = item.CODARTICULO;
-                if (item.NOMBREGENERICO.length > 100) {
-                    const descCorta = item.NOMBREGENERICO;
-                    newNombre.textContent = descCorta.substring(0, 50) + '...';
-                } else {
-                    newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION;
-                }
-                    newSDepo.textContent = item.STOCKEXISTENTE;
+        coincidencia.forEach(item => {
+            const newCMinis = document.createElement("li")
+            const newNombre = document.createElement("li")
+            const newSDepo = document.createElement("li")
+            newCMinis.textContent = item.CODARTICULO;
+            if (item.NOMBREGENERICO.length > 100) {
+                const descCorta = item.NOMBREGENERICO;
+                newNombre.textContent = descCorta.substring(0, 50) + '...';
+            } else {
+                newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION;
+            }
+            newSDepo.textContent = item.STOCKEXISTENTE;
 
-                filtroCodigo.appendChild(newCMinis)
-                filtroNombre.appendChild(newNombre)
-                filtroStockDepo.appendChild(newSDepo)
+            filtroCodigo.appendChild(newCMinis)
+            filtroNombre.appendChild(newNombre)
+            filtroStockDepo.appendChild(newSDepo)
         })
     })
 
