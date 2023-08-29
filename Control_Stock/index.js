@@ -238,6 +238,8 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     const filtroNombre = document.getElementById('filtroNombre')
     const filtroStockDepo = document.getElementById('filtroStockDepo')
 
+    let data = []
+
     filtrosStock.style.display = "none"
     filtrosServicio.style.display = "none"
     filtrosVencimiento.style.display = "none"
@@ -282,6 +284,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
 
     filtrosStock.addEventListener('change', (event) => {
         if (event.target.selectedIndex == "0") {
+            data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
@@ -307,8 +310,11 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                 filtroCodigo.appendChild(newCMinis)
                 filtroNombre.appendChild(newNombre)
                 filtroStockDepo.appendChild(newSDepo)
+                data.push(item)
+
             })
         } else if ((event.target.selectedIndex == "1")) {
+            data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
@@ -335,10 +341,11 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                     filtroCodigo.appendChild(newCMinis)
                     filtroNombre.appendChild(newNombre)
                     filtroStockDepo.appendChild(newSDepo)
+                    data.push(item)
                 }
-            });
-
+            })
         } else {
+            data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
@@ -371,6 +378,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                     filtroCodigo.appendChild(newCMinis)
                     filtroNombre.appendChild(newNombre)
                     filtroStockDepo.appendChild(newSDepo)
+                    data.push(item)
                 }
             });
         }
@@ -378,6 +386,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
 
     filtrosServicio.addEventListener('change', (event) => {
         if (event.target.selectedIndex == "0") {
+            data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
@@ -407,10 +416,12 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                 filtroCodigo.appendChild(newCMinis)
                 filtroNombre.appendChild(newNombre)
                 filtroStockDepo.appendChild(newSDepo)
+                data.push(item)
             })
         }
 
         else if (event.target.selectedIndex == "1") {
+            data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
@@ -440,11 +451,13 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                 filtroCodigo.appendChild(newCMinis)
                 filtroNombre.appendChild(newNombre)
                 filtroStockDepo.appendChild(newSDepo)
+                data.push(item)
             })
         }
     })
 
     btnFiltroVto.addEventListener('click', () => {
+        data = []
         filtroCodigo.textContent = ""
         filtroNombre.textContent = ""
         filtroStockDepo.textContent = ""
@@ -474,6 +487,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
             filtroCodigo.appendChild(newCMinis)
             filtroNombre.appendChild(newNombre)
             filtroStockDepo.appendChild(newSDepo)
+            data.push(item)
         })
     })
 
@@ -482,6 +496,10 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     })
 
     btnDescargar.addEventListener('click', () => {
-        alert("Proximamente...")
+    const exportType = 'xls';
+    console.log(data)
+    const date = new Date();
+    const fileName = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
+    window.exportFromJSON({ data, fileName, exportType })
     })
 }
