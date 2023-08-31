@@ -255,7 +255,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
 
     lPrincipal.addEventListener('change', (event) => {
         if (event.target.selectedIndex == "0") {
-            filtrosStock.style.display = "inline"
+            filtrosStock.style.display = "none"
             filtrosServicio.style.display = "none"
             filtrosVencimiento.style.display = "none"
             filtrosVencimientoY.style.display = "none"
@@ -263,6 +263,14 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
             filtroTodos.style.display = "none"
             lblfiltroTodos.style.display = "none"
         } else if (event.target.selectedIndex == "1") {
+            filtrosStock.style.display = "inline"
+            filtrosServicio.style.display = "none"
+            filtrosVencimiento.style.display = "none"
+            filtrosVencimientoY.style.display = "none"
+            btnFiltroVto.style.display = "none"
+            filtroTodos.style.display = "none"
+            lblfiltroTodos.style.display = "none"
+        } else if (event.target.selectedIndex == "2") {
             filtrosStock.style.display = "none"
             filtrosServicio.style.display = "inline"
             filtrosVencimiento.style.display = "none"
@@ -284,6 +292,12 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
 
     filtrosStock.addEventListener('change', (event) => {
         if (event.target.selectedIndex == "0") {
+            data = []
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""
+        }
+        else if (event.target.selectedIndex == "1") {
             data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
@@ -313,7 +327,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
                 data.push(item)
 
             })
-        } else if ((event.target.selectedIndex == "1")) {
+        } else if ((event.target.selectedIndex == "2")) {
             data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
@@ -389,6 +403,13 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
             data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
+            filtroStockDepo.textContent = ""}
+
+
+        else if (event.target.selectedIndex == "1") {
+            data = []
+            filtroCodigo.textContent = ""
+            filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
 
             const stockEsterilizacion = total.filter(item => {
@@ -420,7 +441,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
             })
         }
 
-        else if (event.target.selectedIndex == "1") {
+        else if (event.target.selectedIndex == "2") {
             data = []
             filtroCodigo.textContent = ""
             filtroNombre.textContent = ""
