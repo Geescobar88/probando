@@ -333,7 +333,8 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
             filtroNombre.textContent = ""
             filtroStockDepo.textContent = ""
             total.forEach(item => {
-                if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
+                console.log(item.STOCK_MIN)
+                if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2 || item.STOCK_MIN == undefined) {
                     const newCMinis = document.createElement("li")
                     const newNombre = document.createElement("li")
                     const newSDepo = document.createElement("li")
@@ -518,7 +519,6 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
 
     btnDescargar.addEventListener('click', () => {
     const exportType = 'xls';
-    console.log(data)
     const date = new Date();
     const fileName = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
     window.exportFromJSON({ data, fileName, exportType })

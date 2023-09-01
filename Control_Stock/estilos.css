@@ -225,7 +225,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 3%;
 }
 
 .listadosSuperior>.titulo {
@@ -237,7 +236,18 @@ body {
 min-height: 50px;
 display: flex;
 align-items: center;
-border: solid 1px;
+margin-bottom: 5px;
+}
+
+.botoneraFiltros>select {
+    padding: 8px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.botoneraFiltros>label {
+    margin-right: 5px;
 }
 
 .botoneraLista {
@@ -245,7 +255,7 @@ border: solid 1px;
 }
 
 .divLista {
-    height: 500px;
+    height: 400px;
     width: 100%;
     border-radius: 5px;
     display: flex;
