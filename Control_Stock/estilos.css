@@ -78,7 +78,7 @@ body {
 .radioBtn {
   display: flex;
   align-items: center;
-  justify-content:space-around;
+  justify-content:space-between;
   margin-bottom: 10px;
 }
 
@@ -86,10 +86,11 @@ body {
   width: 90%;
   display: flex;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .entrada {
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   border: 2px solid black;
   font-size: larger;
