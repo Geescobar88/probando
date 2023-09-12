@@ -63,11 +63,19 @@ body {
   background-color: var(--secundario);
 }
 
-.filtroCheck {
+/* .filtroCheck {
   padding: 20% 40%;
   border-radius: 5px;
   background-color: var(--claro);
   border: 1px solid var(--fuerte);
+} */
+
+.filtroCheck {
+  border: 2px solid var(--fuerte);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--claro);
+  font-weight: bolder;
 }
 
 .tituloBuscar {
@@ -205,12 +213,21 @@ body {
   justify-content: space-between;
 }
 
-.bbutton {
+/* .bbutton {
   padding: 10px 25px;
   border-radius: 5px;
   background-color: var(--fuerte);
   color: var(--claro);
   border: none;
+} */
+
+.bbutton {
+  border: 2px solid var(--fuerte);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--fuerte);
+  color: var(--claro);
+  font-weight: bolder;   
 }
 
 .nodisp {
@@ -246,6 +263,8 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .botoneraFiltros > select {

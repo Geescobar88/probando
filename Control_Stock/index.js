@@ -236,7 +236,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
   const btnFiltroVto = document.getElementById("btnFiltroVto");
 
   const filtroTodos = document.getElementById("filtroTodos");
-  const lblfiltroTodos = document.getElementById("lblfiltroTodos");
+  // const lblfiltroTodos = document.getElementById("lblfiltroTodos");
 
   const lPrincipal = document.getElementById("seleccionFiltros");
   const filtrosStock = document.getElementById("filtrosStock");
@@ -255,7 +255,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
   filtrosVencimientoY.style.display = "none";
   btnFiltroVto.style.display = "none";
   filtroTodos.style.display = "none";
-  lblfiltroTodos.style.display = "none";
+  // lblfiltroTodos.style.display = "none";
 
   filtros.addEventListener("click", () => {
     msjLista.style.display = "inline";
@@ -269,7 +269,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
       filtrosVencimientoY.style.display = "none";
       btnFiltroVto.style.display = "none";
       filtroTodos.style.display = "none";
-      lblfiltroTodos.style.display = "none";
+      // lblfiltroTodos.style.display = "none";
     } else if (event.target.selectedIndex == "1") {
       filtrosStock.style.display = "inline";
       filtrosServicio.style.display = "none";
@@ -277,7 +277,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
       filtrosVencimientoY.style.display = "none";
       btnFiltroVto.style.display = "none";
       filtroTodos.style.display = "none";
-      lblfiltroTodos.style.display = "none";
+      // lblfiltroTodos.style.display = "none";
     } else if (event.target.selectedIndex == "2") {
       filtrosStock.style.display = "none";
       filtrosServicio.style.display = "inline";
@@ -285,7 +285,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
       filtrosVencimientoY.style.display = "none";
       btnFiltroVto.style.display = "none";
       filtroTodos.style.display = "none";
-      lblfiltroTodos.style.display = "none";
+      // lblfiltroTodos.style.display = "none";
     } else {
       filtrosStock.style.display = "none";
       filtrosServicio.style.display = "none";
@@ -293,7 +293,7 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
       filtrosVencimientoY.style.display = "inline";
       btnFiltroVto.style.display = "inline";
       filtroTodos.style.display = "inline";
-      lblfiltroTodos.style.display = "inline";
+      // lblfiltroTodos.style.display = "inline";
     }
   });
 
