@@ -529,7 +529,12 @@ function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
     const exportType = "xls";
     const date = new Date();
     const fileName =
-      "lisdado" + date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+      "lisdado-" +
+      date.getDate() +
+      "-" +
+      date.getMonth() +
+      "-" +
+      date.getFullYear();
     window.exportFromJSON({ data, fileName, exportType });
   });
 }

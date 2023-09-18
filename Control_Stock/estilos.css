@@ -3,17 +3,9 @@
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  /* border: 1px solid red; */
   box-sizing: border-box;
   font-size: 14px;
 }
-
-/* :root {
-    --primario: #61ada0;
-    --secundario: #b2d5ba;
-    --fuerte: #248f8d;
-    --claro: #eff3cd;
-} */
 
 :root {
   --primario: #c6d4e1;
@@ -62,13 +54,6 @@ body {
   padding: 2%;
   background-color: var(--secundario);
 }
-
-/* .filtroCheck {
-  padding: 20% 40%;
-  border-radius: 5px;
-  background-color: var(--claro);
-  border: 1px solid var(--fuerte);
-} */
 
 .filtroCheck {
   border: 2px solid var(--fuerte);
@@ -213,14 +198,6 @@ body {
   justify-content: space-between;
 }
 
-/* .bbutton {
-  padding: 10px 25px;
-  border-radius: 5px;
-  background-color: var(--fuerte);
-  color: var(--claro);
-  border: none;
-} */
-
 .bbutton {
   border: 2px solid var(--fuerte);
   border-radius: 5px;
@@ -316,22 +293,18 @@ body {
   justify-content: space-between;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 20px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -339,8 +312,6 @@ body {
 input[type="radio"] {
   display: none;
 }
-
-
 
 .textoInferior {
   display: none;
