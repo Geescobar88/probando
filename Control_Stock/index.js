@@ -1,6 +1,6 @@
 async function fetchDatos() {
   const listadoResponse = await fetch(
-    "https://geescobar88.github.io/probando/Control_Stock/data/stock.json"
+    "./data/stock.json"
   );
   const dbResponse = await fetch("./data/DB2.json");
   const vto = await fetch("./data/vto.json");
