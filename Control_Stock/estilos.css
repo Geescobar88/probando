@@ -282,8 +282,8 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
   gap: 10px;
-  justify-content: center;
 }
 
 .lista {
@@ -321,6 +321,10 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.filtrarInnerC {
+  width: 100%;
 }
 
 li {
