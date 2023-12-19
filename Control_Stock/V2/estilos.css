@@ -1,0 +1,304 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+:root {
+    --fondoOscuro: #0A0A0A;
+    --primario: #c6d4e1;
+    --secundario: #ebe7e0;
+    --terciario: #94a8e6;
+    --fuerte: #44749d;
+    --claro: #ffffff;
+    --oscuro: #bdb8ad;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: VAR(--primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* ----------------------------------HEADER---------------------------------- */
+header {
+    background-color: var(--fondoOscuro);
+    color: var(--claro);
+    display: flex;
+    height: 8%;
+    align-items: center;
+    width: 100%;
+    }
+
+header>span {
+    font-size: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.titulo {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------------GENERAL---------------------------------- */
+
+a {
+    color: white;
+}
+
+section, .linea {
+    width: 90%;
+}
+
+.container {
+    height: 100%;
+    max-height: 1080px;
+    width: 100%;
+    max-width: 1400px;
+    background-color: VAR(--primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.bbutton {
+    border: 2px solid var(--fuerte);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--fuerte);
+    color: var(--claro);
+    font-weight: bolder;   
+}
+
+.bbutton:hover {
+    background-color: var(--terciario);
+}
+
+select {
+    border: none;
+    border-radius: 5px;
+    height: 48px;
+    width: 100%;
+}
+
+/*-------Tabla-------*/
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid var(--fuerte);
+    background-color: var(--secundario);
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--fuerte);
+    border-right-color: var(--oscuro) ;
+    color: var(--claro);
+}
+
+/* ----------------------------------FILTRO---------------------------------- */
+
+.filtro {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+.radioBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.inputR {
+    display: none;
+}
+
+.filtroCheck {
+    border: 2px solid var(--terciario);
+    color: var(--terciario);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--claro);
+    font-weight: bolder;
+}
+
+.inputR:checked+.filtroCheck {
+    color: var(--claro);
+    background-color: var(--terciario);
+}
+
+/* ----------------------------------BUSQUEDA---------------------------------- */
+
+.busqueda {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.entrada {
+    width: 90%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--fuerte);
+    background-color: var(--secundario);
+}
+
+/* ----------------------------------DATOS---------------------------------- */
+
+.datos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Descripcion {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nombreArticulo {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.stock {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.stockInner {
+    width: 30%;
+    height: 120px;
+    background-color: var(--secundario);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.inner {
+    font-weight: bold;
+}
+
+/* ----------------------------------VENCIMIENTOS---------------------------------- */
+
+.vto {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ----------------------------------LISTAS---------------------------------- */
+
+.listados {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    height: 90%;
+    border: 2px solid var(--fuerte);
+    border-radius: 5px;
+    background-color: var(--primario);
+}
+
+.listadosContainer {
+    padding: 0 5% ;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.listadosContainer>.titulo {
+ margin-bottom: 20px;
+}
+
+.botoneraFiltros {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.botoneraLista {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtrosOcultos {
+    display: none;
+}
+
+.filtrosVencimientoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filtrosFechas {
+    display: flex;
+    gap: 5px;
+}
+
+.tablaContainer {
+    height: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    border: 1px solid var(--fuerte);
+}
+
+/*  *******************************RESPONSIVE*******************************  */
+/*  *******************************RESPONSIVE*******************************  */
+/*  *******************************RESPONSIVE*******************************  */
+
+@media (min-width: 1024px){
+
+    section, .linea {
+        width: 80%;
+    }
+
+    .filtro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+    .radioBtn {
+        width: 30%;
+        justify-content: space-between;
+    }
+
+}
