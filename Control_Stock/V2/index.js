@@ -466,6 +466,7 @@ function crearListados(total, listadoVto) {
         btnSeleccionar.addEventListener('click', () => {
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
+          console.log(listadoVto)
           const fechaElegida = listadoVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
             const fechaConv = fechaSep[0] + "-" + fechaSep[1] + "-" + fechaSep[2]
@@ -481,7 +482,11 @@ function crearListados(total, listadoVto) {
             const cantidadCell = row.insertCell(4);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
-            medicacionCell.innerHTML = articulo.NOMBREGENERICO;
+            if (articulo.CONCENTRACION == undefined) {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+            } else {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+          }
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
@@ -520,7 +525,11 @@ function crearListados(total, listadoVto) {
             const cantidadCell = row.insertCell(4);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
-            medicacionCell.innerHTML = articulo.NOMBREGENERICO;
+            if (articulo.CONCENTRACION == undefined) {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+            } else {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+          }
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
