@@ -194,6 +194,7 @@ function crearListados(total, listadoVto) {
   const filtrosVencimientoEFY = document.getElementById("filtrosVencimientoEFY")
   const btnSeleccionar = document.getElementById("btnSeleccionar")
   const tablaListados = document.getElementById("tablaListados")
+  let data = [];
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
   btnListadosAbrir.addEventListener("click", () => {
@@ -254,6 +255,7 @@ function crearListados(total, listadoVto) {
     switch (event.target.selectedIndex) {
       //Listado Completo
       case 1:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI") {
@@ -277,10 +279,12 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
       //Stock Critico
       case 2:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
@@ -304,10 +308,12 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
       //Agotado
       case 3:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
@@ -331,6 +337,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
     }
@@ -340,6 +347,7 @@ function crearListados(total, listadoVto) {
     switch (event.target.selectedIndex) {
       //Esterilizacion
       case 1:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ESTERILIZACION") {
@@ -364,10 +372,12 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
       //Alimentacion
       case 2:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ALIMENTACION") {
@@ -392,10 +402,12 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
       //Sueros
       case 3:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "SUEROS") {
@@ -420,6 +432,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
+          data.push(articulo)
         })
         break;
       //Programas
@@ -432,6 +445,7 @@ function crearListados(total, listadoVto) {
   })
 
   filtrosVencimiento.addEventListener("change", (event) => {
+    data = [];
     switch (event.target.selectedIndex) {
       //Lista completa
       case 1:
@@ -452,6 +466,7 @@ function crearListados(total, listadoVto) {
           loteCell.innerHTML = articulo.NROLOTE
           vtoCell.innerHTML = articulo.FECHAVTO
           cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+          data.push(articulo)
         })
         break;
       //Mes
@@ -464,6 +479,7 @@ function crearListados(total, listadoVto) {
         btnSeleccionar.style.display = "inline"
 
         btnSeleccionar.addEventListener('click', () => {
+          data = [];
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
           console.log(listadoVto)
@@ -490,6 +506,7 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+            data.push(articulo)
           })
         })
         break;
@@ -503,6 +520,7 @@ function crearListados(total, listadoVto) {
         btnSeleccionar.style.display = "inline"
 
         btnSeleccionar.addEventListener('click', () => {
+          data = [];
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaElegida = listadoVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
@@ -533,10 +551,26 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+            data.push(articulo)
           })
 
         })
         break;
     }
   })
+
+  //--------------------------- BOTON DESCARGAS--------------------------------
+
+  btnDescargar.addEventListener("click", () => {
+    const exportType = "xls";
+    const date = new Date();
+    const fileName =
+      "lisdado-" +
+      date.getDate() +
+      "-" +
+      date.getMonth() +
+      "-" +
+      date.getFullYear();
+    window.exportFromJSON({ data, fileName, exportType });
+  });
 }

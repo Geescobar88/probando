@@ -44,7 +44,7 @@ header>span {
 }
 
 .titulo {
-    font-size: 40px;
+    font-size: 2rem;
     width: 100%;
     text-align: center;
 }
@@ -109,6 +109,9 @@ th {
     background-color: var(--fuerte);
     border-right-color: var(--oscuro) ;
     color: var(--claro);
+}
+td {
+    font-size: 14px;
 }
 
 /* ----------------------------------FILTRO---------------------------------- */
@@ -184,7 +187,6 @@ th {
 }
 
 .nombreArticulo {
-    font-size: larger;
     font-weight: bold;
 }
 
@@ -218,6 +220,10 @@ th {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.LText {
+    font-size: 16px;
 }
 
 /* ----------------------------------LISTAS---------------------------------- */
@@ -301,4 +307,11 @@ th {
         justify-content: space-between;
     }
 
+    td {
+        font-size: 18px;
+    }
+
+    .nombreArticulo {
+        font-size: 24px;
+    }
 }
