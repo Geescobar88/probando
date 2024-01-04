@@ -141,10 +141,11 @@ function seleccionarArticulo(total, listadoVto) {
     const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value)
     nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
     codMinisterial.textContent = articuloEncontrado.CODARTICULO
-    if (articuloEncontrado.SERVICIO != "DESPACHO") {
-      stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
-    } else {
+    if (articuloEncontrado.SERVICIO == "DESPACHO" || articuloEncontrado.SERVICIO == "PROEPI") {
       stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+    } else {
+
+      stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
     }
     consumo.textContent = articuloEncontrado.STOCK_MIN
     if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
