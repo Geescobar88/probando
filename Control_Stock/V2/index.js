@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+  cargarDatos();
+});
+
 async function cargarDatos() {
   const db = await fetch("./data/DB.json");
   const dbResponse = await db.json();
@@ -10,8 +14,6 @@ async function cargarDatos() {
   menubar();
 
 }
-
-// cargarDatos();
 
 ///////////////////////////////////////MENU/////////////////////////////////////////
 
@@ -188,6 +190,7 @@ function crearListados(total, listadoVto) {
   const seleccionFiltros = document.getElementById("seleccionFiltros")
   const filtrosStock = document.getElementById("filtrosStock")
   const filtrosSector = document.getElementById("filtrosSector")
+  const filtrosSectorProgramas = document.getElementById("filtrosProgramas")
   const filtrosVencimiento = document.getElementById("filtrosVencimiento")
   const filtrosVencimientoM = document.getElementById("filtrosVencimientoM")
   const filtrosVencimientoY = document.getElementById("filtrosVencimientoY")
@@ -217,6 +220,7 @@ function crearListados(total, listadoVto) {
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         filtrosStock.style.display = "inline"
         filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
         filtrosVencimiento.style.display = "none"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
@@ -229,6 +233,7 @@ function crearListados(total, listadoVto) {
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         filtrosStock.style.display = "none"
         filtrosSector.style.display = "inline"
+        filtrosSectorProgramas.style.display = "none"
         filtrosVencimiento.style.display = "none"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
@@ -241,6 +246,7 @@ function crearListados(total, listadoVto) {
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
         filtrosStock.style.display = "none"
         filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
         filtrosVencimiento.style.display = "inline"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
@@ -349,6 +355,7 @@ function crearListados(total, listadoVto) {
       //Esterilizacion
       case 1:
         data = [];
+        filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ESTERILIZACION") {
@@ -379,6 +386,7 @@ function crearListados(total, listadoVto) {
       //Alimentacion
       case 2:
         data = [];
+        filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ALIMENTACION") {
@@ -409,6 +417,7 @@ function crearListados(total, listadoVto) {
       //Sueros
       case 3:
         data = [];
+        filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "SUEROS") {
@@ -438,8 +447,102 @@ function crearListados(total, listadoVto) {
         break;
       //Programas
       case 4:
+        data = [];
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
-        alert("Proximamente..")
+        filtrosSectorProgramas.style.display = "inline"
+        filtrosSectorProgramas.addEventListener("change", (event) => {
+          switch (event.target.selectedIndex) {
+            case 1:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "PROEPI") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+      
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDEPOSITO == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDEPOSITO
+                }
+                data.push(articulo)
+              })
+              break;
+
+            case 2:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "TBC") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+      
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+                data.push(articulo)
+              })
+              break;
+
+            case 3:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "HIV") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+      
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+                data.push(articulo)
+              })
+              break;
+          }
+        })
+
+
+
         break;
 
     }
@@ -502,8 +605,8 @@ function crearListados(total, listadoVto) {
             if (articulo.CONCENTRACION == undefined) {
               medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
             } else {
-            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
-          }
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+            }
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
@@ -547,8 +650,8 @@ function crearListados(total, listadoVto) {
             if (articulo.CONCENTRACION == undefined) {
               medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
             } else {
-            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
-          }
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+            }
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE

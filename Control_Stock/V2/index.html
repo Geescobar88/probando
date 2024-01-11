@@ -13,7 +13,7 @@
     <title>Control de Stock</title>
 </head>
 
-<body onload="cargarDatos();">
+<body>
     <header>
         <span id="menu">☰</span>
         <h1 class="titulo">Control de stock</h1>
@@ -38,7 +38,7 @@
         </section>
 
         <section class="busqueda" id="busqueda">
-            <input type="text" list="medicacion" id="entrada" class="entrada" disabled />
+            <input type="text" list="medicacion" id="entrada" class="entrada"  disabled/>
             <datalist id="medicacion"></datalist>
             <button class="bbutton" id="borrar">Borrar</button>
         </section>
@@ -112,6 +112,15 @@
                         <option value="Sueros">Sueros</option>
                         <option value="Programas">Programas</option>
                     </select>
+                    
+                    <select name="filtrosProgramas" id="filtrosProgramas" class="filtrosOcultos">
+                        <option value="" selected disabled>Seleccionar Programa</option>
+                            <option value="proepi">PROEPI</option>
+                            <option value="tbc">TBC</option>
+                            <option value="hiv">HIV</option>
+                    </select>
+                    
+
                     <div class="filtrosVencimientoContainer">
                         <select name="filtrosVencimiento" id="filtrosVencimiento" class="filtrosOcultos">
                             <option value="" selected disabled>Seleccionar opcion</option>
