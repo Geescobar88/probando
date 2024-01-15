@@ -19,25 +19,25 @@
         <h1 class="titulo">Control de stock</h1>
     </header>
 
-    <div class="container">
-
-        <section class="filtro">
-            <label class="tituloBuscar">Buscar articulo por :</label>
-            <div class="radioBtn">
-                <div>
-                    <input type="radio" name="filtro" id="fNombre" class="inputR" value="Articulos" />
-                    <label for="fNombre" class="filtroCheck" id="filtroCheckArt">Nombre</label>
-                </div>
-                <div>
-                    <input type="radio" name="filtro" id="fCodigoMin" class="inputR" value="Codigo Ministerial" />
-                    <label for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Codigo</label>
-                </div>
-                <span class="bbutton" id="btnListados">Listados</span>
+    <section class="filtro" id="seleccionDB">
+        <label class="tituloBuscar">Elegir DB a utilizar</label>
+        <div class="radioBtn">
+            <div>
+                <button class="bbutton" id="btnOnline" onclick="cargarDatos()">Online</button>
             </div>
-        </section>
+            <div>
+                <button class="bbutton" id="btnOffline">Offline</button>
+            </div>
+            <!-- <span class="bbutton" id="btnListados">Listados</span> -->
+        </div>
+    </section>
+
+    <div class="container" id="container">
+
+
 
         <section class="busqueda" id="busqueda">
-            <input type="text" list="medicacion" id="entrada" class="entrada"  disabled/>
+            <input type="text" list="medicacion" id="entrada" class="entrada" disabled />
             <datalist id="medicacion"></datalist>
             <button class="bbutton" id="borrar">Borrar</button>
         </section>
@@ -74,7 +74,8 @@
             </div>
 
             <div class="vto">
-                <label class="LText">Próximo vencimiento hasta 01/26 (Solo referencia - Ultima actualización 15/01/2024)</label>
+                <label class="LText">Próximo vencimiento hasta 01/26 (Solo referencia - Ultima actualización
+                    15/01/2024)</label>
 
                 <table id="tabla" class="tabla">
                     <tr>
@@ -111,14 +112,14 @@
                         <option value="Sueros">Sueros</option>
                         <option value="Programas">Programas</option>
                     </select>
-                    
+
                     <select name="filtrosProgramas" id="filtrosProgramas" class="filtrosOcultos">
                         <option value="" selected disabled>Seleccionar Programa</option>
-                            <option value="proepi">PROEPI</option>
-                            <option value="tbc">TBC</option>
-                            <option value="hiv">HIV</option>
+                        <option value="proepi">PROEPI</option>
+                        <option value="tbc">TBC</option>
+                        <option value="hiv">HIV</option>
                     </select>
-                    
+
 
                     <div class="filtrosVencimientoContainer">
                         <select name="filtrosVencimiento" id="filtrosVencimiento" class="filtrosOcultos">
@@ -142,7 +143,7 @@
                                 <option value="30-11">Noviembre</option>
                                 <option value="31-12">Diciembre</option>
                             </select>
-    
+
                             <select name="filtrosVencimientoY" id="filtrosVencimientoY" class="filtrosOcultos">
                                 <option value="-2024">2024</option>
                                 <option value="-2025">2025</option>
@@ -163,14 +164,14 @@
                                 <option value="30-11">Noviembre</option>
                                 <option value="31-12">Diciembre</option>
                             </select>
-    
+
                             <select name="filtrosVencimientoEFY" id="filtrosVencimientoEFY" class="filtrosOcultos">
                                 <option value="-2024">2024</option>
                                 <option value="-2025">2025</option>
                                 <option value="-2026">2026</option>
                             </select>
                         </div>
-                        
+
                     </div>
                     <!-- <input type="checkbox" id="filtroTodos" disabled /> -->
                     <!-- <label for="filtroTodos" id="lblfiltroTodos" disabled>Incluir anteriores.</label> -->
@@ -193,6 +194,15 @@
                     <button class="bbutton" id="btnCerrar">Cerrar</button>
                 </div>
 
+            </div>
+
+        </div>
+
+        <div class="cargaDB" id="cargaDB">
+            <div class="cargaDBContainer">
+                <input type="file" id="fileInput" accept=".json">
+                <button id="cDB_btnCargar">Cargar</button>
+                <button class="cDB_btnCerrar" id="cDB_btnCerrar">Volver</button>
             </div>
 
         </div>
