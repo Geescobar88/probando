@@ -1,35 +1,25 @@
 
 
-///////////////////////////////////CARGANDO DATOS ONLINE//////////////////////////////////
-async function cargarDatos() {
-  const db = await fetch("./data/DB.json");
-  const dbResponse = await db.json();
-  const listado = await fetch("../data/stock.json");
-  const listadoResponse = await listado.json();
-  const vto = await fetch("../data/vto.json")
-  const listadoVto = await vto.json();
 
-  // generarTotal(dbResponse, listadoResponse, listadoVto);
-  menubar();
 
-  console.log(dbResponse)
-  console.log(listadoResponse)
-  console.log(listadoVto)
-}
+document.addEventListener('DOMContentLoaded', function () {
 
-///////////////////////////////////CARGANDO DATOS OFFLINE//////////////////////////////////
 
-document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById("container")
   const seleccionDB = document.getElementById("seleccionDB")
+  const btnOnline = document.getElementById("btnOnline")
   const btnOffline = document.getElementById("btnOffline")
   const cargaDB = document.getElementById("cargaDB")
   const cDB_btnCerrar = document.getElementById("cDB_btnCerrar")
   const cDB_btnCargar = document.getElementById("cDB_btnCargar")
 
-    btnOffline.addEventListener("click", () => {
-    container.style.display="flex"
-    seleccionDB.style.display ="none"
+  btnOnline.addEventListener("click", () => {
+    cargarDatos()
+  })
+
+  btnOffline.addEventListener("click", () => {
+    container.style.display = "flex"
+    seleccionDB.style.display = "none"
     cargaDB.style.display = "flex"
   })
 
@@ -45,38 +35,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
-
-async function cargarOff(archivoCargado) {
+///////////////////////////////////CARGANDO DATOS ONLINE//////////////////////////////////
+async function cargarDatos() {
   const db = await fetch("./data/DB.json");
-  const dbResponse = await db.json();
-  const vto = await fetch("../data/vto.json")
-  const listadoVto = await vto.json();
-  const listadoResponse = archivoCargado
-  // generarTotal(dbResponse, listadoResponse, listadoVto);
+  const ondbResponse = await db.json();
+  const listado = await fetch("./data/stock.json");
+  const onlistadoResponse = await listado.json();
+  const vto = await fetch("./data/vto.json")
+  const onlistadoVto = await vto.json();
+
+  generarTotalOn(ondbResponse, onlistadoResponse, onlistadoVto);
   menubar();
 
-  console.log(dbResponse)
-  console.log(listadoVto)
-  console.log(listadoResponse)
 }
+
+///////////////////////////////////CARGANDO DATOS OFFLINE//////////////////////////////////
 
 function cargarArchivo() {
 
   const input = document.getElementById("fileInput")
-  var archivoCargado;
   const archivo = input.files[0];
-  if (archivo) { 
+  if (archivo) {
+    let dbResponse;
+    let listadoResponse;
+    let listadoVto;
+
+    fetch('./data/DB.json')
+      .then(response => response.json())
+      .then(data => dbResponse = data);
+
+    fetch('./data/vto.json')
+      .then(response => response.json())
+      .then(data => listadoVto = data);
+
     const lector = new FileReader();
 
     lector.onload = function (e) {
+      console.log(e)
       const contenido = e.target.result;
-      archivoCargado = JSON.parse(contenido)    
-      console.log(archivoCargado)
+      listadoResponse = JSON.parse(contenido)
     };
     lector.readAsText(archivo);
 
-    return cargarOff(archivoCargado)
+    setTimeout(() => {
+      generarTotal(dbResponse, listadoResponse, listadoVto);
+
+      container.style.display = "none"
+      seleccionDB.style.display = "flex"
+      cargaDB.style.display = "none"
+
+    }, "500");
   } else {
     console.log("error")
   }
@@ -91,6 +99,26 @@ function menubar() {
     alert("Esto hará algo en un futuro..")
   })
 }
+
+//////////////////////////////////GENERANDO TOTAL///////////////////////////////////
+
+function generarTotalOn(ondbResponse, onlistadoResponse, onlistadoVto) {
+  const total = ondbResponse.map((array1) => {
+    const coincidencia = onlistadoResponse.find(
+      (array2) => array2.CODARTICULO === array1.CODARTICULO
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
+
+  filtrarDatos(total);
+  seleccionarArticulo(total, onlistadoVto)
+  crearListados(total, onlistadoVto);
+}
+
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
@@ -117,8 +145,6 @@ function generarTotal(dbResponse, listadoResponse, listadoVto) {
 function filtrarDatos(total) {
   const seleccionDB = document.getElementById("seleccionDB");
   const container = document.getElementById("container");
-  const btnOnline = document.getElementById("btnOnline")
-  const btnOffline = document.getElementById("btnOffline")
   const entrada = document.getElementById("entrada");
   const datalist = document.getElementById("medicacion");
   const borrar = document.getElementById("borrar")
@@ -128,17 +154,15 @@ function filtrarDatos(total) {
   const stockDeposito = document.getElementById("stockDeposito");
   const estadoStock = document.getElementById("estadoStock")
   const consumo = document.getElementById("consumo")
-  const cargaDB = document.getElementById("cargaDB")
-  const cDB_btnCargar = document.getElementById("cDB_btnCargar")
-  const cDB_btnCerrar = document.getElementById("cDB_btnCerrar")
 
   const tabla = document.getElementById("tabla");
 
   //--------------------------Utilizar DB online---------------------
-  btnOnline.addEventListener("click", () => {
-    borrar.click();
-    container.style.display = "flex"
-    seleccionDB.style.display = "none"
+  
+  setTimeout(() => {
+      borrar.click();
+      container.style.display = "flex"
+      seleccionDB.style.display = "none"
       datalist.innerHTML = "";
       entrada.value = "";
       tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
@@ -151,35 +175,8 @@ function filtrarDatos(total) {
           datalist.appendChild(newOption);
         }
       });
-  });
 
-  //--------------------------Utilizar DB local---------------------
-
-  abtnOffline.addEventListener("click", () => {
-    borrar.click();
-    container.style.display = "flex"
-    seleccionDB.style.display = "none"
-      datalist.innerHTML = "";
-      entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
-      cargaDB.style.display = "flex"
-
-      // total.forEach((item) => {
-      //   if (item.HABILITADO == "SI") {
-      //     const newOption = document.createElement("option");
-      //     const atribValue = document.createAttribute("value");
-      //     atribValue.value = item.CODARTICULO;
-      //     newOption.setAttributeNode(atribValue);
-      //     datalist.appendChild(newOption);
-      //   }
-      // });
-
-  });
-
-
-
-
-
+  }, "500");
   //--------------------------Otras funcionalidades---------------------
 
   borrar.addEventListener("click", () => {
@@ -196,7 +193,6 @@ function filtrarDatos(total) {
   busqueda.addEventListener("click", () => {
     if (entrada.disabled) {
       entrada.disabled = false;
-      btnOnline.click();
     }
   })
 
@@ -282,13 +278,13 @@ function crearListados(total, listadoVto) {
   let data = [];
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
-  btnListadosAbrir.addEventListener("click", () => {
-    ventanaListados.style.display = "inline"
-  })
+  // btnListadosAbrir.addEventListener("click", () => {
+  //   ventanaListados.style.display = "inline"
+  // })
 
-  btnListadosCerrar.addEventListener("click", () => {
-    ventanaListados.style.display = "none"
-  })
+  // btnListadosCerrar.addEventListener("click", () => {
+  //   ventanaListados.style.display = "none"
+  // })
 
   //------------------------------Mostrar/Ocultar Selects-------------------------
 
@@ -542,7 +538,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -571,7 +567,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -600,7 +596,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -667,7 +663,6 @@ function crearListados(total, listadoVto) {
           data = [];
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
-          console.log(listadoVto)
           const fechaElegida = listadoVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
             const fechaConv = fechaSep[0] + "-" + fechaSep[1] + "-" + fechaSep[2]
