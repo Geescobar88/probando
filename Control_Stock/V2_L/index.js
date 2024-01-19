@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cargaDB = document.getElementById("cargaDB")
   const cDB_btnCerrar = document.getElementById("cDB_btnCerrar")
   const cDB_btnCargar = document.getElementById("cDB_btnCargar")
+  const fechaText = document.getElementById("fechaText")
 
   btnOnline.addEventListener("click", () => {
     cargarDatos()
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   cDB_btnCargar.addEventListener("click", () => {
     cargarArchivo();
+
   })
 
 });
@@ -38,13 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
 ///////////////////////////////////CARGANDO DATOS ONLINE//////////////////////////////////
 async function cargarDatos() {
   const db = await fetch("./data/DB.json");
-  const ondbResponse = await db.json();
+  const dbResponse = await db.json();
   const listado = await fetch("./data/stock.json");
-  const onlistadoResponse = await listado.json();
+  const listadoResponse = await listado.json();
   const vto = await fetch("./data/vto.json")
-  const onlistadoVto = await vto.json();
+  const listadoVto = await vto.json();
 
-  generarTotalOn(ondbResponse, onlistadoResponse, onlistadoVto);
+  generarTotal(dbResponse, listadoResponse, listadoVto);
   menubar();
 
 }
@@ -71,7 +73,6 @@ function cargarArchivo() {
     const lector = new FileReader();
 
     lector.onload = function (e) {
-      console.log(e)
       const contenido = e.target.result;
       listadoResponse = JSON.parse(contenido)
     };
@@ -85,6 +86,7 @@ function cargarArchivo() {
       cargaDB.style.display = "none"
 
     }, "500");
+    fechaText.textContent = "Archivo cargado: " + input.value
   } else {
     console.log("error")
   }
@@ -102,22 +104,23 @@ function menubar() {
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
-function generarTotalOn(ondbResponse, onlistadoResponse, onlistadoVto) {
-  const total = ondbResponse.map((array1) => {
-    const coincidencia = onlistadoResponse.find(
-      (array2) => array2.CODARTICULO === array1.CODARTICULO
-    );
-    if (coincidencia) {
-      return { ...array1, ...coincidencia };
-    } else {
-      return array1;
-    }
-  });
+// function generarTotalOn(dbResponse, listadoResponse, listadoVto) {
+//   const total = dbResponse.map((array1) => {
+//     const coincidencia = listadoResponse.find(
+//       (array2) => array2.CODARTICULO === array1.CODARTICULO
+//     );
+//     if (coincidencia) {
+//       return { ...array1, ...coincidencia };
+//     } else {
+//       return array1;
+//     }
+//   });
 
-  filtrarDatos(total);
-  seleccionarArticulo(total, onlistadoVto)
-  crearListados(total, onlistadoVto);
-}
+//   filtrarDatos(total);
+//   seleccionarArticulo(total, listadoVto)
+//   crearListados(total, listadoVto);
+//   console.log(total)
+// }
 
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
@@ -137,6 +140,7 @@ function generarTotal(dbResponse, listadoResponse, listadoVto) {
   filtrarDatos(total);
   seleccionarArticulo(total, listadoVto)
   crearListados(total, listadoVto);
+  console.log(total)
 }
 
 
