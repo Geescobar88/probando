@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   cargarDatos();
 });
 
@@ -198,7 +198,6 @@ function crearListados(total, listadoVto) {
   const filtrosVencimientoEFY = document.getElementById("filtrosVencimientoEFY")
   const btnSeleccionar = document.getElementById("btnSeleccionar")
   const tablaListados = document.getElementById("tablaListados")
-  let data = [];
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
   btnListadosAbrir.addEventListener("click", () => {
@@ -262,7 +261,7 @@ function crearListados(total, listadoVto) {
     switch (event.target.selectedIndex) {
       //Listado Completo
       case 1:
-        data = [];
+
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI") {
@@ -291,7 +290,7 @@ function crearListados(total, listadoVto) {
         break;
       //Stock Critico
       case 2:
-        data = [];
+
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Consumo</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
@@ -319,7 +318,7 @@ function crearListados(total, listadoVto) {
         break;
       //Agotado
       case 3:
-        data = [];
+
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
@@ -353,7 +352,7 @@ function crearListados(total, listadoVto) {
     switch (event.target.selectedIndex) {
       //Esterilizacion
       case 1:
-        data = [];
+
         filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
@@ -384,7 +383,7 @@ function crearListados(total, listadoVto) {
         break;
       //Alimentacion
       case 2:
-        data = [];
+
         filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
@@ -415,7 +414,7 @@ function crearListados(total, listadoVto) {
         break;
       //Sueros
       case 3:
-        data = [];
+
         filtrosSectorProgramas.style.display = "none"
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
@@ -446,7 +445,7 @@ function crearListados(total, listadoVto) {
         break;
       //Programas
       case 4:
-        data = [];
+
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         filtrosSectorProgramas.style.display = "inline"
         filtrosSectorProgramas.addEventListener("change", (event) => {
@@ -460,7 +459,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -476,7 +475,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDEPOSITO
                 }
-                data.push(articulo)
+    
               })
               break;
 
@@ -489,7 +488,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -505,7 +504,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDISPENSACION
                 }
-                data.push(articulo)
+    
               })
               break;
 
@@ -518,7 +517,7 @@ function crearListados(total, listadoVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-      
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
@@ -534,7 +533,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDISPENSACION
                 }
-                data.push(articulo)
+    
               })
               break;
           }
@@ -582,7 +581,7 @@ function crearListados(total, listadoVto) {
         btnSeleccionar.style.display = "inline"
 
         btnSeleccionar.addEventListener('click', () => {
-          data = [];
+
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
           console.log(listadoVto)
@@ -609,7 +608,7 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
-            data.push(articulo)
+
           })
         })
         break;
@@ -623,7 +622,7 @@ function crearListados(total, listadoVto) {
         btnSeleccionar.style.display = "inline"
 
         btnSeleccionar.addEventListener('click', () => {
-          data = [];
+
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaElegida = listadoVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
@@ -654,7 +653,7 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
-            data.push(articulo)
+
           })
 
         })
@@ -665,15 +664,9 @@ function crearListados(total, listadoVto) {
   //--------------------------- BOTON DESCARGAS--------------------------------
 
   btnDescargar.addEventListener("click", () => {
-    const exportType = "xls";
-    const date = new Date();
-    const fileName =
-      "lisdado-" +
-      date.getDate() +
-      "-" +
-      date.getMonth() +
-      "-" +
-      date.getFullYear();
-    window.exportFromJSON({ data, fileName, exportType });
-  });
+    const tablaListados = document.getElementById("tablaListados")
+    const tablaHTML = tablaListados.outerHTML
+    const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
+    saveAs(blob, 'tabla.xls');
+  })
 }
