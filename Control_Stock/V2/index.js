@@ -285,7 +285,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
       //Stock Critico
@@ -313,7 +313,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
       //Agotado
@@ -342,7 +342,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
     }
@@ -378,7 +378,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
       //Alimentacion
@@ -409,7 +409,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
       //Sueros
@@ -440,7 +440,7 @@ function crearListados(total, listadoVto) {
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          data.push(articulo)
+
         })
         break;
       //Programas
@@ -475,7 +475,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDEPOSITO
                 }
-    
+
               })
               break;
 
@@ -504,7 +504,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDISPENSACION
                 }
-    
+
               })
               break;
 
@@ -533,7 +533,7 @@ function crearListados(total, listadoVto) {
                   }
                   stockCell.innerHTML = articulo.STOCKENDISPENSACION
                 }
-    
+
               })
               break;
           }
@@ -568,7 +568,7 @@ function crearListados(total, listadoVto) {
           loteCell.innerHTML = articulo.NROLOTE
           vtoCell.innerHTML = articulo.FECHAVTO
           cantidadCell.innerHTML = articulo.STOCKEXISTENTE
-          data.push(articulo)
+
         })
         break;
       //Mes
