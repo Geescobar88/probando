@@ -667,6 +667,7 @@ function crearListados(total, listadoVto) {
     const tablaListados = document.getElementById("tablaListados")
     const tablaHTML = tablaListados.outerHTML
     const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
-    saveAs(blob, 'tabla.xls');
+    const date = new Date();
+    saveAs(blob, 'listado' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
   })
 }
