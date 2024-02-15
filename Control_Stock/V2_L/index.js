@@ -227,7 +227,6 @@ function seleccionarArticulo(total, listadoVto) {
     if (articuloEncontrado.SERVICIO == "DESPACHO" || articuloEncontrado.SERVICIO == "PROEPI") {
       stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
     } else {
-
       stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
     }
     consumo.textContent = articuloEncontrado.STOCK_MIN
