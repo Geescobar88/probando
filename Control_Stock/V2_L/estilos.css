@@ -49,6 +49,10 @@ header>span {
     text-align: center;
 }
 
+.btnListados {
+    display: none;
+}
+
 /* ----------------------------------GENERAL---------------------------------- */
 
 a {

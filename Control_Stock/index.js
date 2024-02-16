@@ -1,540 +1,673 @@
-async function fetchDatos() {
-  const listadoResponse = await fetch(
-    "./data/stock.json"
-  );
-  const dbResponse = await fetch("./data/DB2.json");
-  const vto = await fetch("./data/vto.json");
-  const stock_esterilizacion = await fetch("./data/cod_esterilizacion.json");
-  const stock_alimentacion = await fetch("./data/cod_alimentacion.json");
+document.addEventListener('DOMContentLoaded', function () {
+  cargarDatos();
+});
 
-  const listadoData = await listadoResponse.json();
-  const dbData = await dbResponse.json();
+async function cargarDatos() {
+  const db = await fetch("./data/DB.json");
+  const dbResponse = await db.json();
+  const listado = await fetch("./data/stock.json");
+  const listadoResponse = await listado.json();
+  const vto = await fetch("./data/vto.json")
   const listadoVto = await vto.json();
-  const listadoStrlzn = await stock_esterilizacion.json();
-  const listadoAlimentacion = await stock_alimentacion.json();
 
-  generarArray(
-    listadoData,
-    dbData,
-    listadoVto,
-    listadoStrlzn,
-    listadoAlimentacion
-  );
+  generarTotal(dbResponse, listadoResponse, listadoVto);
+  menubar();
+
 }
 
-function generarArray(
-  listadoData,
-  dbData,
-  listadoVto,
-  listadoStrlzn,
-  listadoAlimentacion
-) {
-  const total = listadoData.map((listado1) => {
-    const coincidencia = dbData.find(
-      (listado2) => listado2.CODARTICULO === listado1.CODARTICULO
+///////////////////////////////////////MENU/////////////////////////////////////////
+
+function menubar() {
+  menu = document.getElementById("menu")
+  menu.addEventListener("click", () => {
+    alert("Esto hará algo en un futuro..")
+  })
+}
+
+//////////////////////////////////GENERANDO TOTAL///////////////////////////////////
+
+function generarTotal(dbResponse, listadoResponse, listadoVto) {
+  const total = dbResponse.map((array1) => {
+    const coincidencia = listadoResponse.find(
+      (array2) => array2.CODARTICULO === array1.CODARTICULO
     );
     if (coincidencia) {
-      return { ...listado1, ...coincidencia };
+      return { ...array1, ...coincidencia };
     } else {
-      return listado1;
+      return array1;
     }
   });
 
-  cargar(total);
-  cambiar(total, listadoVto);
-  listar(total, listadoStrlzn, listadoVto, listadoAlimentacion);
+  filtrarDatos(total);
+  seleccionarArticulo(total, listadoVto)
+  crearListados(total, listadoVto);
 }
 
-fetchDatos();
+///////////////////////////////////FILTRANDO DATOS//////////////////////////////////
 
-//CARGA DE DATOS
-
-function cargar(total) {
+function filtrarDatos(total) {
   const filtroArt = document.getElementById("fNombre");
-  const filtroCM = document.getElementById("fCodigoMin");
-  const filtroCheckArt = document.getElementById("filtroCheckArt");
-  const filtroCheckCm = document.getElementById("filtroCheckCm");
-  const datalist = document.getElementById("medicacion");
+  const filtroCm = document.getElementById("fCodigoMin");
   const entrada = document.getElementById("entrada");
-  const busqueda = document.getElementById("busqueda");
-
-  filtroArt.addEventListener("change", function () {
-    if (filtroArt.checked) {
-      filtroCheckArt.style.color = "var(--claro)";
-      filtroCheckArt.style.backgroundColor = "var(--fuerte)";
-      filtroCheckCm.style.color = "black";
-      filtroCheckCm.style.backgroundColor = "var(--claro)";
-      entrada.disabled = false;
-      datalist.innerHTML = "";
-      entrada.value = "";
-      for (let i = 0; i < total.length; i++) {
-        const newOption = document.createElement("option");
-        const lista = document.getElementById("medicacion");
-        const atribValue = document.createAttribute("value");
-        if (total[i].MEDICACION === undefined) {
-          atribValue.value = total[i].DESCRIPCION;
-        } else {
-          atribValue.value = total[i].MEDICACION;
-        }
-        newOption.setAttributeNode(atribValue);
-        lista.appendChild(newOption);
-      }
-    }
-  });
-
-  filtroCM.addEventListener("change", function () {
-    if (filtroCM.checked) {
-      filtroCheckCm.style.color = "var(--claro)";
-      filtroCheckCm.style.backgroundColor = "var(--fuerte)";
-      filtroCheckArt.style.color = "black";
-      filtroCheckArt.style.backgroundColor = "var(--claro)";
-      entrada.disabled = false;
-      datalist.innerHTML = "";
-      entrada.value = "";
-      for (let i = 0; i < total.length; i++) {
-        if (total[i].HABILITADO != "NO") {
-          const newOption = document.createElement("option");
-          const lista = document.getElementById("medicacion");
-          const atribValue = document.createAttribute("value");
-          atribValue.value = total[i].CODARTICULO;
-          newOption.setAttributeNode(atribValue);
-          lista.appendChild(newOption);
-        }
-      }
-    }
-  });
-
-  busqueda.addEventListener("click", function () {
-    if (entrada.disabled) {
-      filtroCheckArt.style.color = "var(--claro)";
-      filtroCheckArt.style.backgroundColor = "var(--fuerte)";
-      filtroCheckCm.style.color = "black";
-      filtroCheckCm.style.backgroundColor = "var(--claro)";
-      entrada.disabled = false;
-      datalist.innerHTML = "";
-      entrada.value = "";
-      for (let i = 0; i < total.length; i++) {
-        const newOption = document.createElement("option");
-        const lista = document.getElementById("medicacion");
-        const atribValue = document.createAttribute("value");
-        if (total[i].MEDICACION === undefined) {
-          atribValue.value = total[i].DESCRIPCION;
-        } else {
-          atribValue.value = total[i].MEDICACION;
-        }
-        newOption.setAttributeNode(atribValue);
-        lista.appendChild(newOption);
-      }
-    }
-  });
-}
-
-//ELECCION DE ARTICULO
-
-function cambiar(total, listadoVto) {
-  const articuloBuscado = document.getElementById("entrada");
+  const datalist = document.getElementById("medicacion");
+  const borrar = document.getElementById("borrar")
+  const busqueda = document.getElementById("busqueda")
   const nomArticulo = document.getElementById("nombreArticulo");
   const codMinisterial = document.getElementById("codMinisterial");
   const stockDeposito = document.getElementById("stockDeposito");
-  const proxVtoLote = document.getElementById("proxVtoLote");
-  const proxVtoVto = document.getElementById("proxVtoVto");
-  const proxVtoCant = document.getElementById("proxVtoCant");
-  const bBorrar = document.getElementById("bBorrar");
+  const estadoStock = document.getElementById("estadoStock")
+  const consumo = document.getElementById("consumo")
 
-  articuloBuscado.addEventListener("change", function () {
-    proxVtoLote.textContent = "";
-    proxVtoVto.textContent = "";
-    proxVtoCant.textContent = "";
+  const tabla = document.getElementById("tabla");
 
-    const objEncontrado = total.find((obj) => {
-      return (
-        obj.CODARTICULO === articuloBuscado.value ||
-        obj.DESCRIPCION === articuloBuscado.value ||
-        obj.MEDICACION === articuloBuscado.value
-      );
-    });
-
-    const objFiltroVto = listadoVto.filter((obj) => {
-      return objEncontrado.CODARTICULO === obj.CODARTICULO;
-    });
-
-    if (objEncontrado.MEDICACION === undefined) {
-      nomArticulo.textContent = objEncontrado.DESCRIPCION;
-    } else {
-      nomArticulo.textContent = objEncontrado.MEDICACION;
+  //--------------------------Filtro por articulos---------------------
+  filtroArt.addEventListener("change", () => {
+    borrar.click();
+    if (filtroArt.checked) {
+      datalist.innerHTML = "";
+      entrada.value = "";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+      total.forEach((item) => {
+        const newOption = document.createElement("option");
+        const atribValue = document.createAttribute("value");
+        if (item.HABILITADO == "SI") {
+          atribValue.value = item.MEDICACION;
+        } else {
+          atribValue.value = item.DESCRIPCION;
+        }
+          newOption.setAttributeNode(atribValue);
+          datalist.appendChild(newOption);
+      });
     }
-    codMinisterial.textContent = objEncontrado.CODARTICULO;
-    stockDeposito.textContent = objEncontrado.STOCKENDEPOSITO;
-    console.log(
-      "Stock Minino establecido: " +
-        objEncontrado.STOCK_MIN +
-        " Si el stock en depo es mas de: " +
-        objEncontrado.STOCK_MIN * 2 +
-        " deberia ser verde. Si es menos deberia ser rojo. Si esta entre " +
-        objEncontrado.STOCK_MIN +
-        " y " +
-        objEncontrado.STOCK_MIN * 2 +
-        "Deberia ser amarillo"
-    );
+  });
 
-    if (objEncontrado.STOCKENDEPOSITO <= objEncontrado.STOCK_MIN) {
-      estadoStock.style.backgroundColor = "Red";
-      estadoStock.style.color = "White";
-      estadoStock.textContent = "Critico";
-    } else if (objEncontrado.STOCKENDEPOSITO > objEncontrado.STOCK_MIN * 2) {
-      estadoStock.style.backgroundColor = "Green";
-      estadoStock.style.color = "White";
-      estadoStock.textContent = "Normal";
-    } else if (objEncontrado.STOCK_MIN === undefined) {
-      estadoStock.style.backgroundColor = "Gray";
-      estadoStock.style.color = "White";
-      estadoStock.textContent = "No definido";
-    } else {
-      estadoStock.style.backgroundColor = "Yellow";
-      estadoStock.style.color = "Black";
-      estadoStock.textContent = "Minimo";
+  //--------------------------Filtro por Codigo ministerial---------------------
+
+  filtroCm.addEventListener("change", () => {
+    borrar.click();
+    if (filtroCm.checked) {
+      datalist.innerHTML = "";
+      entrada.value = "";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+      total.forEach((item) => {
+        const newOption = document.createElement("option");
+        const atribValue = document.createAttribute("value");
+          atribValue.value = item.CODARTICULO;
+          newOption.setAttributeNode(atribValue);
+          datalist.appendChild(newOption);
+      });
     }
-
-    objFiltroVto.forEach((item) => {
-      const newLote = document.createElement("li");
-      newLote.textContent = item.NROLOTE;
-      const newVto = document.createElement("li");
-      newVto.textContent = item.FECHAVTO;
-      const newCant = document.createElement("li");
-      newCant.textContent = item.STOCKEXISTENTE;
-      proxVtoLote.appendChild(newLote);
-      proxVtoVto.appendChild(newVto);
-      proxVtoCant.appendChild(newCant);
-    });
   });
 
-  bBorrar.addEventListener("click", () => {
-    proxVtoLote.textContent = "";
-    proxVtoVto.textContent = "";
-    proxVtoCant.textContent = "";
-    nomArticulo.textContent = "Descripción: No disponible";
-    codMinisterial.textContent = "#0000000";
-    stockDeposito.textContent = "00000";
-    articuloBuscado.value = "";
-    estadoStock.style.backgroundColor = "Gray";
-    estadoStock.style.color = "White";
-    estadoStock.textContent = "No definido";
-  });
+  //--------------------------Otras funcionalidades---------------------
 
-  articuloBuscado.addEventListener("dblclick", () => {
-    bBorrar.click();
-  });
+  borrar.addEventListener("click", () => {
+    entrada.value = "";
+    nomArticulo.textContent = "-----";
+    codMinisterial.textContent = "-----";
+    stockDeposito.textContent = "-----"
+    estadoStock.textContent = "-----"
+    estadoStock.style.color = "black"
+    consumo.textContent = "-----"
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+  })
+
+  busqueda.addEventListener("click", () => {
+    if (entrada.disabled) {
+      entrada.disabled = false;
+      filtroArt.click();
+    }
+  })
+
+  busqueda.addEventListener("dblclick", () => {
+    borrar.click();
+  })
 }
 
-//LISTADOS
+//////////////////////////////////SELECCIONANDO ARTICULO////////////////////////////
 
-function listar(total, listadoStrlzn, listadoVto, listadoAlimentacion) {
-  const btnCerrar = document.getElementById("btnCerrar");
-  const btnDescargar = document.getElementById("btnDescargar");
-  const msjLista = document.getElementById("listaFiltrar");
-  const filtros = document.getElementById("filtros");
-  const btnFiltroVto = document.getElementById("btnFiltroVto");
+function seleccionarArticulo(total, listadoVto) {
+  const entrada = document.getElementById("entrada");
+  const nomArticulo = document.getElementById("nombreArticulo");
+  const codMinisterial = document.getElementById("codMinisterial");
+  const stockDeposito = document.getElementById("stockDeposito");
+  const estadoStock = document.getElementById("estadoStock")
+  const consumo = document.getElementById("consumo")
 
-  const filtroTodos = document.getElementById("filtroTodos");
-  // const lblfiltroTodos = document.getElementById("lblfiltroTodos");
+  const tabla = document.getElementById("tabla");
 
-  const lPrincipal = document.getElementById("seleccionFiltros");
-  const filtrosStock = document.getElementById("filtrosStock");
-  const filtrosServicio = document.getElementById("filtrosServicio");
-  const filtrosVencimiento = document.getElementById("filtrosVencimiento");
-  const filtrosVencimientoY = document.getElementById("filtrosVencimientoY");
-  const filtroCodigo = document.getElementById("filtroCodigo");
-  const filtroNombre = document.getElementById("filtroNombre");
-  const filtroStockDepo = document.getElementById("filtroStockDepo");
+  entrada.addEventListener('change', () => {
 
-  let data = [];
+    //--------------------------Filtrar un articulo---------------------
 
-  filtrosStock.style.display = "none";
-  filtrosServicio.style.display = "none";
-  filtrosVencimiento.style.display = "none";
-  filtrosVencimientoY.style.display = "none";
-  btnFiltroVto.style.display = "none";
-  filtroTodos.style.display = "none";
-  // lblfiltroTodos.style.display = "none";
-
-  filtros.addEventListener("click", () => {
-    msjLista.style.display = "inline";
-  });
-
-  lPrincipal.addEventListener("change", (event) => {
-    if (event.target.selectedIndex == "0") {
-      filtrosStock.style.display = "none";
-      filtrosServicio.style.display = "none";
-      filtrosVencimiento.style.display = "none";
-      filtrosVencimientoY.style.display = "none";
-      btnFiltroVto.style.display = "none";
-      filtroTodos.style.display = "none";
-      // lblfiltroTodos.style.display = "none";
-    } else if (event.target.selectedIndex == "1") {
-      filtrosStock.style.display = "inline";
-      filtrosServicio.style.display = "none";
-      filtrosVencimiento.style.display = "none";
-      filtrosVencimientoY.style.display = "none";
-      btnFiltroVto.style.display = "none";
-      filtroTodos.style.display = "none";
-      // lblfiltroTodos.style.display = "none";
-    } else if (event.target.selectedIndex == "2") {
-      filtrosStock.style.display = "none";
-      filtrosServicio.style.display = "inline";
-      filtrosVencimiento.style.display = "none";
-      filtrosVencimientoY.style.display = "none";
-      btnFiltroVto.style.display = "none";
-      filtroTodos.style.display = "none";
-      // lblfiltroTodos.style.display = "none";
+    const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+    nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
+    codMinisterial.textContent = articuloEncontrado.CODARTICULO
+    if (articuloEncontrado.SERVICIO == "DESPACHO" || articuloEncontrado.SERVICIO == "PROEPI") {
+      stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
     } else {
-      filtrosStock.style.display = "none";
-      filtrosServicio.style.display = "none";
-      filtrosVencimiento.style.display = "inline";
-      filtrosVencimientoY.style.display = "inline";
-      btnFiltroVto.style.display = "inline";
-      filtroTodos.style.display = "inline";
-      // lblfiltroTodos.style.display = "inline";
+
+      stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
     }
-  });
+    consumo.textContent = articuloEncontrado.STOCK_MIN
+    if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
+      estadoStock.textContent = "Critico"
+      estadoStock.style.color = "red";
+    } else if (articuloEncontrado.STOCKENDEPOSITO >= articuloEncontrado.STOCK_MIN * 2) {
+      estadoStock.textContent = "En stock"
+      estadoStock.style.color = "green";
+    } else {
+      estadoStock.textContent = "Minimo"
+      estadoStock.style.color = "black";
+    }
+
+    //--------------------------Tabla de vencimientos---------------------
+
+    const filtroArtVto = listadoVto.filter((match) => {
+      return articuloEncontrado.CODARTICULO === match.CODARTICULO
+    })
+
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+    filtroArtVto.forEach((articulo) => {
+      const row = tabla.insertRow();
+      const loteCell = row.insertCell(0);
+      const vencimientoCell = row.insertCell(1);
+      const cantidadCell = row.insertCell(2);
+
+      loteCell.innerHTML = articulo.NROLOTE;
+      vencimientoCell.innerHTML = articulo.FECHAVTO;
+      cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
+    })
+  })
+}
+
+/////////////////////////////////////////LISTADOS///////////////////////////////////
+
+function crearListados(total, listadoVto) {
+  const btnListadosAbrir = document.getElementById("btnListados")
+  const btnListadosCerrar = document.getElementById("btnCerrar")
+  const ventanaListados = document.getElementById("listados")
+  const seleccionFiltros = document.getElementById("seleccionFiltros")
+  const filtrosStock = document.getElementById("filtrosStock")
+  const filtrosSector = document.getElementById("filtrosSector")
+  const filtrosSectorProgramas = document.getElementById("filtrosProgramas")
+  const filtrosVencimiento = document.getElementById("filtrosVencimiento")
+  const filtrosVencimientoM = document.getElementById("filtrosVencimientoM")
+  const filtrosVencimientoY = document.getElementById("filtrosVencimientoY")
+  const filtrosVencimientoEFM = document.getElementById("filtrosVencimientoEFM")
+  const filtrosVencimientoEFY = document.getElementById("filtrosVencimientoEFY")
+  const btnSeleccionar = document.getElementById("btnSeleccionar")
+  const tablaListados = document.getElementById("tablaListados")
+
+  //--------------------------Abrir/Cerrar ventana Listados---------------------
+  btnListadosAbrir.addEventListener("click", () => {
+    ventanaListados.style.display = "inline"
+  })
+
+  btnListadosCerrar.addEventListener("click", () => {
+    ventanaListados.style.display = "none"
+  })
+
+  //------------------------------Mostrar/Ocultar Selects-------------------------
+
+
+
+  seleccionFiltros.addEventListener("change", (event) => {
+    switch (event.target.selectedIndex) {
+      //Stock
+      case 1:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosStock.style.display = "inline"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+      //Servicio
+      case 2:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "inline"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+      //Vencimiento
+      case 3:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "inline"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+    }
+
+  })
 
   filtrosStock.addEventListener("change", (event) => {
-    if (event.target.selectedIndex == "0") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
-    } else if (event.target.selectedIndex == "1") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
-      total.forEach((item) => {
-        const newCMinis = document.createElement("li");
-        const newNombre = document.createElement("li");
-        const newSDepo = document.createElement("li");
-        newCMinis.textContent = item.CODARTICULO;
-        if (item.DESCRIPCION.length > 100) {
-          const descCorta = item.DESCRIPCION;
-          newNombre.textContent = descCorta.substring(0, 50) + "...";
-        } else {
-          newNombre.textContent = item.DESCRIPCION;
-        }
-        newSDepo.textContent = item.STOCKENDEPOSITO;
-        if (item.STOCKENDEPOSITO === 0) {
-          newSDepo.style.color = "#b83564";
-        } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-          newSDepo.style.color = "#ffb350";
-        } else {
-          newSDepo.style.color = "#4d8f81";
-        }
-        filtroCodigo.appendChild(newCMinis);
-        filtroNombre.appendChild(newNombre);
-        filtroStockDepo.appendChild(newSDepo);
-        data.push(item);
-      });
-    } else if (event.target.selectedIndex == "2") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
-      total.forEach((item) => {
-        console.log(item.STOCK_MIN);
-        if (
-          item.STOCKENDEPOSITO < item.STOCK_MIN * 2 ||
-          item.STOCK_MIN == undefined
-        ) {
-          const newCMinis = document.createElement("li");
-          const newNombre = document.createElement("li");
-          const newSDepo = document.createElement("li");
-          newCMinis.textContent = item.CODARTICULO;
-          if (item.DESCRIPCION.length > 100) {
-            const descCorta = item.DESCRIPCION;
-            newNombre.textContent = descCorta.substring(0, 50) + "...";
-          } else {
-            newNombre.textContent = item.DESCRIPCION;
+    switch (event.target.selectedIndex) {
+      //Listado Completo
+      case 1:
+
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.HABILITADO == "SI") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          newSDepo.textContent = item.STOCKENDEPOSITO;
-          if (item.STOCKENDEPOSITO === 0) {
-            newSDepo.style.color = "#b83564";
-          } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-            newSDepo.style.color = "#ffb350";
-          } else {
-            newSDepo.style.color = "#4d8f81";
+
+        })
+        break;
+      //Stock Critico
+      case 2:
+
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Consumo</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const consumoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            consumoCell.innerHTML = articulo.STOCK_MIN
+            if (articulo.STOCKENDEPOSITO == 0) {
+              stockCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              stockCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          filtroCodigo.appendChild(newCMinis);
-          filtroNombre.appendChild(newNombre);
-          filtroStockDepo.appendChild(newSDepo);
-          data.push(item);
-        }
-      });
-    } else {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
-      total.forEach((item) => {
-        if (item.STOCKENDEPOSITO === 0) {
-          const newCMinis = document.createElement("li");
-          const newNombre = document.createElement("li");
-          const newSDepo = document.createElement("li");
-          newCMinis.textContent = item.CODARTICULO;
-          if (item.DESCRIPCION.length > 100) {
-            const descCorta = item.DESCRIPCION;
-            newNombre.textContent = descCorta.substring(0, 50) + "...";
-          } else {
-            newNombre.textContent = item.DESCRIPCION;
+
+        })
+        break;
+      //Agotado
+      case 3:
+
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
-          newSDepo.textContent = item.STOCKENDEPOSITO;
-          if (item.STOCKENDEPOSITO === 0) {
-            newCMinis.style.color = "#b83564";
-            newNombre.style.color = "#b83564";
-            newSDepo.style.color = "#b83564";
-          } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-            newCMinis.style.color = "#ffb350";
-            newNombre.style.color = "#ffb350";
-            newSDepo.style.color = "#ffb350";
-          } else {
-            newCMinis.style.color = "#4d8f81";
-            newNombre.style.color = "#4d8f81";
-            newSDepo.style.color = "#4d8f81";
-          }
-          filtroCodigo.appendChild(newCMinis);
-          filtroNombre.appendChild(newNombre);
-          filtroStockDepo.appendChild(newSDepo);
-          data.push(item);
-        }
-      });
+
+        })
+        break;
     }
-  });
+  })
 
-  filtrosServicio.addEventListener("change", (event) => {
-    if (event.target.selectedIndex == "0") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
-    } else if (event.target.selectedIndex == "1") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
+  filtrosSector.addEventListener("change", (event) => {
+    switch (event.target.selectedIndex) {
+      //Esterilizacion
+      case 1:
 
-      const stockEsterilizacion = total.filter((item) => {
-        return listadoStrlzn.some(
-          (totalItem) => totalItem.CODIGO === item.CODARTICULO
-        );
-      });
-      stockEsterilizacion.forEach((item) => {
-        const newCMinis = document.createElement("li");
-        const newNombre = document.createElement("li");
-        const newSDepo = document.createElement("li");
-        newCMinis.textContent = item.CODARTICULO;
-        if (item.DESCRIPCION.length > 100) {
-          const descCorta = item.DESCRIPCION;
-          newNombre.textContent = descCorta.substring(0, 50) + "...";
-        } else {
-          newNombre.textContent = item.DESCRIPCION;
-        }
-        newSDepo.textContent = item.STOCKENDEPOSITO;
-        if (item.STOCKENDEPOSITO === 0) {
-          newSDepo.style.color = "#b83564";
-        } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-          newSDepo.style.color = "#ffb350";
-        } else {
-          newSDepo.style.color = "#4d8f81";
-        }
-        filtroCodigo.appendChild(newCMinis);
-        filtroNombre.appendChild(newNombre);
-        filtroStockDepo.appendChild(newSDepo);
-        data.push(item);
-      });
-    } else if (event.target.selectedIndex == "2") {
-      data = [];
-      filtroCodigo.textContent = "";
-      filtroNombre.textContent = "";
-      filtroStockDepo.textContent = "";
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "ESTERILIZACION") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
 
-      const stockAlimentacion = total.filter((item) => {
-        return listadoAlimentacion.some(
-          (totalItem) => totalItem.CODIGO === item.CODARTICULO
-        );
-      });
-      stockAlimentacion.forEach((item) => {
-        const newCMinis = document.createElement("li");
-        const newNombre = document.createElement("li");
-        const newSDepo = document.createElement("li");
-        newCMinis.textContent = item.CODARTICULO;
-        if (item.DESCRIPCION.length > 100) {
-          const descCorta = item.DESCRIPCION;
-          newNombre.textContent = descCorta.substring(0, 50) + "...";
-        } else {
-          newNombre.textContent = item.DESCRIPCION;
-        }
-        newSDepo.textContent = item.STOCKENDEPOSITO;
-        if (item.STOCKENDEPOSITO === 0) {
-          newSDepo.style.color = "#b83564";
-        } else if (item.STOCKENDEPOSITO < item.STOCK_MIN * 2) {
-          newSDepo.style.color = "#ffb350";
-        } else {
-          newSDepo.style.color = "#4d8f81";
-        }
-        filtroCodigo.appendChild(newCMinis);
-        filtroNombre.appendChild(newNombre);
-        filtroStockDepo.appendChild(newSDepo);
-        data.push(item);
-      });
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Alimentacion
+      case 2:
+
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "ALIMENTACION") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Sueros
+      case 3:
+
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "SUEROS") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Programas
+      case 4:
+
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosSectorProgramas.style.display = "inline"
+        filtrosSectorProgramas.addEventListener("change", (event) => {
+          switch (event.target.selectedIndex) {
+            case 1:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "PROEPI") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDEPOSITO == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDEPOSITO
+                }
+
+              })
+              break;
+
+            case 2:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "TBC") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+
+              })
+              break;
+
+            case 3:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "HIV") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+
+              })
+              break;
+          }
+        })
+
+
+
+        break;
+
     }
-  });
+  })
 
-  btnFiltroVto.addEventListener("click", () => {
+  filtrosVencimiento.addEventListener("change", (event) => {
     data = [];
-    filtroCodigo.textContent = "";
-    filtroNombre.textContent = "";
-    filtroStockDepo.textContent = "";
-    const fecha = filtrosVencimiento.value + filtrosVencimientoY.value;
-    fechaobjeto = fecha;
-    const coincidencia = listadoVto.filter((item) => {
-      if (filtroTodos.checked) {
-        return item.FECHAVTO <= fecha;
-      } else {
-        return item.FECHAVTO == fecha;
-      }
-    });
-    console.log(coincidencia);
-    coincidencia.forEach((item) => {
-      const newCMinis = document.createElement("li");
-      const newNombre = document.createElement("li");
-      const newSDepo = document.createElement("li");
-      newCMinis.textContent = item.CODARTICULO;
-      if (item.NOMBREGENERICO.length > 100) {
-        const descCorta = item.NOMBREGENERICO;
-        newNombre.textContent = descCorta.substring(0, 50) + "...";
-      } else {
-        newNombre.textContent = item.NOMBREGENERICO + " " + item.CONCENTRACION;
-      }
-      newSDepo.textContent = item.STOCKEXISTENTE;
+    switch (event.target.selectedIndex) {
+      //Lista completa
+      case 1:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        btnSeleccionar.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        listadoVto.forEach((articulo) => {
+          const row = tablaListados.insertRow();
+          const codigoCell = row.insertCell(0);
+          const medicacionCell = row.insertCell(1);
+          const loteCell = row.insertCell(2);
+          const vtoCell = row.insertCell(3);
+          const cantidadCell = row.insertCell(4);
 
-      filtroCodigo.appendChild(newCMinis);
-      filtroNombre.appendChild(newNombre);
-      filtroStockDepo.appendChild(newSDepo);
-      data.push(item);
-    });
-  });
+          codigoCell.innerHTML = articulo.CODARTICULO;
+          medicacionCell.innerHTML = articulo.NOMBREGENERICO;
+          loteCell.innerHTML = articulo.NROLOTE
+          vtoCell.innerHTML = articulo.FECHAVTO
+          cantidadCell.innerHTML = articulo.STOCKEXISTENTE
 
-  btnCerrar.addEventListener("click", () => {
-    msjLista.style.display = "none";
-  });
+        })
+        break;
+      //Mes
+      case 2:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        filtrosVencimientoM.style.display = "inline"
+        filtrosVencimientoY.style.display = "inline"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "inline"
+
+        btnSeleccionar.addEventListener('click', () => {
+
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+          const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
+          console.log(listadoVto)
+          const fechaElegida = listadoVto.filter((match) => {
+            const fechaSep = match.FECHAVTO.split("/")
+            const fechaConv = fechaSep[0] + "-" + fechaSep[1] + "-" + fechaSep[2]
+            return fechaConv === fechaBtn
+          })
+
+          fechaElegida.forEach((articulo) => {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const loteCell = row.insertCell(2);
+            const vtoCell = row.insertCell(3);
+            const cantidadCell = row.insertCell(4);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            if (articulo.CONCENTRACION == undefined) {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+            } else {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+            }
+            loteCell.innerHTML = articulo.NROLOTE
+            vtoCell.innerHTML = articulo.FECHAVTO
+            cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+
+          })
+        })
+        break;
+      //Entre fechas
+      case 3:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        filtrosVencimientoM.style.display = "inline"
+        filtrosVencimientoY.style.display = "inline"
+        filtrosVencimientoEFM.style.display = "inline"
+        filtrosVencimientoEFY.style.display = "inline"
+        btnSeleccionar.style.display = "inline"
+
+        btnSeleccionar.addEventListener('click', () => {
+
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+          const fechaElegida = listadoVto.filter(match => {
+            const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
+            const fiSeparada = fechaInicial.split("-")
+            const fechaInicialP = new Date(fiSeparada[2] + "-" + fiSeparada[1] + "-" + fiSeparada[0])
+            const fechaFinal = filtrosVencimientoEFM.value + filtrosVencimientoEFY.value
+            const ffSeparada = fechaFinal.split("-")
+            const fechaFinalP = new Date(ffSeparada[2] + "-" + ffSeparada[1] + "-" + ffSeparada[0])
+            const fVtoS = match.FECHAVTO.split("/")
+            const fVto = new Date(fVtoS[2] + "-" + fVtoS[1] + "-" + fVtoS[0])
+            return fVto >= fechaInicialP && fVto <= fechaFinalP
+          })
+
+          fechaElegida.forEach((articulo) => {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const loteCell = row.insertCell(2);
+            const vtoCell = row.insertCell(3);
+            const cantidadCell = row.insertCell(4);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            if (articulo.CONCENTRACION == undefined) {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+            } else {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+            }
+            loteCell.innerHTML = articulo.NROLOTE
+            vtoCell.innerHTML = articulo.FECHAVTO
+            cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+
+          })
+
+        })
+        break;
+    }
+  })
+
+  //--------------------------- BOTON DESCARGAS--------------------------------
 
   btnDescargar.addEventListener("click", () => {
-    const exportType = "xls";
+    const tablaListados = document.getElementById("tablaListados")
+    const tablaHTML = tablaListados.outerHTML
+    const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
-    const fileName =
-      "lisdado-" +
-      date.getDate() +
-      "-" +
-      date.getMonth() +
-      "-" +
-      date.getFullYear();
-    window.exportFromJSON({ data, fileName, exportType });
-  });
+    saveAs(blob, 'listado_' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
+  })
 }

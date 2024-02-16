@@ -102,26 +102,10 @@ function menubar() {
   })
 }
 
-//////////////////////////////////GENERANDO TOTAL///////////////////////////////////
-
-// function generarTotalOn(dbResponse, listadoResponse, listadoVto) {
-//   const total = dbResponse.map((array1) => {
-//     const coincidencia = listadoResponse.find(
-//       (array2) => array2.CODARTICULO === array1.CODARTICULO
-//     );
-//     if (coincidencia) {
-//       return { ...array1, ...coincidencia };
-//     } else {
-//       return array1;
-//     }
-//   });
-
-//   filtrarDatos(total);
-//   seleccionarArticulo(total, listadoVto)
-//   crearListados(total, listadoVto);
-//   console.log(total)
-// }
-
+function mostrarListados() {
+  const menuListados = document.getElementById("btnListados")
+  menuListados.style.display = "inline"
+}
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
@@ -140,7 +124,7 @@ function generarTotal(dbResponse, listadoResponse, listadoVto) {
   filtrarDatos(total);
   seleccionarArticulo(total, listadoVto)
   crearListados(total, listadoVto);
-  console.log(total)
+  mostrarListados();
 }
 
 
@@ -171,13 +155,15 @@ function filtrarDatos(total) {
       entrada.value = "";
       tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
       total.forEach((item) => {
+        const newOption = document.createElement("option");
+        const atribValue = document.createAttribute("value");
         if (item.HABILITADO == "SI") {
-          const newOption = document.createElement("option");
-          const atribValue = document.createAttribute("value");
           atribValue.value = item.MEDICACION;
+        } else {
+          atribValue.value = item.DESCRIPCION;
+        }
           newOption.setAttributeNode(atribValue);
           datalist.appendChild(newOption);
-        }
       });
 
   }, "500");
@@ -221,7 +207,7 @@ function seleccionarArticulo(total, listadoVto) {
 
     //--------------------------Filtrar un articulo---------------------
 
-    const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value)
+    const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
     nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
     codMinisterial.textContent = articuloEncontrado.CODARTICULO
     if (articuloEncontrado.SERVICIO == "DESPACHO" || articuloEncontrado.SERVICIO == "PROEPI") {
@@ -281,13 +267,13 @@ function crearListados(total, listadoVto) {
   let data = [];
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
-  // btnListadosAbrir.addEventListener("click", () => {
-  //   ventanaListados.style.display = "inline"
-  // })
+  btnListadosAbrir.addEventListener("click", () => {
+    ventanaListados.style.display = "inline"
+  })
 
-  // btnListadosCerrar.addEventListener("click", () => {
-  //   ventanaListados.style.display = "none"
-  // })
+  btnListadosCerrar.addEventListener("click", () => {
+    ventanaListados.style.display = "none"
+  })
 
   //------------------------------Mostrar/Ocultar Selects-------------------------
 
@@ -745,15 +731,10 @@ function crearListados(total, listadoVto) {
   //--------------------------- BOTON DESCARGAS--------------------------------
 
   btnDescargar.addEventListener("click", () => {
-    const exportType = "xls";
+    const tablaListados = document.getElementById("tablaListados")
+    const tablaHTML = tablaListados.outerHTML
+    const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
-    const fileName =
-      "lisdado-" +
-      date.getDate() +
-      "-" +
-      date.getMonth() +
-      "-" +
-      date.getFullYear();
-    window.exportFromJSON({ data, fileName, exportType });
-  });
+    saveAs(blob, 'listado_' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
+  })
 }

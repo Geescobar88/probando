@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <script src="./index.js"></script>
+  <title>Control de Stock</title>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1 class="titulo">Control de stock</h1>
+
+    <div class="filtro">
+      <label class="tituloBuscar">Buscar articulo por:</label>
+      <div class="radioBtn">
+        <div>
+          <input type="radio" name="filtro" id="fNombre" class="filtro" value="Articulos" /><label for="fNombre"
+            class="filtroCheck" id="filtroCheckArt">Nombre</label>
+        </div>
+        <div>
+          <input type="radio" name="filtro" id="fCodigoMin" class="filtro" value="Codigo Ministerial" /><label
+            for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Código</label>
+        </div>
+
+        <button name="filtros" id="filtros" class="bbutton btnFiltros">
+          Listados
+        </button>
+      </div>
+    </div>
+
+    <div class="busqueda" id="busqueda">
+      <input type="text" list="medicacion" id="entrada" class="entrada" disabled />
+      <datalist id="medicacion"></datalist>
+      <button class="bbutton" id="bBorrar">Borrar</button>
+    </div>
+
+    <hr class="linea" />
+
+    <div class="datos">
+      <span id="nombreArticulo" class="nombreArticulo">Descripción: <a href="">No disponible</a></span>
+      <div class="descripcion">
+        <span id="codMinisterial" class="codMinisterial">
+          <h2>#M0000000</h2>
+        </span>
+        <span id="estadoStock" class="estadoStock">Estado</span>
+      </div>
+
+      <div class="contenedorStock">
+        <div class="stock">
+          <span>Stock en Deposito</span>
+          <span id="stockDeposito">00000</span>
+        </div>
+
+        <div class="vto">
+          <h2>Próximo vencimiento hasta 01/26 (Solo referencia - Ultima actualización 16/02/2024)</h2>
+
+          <div class="vtoContainer">
+            <div class="vtoInner">
+              <span>Lote</span>
+              <ul id="proxVtoLote"></ul>
+            </div>
+
+            <div class="vtoInner">
+              <span>Vto</span>
+              <ul id="proxVtoVto"></ul>
+            </div>
+
+            <div class="vtoInner">
+              <span>Cant</span>
+              <ul id="proxVtoCant"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="botonera" class="botonera">
+
+    </div>
+
+    <div class="listaStock" id="listaFiltrar">
+      <div class="listadosSuperior">
+        <h2 class="titulo">Listados</h2>
+        <div class="botoneraFiltros">
+          <select name="tipoFiltros" id="seleccionFiltros">
+            <option value="" selected disabled>Filtrar por:</option>
+            <option value="Stock" id="optionselect">Stock</option>
+            <option value="Servicio">Servicio</option>
+            <option value="vencimiento">Vencimiento</option>
+          </select>
+
+          <select name="filtrosStock" id="filtrosStock">
+            <option value="" selected disabled>Seleccionar listado:</option>
+            <option value="Lista completa" id="lCompleta">
+              Lista Completa
+            </option>
+            <option value="En Stock minimo">En Stock mínimo</option>
+            <option value="Agotados">Agotados</option>
+          </select>
+
+          <select name="filtrosServicio" id="filtrosServicio">
+            <option value="" selected disabled>Seleccionar Servicio</option>
+            <option value="Esterilizacion">Esterilización</option>
+            <option value="Alimentacion">Alimentación</option>
+            <option value="Sueros">Sueros</option>
+          </select>
+
+          <select name="filtrosVencimiento" id="filtrosVencimiento">
+            <option value="31/01">Enero</option>
+            <option value="29/02">Febrero</option>
+            <option value="31/03">Marzo</option>
+            <option value="30/04">Abril</option>
+            <option value="31/05">Mayo</option>
+            <option value="30/06">Junio</option>
+            <option value="31/07">Julio</option>
+            <option value="31/08">Agosto</option>
+            <option value="30/09">Septiembre</option>
+            <option value="31/10">Octubre</option>
+            <option value="30/11">Noviembre</option>
+            <option value="31/12">Diciembre</option>
+          </select>
+
+          <select name="filtrosVencimientoY" id="filtrosVencimientoY">
+            <option value="/2024">2024</option>
+            <option value="/2025">2025</option>
+            <option value="-2026">2026</option>
+          </select>
+          <input type="checkbox" id="filtroTodos" disabled />
+          <!-- <label for="filtroTodos" id="lblfiltroTodos" disabled>Incluir anteriores.</label> -->
+          <button class="bbutton" id="btnFiltroVto">Seleccionar</button>
+        </div>
+      </div>
+
+      <div class="divLista">
+        <div class="filtroContainer">
+          <div class="filtrarInner">
+            <span>Código</span>
+            <ul id="filtroCodigo" class="filtroLista"></ul>
+          </div>
+          <div class="filtrarInner filtrarInnerC">
+            <span>Medicación</span>
+            <ul id="filtroNombre" class="filtroLista"></ul>
+          </div>
+          <div class="filtrarInner">
+            <span>Stock</span>
+            <ul id="filtroStockDepo" class="filtroLista"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="botoneraLista">
+        <button class="bbutton" id="btnDescargar">Descargar</button>
+        <button class="bbutton" id="btnCerrar">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <p class="textoInferior">Ultima actualización: 16/02/24 09:04 hs - <a href="./V2/index.html"> Probá la nueva version</a></p>
+
+  <script src="https://unpkg.com/export-from-json/dist/umd/index.min.js"></script>
+</body>
+
+</html>
