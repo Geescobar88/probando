@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Control_Stock/estilos.css">
+    <title>Etiquetas Oncologia</title>
+</head>
+<body>
+    <header>
+        <span id="menu">☰</span>
+        <h1 class="titulo">Oncologia</h1>
+    </header>
+
+    <div class="container">
+        <section class="dat_Pacientes">
+            <div>
+                <span>Preparacion:</span> <span>1</span>
+                <span>Fecha:</span> <input type="date" class="entrada_p"> 
+            </div>
+            <div>
+                <span>Paciente:</span> <input type="text" class="entrada_p">
+                <span>DNI:</span> <input type="text" class="entrada_p">
+                <span>Cama:</span><input type="text" class="entrada_p">
+            </div>
+        </section>
+
+        <section class="sel_Medicacion">
+            <input type="text" list="medicacion" name="" id="" placeholder="Ingresar medicacion..." class="entrada_p">
+            <br>
+            <span>Laboratorio</span><input type="text" name="" id="" class="entrada_p">
+            <span>Lote: </span><input type="text" name="" id="" class="entrada_p">
+            <span>Vto:</span><input type="text" name="" id="" class="entrada_p">
+            <datalist id="medicacion"></datalist>
+        </section>
+
+        <section class="dat_preparacion">
+            <span>Volumen de droga a tomar: </span> <input type="text" name="" id="" class="entrada_p"> <span>ml</span>
+            <br>
+            <span>Diluir con:</span> <input type="text" name="" id="" class="entrada_p"> <span>ml de </span> <select name="" id="sel_diluyente" class="entrada_p"> <option value="Agua">Agua Destilada</option><option value="SF">Sol.Fisiologica</option></select>
+            <br>
+            <span>Nro de dosis: </span> <input type="text" name="" id="" class="entrada_p">
+            <br>
+            <span>Fecha de infusion:</span> <input type="date" name="" id="" class="entrada_p">
+            <br>
+            <span>Fecha de vencimiento</span> <input type="date" name="" id="" class="entrada_p">
+        </section>
+
+        <section class="muestra_tabla">
+            <button>Ver/Ocultar tabla</button>
+            <table>
+                <th>MEDICACION</th>
+                <th>DOSIS</th>
+                <th>PACIENTE</th>
+                <th>DNI</th>
+                <th>CAMA</th>
+                <th>FECHA</th>
+                <th>F_INF</th>
+                <th>OBS</th>
+            </table>
+        </section>
+
+        <section class="muestra_etiq">
+            <button>Ver/Ocultar etiqueta</button>
+        </section>
+
+        <section class="botonera">
+            <button class="bbutton">Agregar</button>
+            <button class="bbutton">Borrar</button>
+            <button class="bbutton">Finalizar</button>
+        </section>
+    </div>
+
+<script src="index.js"></script>
+</body>
+</html>
