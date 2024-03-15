@@ -16,39 +16,39 @@
         <section class="dat_Pacientes">
             <div>
                 <span>Preparacion:</span> <span>1</span>
-                <span>Fecha:</span> <input type="date" class="entrada_p"> 
+                <span>Fecha:</span> <input type="date" class="entrada_p" id="fecha"> 
             </div>
             <div>
-                <span>Paciente:</span> <input type="text" class="entrada_p">
-                <span>DNI:</span> <input type="text" class="entrada_p">
-                <span>Cama:</span><input type="text" class="entrada_p">
+                <span>Paciente:</span> <input type="text" class="entrada_p" id="paciente">
+                <span>DNI:</span> <input type="text" class="entrada_p" id="dni">
+                <span>Cama:</span><input type="text" class="entrada_p" id="cama">
             </div>
         </section>
 
         <section class="sel_Medicacion">
-            <input type="text" list="medicacion" name="" id="" placeholder="Ingresar medicacion..." class="entrada_p">
+            <input type="text" list="medicacion" name="" id="articulo" placeholder="Ingresar medicacion..." class="entrada_p">
             <br>
-            <span>Laboratorio</span><input type="text" name="" id="" class="entrada_p">
-            <span>Lote: </span><input type="text" name="" id="" class="entrada_p">
-            <span>Vto:</span><input type="text" name="" id="" class="entrada_p">
+            <span>Laboratorio</span><input type="text" name="" id="laboratorio" class="entrada_p">
+            <span>Lote: </span><input type="text" name="" id="lote" class="entrada_p">
+            <span>Vto:</span><input type="text" name="" id="vto" class="entrada_p">
             <datalist id="medicacion"></datalist>
         </section>
 
         <section class="dat_preparacion">
-            <span>Volumen de droga a tomar: </span> <input type="text" name="" id="" class="entrada_p"> <span>ml</span>
+            <span>Volumen de droga a tomar: </span> <input type="text" name="" id="volumen" class="entrada_p"> <span>ml</span>
             <br>
-            <span>Diluir con:</span> <input type="text" name="" id="" class="entrada_p"> <span>ml de </span> <select name="" id="sel_diluyente" class="entrada_p"> <option value="Agua">Agua Destilada</option><option value="SF">Sol.Fisiologica</option></select>
+            <span>Diluir con:</span> <input type="text" name="" id="diluir_ml" class="entrada_p"> <span>ml de </span> <select name="" id="diluyente" class="entrada_p"> <option value="Agua">Agua Destilada</option><option value="SF">Sol.Fisiologica</option></select>
             <br>
-            <span>Nro de dosis: </span> <input type="text" name="" id="" class="entrada_p">
+            <span>Nro de dosis: </span> <input type="text" name="" id="dosis" class="entrada_p">
             <br>
-            <span>Fecha de infusion:</span> <input type="date" name="" id="" class="entrada_p">
+            <span>Fecha de infusion:</span> <input type="date" name="" id="fecha_inf" class="entrada_p">
             <br>
-            <span>Fecha de vencimiento</span> <input type="date" name="" id="" class="entrada_p">
+            <span>Fecha de vencimiento</span> <input type="date" name="" id="fecha_vto" class="entrada_p">
         </section>
 
         <section class="muestra_tabla">
             <button>Ver/Ocultar tabla</button>
-            <table>
+            <table id="tabla">
                 <th>MEDICACION</th>
                 <th>DOSIS</th>
                 <th>PACIENTE</th>
