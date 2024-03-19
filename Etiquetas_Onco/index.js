@@ -24,6 +24,8 @@ const dosis = document.getElementById('dosis').value;
 const fecha_inf = document.getElementById('fecha_inf');
 const fecha_vto = document.getElementById('fecha_vto');
 
+const tabla = document.getElementById('tabla')
+
 
 const ingreso = new Object();
 
@@ -82,4 +84,25 @@ dosis.value = ""
 fecha_inf.value = ""
 fecha_vto.value = ""
 
+
+
 })
+
+//Etiqueta
+
+const mostrarEtiqueta = document.getElementById('mostrarEtiqueta');
+const etiqueta_container = document.getElementById('etiqueta_container');
+
+mostrarEtiqueta.addEventListener('click', () => {
+
+    if (etiqueta_container.style.display == "inline") {
+        etiqueta_container.style.display = "none"
+    } else {
+        etiqueta_container.style.display = "inline"
+    }
+
+})
+
+
+
+
