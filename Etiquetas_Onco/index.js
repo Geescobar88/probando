@@ -1,8 +1,11 @@
 var lista_ingresos = [];
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
-
+ fetch('./data/db_med.json')
+    .then (response => response.json())
+    .then(data => data)
 });
 
 const btnAgregar = document.getElementById("btnAgregar")
