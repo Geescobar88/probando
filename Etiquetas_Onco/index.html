@@ -26,7 +26,7 @@
         </section>
 
         <section class="sel_Medicacion">
-            <input type="text" list="medicacion" name="" id="articulo" placeholder="Ingresar medicacion..." class="entrada_p">
+            <input type="text" list="medicacion" name="" id="articulo" placeholder="Ingresar medicacion..." class="entrada_art_p">
             <br>
             <span>Laboratorio</span><input type="text" name="" id="laboratorio" class="entrada_p">
             <span>Lote: </span><input type="text" name="" id="lote" class="entrada_p">
@@ -44,6 +44,10 @@
             <span>Fecha de infusion:</span> <input type="date" name="" id="fecha_inf" class="entrada_p">
             <br>
             <span>Fecha de vencimiento</span> <input type="date" name="" id="fecha_vto" class="entrada_p">
+            <br>
+            <input type="checkbox"> Proteger de la luz.
+            <br>
+            <input type="checkbox"> Refrigerar.
         </section>
 
         <section class="muestra_tabla">
@@ -66,14 +70,14 @@
                 <div class="etiqueta">
                     <table id="tablaEtiqueta">
                         <tr>
-                            <td colspan="2">medicacion</td>
-                            <td>dosis</td>
+                            <td colspan="2" id="etq_medicacion">medicacion</td>
+                            <td id="etq_dosis">dosis</td>
                             <td>mg</td>
                         </tr>
                         <tr>
-                            <td>Paciente</td>
-                            <td>Dni</td>
-                            <td>Cama:</td>
+                            <td id="etq_paciente">Paciente</td>
+                            <td id="etq_dni">Dni</td>
+                            <td id="etq_cama">Cama:</td>
                             <td>00</td>
                         </tr>
                         <tr>

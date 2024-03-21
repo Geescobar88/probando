@@ -177,6 +177,13 @@ td {
     background-color: var(--secundario);
 }
 
+.entrada_art_p{
+    width: 50%;
+    border-radius: 3px;
+    border: 2px solid var(--fuerte);
+    background-color: var(--secundario);
+}
+
 /* ----------------------------------DATOS---------------------------------- */
 
 .datos {
