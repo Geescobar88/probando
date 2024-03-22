@@ -18,16 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const tabla = document.getElementById("tabla")
-    const celda = tabla.getElementsByTagName("tr")
-
-    // for (i = 0; 1 < celda.length; i++) {
-    //     celda[i].addEventListener("click", () => {
-    //         const rowIndex = this.rowIndex;
-    //         console.log(rowIndex)
-
-    //     })
-    // }
-
     tabla.addEventListener("click", (evento) => {
         let target = evento.target;
         while (target && target !== tabla) {
@@ -41,9 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function cargarEtiqueta(orden) {
-    console.log(orden)
+        const medicacion = document.getElementById('etq_medicacion')
+        const dosis = document.getElementById('etq_dosis')
+        const paciente = document.getElementById('etq_paciente')
+        const dni = document.getElementById('etq_dni')
+        const cama = document.getElementById('etq_camaN')
+        const fechaElab = document.getElementById('etq_fElab')
+        const fechaVto = document.getElementById('etq_fVto')
+        const volTotal = document.getElementById('etq_volTotal')
+        const diluyente = document.getElementById('etq_diluyente')
 
-    const medicacion = document.getElementById("")
+        if (orden != 0) {
+           const i = orden - 1
+
+           medicacion.textContent = lista_ingresos[i].articulo
+           dosis.textContent = lista_ingresos[i].dosis
+           paciente.textContent = lista_ingresos[i].paciente
+           dni.textContent = lista_ingresos[i].dni
+           cama.textContent = lista_ingresos[i].cama
+           fechaElab.textContent = lista_ingresos[i].fecha
+           fechaVto.textContent = lista_ingresos[i].fechaVto
+           volTotal.textContent = lista_ingresos[i].volTotal
+           diluyente.textContent = lista_ingresos[i].diluyente
+        }
 
     }
 });

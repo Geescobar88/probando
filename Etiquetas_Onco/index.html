@@ -24,7 +24,7 @@
                 <span>Cama:</span><input type="text" class="entrada_p" id="cama">
             </div>
         </section>
-
+        <hr>
         <section class="sel_Medicacion">
             <input type="text" list="medicacion" name="" id="articulo" placeholder="Ingresar medicacion..." class="entrada_art_p">
             <br>
@@ -33,7 +33,7 @@
             <span>Vto:</span><input type="text" name="" id="vto" class="entrada_p">
             <datalist id="medicacion"></datalist>
         </section>
-
+        <hr>
         <section class="dat_preparacion">
             <span>Volumen de droga a tomar: </span> <input type="text" name="" id="volumen" class="entrada_p"> <span>ml</span>
             <br>
@@ -49,6 +49,8 @@
             <br>
             <input type="checkbox"> Refrigerar.
         </section>
+        
+        <hr>
 
         <section class="muestra_tabla">
             <button>Ver/Ocultar tabla</button>
@@ -77,20 +79,20 @@
                         <tr>
                             <td id="etq_paciente">Paciente</td>
                             <td id="etq_dni">Dni</td>
-                            <td id="etq_cama">Cama:</td>
-                            <td>00</td>
+                            <td>Cama:</td>
+                            <td id="etq_camaN">00</td>
                         </tr>
                         <tr>
                             <td>Fecha:</td>
-                            <td>11/11/11</td>
+                            <td id="etq_fElab">11/11/11</td>
                             <td>Fecha Inf.</td>
-                            <td>11/11/11</td>
+                            <td id="etq_fVto">11/11/11</td>
                         </tr>
                         <tr>
                             <td>Vol.Total</td>
-                            <td>00</td>
+                            <td id="etq_volTotal">00</td>
                             <td>en</td>
-                            <td>diluyente</td>
+                            <td id="etq_diluyente">diluyente</td>
                         </tr>
                     </table>
                 </div>
