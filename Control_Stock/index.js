@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   cargarDatos();
+  mostrarBody();
 });
+
+function mostrarBody() {
+  const body = document.getElementById("body")
+  body.style.display = "flex"
+}
 
 async function cargarDatos() {
   const db = await fetch("./data/DB.json");
