@@ -136,7 +136,9 @@ function seleccionarArticulo(total, listadoVto) {
   const entrada = document.getElementById("entrada");
   const nomArticulo = document.getElementById("nombreArticulo");
   const codMinisterial = document.getElementById("codMinisterial");
+  const stockDepositoContainer = document.getElementById("stockDepositoContainer");
   const stockDeposito = document.getElementById("stockDeposito");
+  const stockDepositoLabel = document.getElementById('stockDepositoLabel')
   const estadoStock = document.getElementById("estadoStock")
   const consumo = document.getElementById("consumo")
 
@@ -166,6 +168,21 @@ function seleccionarArticulo(total, listadoVto) {
       estadoStock.textContent = "Minimo"
       estadoStock.style.color = "black";
     }
+
+    //--------------------------Alternar Deposito/Farmacia---------------------
+    let aux = 0;
+    stockDepositoContainer.addEventListener("click", ()=> {
+      if (aux == 0) {
+        stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
+        stockDepositoLabel.textContent = "Stock en Farmacia"
+        aux =+ 1
+      } else if (aux == 1){
+        stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+        stockDepositoLabel.textContent = "Stock en Deposito"
+        aux = aux - 1
+      }
+    })
+
 
     //--------------------------Tabla de vencimientos---------------------
 
