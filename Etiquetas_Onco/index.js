@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             newOption.setAttributeNode(atribValue);
             datalist.appendChild(newOption);
         });
+
+        const mostrarbody = document.getElementById("body")
+
+        mostrarbody.style.display = "flex"
+
     }
 
     const tabla = document.getElementById("tabla")
