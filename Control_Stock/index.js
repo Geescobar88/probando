@@ -81,8 +81,8 @@ function filtrarDatos(total) {
         } else {
           atribValue.value = item.DESCRIPCION;
         }
-          newOption.setAttributeNode(atribValue);
-          datalist.appendChild(newOption);
+        newOption.setAttributeNode(atribValue);
+        datalist.appendChild(newOption);
       });
     }
   });
@@ -98,9 +98,9 @@ function filtrarDatos(total) {
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
-          atribValue.value = item.CODARTICULO;
-          newOption.setAttributeNode(atribValue);
-          datalist.appendChild(newOption);
+        atribValue.value = item.CODARTICULO;
+        newOption.setAttributeNode(atribValue);
+        datalist.appendChild(newOption);
       });
     }
   });
@@ -171,12 +171,12 @@ function seleccionarArticulo(total, listadoVto) {
 
     //--------------------------Alternar Deposito/Farmacia---------------------
     let aux = 0;
-    stockDepositoContainer.addEventListener("click", ()=> {
+    stockDepositoContainer.addEventListener("click", () => {
       if (aux == 0) {
         stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
         stockDepositoLabel.textContent = "Stock en Farmacia"
-        aux =+ 1
-      } else if (aux == 1){
+        aux = + 1
+      } else if (aux == 1) {
         stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
         stockDepositoLabel.textContent = "Stock en Deposito"
         aux = aux - 1
@@ -285,7 +285,7 @@ function crearListados(total, listadoVto) {
       //Listado Completo
       case 1:
 
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Deposito</th><th>Farmacia</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI") {
             const row = tablaListados.insertRow();
@@ -293,6 +293,7 @@ function crearListados(total, listadoVto) {
             const medicacionCell = row.insertCell(1);
             const estadoCell = row.insertCell(2);
             const stockCell = row.insertCell(3);
+            const stockFCell = row.insertCell(4)
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             medicacionCell.innerHTML = articulo.MEDICACION;
@@ -307,6 +308,7 @@ function crearListados(total, listadoVto) {
               estadoCell.style.color = "red"
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
+            stockFCell.innerHTML = articulo.STOCKENDISPENSACION
           }
 
         })
@@ -561,9 +563,6 @@ function crearListados(total, listadoVto) {
               break;
           }
         })
-
-
-
         break;
 
     }
