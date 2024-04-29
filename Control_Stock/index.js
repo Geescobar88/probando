@@ -609,7 +609,7 @@ function crearListados(total, listadoVto) {
           console.log(listadoVto)
           const fechaElegida = listadoVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
-            const fechaConv = fechaSep[0] + "-" + fechaSep[1] + "-" + fechaSep[2]
+            const fechaConv = fechaSep[0] + "/" + fechaSep[1] + "/" + fechaSep[2]
             return fechaConv === fechaBtn
           })
 
@@ -648,13 +648,13 @@ function crearListados(total, listadoVto) {
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
           const fechaElegida = listadoVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
-            const fiSeparada = fechaInicial.split("-")
-            const fechaInicialP = new Date(fiSeparada[2] + "-" + fiSeparada[1] + "-" + fiSeparada[0])
+            const fiSeparada = fechaInicial.split("/")
+            const fechaInicialP = new Date(fiSeparada[2] + "/" + fiSeparada[1] + "/" + fiSeparada[0])
             const fechaFinal = filtrosVencimientoEFM.value + filtrosVencimientoEFY.value
-            const ffSeparada = fechaFinal.split("-")
-            const fechaFinalP = new Date(ffSeparada[2] + "-" + ffSeparada[1] + "-" + ffSeparada[0])
+            const ffSeparada = fechaFinal.split("/")
+            const fechaFinalP = new Date(ffSeparada[2] + "/" + ffSeparada[1] + "/" + ffSeparada[0])
             const fVtoS = match.FECHAVTO.split("/")
-            const fVto = new Date(fVtoS[2] + "-" + fVtoS[1] + "-" + fVtoS[0])
+            const fVto = new Date(fVtoS[2] + "/" + fVtoS[1] + "/" + fVtoS[0])
             return fVto >= fechaInicialP && fVto <= fechaFinalP
           })
 
