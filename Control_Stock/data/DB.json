@@ -4168,6 +4168,14 @@
         "PRIORIDAD": 0
     },
     {
+        "CODARTICULO": "M1224112",
+        "MEDICACION": "TIORIDAZINA COMPRIMIDOS 25MG",
+        "STOCK_MIN": 900,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 0
+    },
+    {
         "CODARTICULO": "M1224113",
         "MEDICACION": "TIORIDAZINA COMPRIMIDOS 200MG",
         "STOCK_MIN": 900,
