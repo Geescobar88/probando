@@ -3016,6 +3016,22 @@
         "PRIORIDAD": 0
     },
     {
+        "CODARTICULO": "M3201013",
+        "MEDICACION": "METOTREXATO COMPRIMIDOS 2.5MG",
+        "STOCK_MIN": 450,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 0
+    },
+    {
+        "CODARTICULO": "M3259198",
+        "MEDICACION": "METOTREXATO COMPRIMIDOS 15MG",
+        "STOCK_MIN": 450,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 0
+    },
+    {
         "CODARTICULO": "M3101060",
         "MEDICACION": "METRONIDAZOL + ASOCIADOS OVULOS",
         "STOCK_MIN": 130,
@@ -3100,14 +3116,6 @@
         "MEDICACION": "MONTELUKAST COMPRIMIDOS 10MG",
         "STOCK_MIN": 300,
         "HABILITADO": "SI",
-        "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
-    },
-    {
-        "CODARTICULO": "M0216116",
-        "MEDICACION": "MORFINA - AMP - 10MG (EC)",
-        "STOCK_MIN": 1800,
-        "HABILITADO": "NO",
         "SERVICIO": "DESPACHO",
         "PRIORIDAD": 0
     },
@@ -3690,14 +3698,6 @@
     {
         "CODARTICULO": "M2201121",
         "MEDICACION": "RANITIDINA AMPOLLAS 50MG",
-        "STOCK_MIN": 4800,
-        "HABILITADO": "SI",
-        "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
-    },
-    {
-        "CODARTICULO": "M2203112",
-        "MEDICACION": "RANITIDINA AMPOLLAS 50MG (EC)",
         "STOCK_MIN": 4800,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
