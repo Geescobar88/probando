@@ -15,10 +15,25 @@ async function cargarDatos() {
   const listadoResponse = await listado.json();
   const vto = await fetch("./data/vto.json")
   const listadoVto = await vto.json();
+  const vtoF = await fetch("./data/vto_F.json")
+  const listadoVtoF = await vtoF.json();
 
-  generarTotal(dbResponse, listadoResponse, listadoVto);
+  const totalVto = listadoVto.map((array1) => {
+    const coincidencia = listadoVtoF.find(
+      (array2) => array2.NROLOTE === array1.NROLOTE
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
+
+
+
+
+  generarTotal(dbResponse, listadoResponse, listadoVto, totalVto);
   menubar();
-
 }
 
 ///////////////////////////////////////MENU/////////////////////////////////////////
@@ -32,7 +47,7 @@ function menubar() {
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
-function generarTotal(dbResponse, listadoResponse, listadoVto) {
+function generarTotal(dbResponse, listadoResponse, listadoVto, totalVto) {
   const total = dbResponse.map((array1) => {
     const coincidencia = listadoResponse.find(
       (array2) => array2.CODARTICULO === array1.CODARTICULO
@@ -45,8 +60,8 @@ function generarTotal(dbResponse, listadoResponse, listadoVto) {
   });
 
   filtrarDatos(total);
-  seleccionarArticulo(total, listadoVto)
-  crearListados(total, listadoVto);
+  seleccionarArticulo(total, totalVto)
+  crearListados(total, totalVto);
 }
 
 ///////////////////////////////////FILTRANDO DATOS//////////////////////////////////
@@ -132,7 +147,7 @@ function filtrarDatos(total) {
 
 //////////////////////////////////SELECCIONANDO ARTICULO////////////////////////////
 
-function seleccionarArticulo(total, listadoVto) {
+function seleccionarArticulo(total, totalVto) {
   const entrada = document.getElementById("entrada");
   const nomArticulo = document.getElementById("nombreArticulo");
   const codMinisterial = document.getElementById("codMinisterial");
@@ -185,27 +200,33 @@ function seleccionarArticulo(total, listadoVto) {
 
     //--------------------------Tabla de vencimientos---------------------
 
-    const filtroArtVto = listadoVto.filter((match) => {
+    const filtroArtVto = totalVto.filter((match) => {
       return articuloEncontrado.CODARTICULO === match.CODARTICULO
     })
 
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
     filtroArtVto.forEach((articulo) => {
       const row = tabla.insertRow();
       const loteCell = row.insertCell(0);
       const vencimientoCell = row.insertCell(1);
       const cantidadCell = row.insertCell(2);
+      const cantidadFCell = row.insertCell(3);
 
       loteCell.innerHTML = articulo.NROLOTE;
       vencimientoCell.innerHTML = articulo.FECHAVTO;
       cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
+      if (articulo.STOCKEXISTENTE_F == undefined) {
+        cantidadFCell.innerHTML = "----";
+      } else {
+      cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
+      }
     })
   })
 }
 
 /////////////////////////////////////////LISTADOS///////////////////////////////////
 
-function crearListados(total, listadoVto) {
+function crearListados(total, totalVto) {
   const btnListadosAbrir = document.getElementById("btnListados")
   const btnListadosCerrar = document.getElementById("btnCerrar")
   const ventanaListados = document.getElementById("listados")
@@ -231,8 +252,6 @@ function crearListados(total, listadoVto) {
   })
 
   //------------------------------Mostrar/Ocultar Selects-------------------------
-
-
 
   seleccionFiltros.addEventListener("change", (event) => {
     switch (event.target.selectedIndex) {
@@ -572,29 +591,36 @@ function crearListados(total, listadoVto) {
     switch (event.target.selectedIndex) {
       //Lista completa
       case 1:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
         btnSeleccionar.style.display = "none"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
-        listadoVto.forEach((articulo) => {
+        totalVto.forEach((articulo) => {
           const row = tablaListados.insertRow();
           const codigoCell = row.insertCell(0);
           const medicacionCell = row.insertCell(1);
           const loteCell = row.insertCell(2);
           const vtoCell = row.insertCell(3);
           const cantidadCell = row.insertCell(4);
+          const cantidadFCell = row.insertCell(5);
 
           codigoCell.innerHTML = articulo.CODARTICULO;
           medicacionCell.innerHTML = articulo.NOMBREGENERICO;
           loteCell.innerHTML = articulo.NROLOTE
           vtoCell.innerHTML = articulo.FECHAVTO
           cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+          if (articulo.STOCKEXISTENTE_F == undefined) {
+            cantidadFCell.innerHTML = "-----"
+          }
+          else {
+            cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+          }
 
         })
         break;
       //Mes
       case 2:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "none"
@@ -603,10 +629,9 @@ function crearListados(total, listadoVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
-          console.log(listadoVto)
-          const fechaElegida = listadoVto.filter((match) => {
+          const fechaElegida = totalVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
             const fechaConv = fechaSep[0] + "/" + fechaSep[1] + "/" + fechaSep[2]
             return fechaConv === fechaBtn
@@ -619,6 +644,7 @@ function crearListados(total, listadoVto) {
             const loteCell = row.insertCell(2);
             const vtoCell = row.insertCell(3);
             const cantidadCell = row.insertCell(4);
+            const cantidadFCell = row.insertCell(5);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             if (articulo.CONCENTRACION == undefined) {
@@ -629,13 +655,19 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+            if (articulo.STOCKEXISTENTE_F == undefined) {
+              cantidadFCell.innerHTML = "-----"
+            }
+            else {
+              cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+            }
 
           })
         })
         break;
       //Entre fechas
       case 3:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "inline"
@@ -644,8 +676,8 @@ function crearListados(total, listadoVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
-          const fechaElegida = listadoVto.filter(match => {
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+          const fechaElegida = totalVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
             const fiSeparada = fechaInicial.split("/")
             const fechaInicialP = new Date(fiSeparada[2] + "/" + fiSeparada[1] + "/" + fiSeparada[0])
@@ -664,6 +696,7 @@ function crearListados(total, listadoVto) {
             const loteCell = row.insertCell(2);
             const vtoCell = row.insertCell(3);
             const cantidadCell = row.insertCell(4);
+            const cantidadFCell = row.insertCell(5);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             if (articulo.CONCENTRACION == undefined) {
@@ -674,6 +707,12 @@ function crearListados(total, listadoVto) {
             loteCell.innerHTML = articulo.NROLOTE
             vtoCell.innerHTML = articulo.FECHAVTO
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+            if (articulo.STOCKEXISTENTE_F == undefined) {
+              cantidadFCell.innerHTML = "-----"
+            }
+            else {
+              cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+            }
 
           })
 

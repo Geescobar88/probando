@@ -96,6 +96,7 @@ select {
 .tabla {
     border-collapse: collapse;
     width: 100%;
+    font-size: 12px;
 }
 
 th, td {
@@ -109,7 +110,17 @@ th {
     background-color: var(--fuerte);
     border-right-color: var(--oscuro) ;
     color: var(--claro);
+
 }
+
+.thListados th {
+    border: 0px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+}
+
 td {
     font-size: 14px;
 }
