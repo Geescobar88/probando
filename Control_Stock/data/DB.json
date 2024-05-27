@@ -2936,6 +2936,14 @@
         "PRIORIDAD": 0
     },
     {
+        "CODARTICULO": "M0200104",
+        "MEDICACION": "METADONA 5 MG COMP",
+        "STOCK_MIN": 250,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 0
+    },
+    {
         "CODARTICULO": "M0200106",
         "MEDICACION": "METADONA 10 MG COMP",
         "STOCK_MIN": 250,
@@ -4400,7 +4408,7 @@
         "PRIORIDAD": 0
     },
     {
-        "CODARTICULO": "M4101005",
+        "CODARTICULO": "M4101008",
         "MEDICACION": "VECURONIO FCO AMPOLLA 10MG",
         "STOCK_MIN": 0,
         "HABILITADO": "SI",
