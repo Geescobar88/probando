@@ -258,7 +258,7 @@ td {
     display: none;
     position: absolute;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     height: 90%;
     border: 2px solid var(--fuerte);
     border-radius: 5px;

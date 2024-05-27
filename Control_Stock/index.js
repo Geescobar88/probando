@@ -29,10 +29,20 @@ async function cargarDatos() {
     }
   });
 
+  const totalVto2 = totalVto.map((array1) => {
+    const coincidencia = dbResponse.find(
+      (array2) => array2.CODARTICULO === array1.CODARTICULO
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
 
+  console.log(totalVto2)
 
-
-  generarTotal(dbResponse, listadoResponse, listadoVto, totalVto);
+  generarTotal(dbResponse, listadoResponse, totalVto2);
   menubar();
 }
 
@@ -47,7 +57,7 @@ function menubar() {
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
-function generarTotal(dbResponse, listadoResponse, listadoVto, totalVto) {
+function generarTotal(dbResponse, listadoResponse, totalVto) {
   const total = dbResponse.map((array1) => {
     const coincidencia = listadoResponse.find(
       (array2) => array2.CODARTICULO === array1.CODARTICULO
@@ -186,13 +196,13 @@ function seleccionarArticulo(total, totalVto) {
         stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
         stockDepositoLabel.textContent = "Stock en Farmacia"
         stockDepositoLabel.style.color = "#ffffff"
-        stockDepositoContainer.style.backgroundColor ="#94a8e6"
+        stockDepositoContainer.style.backgroundColor = "#94a8e6"
         aux = + 1
       } else if (aux == 1) {
         stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
         stockDepositoLabel.textContent = "Stock en Deposito"
         stockDepositoLabel.style.color = "#0A0A0A"
-        stockDepositoContainer.style.backgroundColor ="#ebe7e0"
+        stockDepositoContainer.style.backgroundColor = "#ebe7e0"
         aux = aux - 1
       }
     })
@@ -218,7 +228,7 @@ function seleccionarArticulo(total, totalVto) {
       if (articulo.STOCKEXISTENTE_F == undefined) {
         cantidadFCell.innerHTML = "----";
       } else {
-      cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
+        cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
       }
     })
   })
@@ -591,7 +601,7 @@ function crearListados(total, totalVto) {
     switch (event.target.selectedIndex) {
       //Lista completa
       case 1:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
         btnSeleccionar.style.display = "none"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
@@ -603,12 +613,18 @@ function crearListados(total, totalVto) {
           const vtoCell = row.insertCell(3);
           const cantidadCell = row.insertCell(4);
           const cantidadFCell = row.insertCell(5);
+          const StockMinCell = row.insertCell(6);
 
           codigoCell.innerHTML = articulo.CODARTICULO;
-          medicacionCell.innerHTML = articulo.NOMBREGENERICO;
+          if (articulo.CONCENTRACION == undefined) {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+          } else {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+          }
           loteCell.innerHTML = articulo.NROLOTE
           vtoCell.innerHTML = articulo.FECHAVTO
           cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+
           if (articulo.STOCKEXISTENTE_F == undefined) {
             cantidadFCell.innerHTML = "-----"
           }
@@ -616,11 +632,18 @@ function crearListados(total, totalVto) {
             cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
           }
 
+          if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
+            StockMinCell.innerHTML = "-----"
+          }
+          else {
+            StockMinCell.innerHTML = articulo.STOCK_MIN
+          }
+
         })
         break;
       //Mes
       case 2:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "none"
@@ -629,7 +652,7 @@ function crearListados(total, totalVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
           const fechaElegida = totalVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
@@ -645,6 +668,7 @@ function crearListados(total, totalVto) {
             const vtoCell = row.insertCell(3);
             const cantidadCell = row.insertCell(4);
             const cantidadFCell = row.insertCell(5);
+            const StockMinCell = row.insertCell(6);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             if (articulo.CONCENTRACION == undefined) {
@@ -662,12 +686,19 @@ function crearListados(total, totalVto) {
               cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
             }
 
+            if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
+              StockMinCell.innerHTML = "-----"
+            }
+            else {
+              StockMinCell.innerHTML = articulo.STOCK_MIN
+            }
+
           })
         })
         break;
       //Entre fechas
       case 3:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "inline"
@@ -676,7 +707,7 @@ function crearListados(total, totalVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th></tr>";
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
           const fechaElegida = totalVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
             const fiSeparada = fechaInicial.split("/")
@@ -697,6 +728,7 @@ function crearListados(total, totalVto) {
             const vtoCell = row.insertCell(3);
             const cantidadCell = row.insertCell(4);
             const cantidadFCell = row.insertCell(5);
+            const StockMinCell = row.insertCell(6);
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             if (articulo.CONCENTRACION == undefined) {
@@ -712,6 +744,13 @@ function crearListados(total, totalVto) {
             }
             else {
               cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+            }
+
+            if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
+              StockMinCell.innerHTML = "-----"
+            }
+            else {
+              StockMinCell.innerHTML = articulo.STOCK_MIN
             }
 
           })
