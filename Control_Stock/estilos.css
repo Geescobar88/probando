@@ -96,7 +96,6 @@ select {
 .tabla {
     border-collapse: collapse;
     width: 100%;
-    font-size: 12px;
 }
 
 th, td {

@@ -97,7 +97,7 @@ function filtrarDatos(total) {
     if (filtroArt.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -119,7 +119,7 @@ function filtrarDatos(total) {
     if (filtroCm.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -601,7 +601,7 @@ function crearListados(total, totalVto) {
     switch (event.target.selectedIndex) {
       //Lista completa
       case 1:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
         btnSeleccionar.style.display = "none"
         filtrosVencimientoM.style.display = "none"
         filtrosVencimientoY.style.display = "none"
@@ -643,7 +643,7 @@ function crearListados(total, totalVto) {
         break;
       //Mes
       case 2:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "none"
@@ -652,7 +652,7 @@ function crearListados(total, totalVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
           const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
           const fechaElegida = totalVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
@@ -698,7 +698,7 @@ function crearListados(total, totalVto) {
         break;
       //Entre fechas
       case 3:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
         filtrosVencimientoEFM.style.display = "inline"
@@ -707,7 +707,7 @@ function crearListados(total, totalVto) {
 
         btnSeleccionar.addEventListener('click', () => {
 
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Minimo</th></tr>";
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
           const fechaElegida = totalVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
             const fiSeparada = fechaInicial.split("/")
