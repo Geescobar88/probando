@@ -1,17 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   cargarDatos();
-  mostrarBody();
 });
-
-function mostrarBody() {
-  const body = document.getElementById("body")
-  body.style.display = "flex"
-}
 
 async function cargarDatos() {
   const db = await fetch("./data/DB.json");
   const dbResponse = await db.json();
-  const listado = await fetch("./data/stock.json");
+  const listado = await fetch("./data/stock.json")
   const listadoResponse = await listado.json();
   const vto = await fetch("./data/vto.json")
   const listadoVto = await vto.json();
@@ -40,8 +34,6 @@ async function cargarDatos() {
     }
   });
 
-  console.log(totalVto2)
-
   generarTotal(dbResponse, listadoResponse, totalVto2);
   menubar();
 }
@@ -50,9 +42,17 @@ async function cargarDatos() {
 
 function menubar() {
   menu = document.getElementById("menu")
-  menu.addEventListener("click", () => {
-    alert("Esto hará algo en un futuro..")
+  menu_btn = document.getElementById("menu_btn")
+  menu_close = document.getElementById("menu_close")
+
+  menu_btn.addEventListener("click", () => {
+    menu.style.display = "flex"
   })
+
+  menu_close.addEventListener("click", () => {
+    menu.style.display = "none"
+  })
+
 }
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
@@ -140,7 +140,7 @@ function filtrarDatos(total) {
     estadoStock.textContent = "-----"
     estadoStock.style.color = "black"
     consumo.textContent = "-----"
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
   })
 
   busqueda.addEventListener("click", () => {
