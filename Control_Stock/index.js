@@ -374,7 +374,37 @@ function crearListados(total, totalVto) {
 
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
+
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Control
+      case 4:
+        console.log(total)
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.PRIORIDAD == 1) {
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
             const medicacionCell = row.insertCell(1);
@@ -541,7 +571,7 @@ function crearListados(total, totalVto) {
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-
+                  
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";

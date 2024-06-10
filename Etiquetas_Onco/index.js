@@ -165,3 +165,16 @@ mostrarEtiqueta.addEventListener('click', () => {
 
 
 
+//Imprimir
+
+const btnImprimir = document.getElementById('btnImprimir')
+
+btnImprimir.addEventListener('click', () => {
+    var prtContent = document.getElementById("etiqueta");
+    var WinPrint = window.open('', '', 'left=0,top=0,width=211,height=234,toolbar=0,scrollbars=0,status=0');
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+})
