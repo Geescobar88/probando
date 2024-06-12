@@ -1680,6 +1680,14 @@
         "PRIORIDAD": 1
     },
     {
+        "CODARTICULO": "M1200157",
+        "MEDICACION": "ESCITALOPRAM 10 MG COMPRIMIDOS",
+        "STOCK_MIN": 50,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 1
+    },
+    {
         "CODARTICULO": "M2501040",
         "MEDICACION": "ESMOLOL 100 MG FRASCO AMPOLLA 10 ML",
         "STOCK_MIN": 5,
@@ -2571,6 +2579,14 @@
         "CODARTICULO": "M1200172",
         "MEDICACION": "LEVETIRACETAM COMPRIMIDOS 500 MG",
         "STOCK_MIN": 3500,
+        "HABILITADO": "SI",
+        "SERVICIO": "DESPACHO",
+        "PRIORIDAD": 0
+    },
+    {
+        "CODARTICULO": "M1246299",
+        "MEDICACION": "LEVETIRACETAM FA 500 MG",
+        "STOCK_MIN": 100,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
         "PRIORIDAD": 0
