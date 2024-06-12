@@ -416,12 +416,33 @@ function crearListados(total, totalVto) {
             if (articulo.STOCKENDEPOSITO == 0) {
               estadoCell.innerHTML = "Agotado";
               estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
             } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
               estadoCell.innerHTML = "Normal";
               estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Limite";
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Critico";
+              estadoCell.innerHTML = "Crítico";
               estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
