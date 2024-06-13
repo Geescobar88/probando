@@ -402,7 +402,7 @@ function crearListados(total, totalVto) {
       //Control
       case 4:
         console.log(total)
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado (Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.PRIORIDAD == 1) {
             const row = tablaListados.insertRow();
@@ -414,17 +414,17 @@ function crearListados(total, totalVto) {
             codigoCell.innerHTML = articulo.CODARTICULO;
             medicacionCell.innerHTML = articulo.MEDICACION;
             if (articulo.STOCKENDEPOSITO == 0) {
-              estadoCell.innerHTML = "Agotado";
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "black"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
               medicacionCell.style.fontWeight = "bold"
               stockCell.style.fontWeight = "bold"
             } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Normal";
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
             } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Limite";
+              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "orange"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -434,7 +434,7 @@ function crearListados(total, totalVto) {
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Crítico";
+              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
