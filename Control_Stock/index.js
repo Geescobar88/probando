@@ -313,9 +313,10 @@ function crearListados(total, totalVto) {
       //Listado Completo
       case 1:
 
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Deposito</th><th>Farmacia</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Depósito</th><th>Farmacia</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI") {
+
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
             const medicacionCell = row.insertCell(1);
@@ -326,17 +327,60 @@ function crearListados(total, totalVto) {
             codigoCell.innerHTML = articulo.CODARTICULO;
             medicacionCell.innerHTML = articulo.MEDICACION;
             if (articulo.STOCKENDEPOSITO == 0) {
-              estadoCell.innerHTML = "Agotado";
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
             } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Normal";
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Critico";
+              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
             stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+
+            // const row = tablaListados.insertRow();
+            // const codigoCell = row.insertCell(0);
+            // const medicacionCell = row.insertCell(1);
+            // const estadoCell = row.insertCell(2);
+            // const stockCell = row.insertCell(3);
+            // const stockFCell = row.insertCell(4)
+
+            // codigoCell.innerHTML = articulo.CODARTICULO;
+            // medicacionCell.innerHTML = articulo.MEDICACION;
+            // if (articulo.STOCKENDEPOSITO == 0) {
+            //   estadoCell.innerHTML = "Agotado";
+            //   estadoCell.style.color = "black"
+            // } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+            //   estadoCell.innerHTML = "Normal";
+            //   estadoCell.style.color = "green"
+            // } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+            //   estadoCell.innerHTML = "Critico";
+            //   estadoCell.style.color = "red"
+            // }
+            // stockCell.innerHTML = articulo.STOCKENDEPOSITO
+            // stockFCell.innerHTML = articulo.STOCKENDISPENSACION
           }
 
         })
@@ -344,38 +388,10 @@ function crearListados(total, totalVto) {
       //Stock Critico
       case 2:
 
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Consumo</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-            const row = tablaListados.insertRow();
-            const codigoCell = row.insertCell(0);
-            const medicacionCell = row.insertCell(1);
-            const consumoCell = row.insertCell(2);
-            const stockCell = row.insertCell(3);
 
-            codigoCell.innerHTML = articulo.CODARTICULO;
-
-            medicacionCell.innerHTML = articulo.MEDICACION;
-            consumoCell.innerHTML = articulo.STOCK_MIN
-            if (articulo.STOCKENDEPOSITO == 0) {
-              stockCell.style.color = "black"
-            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
-              stockCell.style.color = "green"
-            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              stockCell.style.color = "red"
-            }
-            stockCell.innerHTML = articulo.STOCKENDEPOSITO
-          }
-
-        })
-        break;
-      //Agotado
-      case 3:
-
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
-        total.forEach((articulo) => {
-
-          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
             const medicacionCell = row.insertCell(1);
@@ -385,16 +401,126 @@ function crearListados(total, totalVto) {
             codigoCell.innerHTML = articulo.CODARTICULO;
             medicacionCell.innerHTML = articulo.MEDICACION;
             if (articulo.STOCKENDEPOSITO == 0) {
-              estadoCell.innerHTML = "Agotado";
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
             } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Normal";
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Critico";
+              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
             }
             stockCell.innerHTML = articulo.STOCKENDEPOSITO
+            // const row = tablaListados.insertRow();
+            // const codigoCell = row.insertCell(0);
+            // const medicacionCell = row.insertCell(1);
+            // const consumoCell = row.insertCell(2);
+            // const stockCell = row.insertCell(3);
+
+            // codigoCell.innerHTML = articulo.CODARTICULO;
+
+            // medicacionCell.innerHTML = articulo.MEDICACION;
+            // consumoCell.innerHTML = articulo.STOCK_MIN
+            // if (articulo.STOCKENDEPOSITO == 0) {
+            //   stockCell.style.color = "black"
+            // } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+            //   stockCell.style.color = "green"
+            // } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+            //   stockCell.style.color = "red"
+            // }
+            // stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Agotado
+      case 3:
+
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+
+          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
+
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+            // const row = tablaListados.insertRow();
+            // const codigoCell = row.insertCell(0);
+            // const medicacionCell = row.insertCell(1);
+            // const estadoCell = row.insertCell(2);
+            // const stockCell = row.insertCell(3);
+
+            // codigoCell.innerHTML = articulo.CODARTICULO;
+            // medicacionCell.innerHTML = articulo.MEDICACION;
+            // if (articulo.STOCKENDEPOSITO == 0) {
+            //   estadoCell.innerHTML = "Agotado";
+            //   estadoCell.style.color = "black"
+            // } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+            //   estadoCell.innerHTML = "Normal";
+            //   estadoCell.style.color = "green"
+            // } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+            //   estadoCell.innerHTML = "Critico";
+            //   estadoCell.style.color = "red"
+            // }
+            // stockCell.innerHTML = articulo.STOCKENDEPOSITO
           }
 
         })
@@ -402,7 +528,7 @@ function crearListados(total, totalVto) {
       //Control
       case 4:
         console.log(total)
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado (Consumo)</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.PRIORIDAD == 1) {
             const row = tablaListados.insertRow();
@@ -458,7 +584,7 @@ function crearListados(total, totalVto) {
       case 1:
 
         filtrosSectorProgramas.style.display = "none"
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ESTERILIZACION") {
             const row = tablaListados.insertRow();
@@ -489,7 +615,7 @@ function crearListados(total, totalVto) {
       case 2:
 
         filtrosSectorProgramas.style.display = "none"
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.SERVICIO == "ALIMENTACION") {
             const row = tablaListados.insertRow();
