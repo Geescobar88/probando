@@ -2693,7 +2693,7 @@
         "STOCK_MIN": 30,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0314131",
@@ -2701,7 +2701,7 @@
         "STOCK_MIN": 200,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0314136",
@@ -2709,7 +2709,7 @@
         "STOCK_MIN": 70,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0301135",
@@ -2717,7 +2717,7 @@
         "STOCK_MIN": 0,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0314134",
@@ -2725,7 +2725,7 @@
         "STOCK_MIN": 500,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0314137",
@@ -2733,7 +2733,7 @@
         "STOCK_MIN": 0,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M0301130",
@@ -2749,7 +2749,7 @@
         "STOCK_MIN": 70,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M1109139",
