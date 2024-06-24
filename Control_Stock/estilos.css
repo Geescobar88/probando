@@ -413,7 +413,23 @@ td {
     text-align: center;
 }
 
+.volver {
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    left: 0;
+    display: none;
+}
 
+.bbutton_p {
+    width: 300px;
+}
+
+.input_peq {
+    border-radius: 5px;
+    width: 300px;
+    padding: 3px;
+}
 
 
 
