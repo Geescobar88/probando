@@ -213,22 +213,46 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
 
     //--------------------------Alternar Deposito/Farmacia---------------------
-    let aux = 0;
-    stockDepositoContainer.addEventListener("click", () => {
-      if (aux == 0) {
-        stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
-        stockDepositoLabel.textContent = "Stock en Farmacia"
-        stockDepositoLabel.style.color = "#ffffff"
-        stockDepositoContainer.style.backgroundColor = "#94a8e6"
-        aux = + 1
-      } else if (aux == 1) {
-        stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
-        stockDepositoLabel.textContent = "Stock en Deposito"
-        stockDepositoLabel.style.color = "#0A0A0A"
-        stockDepositoContainer.style.backgroundColor = "#ebe7e0"
-        aux = aux - 1
-      }
-    })
+
+
+
+    if (filtroArt.checked) {
+      const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      let aux = 0;
+      stockDepositoContainer.addEventListener("click", () => {
+        if (aux == 0) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
+          stockDepositoLabel.textContent = "Stock en Farmacia"
+          stockDepositoLabel.style.color = "#ffffff"
+          stockDepositoContainer.style.backgroundColor = "#94a8e6"
+          aux = + 1
+        } else if (aux == 1) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+          stockDepositoLabel.textContent = "Stock en Deposito"
+          stockDepositoLabel.style.color = "#0A0A0A"
+          stockDepositoContainer.style.backgroundColor = "#ebe7e0"
+          aux = aux - 1
+        }
+      })
+    } else {
+      const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      let aux = 0;
+      stockDepositoContainer.addEventListener("click", () => {
+        if (aux == 0) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
+          stockDepositoLabel.textContent = "Stock en Farmacia"
+          stockDepositoLabel.style.color = "#ffffff"
+          stockDepositoContainer.style.backgroundColor = "#94a8e6"
+          aux = + 1
+        } else if (aux == 1) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+          stockDepositoLabel.textContent = "Stock en Deposito"
+          stockDepositoLabel.style.color = "#0A0A0A"
+          stockDepositoContainer.style.backgroundColor = "#ebe7e0"
+          aux = aux - 1
+        }
+      })
+    }
 
 
     //--------------------------Tabla de vencimientos---------------------
