@@ -127,10 +127,11 @@ section, .linea {
 .bbutton {
     border: 2px solid var(--fuerte);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
     background-color: var(--fuerte);
     color: var(--claro);
     font-weight: bolder;   
+    font-size: 16px;
 }
 
 .bbutton:hover {
@@ -202,9 +203,10 @@ td {
     border: 2px solid var(--terciario);
     color: var(--terciario);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
     background-color: var(--claro);
     font-weight: bolder;
+    font-size: 16px;
 }
 
 .inputR:checked+.filtroCheck {
@@ -482,6 +484,14 @@ td {
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+    }
+
+    .bbutton {
+        font-size: 20px;
+    }
+
+    .filtroCheck {
+        font-size: 20px;
     }
 
 
