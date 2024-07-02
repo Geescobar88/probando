@@ -1,5 +1,11 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   cargarDatos();
+
+  if (gravdept.isIos()) {
+    document.querySelector('html').classList.add('is-ios');
+  }
 });
 
 async function cargarDatos() {
