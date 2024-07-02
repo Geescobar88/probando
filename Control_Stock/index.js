@@ -1,11 +1,5 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
   cargarDatos();
-
-  if (gravdept.isIos()) {
-    document.querySelector('html').classList.add('is-ios');
-  }
 });
 
 async function cargarDatos() {
@@ -176,12 +170,16 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
   const tabla = document.getElementById("tabla");
 
+  entrada.addEventListener('input', () => {
+    const inputValue = entrada.value;
+    entrada.value = inputValue
+    console.log(inputValue)
+  })
+
   entrada.addEventListener('change', () => {
 
     //--------------------------Filtrar un articulo---------------------
-    
-    
-    
+        
     if (filtroArt.checked) {
       const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
     nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
@@ -216,6 +214,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       }
     }
     
+
 
 
     //--------------------------Alternar Deposito/Farmacia---------------------

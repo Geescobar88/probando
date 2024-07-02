@@ -6,10 +6,6 @@
 
 }
 
-.is-ios * {
-    cursor: pointer;
-}
-
 :root {
     --fondoOscuro: #0A0A0A;
     --primario: #c6d4e1;
