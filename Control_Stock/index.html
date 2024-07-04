@@ -14,14 +14,18 @@
 </head>
 
 <body id="body">
+    <noscript>
+        <p>Lo sentimos, su navegador no soporta JavaScript o lo ha deshabilitado.</p>
+        <p>Para ver el contenido de esta página, por favor habilite JavaScript en su navegador.</p>
+    </noscript>
     <header>
         <span id="menu_btn" class="menu_btn">☰</span>
         <h1 class="titulo">Control de stock</h1>
         <div id="menu" class="menu">
             <ul>
-                <li ><a href="./index.html"class="menu_i">Control de Stock</a></li>
-                <li ><a href="./etiquetas.html"class="menu_i">Etiquetas</a></li>
-                <li><a href="./planillas.html"class="menu_i">Planillas</a></li>
+                <li><a href="./index.html" class="menu_i">Control de Stock</a></li>
+                <li><a href="./etiquetas.html" class="menu_i">Etiquetas</a></li>
+                <li><a href="./planillas.html" class="menu_i">Planillas</a></li>
             </ul>
             <div class="menu_close" id="menu_close">x</div>
         </div>
@@ -44,7 +48,7 @@
         </section>
 
         <section class="busqueda" id="busqueda">
-            <input type="text" list="medicacion" id="entrada" class="entrada" disabled/>
+            <input type="text" list="medicacion" id="entrada" class="entrada" disabled />
             <datalist id="medicacion"></datalist>
             <button class="bbutton" id="borrar">Borrar</button>
         </section>
@@ -81,7 +85,8 @@
             </div>
 
             <div class="vto">
-                <label class="LText">Próximo vencimiento hasta 06/27 (Solo referencia - Ultima actualización 01/07/2024)</label>
+                <label class="LText">Próximo vencimiento hasta 06/27 (Solo referencia - Ultima actualización
+                    01/07/2024)</label>
 
                 <table id="tabla" class="tabla">
                     <tr>
@@ -121,14 +126,14 @@
                         <option value="Sueros">Sueros</option>
                         <option value="Programas">Programas</option>
                     </select>
-                    
+
                     <select name="filtrosProgramas" id="filtrosProgramas" class="filtrosOcultos">
                         <option value="" selected disabled>Seleccionar Programa</option>
-                            <option value="proepi">PROEPI</option>
-                            <option value="tbc">TBC</option>
-                            <option value="hiv">HIV</option>
+                        <option value="proepi">PROEPI</option>
+                        <option value="tbc">TBC</option>
+                        <option value="hiv">HIV</option>
                     </select>
-                    
+
 
                     <div class="filtrosVencimientoContainer">
                         <select name="filtrosVencimiento" id="filtrosVencimiento" class="filtrosOcultos">
@@ -152,7 +157,7 @@
                                 <option value="30/11">Noviembre</option>
                                 <option value="31/12">Diciembre</option>
                             </select>
-    
+
                             <select name="filtrosVencimientoY" id="filtrosVencimientoY" class="filtrosOcultos">
                                 <option value="/2024">2024</option>
                                 <option value="/2025">2025</option>
@@ -174,7 +179,7 @@
                                 <option value="30/11">Noviembre</option>
                                 <option value="31/12">Diciembre</option>
                             </select>
-    
+
                             <select name="filtrosVencimientoEFY" id="filtrosVencimientoEFY" class="filtrosOcultos">
                                 <option value="/2024">2024</option>
                                 <option value="/2025">2025</option>
@@ -182,7 +187,7 @@
                                 <option value="/2027">2027</option>
                             </select>
                         </div>
-                        
+
                     </div>
 
                     <button class="bbutton filtrosOcultos" id="btnSeleccionar">Seleccionar</button>
@@ -208,13 +213,12 @@
 
         </div>
 
-        <p class="LText">Ultima actualización: 03/07/24 10:58 hs</p>
+        <p class="LText">Ultima actualización: 04/07/24 09:01 hs</p>
         <footer></footer>
     </div>
     <script src="https://unpkg.com/export-from-json/dist/umd/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datalist-polyfill/1.25.1/datalist-polyfill.min.js"></script>
-</body>
+    </body>
 
 </html>
