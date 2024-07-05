@@ -107,7 +107,7 @@ function filtrarDatos(total, listadoResponse) {
           atribLabel.value = item.MEDICACION;
         } else {
           atribValue.value = item.DESCRIPCION;
-          atribLabel.value = item.MEDICACION;
+          atribLabel.value = item.DESCRIPCION;
         }
         newOption.setAttributeNode(atribValue);
         newOption.setAttributeNode(atribLabel);
