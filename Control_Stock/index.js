@@ -101,12 +101,16 @@ function filtrarDatos(total, listadoResponse) {
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
+        const atribLabel = document.createAttribute("label");
         if (item.HABILITADO == "SI") {
           atribValue.value = item.MEDICACION;
+          atribLabel.value = item.MEDICACION;
         } else {
           atribValue.value = item.DESCRIPCION;
+          atribLabel.value = item.MEDICACION;
         }
         newOption.setAttributeNode(atribValue);
+        newOption.setAttributeNode(atribLabel);
         datalist.appendChild(newOption);
       });
     }
