@@ -174,11 +174,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
   const tabla = document.getElementById("tabla");
 
-  entrada.addEventListener('input', () => {
-    const inputValue = entrada.value;
-    entrada.value = inputValue
-    console.log(inputValue)
-  })
+
 
   entrada.addEventListener('change', () => {
 
