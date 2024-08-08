@@ -373,7 +373,7 @@
         "STOCK_MIN": 50,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 1
+        "PRIORIDAD": 0
     },
     {
         "CODARTICULO": "M1801008",
@@ -1685,7 +1685,7 @@
         "STOCK_MIN": 50,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 1
+        "PRIORIDAD": 0
     },
     {
         "CODARTICULO": "M2501040",
