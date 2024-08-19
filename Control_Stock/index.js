@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-  cargarDatos();
+  const fecha = new Date();
+  const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
+  const diaPrevio = "16-8-2024"
+  cargarDatos(diaActual, diaPrevio);
 });
 
-async function cargarDatos() {
+async function cargarDatos(diaActual, diaPrevio) {
   const db = await fetch("./data/DB.json");
   const dbResponse = await db.json();
-  const listado = await fetch("./data/stock.json")
+  const listado = await fetch("./data/"+diaActual+".json")
   const listadoResponse = await listado.json();
+  const listadoPrevio = await fetch("./data/"+diaPrevio+".json")
+  const listadoPrevioResponse = await listadoPrevio.json();
   const vto = await fetch("./data/vto.json")
   const listadoVto = await vto.json();
   const vtoF = await fetch("./data/vto_F.json")
@@ -34,7 +39,7 @@ async function cargarDatos() {
     }
   });
 
-  generarTotal(dbResponse, listadoResponse, totalVto2);
+  generarTotal(dbResponse, listadoResponse, listadoPrevioResponse, totalVto2);
   menubar();
 }
 
@@ -57,7 +62,7 @@ function menubar() {
 
 //////////////////////////////////GENERANDO TOTAL///////////////////////////////////
 
-function generarTotal(dbResponse, listadoResponse, totalVto) {
+function generarTotal(dbResponse, listadoResponse, listadoPrevioResponse, totalVto) {
   const total = dbResponse.map((array1) => {
     const coincidencia = listadoResponse.find(
       (array2) => array2.CODARTICULO === array1.CODARTICULO
@@ -71,7 +76,7 @@ function generarTotal(dbResponse, listadoResponse, totalVto) {
 
   filtrarDatos(total, listadoResponse);
   seleccionarArticulo(total, totalVto, listadoResponse)
-  crearListados(total, totalVto, listadoResponse);
+  crearListados(total, totalVto, listadoResponse, listadoPrevioResponse);
 }
 
 ///////////////////////////////////FILTRANDO DATOS//////////////////////////////////
@@ -294,7 +299,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
 /////////////////////////////////////////LISTADOS///////////////////////////////////
 
-function crearListados(total, totalVto, listadoResponse) {
+function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) {
   const btnListadosAbrir = document.getElementById("btnListados")
   const btnListadosCerrar = document.getElementById("btnCerrar")
   const ventanaListados = document.getElementById("listados")
@@ -309,6 +314,23 @@ function crearListados(total, totalVto, listadoResponse) {
   const filtrosVencimientoEFY = document.getElementById("filtrosVencimientoEFY")
   const btnSeleccionar = document.getElementById("btnSeleccionar")
   const tablaListados = document.getElementById("tablaListados")
+
+  const diferencias = listadoResponse.filter((obj1) => {
+    return listadoPrevioResponse.some((obj2) => {
+      return obj1.CODARTICULO === obj2.CODARTICULO && obj1.STOCKENDEPOSITO !== obj2.STOCKENDEPOSITO;
+    }); 
+  }).map((obj1) => {
+    const obj2 = listadoPrevioResponse.find((obj) => obj.CODARTICULO === obj1.CODARTICULO);
+    return {
+      CODARTICULO: obj1.CODARTICULO,
+      DESCRIPCION: obj1.DESCRIPCION,
+      VALORANTERIOR: obj2.STOCKENDEPOSITO,
+      VALORACTUAL: obj1.STOCKENDEPOSITO,
+      DIFERENCIA: obj1.STOCKENDEPOSITO - obj2.STOCKENDEPOSITO,
+    };
+  });
+
+  console.log(diferencias)
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
   btnListadosAbrir.addEventListener("click", () => {
@@ -361,6 +383,43 @@ function crearListados(total, totalVto, listadoResponse) {
         filtrosVencimientoEFM.style.display = "none"
         filtrosVencimientoEFY.style.display = "none"
         btnSeleccionar.style.display = "none"
+        break;
+        //Ultimos cambios
+      case 4:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Stock Anterior</th><th>Stock Actual</th><th>Diferencia</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+
+        diferencias.forEach((articulo) => {
+
+          const row = tablaListados.insertRow();
+          const codigoCell = row.insertCell(0);
+          const medicacionCell = row.insertCell(1);
+          const valorAnteriorCell = row.insertCell(2);
+          const valorActualCell = row.insertCell(3);
+          const diferenciaCell = row.insertCell(4)
+
+          codigoCell.innerHTML = articulo.CODARTICULO;
+          medicacionCell.innerHTML = articulo.DESCRIPCION;
+          valorAnteriorCell.innerHTML = articulo.VALORANTERIOR;
+          valorActualCell.innerHTML = articulo.VALORACTUAL;
+          diferenciaCell.innerHTML = articulo.DIFERENCIA;
+          diferenciaCell.style.fontWeight = "bold"
+
+          if (articulo.DIFERENCIA > 0) {
+            diferenciaCell.style.color = "green"
+          } else {
+            diferenciaCell.style.color = "red"
+          }
+        })
+
         break;
     }
 
