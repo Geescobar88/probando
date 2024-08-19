@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fecha = new Date();
-  const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
+  const diaActual = "19-8-2024"
+  // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
   const diaPrevio = "16-8-2024"
   cargarDatos(diaActual, diaPrevio);
 });
@@ -329,8 +330,6 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
       DIFERENCIA: obj1.STOCKENDEPOSITO - obj2.STOCKENDEPOSITO,
     };
   });
-
-  console.log(diferencias)
 
   //--------------------------Abrir/Cerrar ventana Listados---------------------
   btnListadosAbrir.addEventListener("click", () => {
