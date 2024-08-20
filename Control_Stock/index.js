@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fecha = new Date();
-  const diaActual = "19-8-2024"
+  const diaActual = "20-8-2024"
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "16-8-2024"
+  const diaPrevio = "19-8-2024"
   cargarDatos(diaActual, diaPrevio);
 });
 
