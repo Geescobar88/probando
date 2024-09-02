@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "30-8-2024"
+  const diaActual = "02-9-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "28-8-2024"
+  const diaPrevio = "30-8-2024"
   cargarDatos(diaActual, diaPrevio);
 });
 
@@ -320,7 +320,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
   const diferencias = listadoResponse.filter((obj1) => {
     return listadoPrevioResponse.some((obj2) => {
-      return obj1.CODARTICULO === obj2.CODARTICULO && obj1.STOCKENDEPOSITO !== obj2.STOCKENDEPOSITO;
+      return obj1.CODARTICULO === obj2.CODARTICULO && obj1.STOCKENDEPOSITO != obj2.STOCKENDEPOSITO;
     }); 
   }).map((obj1) => {
     const obj2 = listadoPrevioResponse.find((obj) => obj.CODARTICULO === obj1.CODARTICULO);
