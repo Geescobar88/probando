@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "09-9-2024"
+  const diaActual = "10-9-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "06-9-2024"
+  const diaPrevio = "09-9-2024"
   cargarDatos(diaActual, diaPrevio);
 });
 
@@ -106,19 +106,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroArt.checked) {
       entrada.value = "";
       tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
-      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>Deposito</th><th>Farmacia</th></tr>";
-      listadoResponse.forEach((articulo) => {
-      const row = tablaTotal.insertRow();
-      const codCell = row.insertCell(0);
-      const articuloCell = row.insertCell(1);
-      const depositoCell = row.insertCell(2);
-      const farmaciaFCell = row.insertCell(3);
-
-      codCell.innerHTML = articulo.CODARTICULO;
-      articuloCell.innerHTML = articulo.DESCRIPCION;
-      depositoCell.innerHTML = articulo.STOCKENDEPOSITO;
-      farmaciaFCell.innerHTML = articulo.STOCKENDISPENSACION;
-      })
+      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
     }
   });
 
@@ -129,7 +117,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroCm.checked) {
       entrada.value = "";
       tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
-      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>Deposito</th><th>Farmacia</th></tr>";
+      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
       total.forEach((articulo) => {
       const row = tablaTotal.insertRow();
       const codCell = row.insertCell(0);
@@ -156,6 +144,8 @@ function filtrarDatos(total, listadoResponse) {
     estadoStock.style.color = "black"
     consumo.textContent = "-----"
     tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+    tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
+
   })
 
   busqueda.addEventListener("click", () => {
@@ -305,13 +295,13 @@ tablaTotal.addEventListener("click", (evento) => {
 });
 
 
-  entrada.addEventListener('keydown', (event) => {
+  entrada.addEventListener('keydown', () => {
     const valorUC = entrada.value;
         //--------------------------Filtrar un articulo---------------------
 
     if (filtroArt.checked) {
       const filtro = listadoResponse.filter((articulo) => articulo.DESCRIPCION.includes(valorUC.toUpperCase())) 
-      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>Deposito</th><th>Farmacia</th></tr>";
+      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
       filtro.forEach((articulo) => {
       const row = tablaTotal.insertRow();
       const codCell = row.insertCell(0);
@@ -327,7 +317,7 @@ tablaTotal.addEventListener("click", (evento) => {
     } else {
       
       const filtro = total.filter((articulo) => articulo.DESCRIPCION.includes(entrada.value)) 
-      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>Deposito</th><th>Farmacia</th></tr>";
+      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
       filtro.forEach((articulo) => {
       const row = tablaTotal.insertRow();
       const codCell = row.insertCell(0);
@@ -343,6 +333,9 @@ tablaTotal.addEventListener("click", (evento) => {
 
     }
 
+    if (entrada.value == "") {
+      tablaTotal.innerHTML = "<tr><th>CODIGO</th><th>ARTICULO</th><th>DEPOSITO</th><th>FARMACIA</th></tr>";
+    }
    
 
 
