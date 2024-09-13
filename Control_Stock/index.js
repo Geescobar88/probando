@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "12-9-2024"
+  const diaActual = "13-9-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "10-9-2024"
+  const diaPrevio = "12-9-2024"
   cargarDatos(diaActual, diaPrevio);
 });
 
 async function cargarDatos(diaActual, diaPrevio) {
   const db = await fetch("./data/DB.json");
   const dbResponse = await db.json();
-  const listado = await fetch("./data/"+diaActual+".json")
+  const listado = await fetch("./data/" + diaActual + ".json")
   const listadoResponse = await listado.json();
-  const listadoPrevio = await fetch("./data/"+diaPrevio+".json")
+  const listadoPrevio = await fetch("./data/" + diaPrevio + ".json")
   const listadoPrevioResponse = await listadoPrevio.json();
   const vto = await fetch("./data/vto.json")
   const listadoVto = await vto.json();
@@ -187,23 +187,23 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
   entrada.addEventListener('change', () => {
 
     //--------------------------Filtrar un articulo---------------------
-        
+
     if (filtroArt.checked) {
       const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
-    nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
-    codMinisterial.textContent = articuloEncontrado.CODARTICULO
-    stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
-    consumo.textContent = articuloEncontrado.STOCK_MIN
-    if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
-      estadoStock.textContent = "Critico"
-      estadoStock.style.color = "red";
-    } else if (articuloEncontrado.STOCKENDEPOSITO >= articuloEncontrado.STOCK_MIN * 2) {
-      estadoStock.textContent = "En stock"
-      estadoStock.style.color = "green";
-    } else {
-      estadoStock.textContent = "Minimo"
-      estadoStock.style.color = "black";
-    }
+      nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
+      codMinisterial.textContent = articuloEncontrado.CODARTICULO
+      stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+      consumo.textContent = articuloEncontrado.STOCK_MIN
+      if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
+        estadoStock.textContent = "Critico"
+        estadoStock.style.color = "red";
+      } else if (articuloEncontrado.STOCKENDEPOSITO >= articuloEncontrado.STOCK_MIN * 2) {
+        estadoStock.textContent = "En stock"
+        estadoStock.style.color = "green";
+      } else {
+        estadoStock.textContent = "Minimo"
+        estadoStock.style.color = "black";
+      }
     } else {
       const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
       nomArticulo.textContent = articuloEncontrado.DESCRIPCION
@@ -221,7 +221,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
         estadoStock.style.color = "black";
       }
     }
-    
+
 
 
 
@@ -272,8 +272,8 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
     const filtroArtVto = totalVto.filter((match) => {
       if (filtroArt.checked) {
-      const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
-      return articuloEncontrado.CODARTICULO === match.CODARTICULO
+        const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+        return articuloEncontrado.CODARTICULO === match.CODARTICULO
       } else {
         const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
         return articuloEncontrado.CODARTICULO === match.CODARTICULO
@@ -321,7 +321,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
   const diferencias = listadoResponse.filter((obj1) => {
     return listadoPrevioResponse.some((obj2) => {
       return obj1.CODARTICULO === obj2.CODARTICULO && obj1.STOCKENDEPOSITO != obj2.STOCKENDEPOSITO;
-    }); 
+    });
   }).map((obj1) => {
     const obj2 = listadoPrevioResponse.find((obj) => obj.CODARTICULO === obj1.CODARTICULO);
     return {
@@ -385,7 +385,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         filtrosVencimientoEFY.style.display = "none"
         btnSeleccionar.style.display = "none"
         break;
-        //Ultimos cambios
+      //Ultimos cambios
       case 4:
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Stock Anterior</th><th>Stock Actual</th><th>Diferencia</th></tr>";
         filtrosStock.style.display = "none"
@@ -400,26 +400,30 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
         diferencias.forEach((articulo) => {
 
-          const row = tablaListados.insertRow();
-          const codigoCell = row.insertCell(0);
-          const medicacionCell = row.insertCell(1);
-          const valorAnteriorCell = row.insertCell(2);
-          const valorActualCell = row.insertCell(3);
-          const diferenciaCell = row.insertCell(4)
+          if (articulo.DIFERENCIA >= 0 || articulo.VALORACTUAL == 0 ) {
 
-          codigoCell.innerHTML = articulo.CODARTICULO;
-          medicacionCell.innerHTML = articulo.DESCRIPCION;
-          valorAnteriorCell.innerHTML = articulo.VALORANTERIOR;
-          valorActualCell.innerHTML = articulo.VALORACTUAL;
-          diferenciaCell.innerHTML = articulo.DIFERENCIA;
-          diferenciaCell.style.fontWeight = "bold"
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const valorAnteriorCell = row.insertCell(2);
+            const valorActualCell = row.insertCell(3);
+            const diferenciaCell = row.insertCell(4)
 
-          if (articulo.DIFERENCIA > 0) {
-            diferenciaCell.style.color = "green"
-          } else {
-            diferenciaCell.style.color = "red"
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.DESCRIPCION;
+            valorAnteriorCell.innerHTML = articulo.VALORANTERIOR;
+            valorActualCell.innerHTML = articulo.VALORACTUAL;
+            diferenciaCell.innerHTML = articulo.DIFERENCIA;
+            diferenciaCell.style.fontWeight = "bold"
+
+            if (articulo.DIFERENCIA > 0) {
+              diferenciaCell.style.color = "green"
+            } else {
+              diferenciaCell.style.color = "red"
+            }
           }
         })
+
 
         break;
     }
@@ -455,7 +459,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
             } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "orange"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -465,7 +469,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -507,7 +511,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
             } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "orange"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -517,7 +521,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -559,7 +563,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
             } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "orange"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -569,7 +573,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -609,7 +613,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "green"
             } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
-              estadoCell.innerHTML = "Mínimo "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "orange"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -619,7 +623,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "orange"
             } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
-              estadoCell.innerHTML = "Crítico "  + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
               estadoCell.style.color = "red"
               estadoCell.style.fontWeight = "bold"
               codigoCell.style.fontWeight = "bold"
@@ -635,22 +639,22 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         })
         break;
 
-        //Completo sin filtrar
+      //Completo sin filtrar
 
-        case 5:
+      case 5:
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Depósito</th><th>Farmacia</th></tr>";
         listadoResponse.forEach((articulo) => {
-            const row = tablaListados.insertRow();
-            const codigoCell = row.insertCell(0);
-            const medicacionCell = row.insertCell(1);
-            const stockCell = row.insertCell(2);
-            const stockFCell = row.insertCell(3)
+          const row = tablaListados.insertRow();
+          const codigoCell = row.insertCell(0);
+          const medicacionCell = row.insertCell(1);
+          const stockCell = row.insertCell(2);
+          const stockFCell = row.insertCell(3)
 
-            codigoCell.innerHTML = articulo.CODARTICULO;
-            medicacionCell.innerHTML = articulo.DESCRIPCION;
-            stockCell.innerHTML = articulo.STOCKENDEPOSITO
-            stockFCell.innerHTML = articulo.STOCKENDISPENSACION
-          
+          codigoCell.innerHTML = articulo.CODARTICULO;
+          medicacionCell.innerHTML = articulo.DESCRIPCION;
+          stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+
         })
         break;
 
@@ -798,7 +802,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
                   const medicacionCell = row.insertCell(1);
                   const estadoCell = row.insertCell(2);
                   const stockCell = row.insertCell(3);
-                  
+
                   codigoCell.innerHTML = articulo.CODARTICULO;
                   medicacionCell.innerHTML = articulo.MEDICACION;
                   estadoCell.innerHTML = "-----";
