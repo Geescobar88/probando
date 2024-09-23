@@ -1250,7 +1250,7 @@
     {
         "CODARTICULO": "M43R0126",
         "MEDICACION": "DARUNAVIR\/RITONAVIR - 600MG\/100MG",
-        "STOCK_MIN": 4260,
+        "STOCK_MIN": 960,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1258,7 +1258,7 @@
     {
         "CODARTICULO": "M43R0125",
         "MEDICACION": "DARUNAVIR\/RITONAVIR - 800MG\/100MG",
-        "STOCK_MIN": 4530,
+        "STOCK_MIN": 3300,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1498,7 +1498,7 @@
     {
         "CODARTICULO": "M43R0124",
         "MEDICACION": "DOLUTEGRAVIR - 50MG",
-        "STOCK_MIN": 1950,
+        "STOCK_MIN": 1920,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1506,7 +1506,7 @@
     {
         "CODARTICULO": "M3706184",
         "MEDICACION": "DOLUTEGRAVIR\/LAMIVIDUVINA\/TENOFOVIR - 50MG\/300MG\/300MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 10800,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1514,7 +1514,7 @@
     {
         "CODARTICULO": "M4219154",
         "MEDICACION": "DOLUTEGRAVIR\/LAMIVUDINA",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": "0",
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1538,7 +1538,7 @@
     {
         "CODARTICULO": "M11R6018",
         "MEDICACION": "EFAVIRENZ - 600MG",
-        "STOCK_MIN": 90,
+        "STOCK_MIN": 9030,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1546,7 +1546,7 @@
     {
         "CODARTICULO": "M43R0117",
         "MEDICACION": "EFAVIRENZ\/EMTRICITABINA\/TENOFOVIR - 600MG\/200MG\/300MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 540,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1570,7 +1570,7 @@
     {
         "CODARTICULO": "M4219147",
         "MEDICACION": "EMTRICITABINA\/TENOFOVIR ALAFENAMIDA",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 90,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -1794,7 +1794,7 @@
     {
         "CODARTICULO": "M43R0120",
         "MEDICACION": "ETRAVIRINA - 200MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 240,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -2514,7 +2514,7 @@
     {
         "CODARTICULO": "M43R0113",
         "MEDICACION": "LAMIVUDINA\/ABACAVIR - 300MG\/600MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 900,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -2522,7 +2522,7 @@
     {
         "CODARTICULO": "M43R0131",
         "MEDICACION": "LAMIVUDINA\/ZIDOVUDINA - 150MG\/300MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 0,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -2850,7 +2850,7 @@
     {
         "CODARTICULO": "M43R0118",
         "MEDICACION": "MARAVIROC - 150MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 120,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
@@ -3714,7 +3714,7 @@
     {
         "CODARTICULO": "M43R0111",
         "MEDICACION": "RALTEGRAVIR - 400MG",
-        "STOCK_MIN": "undefined",
+        "STOCK_MIN": 2460,
         "HABILITADO": "SI",
         "SERVICIO": "HIV",
         "PRIORIDAD": 0
