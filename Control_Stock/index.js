@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "24-9-2024"
+  const diaActual = "26-9-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "23-9-2024"
+  const diaPrevio = "24-9-2024"
   cargarDatos(diaActual, diaPrevio);
 });
 
@@ -418,8 +418,10 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
             if (articulo.DIFERENCIA > 0) {
               diferenciaCell.style.color = "green"
+              medicacionCell.style.color = "green"
             } else {
               diferenciaCell.style.color = "red"
+              medicacionCell.style.color = "red"
             }
           }
         })
