@@ -469,7 +469,7 @@
         "STOCK_MIN": 1800,
         "HABILITADO": "SI",
         "SERVICIO": "DESPACHO",
-        "PRIORIDAD": 0
+        "PRIORIDAD": 1
     },
     {
         "CODARTICULO": "M1501123",
