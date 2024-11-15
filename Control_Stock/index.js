@@ -105,7 +105,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroArt.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -131,7 +131,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroCm.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
       listadoResponse.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -152,7 +152,7 @@ function filtrarDatos(total, listadoResponse) {
     estadoStock.textContent = "-----"
     estadoStock.style.color = "black"
     consumo.textContent = "-----"
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
   })
 
   busqueda.addEventListener("click", () => {
@@ -280,22 +280,15 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       }
     })
 
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
     filtroArtVto.forEach((articulo) => {
       const row = tabla.insertRow();
       const loteCell = row.insertCell(0);
       const vencimientoCell = row.insertCell(1);
-      const cantidadCell = row.insertCell(2);
-      const cantidadFCell = row.insertCell(3);
+
 
       loteCell.innerHTML = articulo.NROLOTE;
       vencimientoCell.innerHTML = articulo.FECHAVTO;
-      cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
-      if (articulo.STOCKEXISTENTE_F == undefined) {
-        cantidadFCell.innerHTML = "----";
-      } else {
-        cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
-      }
     })
   })
 }
