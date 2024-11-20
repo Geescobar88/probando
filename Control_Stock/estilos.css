@@ -151,6 +151,12 @@ select {
     width: 100%;
 }
 
+.tablaVto {
+    border-collapse: collapse;
+    width: 100%;
+    visibility: hidden;
+}
+
 th, td {
     border: 1px solid var(--fuerte);
     background-color: var(--secundario);
@@ -301,8 +307,11 @@ td {
     align-items: center;
 }
 
-.LText {
+.LTextVto {
     font-size: 16px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 /* ----------------------------------LISTAS---------------------------------- */

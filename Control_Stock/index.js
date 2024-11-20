@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "19-11-2024"
+  const diaActual = "20-11-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "15-11-2024"
+  const diaPrevio = "19-11-2024"
   cargarDatos(diaActual, diaPrevio);
+
 });
 
 async function cargarDatos(diaActual, diaPrevio) {
@@ -105,7 +106,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroArt.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
       total.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -131,7 +132,7 @@ function filtrarDatos(total, listadoResponse) {
     if (filtroCm.checked) {
       datalist.innerHTML = "";
       entrada.value = "";
-      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
       listadoResponse.forEach((item) => {
         const newOption = document.createElement("option");
         const atribValue = document.createAttribute("value");
@@ -152,7 +153,7 @@ function filtrarDatos(total, listadoResponse) {
     estadoStock.textContent = "-----"
     estadoStock.style.color = "black"
     consumo.textContent = "-----"
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
   })
 
   busqueda.addEventListener("click", () => {
@@ -179,6 +180,8 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
   const stockDepositoLabel = document.getElementById('stockDepositoLabel')
   const estadoStock = document.getElementById("estadoStock")
   const consumo = document.getElementById("consumo")
+
+  const LTextVto = document.getElementById("LTextVto")
 
   const tabla = document.getElementById("tabla");
 
@@ -260,7 +263,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
         } else if (aux == 1) {
           stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
           stockDepositoLabel.textContent = "Stock en Deposito"
-          stockDepositoLabel.style.color = "#0A0A0A"
+          stockDepositoLabel.style.color = "white"
           stockDepositoContainer.style.backgroundColor = "#ebe7e0"
           aux = aux - 1
         }
@@ -280,18 +283,35 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       }
     })
 
-    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th></tr>";
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
     filtroArtVto.forEach((articulo) => {
       const row = tabla.insertRow();
       const loteCell = row.insertCell(0);
       const vencimientoCell = row.insertCell(1);
-
+      const cantidadCell = row.insertCell(2);
+      const cantidadFCell = row.insertCell(3);
 
       loteCell.innerHTML = articulo.NROLOTE;
       vencimientoCell.innerHTML = articulo.FECHAVTO;
+      cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
+      if (articulo.STOCKEXISTENTE_F == undefined) {
+        cantidadFCell.innerHTML = "----";
+      } else {
+        cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
+      }
     })
   })
+
+  LTextVto.addEventListener("click", () => {
+    tabla.style.visibility = "visible"
+    LTextVto.style.backgroundColor = "#44749d"
+    LTextVto.style.color = "#ebe7e0"
+    LTextVto.style.fontWeight = "bold"
+
+  })
 }
+
+
 
 /////////////////////////////////////////LISTADOS///////////////////////////////////
 
