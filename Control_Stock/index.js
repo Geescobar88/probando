@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "21-11-2024"
+  const diaActual = "28-11-2024"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "20-11-2024"
+  const diaPrevio = "21-11-2024"
   cargarDatos(diaActual, diaPrevio);
 
 });
