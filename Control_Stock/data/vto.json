@@ -1,175 +1,5 @@
 [
     {
-        "CODARTICULO": "M2501005",
-        "NOMBREGENERICO": "AMIODARONA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "432079",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "1000"
-    },
-    {
-        "CODARTICULO": "M0724122",
-        "NOMBREGENERICO": "CEFOTAXIMA",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "1 GR",
-        "NROLOTE": "43420",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "200"
-    },
-    {
-        "CODARTICULO": "M1109165",
-        "NOMBREGENERICO": "DAPTOMICINA",
-        "PRESENTACION": "FRASCO AMPOLLA 500 MG",
-        "FORMA": "",
-        "CONCENTRACION": "",
-        "NROLOTE": "41459F2",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "6"
-    },
-    {
-        "CODARTICULO": "M2501027",
-        "NOMBREGENERICO": "DILTIAZEM",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "25MG - 5 ML",
-        "NROLOTE": "37",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "46"
-    },
-    {
-        "CODARTICULO": "M2513111",
-        "NOMBREGENERICO": "DINITRATO DE ISOSORBIDE",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "5 MG",
-        "NROLOTE": "14",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "5"
-    },
-    {
-        "CODARTICULO": "M2513111",
-        "NOMBREGENERICO": "DINITRATO DE ISOSORBIDE",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "5 MG",
-        "NROLOTE": "14",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "95"
-    },
-    {
-        "CODARTICULO": "M2615141",
-        "NOMBREGENERICO": "DIPIRIDAMOL",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "10MG - 2 ML",
-        "NROLOTE": "42927",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "270"
-    },
-    {
-        "CODARTICULO": "M0701165",
-        "NOMBREGENERICO": "ERTAPENEM",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "1 GR",
-        "NROLOTE": "41811F2",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "330"
-    },
-    {
-        "CODARTICULO": "M5004011",
-        "NOMBREGENERICO": "FÃ“RMULA ENTERAL LISTA P/USAR HIPERCALORICA-HIPERPROTEICA-PROTEINA HIDROLIZADA- SIN FIBRA-",
-        "PRESENTACION": "500 ML",
-        "FORMA": "ESPECÃFICA P/PACIENTES ESTRESADOS/ALTO",
-        "CONCENTRACION": "RENDIMIENTO PROTEICO - EPA- 1.3 CAL/ML",
-        "NROLOTE": "111317465",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "120"
-    },
-    {
-        "CODARTICULO": "M1701075",
-        "NOMBREGENERICO": "IBUPROFENO",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "400 MG",
-        "NROLOTE": "IBU006",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "2800"
-    },
-    {
-        "CODARTICULO": "M2000027",
-        "NOMBREGENERICO": "IODOPOVIDONA",
-        "PRESENTACION": "BIDÃ“N X 5 LITROS",
-        "FORMA": "SOLUCION JABONOSA",
-        "CONCENTRACION": "5% -",
-        "NROLOTE": "6970/1357/1342",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "16"
-    },
-    {
-        "CODARTICULO": "M1201089",
-        "NOMBREGENERICO": "LEVOMEPROMAZINA",
-        "PRESENTACION": "1 ML",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "25MG -",
-        "NROLOTE": "041-324",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M0209111",
-        "NOMBREGENERICO": "MORFINA",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "1% - 1 ML",
-        "NROLOTE": "13932",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "3600"
-    },
-    {
-        "CODARTICULO": "M2601066",
-        "NOMBREGENERICO": "PROTAMINA CLORHIDRATO",
-        "PRESENTACION": "",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "1.000U.H/ML - 5 ML",
-        "NROLOTE": "A/083",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "154"
-    },
-    {
-        "CODARTICULO": "M1201123",
-        "NOMBREGENERICO": "RISPERIDONA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "1 MG",
-        "NROLOTE": "691033",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "23000"
-    },
-    {
-        "CODARTICULO": "M1101033",
-        "NOMBREGENERICO": "SULFADIAZINA DE PLATA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "241067",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "500"
-    },
-    {
-        "CODARTICULO": "M1224112",
-        "NOMBREGENERICO": "TIORIDAZINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "25 MG",
-        "NROLOTE": "8",
-        "FECHAVTO": "30/11/2024",
-        "STOCKEXISTENTE": "4200"
-    },
-    {
         "CODARTICULO": "M3209112",
         "NOMBREGENERICO": "CICLOFOSFAMIDA",
         "PRESENTACION": "FRASCO AMPOLLA",
@@ -177,7 +7,7 @@
         "CONCENTRACION": "1 GR",
         "NROLOTE": "4646",
         "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "20"
+        "STOCKEXISTENTE": "12"
     },
     {
         "CODARTICULO": "M2701020",
@@ -187,17 +17,7 @@
         "CONCENTRACION": "8 MG",
         "NROLOTE": "27",
         "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "2272"
-    },
-    {
-        "CODARTICULO": "M0701165",
-        "NOMBREGENERICO": "ERTAPENEM",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "1 GR",
-        "NROLOTE": "41906F2",
-        "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "60"
+        "STOCKEXISTENTE": "1272"
     },
     {
         "CODARTICULO": "M1246400",
@@ -207,7 +27,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "7589/7934",
         "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "150"
     },
     {
         "CODARTICULO": "M2601040",
@@ -220,16 +40,6 @@
         "STOCKEXISTENTE": "300"
     },
     {
-        "CODARTICULO": "I0302004",
-        "NOMBREGENERICO": "GEL P/ECOGRAFIA",
-        "PRESENTACION": "5 LITROS",
-        "FORMA": "BIDON",
-        "CONCENTRACION": "",
-        "NROLOTE": "191222/3",
-        "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "6"
-    },
-    {
         "CODARTICULO": "M1701075",
         "NOMBREGENERICO": "IBUPROFENO",
         "PRESENTACION": "",
@@ -237,7 +47,7 @@
         "CONCENTRACION": "400 MG",
         "NROLOTE": "IBU008",
         "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "10400"
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M2501025",
@@ -250,16 +60,6 @@
         "STOCKEXISTENTE": "5"
     },
     {
-        "CODARTICULO": "M1901046",
-        "NOMBREGENERICO": "PERMETRINA",
-        "PRESENTACION": "",
-        "FORMA": "CREMA",
-        "CONCENTRACION": "5%-100GR",
-        "NROLOTE": "22222",
-        "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "2"
-    },
-    {
         "CODARTICULO": "M1101044",
         "NOMBREGENERICO": "TEICOPLANINA",
         "PRESENTACION": "INYECTABLE",
@@ -267,36 +67,6 @@
         "CONCENTRACION": "400 MG",
         "NROLOTE": "41520F4",
         "FECHAVTO": "31/12/2024",
-        "STOCKEXISTENTE": "120"
-    },
-    {
-        "CODARTICULO": "M0601113",
-        "NOMBREGENERICO": "AMIKACINA SULFATO",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "SOLUCIÃ“N INYECTABLE",
-        "CONCENTRACION": "500MG - 2 ML",
-        "NROLOTE": "15553",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "200"
-    },
-    {
-        "CODARTICULO": "M1200134",
-        "NOMBREGENERICO": "DIVALPROATO DE SODIO",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "2BZQD",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "17400"
-    },
-    {
-        "CODARTICULO": "M5004001",
-        "NOMBREGENERICO": "FÃ“RMULA ENTERAL LISTA P/USAR NORMOCALORICA-NORMOPROTEICA",
-        "PRESENTACION": "1000 ML",
-        "FORMA": "PROTEÃNA ENTERA- SIN FIBRAS",
-        "CONCENTRACION": "1 CAL/ML",
-        "NROLOTE": "111343912",
-        "FECHAVTO": "31/01/2025",
         "STOCKEXISTENTE": "120"
     },
     {
@@ -320,6 +90,16 @@
         "STOCKEXISTENTE": "100"
     },
     {
+        "CODARTICULO": "M5004001",
+        "NOMBREGENERICO": "FÃ“RMULA ENTERAL LISTA P/USAR NORMOCALORICA-NORMOPROTEICA",
+        "PRESENTACION": "1000 ML",
+        "FORMA": "PROTEÃNA ENTERA- SIN FIBRAS",
+        "CONCENTRACION": "1 CAL/ML",
+        "NROLOTE": "111343912",
+        "FECHAVTO": "31/01/2025",
+        "STOCKEXISTENTE": "120"
+    },
+    {
         "CODARTICULO": "M0141266",
         "NOMBREGENERICO": "IVABRADINA",
         "PRESENTACION": "UNIDAD",
@@ -328,6 +108,16 @@
         "NROLOTE": "6051465",
         "FECHAVTO": "31/01/2025",
         "STOCKEXISTENTE": "392"
+    },
+    {
+        "CODARTICULO": "M1701064",
+        "NOMBREGENERICO": "PARACETAMOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "ARHPW4",
+        "FECHAVTO": "31/01/2025",
+        "STOCKEXISTENTE": "24000"
     },
     {
         "CODARTICULO": "M2310122",
@@ -340,6 +130,16 @@
         "STOCKEXISTENTE": "152"
     },
     {
+        "CODARTICULO": "M2534221",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "28 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "40 MG",
+        "NROLOTE": "KI10C",
+        "FECHAVTO": "31/01/2025",
+        "STOCKEXISTENTE": "30"
+    },
+    {
         "CODARTICULO": "M0314116",
         "NOMBREGENERICO": "SEVOFLURANO",
         "PRESENTACION": "",
@@ -347,37 +147,7 @@
         "CONCENTRACION": "100% - 250 ML",
         "NROLOTE": "23010357",
         "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "118"
-    },
-    {
-        "CODARTICULO": "M0314116",
-        "NOMBREGENERICO": "SEVOFLURANO",
-        "PRESENTACION": "",
-        "FORMA": "FRASCO",
-        "CONCENTRACION": "100% - 250 ML",
-        "NROLOTE": "1168452",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "14"
-    },
-    {
-        "CODARTICULO": "M5001002",
-        "NOMBREGENERICO": "SUPLEMENTO ORAL LÃQUIDO - HIPERCALORICO-NORMOPROTEICO",
-        "PRESENTACION": "200/240ML",
-        "FORMA": "1.5 CAL/ML",
-        "CONCENTRACION": "",
-        "NROLOTE": "111335748",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "48"
-    },
-    {
-        "CODARTICULO": "M5001002",
-        "NOMBREGENERICO": "SUPLEMENTO ORAL LÃQUIDO - HIPERCALORICO-NORMOPROTEICO",
-        "PRESENTACION": "200/240ML",
-        "FORMA": "1.5 CAL/ML",
-        "CONCENTRACION": "",
-        "NROLOTE": "111341581",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "60"
+        "STOCKEXISTENTE": "111"
     },
     {
         "CODARTICULO": "M0201162",
@@ -387,27 +157,7 @@
         "CONCENTRACION": "50 MG",
         "NROLOTE": "23A003",
         "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "6000"
-    },
-    {
-        "CODARTICULO": "M0201162",
-        "NOMBREGENERICO": "TRAMADOL",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "50 MG",
-        "NROLOTE": "23A002",
-        "FECHAVTO": "31/01/2025",
-        "STOCKEXISTENTE": "3500"
-    },
-    {
-        "CODARTICULO": "M1200179",
-        "NOMBREGENERICO": "ARIPIPRAZOL",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "5MG",
-        "NROLOTE": "813823",
-        "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "900"
+        "STOCKEXISTENTE": "4500"
     },
     {
         "CODARTICULO": "M1202111",
@@ -427,17 +177,7 @@
         "CONCENTRACION": "200 MG",
         "NROLOTE": "16123",
         "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "16980"
-    },
-    {
-        "CODARTICULO": "M1201029",
-        "NOMBREGENERICO": "CLONAZEPAM",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "0.5 MG",
-        "NROLOTE": "9722",
-        "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "5940"
     },
     {
         "CODARTICULO": "BB401003",
@@ -477,17 +217,7 @@
         "CONCENTRACION": "200MG-50MG",
         "NROLOTE": "R1850R01/157R01",
         "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "1850"
-    },
-    {
-        "CODARTICULO": "M1601028",
-        "NOMBREGENERICO": "LORATADINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10MG",
-        "NROLOTE": "71087",
-        "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "10"
+        "STOCKEXISTENTE": "1250"
     },
     {
         "CODARTICULO": "M3201012",
@@ -498,16 +228,6 @@
         "NROLOTE": "ME053A",
         "FECHAVTO": "28/02/2025",
         "STOCKEXISTENTE": "40"
-    },
-    {
-        "CODARTICULO": "M3259198",
-        "NOMBREGENERICO": "METOTREXATO 15 MG",
-        "PRESENTACION": "COMPRIMIDOS RANURADOS X 4",
-        "FORMA": "",
-        "CONCENTRACION": "",
-        "NROLOTE": "2BZEM",
-        "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "44"
     },
     {
         "CODARTICULO": "M0205111",
@@ -540,14 +260,14 @@
         "STOCKEXISTENTE": "200"
     },
     {
-        "CODARTICULO": "M1246168",
-        "NOMBREGENERICO": "VALPROATO DE MAGNESIO",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "400 MG",
-        "NROLOTE": "2CAAB",
-        "FECHAVTO": "28/02/2025",
-        "STOCKEXISTENTE": "2220"
+        "CODARTICULO": "M0110021",
+        "NOMBREGENERICO": "ALCOHOL",
+        "PRESENTACION": "LITRO",
+        "FORMA": "SOLUCION",
+        "CONCENTRACION": "96% -",
+        "NROLOTE": "1849745",
+        "FECHAVTO": "31/03/2025",
+        "STOCKEXISTENTE": "60"
     },
     {
         "CODARTICULO": "M2523121",
@@ -558,16 +278,6 @@
         "NROLOTE": "AA0020A",
         "FECHAVTO": "31/03/2025",
         "STOCKEXISTENTE": "220"
-    },
-    {
-        "CODARTICULO": "M2615135",
-        "NOMBREGENERICO": "ATORVASTATIN",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "20MG",
-        "NROLOTE": "X2303",
-        "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "25"
     },
     {
         "CODARTICULO": "M1202111",
@@ -600,26 +310,6 @@
         "STOCKEXISTENTE": "6000"
     },
     {
-        "CODARTICULO": "M3601029",
-        "NOMBREGENERICO": "ERITROPOYETINA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "4.000 U.I.",
-        "NROLOTE": "EA04-018",
-        "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M1201056",
-        "NOMBREGENERICO": "FENITOINA (DIFENILHIDANTOINA)",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS/CÃPSULAS",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "FS228",
-        "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "3000"
-    },
-    {
         "CODARTICULO": "M1201053",
         "NOMBREGENERICO": "FENITOINA CALCICA (DIFENILHIDANTOINA)",
         "PRESENTACION": "",
@@ -637,17 +327,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "310323/1",
         "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "16"
-    },
-    {
-        "CODARTICULO": "M1201086",
-        "NOMBREGENERICO": "LAMOTRIGINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "50 MG",
-        "NROLOTE": "64945",
-        "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "310"
+        "STOCKEXISTENTE": "10"
     },
     {
         "CODARTICULO": "M1708130",
@@ -657,7 +337,7 @@
         "CONCENTRACION": "20 MG",
         "NROLOTE": "2CAAA",
         "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "300"
+        "STOCKEXISTENTE": "210"
     },
     {
         "CODARTICULO": "M0208111",
@@ -677,7 +357,7 @@
         "CONCENTRACION": "1% - 1 ML",
         "NROLOTE": "14113",
         "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "3600"
+        "STOCKEXISTENTE": "3500"
     },
     {
         "CODARTICULO": "M2201005",
@@ -687,7 +367,7 @@
         "CONCENTRACION": "40 MG",
         "NROLOTE": "41675F2",
         "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "1750"
+        "STOCKEXISTENTE": "1500"
     },
     {
         "CODARTICULO": "M2000117",
@@ -717,7 +397,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "7681",
         "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "70"
+        "STOCKEXISTENTE": "30"
     },
     {
         "CODARTICULO": "YD464006",
@@ -728,16 +408,6 @@
         "NROLOTE": "9190329",
         "FECHAVTO": "31/03/2025",
         "STOCKEXISTENTE": "3"
-    },
-    {
-        "CODARTICULO": "M1246126",
-        "NOMBREGENERICO": "TOPIRAMATO",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "1923B",
-        "FECHAVTO": "31/03/2025",
-        "STOCKEXISTENTE": "1112"
     },
     {
         "CODARTICULO": "M2434112",
@@ -760,14 +430,14 @@
         "STOCKEXISTENTE": "336"
     },
     {
-        "CODARTICULO": "M1200135",
-        "NOMBREGENERICO": "DIVALPROATO DE SODIO",
+        "CODARTICULO": "M2534129",
+        "NOMBREGENERICO": "CARVEDILOL",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "250 MG",
-        "NROLOTE": "2CAQR",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "12.5 MG",
+        "NROLOTE": "3G302",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "1950"
     },
     {
         "CODARTICULO": "M1200135",
@@ -777,7 +447,7 @@
         "CONCENTRACION": "250 MG",
         "NROLOTE": "38271QA/43203QA",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "3400"
+        "STOCKEXISTENTE": "1900"
     },
     {
         "CODARTICULO": "M3629126",
@@ -827,17 +497,7 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "A423",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "870"
-    },
-    {
-        "CODARTICULO": "M3629137",
-        "NOMBREGENERICO": "LEVOTIROXINA SODICA 125 MCG",
-        "PRESENTACION": "COMPRIMIDO",
-        "FORMA": "FORMA FARMACÃ‰UTICA COMPRIMIDO",
-        "CONCENTRACION": "",
-        "NROLOTE": "GO1YG8",
-        "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "570"
     },
     {
         "CODARTICULO": "M3259198",
@@ -847,7 +507,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "L2CAIL",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "228"
+        "STOCKEXISTENTE": "72"
     },
     {
         "CODARTICULO": "M2534150",
@@ -865,9 +525,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "2 MG",
-        "NROLOTE": "692051",
+        "NROLOTE": "692049",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "1900"
     },
     {
         "CODARTICULO": "M1201124",
@@ -875,9 +535,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "2 MG",
-        "NROLOTE": "692049",
+        "NROLOTE": "692051",
         "FECHAVTO": "30/04/2025",
-        "STOCKEXISTENTE": "6900"
+        "STOCKEXISTENTE": "400"
     },
     {
         "CODARTICULO": "M2401073",
@@ -957,7 +617,7 @@
         "CONCENTRACION": "2 MG",
         "NROLOTE": "11252",
         "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "4400"
+        "STOCKEXISTENTE": "80"
     },
     {
         "CODARTICULO": "M2615123",
@@ -970,6 +630,16 @@
         "STOCKEXISTENTE": "1200"
     },
     {
+        "CODARTICULO": "M2615123",
+        "NOMBREGENERICO": "CLOPIDOGREL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "75 MG",
+        "NROLOTE": "ID245-1",
+        "FECHAVTO": "31/05/2025",
+        "STOCKEXISTENTE": "468"
+    },
+    {
         "CODARTICULO": "M2000013",
         "NOMBREGENERICO": "CLORHEXIDINA GLUCONATO",
         "PRESENTACION": "LITRO",
@@ -980,6 +650,16 @@
         "STOCKEXISTENTE": "20"
     },
     {
+        "CODARTICULO": "M1109165",
+        "NOMBREGENERICO": "DAPTOMICINA",
+        "PRESENTACION": "FRASCO AMPOLLA 500 MG",
+        "FORMA": "",
+        "CONCENTRACION": "",
+        "NROLOTE": "41840F1",
+        "FECHAVTO": "31/05/2025",
+        "STOCKEXISTENTE": "6"
+    },
+    {
         "CODARTICULO": "M0701165",
         "NOMBREGENERICO": "ERTAPENEM",
         "PRESENTACION": "AMPOLLA",
@@ -988,16 +668,6 @@
         "NROLOTE": "42369F3-4",
         "FECHAVTO": "31/05/2025",
         "STOCKEXISTENTE": "60"
-    },
-    {
-        "CODARTICULO": "M2601033",
-        "NOMBREGENERICO": "ESTREPTOQUINASA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "1.500.000 U.I.",
-        "NROLOTE": "ST2204",
-        "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "4"
     },
     {
         "CODARTICULO": "M5004011",
@@ -1015,19 +685,9 @@
         "PRESENTACION": "",
         "FORMA": "JERINGA PRELLENADA",
         "CONCENTRACION": "60MG - 0.6 ML",
-        "NROLOTE": "43822/20",
-        "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "50"
-    },
-    {
-        "CODARTICULO": "M2601030",
-        "NOMBREGENERICO": "HEPARINA BAJO PESO MOLECULAR (ENOXAPARINA)",
-        "PRESENTACION": "",
-        "FORMA": "JERINGA PRELLENADA",
-        "CONCENTRACION": "60MG - 0.6 ML",
         "NROLOTE": "43822",
         "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "250"
+        "STOCKEXISTENTE": "50"
     },
     {
         "CODARTICULO": "M2501025",
@@ -1038,6 +698,36 @@
         "NROLOTE": "41791F5",
         "FECHAVTO": "31/05/2025",
         "STOCKEXISTENTE": "15"
+    },
+    {
+        "CODARTICULO": "I0108002",
+        "NOMBREGENERICO": "MEDIO DE CONTRASTE IODADO IONICO (OXITALAMATO DE MEGLUMINA-OXITALAMATO DE SODIO//IOTALAMATO DE",
+        "PRESENTACION": "FCO AMPOLLA 50 ML O VOLUMEN EQUIVALENTE",
+        "FORMA": "MEGLUMINA-IOTALAMATO DE SODIO) -",
+        "CONCENTRACION": "CONCENTRACION NO MENOR A 300MG/ML",
+        "NROLOTE": "TY6070",
+        "FECHAVTO": "31/05/2025",
+        "STOCKEXISTENTE": "100"
+    },
+    {
+        "CODARTICULO": "M2310112",
+        "NOMBREGENERICO": "MESALAZINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "8222",
+        "FECHAVTO": "31/05/2025",
+        "STOCKEXISTENTE": "1500"
+    },
+    {
+        "CODARTICULO": "M1701024",
+        "NOMBREGENERICO": "NAPROXENO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "542263",
+        "FECHAVTO": "31/05/2025",
+        "STOCKEXISTENTE": "3500"
     },
     {
         "CODARTICULO": "M2509113",
@@ -1055,9 +745,9 @@
         "PRESENTACION": "",
         "FORMA": "LIQUIDO",
         "CONCENTRACION": "0,55%-5 LITROS",
-        "NROLOTE": "2537",
+        "NROLOTE": "2525",
         "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "60"
+        "STOCKEXISTENTE": "10"
     },
     {
         "CODARTICULO": "M2000117",
@@ -1065,9 +755,9 @@
         "PRESENTACION": "",
         "FORMA": "LIQUIDO",
         "CONCENTRACION": "0,55%-5 LITROS",
-        "NROLOTE": "2525",
+        "NROLOTE": "2537",
         "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "10"
+        "STOCKEXISTENTE": "60"
     },
     {
         "CODARTICULO": "M43R0119",
@@ -1080,16 +770,6 @@
         "STOCKEXISTENTE": "150"
     },
     {
-        "CODARTICULO": "M2401044",
-        "NOMBREGENERICO": "SALBUTAMOL",
-        "PRESENTACION": "",
-        "FORMA": "FCO. GOTERO",
-        "CONCENTRACION": "0.5% - 10 ML",
-        "NROLOTE": "3127",
-        "FECHAVTO": "31/05/2025",
-        "STOCKEXISTENTE": "65"
-    },
-    {
         "CODARTICULO": "M0314116",
         "NOMBREGENERICO": "SEVOFLURANO",
         "PRESENTACION": "",
@@ -1100,6 +780,16 @@
         "STOCKEXISTENTE": "20"
     },
     {
+        "CODARTICULO": "M2608111",
+        "NOMBREGENERICO": "ACENOCUMAROL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "4 MG",
+        "NROLOTE": "63642",
+        "FECHAVTO": "30/06/2025",
+        "STOCKEXISTENTE": "1000"
+    },
+    {
         "CODARTICULO": "M1238111",
         "NOMBREGENERICO": "BIPERIDENO CLORHIDRATO",
         "PRESENTACION": "",
@@ -1107,7 +797,7 @@
         "CONCENTRACION": "2 MG",
         "NROLOTE": "531074",
         "FECHAVTO": "30/06/2025",
-        "STOCKEXISTENTE": "4000"
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M1801026",
@@ -1147,7 +837,17 @@
         "CONCENTRACION": "0.1 MG",
         "NROLOTE": "8245",
         "FECHAVTO": "30/06/2025",
-        "STOCKEXISTENTE": "960"
+        "STOCKEXISTENTE": "60"
+    },
+    {
+        "CODARTICULO": "M2519112",
+        "NOMBREGENERICO": "ENALAPRIL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "63516",
+        "FECHAVTO": "30/06/2025",
+        "STOCKEXISTENTE": "780"
     },
     {
         "CODARTICULO": "M5004011",
@@ -1155,7 +855,7 @@
         "PRESENTACION": "500 ML",
         "FORMA": "ESPECÃFICA P/PACIENTES ESTRESADOS/ALTO",
         "CONCENTRACION": "RENDIMIENTO PROTEICO - EPA- 1.3 CAL/ML",
-        "NROLOTE": "111388643/391532",
+        "NROLOTE": "11391532",
         "FECHAVTO": "30/06/2025",
         "STOCKEXISTENTE": "1500"
     },
@@ -1165,7 +865,7 @@
         "PRESENTACION": "500 ML",
         "FORMA": "ESPECÃFICA P/PACIENTES ESTRESADOS/ALTO",
         "CONCENTRACION": "RENDIMIENTO PROTEICO - EPA- 1.3 CAL/ML",
-        "NROLOTE": "11391532",
+        "NROLOTE": "111388643/391532",
         "FECHAVTO": "30/06/2025",
         "STOCKEXISTENTE": "1500"
     },
@@ -1230,16 +930,6 @@
         "STOCKEXISTENTE": "4"
     },
     {
-        "CODARTICULO": "YA264228",
-        "NOMBREGENERICO": "PAPEL USO MEDICO LISO Y LAMINA TRANSPARENTE C/INDICADOR QUIMICO. (POUCH)",
-        "PRESENTACION": "ROLLO",
-        "FORMA": "ENVASE MIXTO",
-        "CONCENTRACION": "300 MM DE X 200M",
-        "NROLOTE": "300/204",
-        "FECHAVTO": "30/06/2025",
-        "STOCKEXISTENTE": "2"
-    },
-    {
         "CODARTICULO": "M1231121",
         "NOMBREGENERICO": "PROMETAZINA",
         "PRESENTACION": "",
@@ -1247,7 +937,7 @@
         "CONCENTRACION": "25 MG",
         "NROLOTE": "781036/37",
         "FECHAVTO": "30/06/2025",
-        "STOCKEXISTENTE": "4000"
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M0908114",
@@ -1258,16 +948,6 @@
         "NROLOTE": "41928F1",
         "FECHAVTO": "30/06/2025",
         "STOCKEXISTENTE": "50"
-    },
-    {
-        "CODARTICULO": "M1101076",
-        "NOMBREGENERICO": "TIGECICLINA",
-        "PRESENTACION": "INYECTABLE",
-        "FORMA": "FRASCO AMPOLLA",
-        "CONCENTRACION": "50MG",
-        "NROLOTE": "41936F4/F2",
-        "FECHAVTO": "30/06/2025",
-        "STOCKEXISTENTE": "70"
     },
     {
         "CODARTICULO": "M4601022",
@@ -1305,9 +985,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "200 MG",
-        "NROLOTE": "22673",
+        "NROLOTE": "2BVNB/2BVNC",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "4000"
+        "STOCKEXISTENTE": "30000"
     },
     {
         "CODARTICULO": "M1202111",
@@ -1315,9 +995,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "200 MG",
-        "NROLOTE": "2BVNB/2BVNC",
+        "NROLOTE": "22673",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "30000"
+        "STOCKEXISTENTE": "4000"
     },
     {
         "CODARTICULO": "M2601099",
@@ -1327,7 +1007,17 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "CI0005B",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "2000"
+    },
+    {
+        "CODARTICULO": "M2601099",
+        "NOMBREGENERICO": "CILOSTAZOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "CI005B",
+        "FECHAVTO": "31/07/2025",
+        "STOCKEXISTENTE": "5000"
     },
     {
         "CODARTICULO": "M1229111",
@@ -1347,7 +1037,7 @@
         "CONCENTRACION": "0.25 MG",
         "NROLOTE": "214",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "325"
     },
     {
         "CODARTICULO": "M2511111",
@@ -1357,17 +1047,7 @@
         "CONCENTRACION": "0.25 MG",
         "NROLOTE": "214",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "325"
-    },
-    {
-        "CODARTICULO": "M1208111",
-        "NOMBREGENERICO": "FENOBARBITAL",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "R2301",
-        "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "8180"
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M1208111",
@@ -1378,6 +1058,16 @@
         "NROLOTE": "2301",
         "FECHAVTO": "31/07/2025",
         "STOCKEXISTENTE": "400"
+    },
+    {
+        "CODARTICULO": "M1208111",
+        "NOMBREGENERICO": "FENOBARBITAL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "R2301",
+        "FECHAVTO": "31/07/2025",
+        "STOCKEXISTENTE": "6180"
     },
     {
         "CODARTICULO": "M5004007",
@@ -1417,17 +1107,7 @@
         "CONCENTRACION": "1MG - 5 ML",
         "NROLOTE": "87",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "200"
-    },
-    {
-        "CODARTICULO": "M1201086",
-        "NOMBREGENERICO": "LAMOTRIGINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "50 MG",
-        "NROLOTE": "2927D",
-        "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "18810"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M1201086",
@@ -1438,6 +1118,16 @@
         "NROLOTE": "2927A",
         "FECHAVTO": "31/07/2025",
         "STOCKEXISTENTE": "31200"
+    },
+    {
+        "CODARTICULO": "M1201086",
+        "NOMBREGENERICO": "LAMOTRIGINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "50 MG",
+        "NROLOTE": "2927D",
+        "FECHAVTO": "31/07/2025",
+        "STOCKEXISTENTE": "1120"
     },
     {
         "CODARTICULO": "M5005005",
@@ -1457,7 +1147,7 @@
         "CONCENTRACION": "6% - 500 ML",
         "NROLOTE": "13RHL232A",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "138"
+        "STOCKEXISTENTE": "118"
     },
     {
         "CODARTICULO": "M1200183",
@@ -1487,7 +1177,17 @@
         "CONCENTRACION": "50MG",
         "NROLOTE": "42032F2",
         "FECHAVTO": "31/07/2025",
-        "STOCKEXISTENTE": "370"
+        "STOCKEXISTENTE": "210"
+    },
+    {
+        "CODARTICULO": "M2301005",
+        "NOMBREGENERICO": "ACIDO URSODESOXICOLICO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "300 MG",
+        "NROLOTE": "UR0060B",
+        "FECHAVTO": "31/08/2025",
+        "STOCKEXISTENTE": "1500"
     },
     {
         "CODARTICULO": "M3501112",
@@ -1497,7 +1197,7 @@
         "CONCENTRACION": "300 MG",
         "NROLOTE": "PD173",
         "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "1980"
+        "STOCKEXISTENTE": "980"
     },
     {
         "CODARTICULO": "M0601113",
@@ -1508,6 +1208,16 @@
         "NROLOTE": "L3301",
         "FECHAVTO": "31/08/2025",
         "STOCKEXISTENTE": "97"
+    },
+    {
+        "CODARTICULO": "M2501010",
+        "NOMBREGENERICO": "AMLODIPINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "KN026-0",
+        "FECHAVTO": "31/08/2025",
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M0306112",
@@ -1537,7 +1247,37 @@
         "CONCENTRACION": "2 MG",
         "NROLOTE": "12782",
         "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "2340"
+        "STOCKEXISTENTE": "780"
+    },
+    {
+        "CODARTICULO": "M1708158",
+        "NOMBREGENERICO": "DICLOFENAC POTASICO",
+        "PRESENTACION": "10 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "75 MG",
+        "NROLOTE": "BD302",
+        "FECHAVTO": "31/08/2025",
+        "STOCKEXISTENTE": "7000"
+    },
+    {
+        "CODARTICULO": "M2310150",
+        "NOMBREGENERICO": "EZETIMIBA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "2CDDZ",
+        "FECHAVTO": "31/08/2025",
+        "STOCKEXISTENTE": "30"
+    },
+    {
+        "CODARTICULO": "M2601024",
+        "NOMBREGENERICO": "FENOFIBRATO",
+        "PRESENTACION": "",
+        "FORMA": "CAPSULA",
+        "CONCENTRACION": "200 MG",
+        "NROLOTE": "2CDLQ",
+        "FECHAVTO": "31/08/2025",
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M5003011",
@@ -1547,7 +1287,7 @@
         "CONCENTRACION": "1.5CAL/ML",
         "NROLOTE": "101322385",
         "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "265"
+        "STOCKEXISTENTE": "229"
     },
     {
         "CODARTICULO": "M5004007",
@@ -1570,24 +1310,14 @@
         "STOCKEXISTENTE": "2250"
     },
     {
-        "CODARTICULO": "M0501118",
-        "NOMBREGENERICO": "HIERRO SACARATO",
-        "PRESENTACION": "AMPOLLA - 5 ML",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "100MG - 5 ML",
-        "NROLOTE": "8136",
-        "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M1201086",
-        "NOMBREGENERICO": "LAMOTRIGINA",
+        "CODARTICULO": "M2706121",
+        "NOMBREGENERICO": "HIDROCORTISONA",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "50 MG",
-        "NROLOTE": "1840A",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "36914",
         "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "1950"
+        "STOCKEXISTENTE": "3000"
     },
     {
         "CODARTICULO": "M1201086",
@@ -1620,22 +1350,12 @@
         "STOCKEXISTENTE": "180"
     },
     {
-        "CODARTICULO": "M0301135",
-        "NOMBREGENERICO": "LIDOCAINA S/EPINEFRINA-S/CONSERVADORES",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "1 % - 5 ML",
-        "NROLOTE": "15502",
-        "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "400"
-    },
-    {
-        "CODARTICULO": "M3259143",
+        "CODARTICULO": "M3201013",
         "NOMBREGENERICO": "METOTREXATO",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "7.5MG",
-        "NROLOTE": "2CCYH",
+        "CONCENTRACION": "2.5 MG",
+        "NROLOTE": "2CCYA",
         "FECHAVTO": "31/08/2025",
         "STOCKEXISTENTE": "200"
     },
@@ -1657,7 +1377,7 @@
         "CONCENTRACION": "20 MG",
         "NROLOTE": "483702",
         "FECHAVTO": "31/08/2025",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M4528198",
@@ -1690,6 +1410,16 @@
         "STOCKEXISTENTE": "60"
     },
     {
+        "CODARTICULO": "M0701011",
+        "NOMBREGENERICO": "AMOXICILINA-ACIDO CLAVULANICO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "875MG-125MG",
+        "NROLOTE": "63588",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "1680"
+    },
+    {
         "CODARTICULO": "M2523121",
         "NOMBREGENERICO": "ATENOLOL",
         "PRESENTACION": "",
@@ -1697,7 +1427,7 @@
         "CONCENTRACION": "50 MG",
         "NROLOTE": "AA0022A",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "490"
+        "STOCKEXISTENTE": "2940"
     },
     {
         "CODARTICULO": "M2709124",
@@ -1710,6 +1440,26 @@
         "STOCKEXISTENTE": "200"
     },
     {
+        "CODARTICULO": "M2501151",
+        "NOMBREGENERICO": "BISOPROLOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "PI0038",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "1800"
+    },
+    {
+        "CODARTICULO": "M2709135",
+        "NOMBREGENERICO": "BUDESONIDE-FORMOTEROL FUMARATO",
+        "PRESENTACION": "",
+        "FORMA": "CAPSULAS P/INHALACION",
+        "CONCENTRACION": "200MCG-6,268MCG",
+        "NROLOTE": "3477",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "2400"
+    },
+    {
         "CODARTICULO": "M0301007",
         "NOMBREGENERICO": "BUPIVACAINA",
         "PRESENTACION": "FRASCO AMPOLLA",
@@ -1717,37 +1467,17 @@
         "CONCENTRACION": "0.5% - 20 ML",
         "NROLOTE": "146",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "360"
+        "STOCKEXISTENTE": "216"
     },
     {
-        "CODARTICULO": "M1801026",
-        "NOMBREGENERICO": "CASPOFUNGINA ACETATO",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "50 MG.",
-        "NROLOTE": "B000118",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "20"
-    },
-    {
-        "CODARTICULO": "M1001001",
-        "NOMBREGENERICO": "DOXICICLINA",
+        "CODARTICULO": "M2519111",
+        "NOMBREGENERICO": "ENALAPRIL",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "3296",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "366-810",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "960"
-    },
-    {
-        "CODARTICULO": "M4014111",
-        "NOMBREGENERICO": "ERITROMICINA",
-        "PRESENTACION": "",
-        "FORMA": "CAPSULAS DESCARTABLES",
-        "CONCENTRACION": "0.5 %",
-        "NROLOTE": "68",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "210"
+        "STOCKEXISTENTE": "49980"
     },
     {
         "CODARTICULO": "M1246400",
@@ -1757,7 +1487,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "7796/8551",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "133"
+        "STOCKEXISTENTE": "103"
     },
     {
         "CODARTICULO": "M1246400",
@@ -1787,7 +1517,7 @@
         "CONCENTRACION": "30.000.000 U.I - 1ML",
         "NROLOTE": "GCSF/",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "80"
+        "STOCKEXISTENTE": "20"
     },
     {
         "CODARTICULO": "M2434155",
@@ -1797,7 +1527,7 @@
         "CONCENTRACION": "250/50 MCG/DOSIS",
         "NROLOTE": "3582",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "780"
+        "STOCKEXISTENTE": "360"
     },
     {
         "CODARTICULO": "M5003011",
@@ -1808,16 +1538,6 @@
         "NROLOTE": "101323309",
         "FECHAVTO": "30/09/2025",
         "STOCKEXISTENTE": "38"
-    },
-    {
-        "CODARTICULO": "YI400302",
-        "NOMBREGENERICO": "INDICADOR BIOLOGICO AUTOCONTENIDO P/PROCESOS POR OXIDO DE ETILENO C/ESPORAS DE BACILLUS ATROPHEAUS",
-        "PRESENTACION": "VEZ UNA AMPOLLA CON EL MEDIO DE CULTIVO",
-        "FORMA": "TUBOS PLASTICOS QUE CONTIENEN NO MENOS DE 106 UFC",
-        "CONCENTRACION": "INOCULADAS EN UNA TIRA DE PAPEL Y A SU",
-        "NROLOTE": "A30444",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "110"
     },
     {
         "CODARTICULO": "M2501007",
@@ -1847,17 +1567,7 @@
         "CONCENTRACION": "2% - 5 ML",
         "NROLOTE": "14386",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "800"
-    },
-    {
-        "CODARTICULO": "M2301062",
-        "NOMBREGENERICO": "MESALAZINA",
-        "PRESENTACION": "",
-        "FORMA": "SUPOSITORIOS",
-        "CONCENTRACION": "1 GR",
-        "NROLOTE": "U17266A",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "112"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M2301062",
@@ -1870,6 +1580,16 @@
         "STOCKEXISTENTE": "504"
     },
     {
+        "CODARTICULO": "M2301062",
+        "NOMBREGENERICO": "MESALAZINA",
+        "PRESENTACION": "",
+        "FORMA": "SUPOSITORIOS",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "U17266A",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "112"
+    },
+    {
         "CODARTICULO": "M4109111",
         "NOMBREGENERICO": "NEOSTIGMINA",
         "PRESENTACION": "1 ML",
@@ -1877,7 +1597,7 @@
         "CONCENTRACION": "0.5MG/ML -",
         "NROLOTE": "14396",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "300"
+        "STOCKEXISTENTE": "200"
     },
     {
         "CODARTICULO": "M1246296",
@@ -1895,9 +1615,29 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "150MG",
+        "NROLOTE": "160323/22",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "2992"
+    },
+    {
+        "CODARTICULO": "M1200176",
+        "NOMBREGENERICO": "PREGABALINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "150MG",
         "NROLOTE": "1603022",
         "FECHAVTO": "30/09/2025",
         "STOCKEXISTENTE": "3016"
+    },
+    {
+        "CODARTICULO": "M2401073",
+        "NOMBREGENERICO": "SALMETEROL-FLUTICASONA",
+        "PRESENTACION": "",
+        "FORMA": "AEROSOL",
+        "CONCENTRACION": "125MCG-50MCG-120 DOSIS",
+        "NROLOTE": "101",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "26"
     },
     {
         "CODARTICULO": "M2401065",
@@ -1910,26 +1650,6 @@
         "STOCKEXISTENTE": "15"
     },
     {
-        "CODARTICULO": "M2401073",
-        "NOMBREGENERICO": "SALMETEROL-FLUTICASONA",
-        "PRESENTACION": "",
-        "FORMA": "AEROSOL",
-        "CONCENTRACION": "125MCG-50MCG-120 DOSIS",
-        "NROLOTE": "101",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M4528219",
-        "NOMBREGENERICO": "SOLUCION RINGER CON LACTATO",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "",
-        "CONCENTRACION": "ENVASE X 500ML.CON 1 BOLSA DE PROTECCION",
-        "NROLOTE": "2337279061",
-        "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "700"
-    },
-    {
         "CODARTICULO": "M4528219",
         "NOMBREGENERICO": "SOLUCION RINGER CON LACTATO",
         "PRESENTACION": "UNIDAD",
@@ -1940,6 +1660,16 @@
         "STOCKEXISTENTE": "2000"
     },
     {
+        "CODARTICULO": "M4528219",
+        "NOMBREGENERICO": "SOLUCION RINGER CON LACTATO",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "",
+        "CONCENTRACION": "ENVASE X 500ML.CON 1 BOLSA DE PROTECCION",
+        "NROLOTE": "2337279061",
+        "FECHAVTO": "30/09/2025",
+        "STOCKEXISTENTE": "600"
+    },
+    {
         "CODARTICULO": "M4501077",
         "NOMBREGENERICO": "SOLUCIÃ“N DEXTROSADA (GLUCOSADA) ISOTONICA",
         "PRESENTACION": "CON PUNTO DE INYECCIÃ“N ADICIONAL",
@@ -1947,7 +1677,7 @@
         "CONCENTRACION": "5 % - 500 ML",
         "NROLOTE": "14616",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "4320"
+        "STOCKEXISTENTE": "1440"
     },
     {
         "CODARTICULO": "M5001002",
@@ -1957,7 +1687,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "66953NR",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "336"
     },
     {
         "CODARTICULO": "M1101055",
@@ -1967,7 +1697,17 @@
         "CONCENTRACION": "1 GR",
         "NROLOTE": "94391",
         "FECHAVTO": "30/09/2025",
-        "STOCKEXISTENTE": "3500"
+        "STOCKEXISTENTE": "2050"
+    },
+    {
+        "CODARTICULO": "M2608111",
+        "NOMBREGENERICO": "ACENOCUMAROL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "4 MG",
+        "NROLOTE": "63742",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "7000"
     },
     {
         "CODARTICULO": "M0501002",
@@ -1977,7 +1717,7 @@
         "CONCENTRACION": "5 MG",
         "NROLOTE": "401074",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "8000"
+        "STOCKEXISTENTE": "16000"
     },
     {
         "CODARTICULO": "M2501157",
@@ -1987,17 +1727,27 @@
         "CONCENTRACION": "500MG-10ML",
         "NROLOTE": "61",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "63"
+        "STOCKEXISTENTE": "13"
     },
     {
-        "CODARTICULO": "M4101048",
-        "NOMBREGENERICO": "BROMURO DE PANCURONIO",
+        "CODARTICULO": "M2501010",
+        "NOMBREGENERICO": "AMLODIPINA",
         "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "2MG/ML - 2 ML",
-        "NROLOTE": "31034",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "AM0024A",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "800"
+        "STOCKEXISTENTE": "14000"
+    },
+    {
+        "CODARTICULO": "M0724126",
+        "NOMBREGENERICO": "AMOXICILINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "70322",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "2835"
     },
     {
         "CODARTICULO": "M4101048",
@@ -2010,6 +1760,16 @@
         "STOCKEXISTENTE": "500"
     },
     {
+        "CODARTICULO": "M4101048",
+        "NOMBREGENERICO": "BROMURO DE PANCURONIO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "2MG/ML - 2 ML",
+        "NROLOTE": "31034",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "800"
+    },
+    {
         "CODARTICULO": "M0306112",
         "NOMBREGENERICO": "BUPIVACAINA HIPERBARICA",
         "PRESENTACION": "AMPOLLA",
@@ -2017,7 +1777,27 @@
         "CONCENTRACION": "0.5% - 4 ML",
         "NROLOTE": "14356*",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "100"
+    },
+    {
+        "CODARTICULO": "M0714111",
+        "NOMBREGENERICO": "CEFALOTINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "15821",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "300"
+    },
+    {
+        "CODARTICULO": "M4001112",
+        "NOMBREGENERICO": "CIPROFLOXACINA-DEXAMETASONA",
+        "PRESENTACION": "5 ML",
+        "FORMA": "COLIRIO",
+        "CONCENTRACION": "0,3%-0,1%",
+        "NROLOTE": "E286",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "2"
     },
     {
         "CODARTICULO": "M7201016",
@@ -2037,7 +1817,7 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "42178F1",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "150"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M1601132",
@@ -2057,27 +1837,17 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "46591QA",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "35850"
+        "STOCKEXISTENTE": "34650"
     },
     {
-        "CODARTICULO": "M1001001",
-        "NOMBREGENERICO": "DOXICICLINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "TR3",
+        "CODARTICULO": "M5004007",
+        "NOMBREGENERICO": "FÃ“RMULA ENTERAL LISTA P/USAR HIPERCALORICA-NORMOPROTEICA",
+        "PRESENTACION": "500 ML",
+        "FORMA": "PROTEINA ENTERA- SIN FIBRAS",
+        "CONCENTRACION": "1.5 CAL/ML",
+        "NROLOTE": "28TGB210",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "40"
-    },
-    {
-        "CODARTICULO": "I0103002",
-        "NOMBREGENERICO": "MEDIO DE CONTRASTE IODADO IONICO DE BAJA OSMOLARIDAD",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "FRASCO AMPOLLA X 100 ML.",
-        "CONCENTRACION": "",
-        "NROLOTE": "TYH029",
-        "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "192"
+        "STOCKEXISTENTE": "800"
     },
     {
         "CODARTICULO": "I0103002",
@@ -2088,6 +1858,16 @@
         "NROLOTE": "TYH028",
         "FECHAVTO": "31/10/2025",
         "STOCKEXISTENTE": "59"
+    },
+    {
+        "CODARTICULO": "I0103002",
+        "NOMBREGENERICO": "MEDIO DE CONTRASTE IODADO IONICO DE BAJA OSMOLARIDAD",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "FRASCO AMPOLLA X 100 ML.",
+        "CONCENTRACION": "",
+        "NROLOTE": "TYH029",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "192"
     },
     {
         "CODARTICULO": "M3007119",
@@ -2110,6 +1890,16 @@
         "STOCKEXISTENTE": "1"
     },
     {
+        "CODARTICULO": "M1001008",
+        "NOMBREGENERICO": "MINOCICLINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "42226F3",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "400"
+    },
+    {
         "CODARTICULO": "M2901084",
         "NOMBREGENERICO": "MUPIROCINA",
         "PRESENTACION": "",
@@ -2120,6 +1910,16 @@
         "STOCKEXISTENTE": "50"
     },
     {
+        "CODARTICULO": "M3805111",
+        "NOMBREGENERICO": "NALOXONA",
+        "PRESENTACION": "1 ML",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "0.4MG/ML -",
+        "NROLOTE": "21000",
+        "FECHAVTO": "31/10/2025",
+        "STOCKEXISTENTE": "100"
+    },
+    {
         "CODARTICULO": "C8103111",
         "NOMBREGENERICO": "OXIDO DE ETILENO",
         "PRESENTACION": "UNIDAD",
@@ -2127,7 +1927,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "1701",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "360"
+        "STOCKEXISTENTE": "336"
     },
     {
         "CODARTICULO": "M1201126",
@@ -2137,7 +1937,7 @@
         "CONCENTRACION": "50 MG",
         "NROLOTE": "103753",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "15000"
+        "STOCKEXISTENTE": "13000"
     },
     {
         "CODARTICULO": "M1201126",
@@ -2167,7 +1967,7 @@
         "CONCENTRACION": "9MG/ML - 5 ML",
         "NROLOTE": "13893",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "4700"
+        "STOCKEXISTENTE": "3300"
     },
     {
         "CODARTICULO": "M1101044",
@@ -2178,16 +1978,6 @@
         "NROLOTE": "42240F2",
         "FECHAVTO": "31/10/2025",
         "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M4001040",
-        "NOMBREGENERICO": "TOBRAMICINA",
-        "PRESENTACION": "",
-        "FORMA": "GOTAS",
-        "CONCENTRACION": "0.3% - 5 ML",
-        "NROLOTE": "30948",
-        "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "1"
     },
     {
         "CODARTICULO": "M1109128",
@@ -2207,7 +1997,7 @@
         "CONCENTRACION": "400 MG",
         "NROLOTE": "2CEGB",
         "FECHAVTO": "31/10/2025",
-        "STOCKEXISTENTE": "5340"
+        "STOCKEXISTENTE": "2940"
     },
     {
         "CODARTICULO": "M2608111",
@@ -2225,9 +2015,9 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "150MG - 3 ML",
-        "NROLOTE": "43657/43735",
+        "NROLOTE": "43735",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "350"
     },
     {
         "CODARTICULO": "M2501121",
@@ -2235,19 +2025,9 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "150MG - 3 ML",
-        "NROLOTE": "43735",
+        "NROLOTE": "43657/43735",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "500"
-    },
-    {
-        "CODARTICULO": "M2701121",
-        "NOMBREGENERICO": "BETA METIL PREDNISONA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "4 MG",
-        "NROLOTE": "LL163",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "50"
     },
     {
         "CODARTICULO": "M2401059",
@@ -2257,7 +2037,7 @@
         "CONCENTRACION": "25MG/100ML - 15 ML",
         "NROLOTE": "306",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "140"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M0724122",
@@ -2266,16 +2046,6 @@
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "1 GR",
         "NROLOTE": "2.30E+64",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "300"
-    },
-    {
-        "CODARTICULO": "M1232121",
-        "NOMBREGENERICO": "CLORPROMAZINA",
-        "PRESENTACION": "AMPOLLA I.V. - 2 ML",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "2.5% - 2ML",
-        "NROLOTE": "040-905",
         "FECHAVTO": "30/11/2025",
         "STOCKEXISTENTE": "300"
     },
@@ -2297,7 +2067,37 @@
         "CONCENTRACION": "0.5% - 5 ML",
         "NROLOTE": "038-905",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "500"
+    },
+    {
+        "CODARTICULO": "M1232121",
+        "NOMBREGENERICO": "CLORPROMAZINA",
+        "PRESENTACION": "AMPOLLA I.V. - 2 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "2.5% - 2ML",
+        "NROLOTE": "040-905",
+        "FECHAVTO": "30/11/2025",
+        "STOCKEXISTENTE": "300"
+    },
+    {
+        "CODARTICULO": "M3000025",
+        "NOMBREGENERICO": "CONCENTRADO DE BICARBONATO",
+        "PRESENTACION": "",
+        "FORMA": "SOLUCION - USO HD",
+        "CONCENTRACION": "10 LITROS",
+        "NROLOTE": "6564",
+        "FECHAVTO": "30/11/2025",
+        "STOCKEXISTENTE": "400"
+    },
+    {
+        "CODARTICULO": "M1201017",
+        "NOMBREGENERICO": "DEXMEDETOMIDINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "100 MCG/ML - 2 ML",
+        "NROLOTE": "DMX007",
+        "FECHAVTO": "30/11/2025",
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M1201017",
@@ -2310,26 +2110,6 @@
         "STOCKEXISTENTE": "150"
     },
     {
-        "CODARTICULO": "M1201017",
-        "NOMBREGENERICO": "DEXMEDETOMIDINA",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "100 MCG/ML - 2 ML",
-        "NROLOTE": "DMX007",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "1150"
-    },
-    {
-        "CODARTICULO": "M2501027",
-        "NOMBREGENERICO": "DILTIAZEM",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "25MG - 5 ML",
-        "NROLOTE": "5500039",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "57"
-    },
-    {
         "CODARTICULO": "M2513111",
         "NOMBREGENERICO": "DINITRATO DE ISOSORBIDE",
         "PRESENTACION": "",
@@ -2340,14 +2120,14 @@
         "STOCKEXISTENTE": "200"
     },
     {
-        "CODARTICULO": "M3601029",
-        "NOMBREGENERICO": "ERITROPOYETINA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "4.000 U.I.",
-        "NROLOTE": "EA04-027/1",
+        "CODARTICULO": "M2513111",
+        "NOMBREGENERICO": "DINITRATO DE ISOSORBIDE",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "15",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "30"
     },
     {
         "CODARTICULO": "M3801011",
@@ -2367,17 +2147,17 @@
         "CONCENTRACION": "40 MG",
         "NROLOTE": "149-898",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "8000"
+        "STOCKEXISTENTE": "6000"
     },
     {
-        "CODARTICULO": "M1101059",
-        "NOMBREGENERICO": "LEVOFLOXACINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "FG078",
+        "CODARTICULO": "M5004001",
+        "NOMBREGENERICO": "FÃ“RMULA ENTERAL LISTA P/USAR NORMOCALORICA-NORMOPROTEICA",
+        "PRESENTACION": "1000 ML",
+        "FORMA": "PROTEÃNA ENTERA- SIN FIBRAS",
+        "CONCENTRACION": "1 CAL/ML",
+        "NROLOTE": "28THA160",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "695"
+        "STOCKEXISTENTE": "4500"
     },
     {
         "CODARTICULO": "M1803152",
@@ -2387,17 +2167,7 @@
         "CONCENTRACION": "100.000U.I/ML -",
         "NROLOTE": "3506",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "72"
-    },
-    {
-        "CODARTICULO": "M2534150",
-        "NOMBREGENERICO": "NITROGLICERINA",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLA",
-        "CONCENTRACION": "25 MG X 5 ML",
-        "NROLOTE": "48098",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "24"
     },
     {
         "CODARTICULO": "M2501075",
@@ -2410,14 +2180,14 @@
         "STOCKEXISTENTE": "50"
     },
     {
-        "CODARTICULO": "M3601015",
-        "NOMBREGENERICO": "OCTREOTIDA",
+        "CODARTICULO": "M2534150",
+        "NOMBREGENERICO": "NITROGLICERINA",
         "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "0.1MG/ML - 1 ML",
-        "NROLOTE": "7809/9311",
+        "FORMA": "AMPOLLA",
+        "CONCENTRACION": "25 MG X 5 ML",
+        "NROLOTE": "48098",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "75"
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M1201108",
@@ -2427,7 +2197,7 @@
         "CONCENTRACION": "5 MG",
         "NROLOTE": "303769",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "5044"
+        "STOCKEXISTENTE": "3028"
     },
     {
         "CODARTICULO": "M1231121",
@@ -2437,17 +2207,7 @@
         "CONCENTRACION": "25 MG",
         "NROLOTE": "781038",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "23200"
-    },
-    {
-        "CODARTICULO": "M4528209",
-        "NOMBREGENERICO": "SOLUCION DEXTROSA EN AGUA",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "",
-        "CONCENTRACION": "10% X 500 ML.- SIN BOLSA DE PROTECCION.",
-        "NROLOTE": "DB022851",
-        "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "300"
+        "STOCKEXISTENTE": "19200"
     },
     {
         "CODARTICULO": "M4528218",
@@ -2467,7 +2227,27 @@
         "CONCENTRACION": "50 GRS",
         "NROLOTE": "M23080",
         "FECHAVTO": "30/11/2025",
-        "STOCKEXISTENTE": "8"
+        "STOCKEXISTENTE": "4"
+    },
+    {
+        "CODARTICULO": "M3000011",
+        "NOMBREGENERICO": "TAMSULOSINA",
+        "PRESENTACION": "",
+        "FORMA": "CAPSULAS",
+        "CONCENTRACION": "0.4 MG",
+        "NROLOTE": "42312F1",
+        "FECHAVTO": "30/11/2025",
+        "STOCKEXISTENTE": "6800"
+    },
+    {
+        "CODARTICULO": "M0201162",
+        "NOMBREGENERICO": "TRAMADOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "50 MG",
+        "NROLOTE": "TRA002",
+        "FECHAVTO": "30/11/2025",
+        "STOCKEXISTENTE": "28000"
     },
     {
         "CODARTICULO": "M2534241",
@@ -2495,9 +2275,9 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "500MG-10ML",
-        "NROLOTE": "L/096",
+        "NROLOTE": "96",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "1076"
+        "STOCKEXISTENTE": "230"
     },
     {
         "CODARTICULO": "M2501157",
@@ -2505,9 +2285,29 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "500MG-10ML",
-        "NROLOTE": "96",
+        "NROLOTE": "L/096",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "230"
+        "STOCKEXISTENTE": "916"
+    },
+    {
+        "CODARTICULO": "M1201003",
+        "NOMBREGENERICO": "ALPRAZOLAM",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "2 MG",
+        "NROLOTE": "233821",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "7500"
+    },
+    {
+        "CODARTICULO": "M0702133",
+        "NOMBREGENERICO": "AMPICILINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "22618",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M1501111",
@@ -2517,7 +2317,7 @@
         "CONCENTRACION": "20MG - 1ML",
         "NROLOTE": "120153",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "4700"
+        "STOCKEXISTENTE": "3500"
     },
     {
         "CODARTICULO": "M3312112",
@@ -2538,16 +2338,6 @@
         "NROLOTE": "19181",
         "FECHAVTO": "31/12/2025",
         "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M1703121",
-        "NOMBREGENERICO": "DICLOFENAC",
-        "PRESENTACION": "AMPOLLA - 3 ML",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "75MG -",
-        "NROLOTE": "14507",
-        "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "3800"
     },
     {
         "CODARTICULO": "M2511111",
@@ -2587,7 +2377,7 @@
         "CONCENTRACION": "1.500.000 U.I.",
         "NROLOTE": "ST2301",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "18"
+        "STOCKEXISTENTE": "10"
     },
     {
         "CODARTICULO": "M2301051",
@@ -2597,7 +2387,17 @@
         "CONCENTRACION": "48GR-18GR/100ML-45ML",
         "NROLOTE": "177",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "432"
+        "STOCKEXISTENTE": "288"
+    },
+    {
+        "CODARTICULO": "M3001122",
+        "NOMBREGENERICO": "FUROSEMIDA",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "20MG - 2 ML",
+        "NROLOTE": "14518",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "7700"
     },
     {
         "CODARTICULO": "M3001122",
@@ -2610,16 +2410,6 @@
         "STOCKEXISTENTE": "1800"
     },
     {
-        "CODARTICULO": "M3001122",
-        "NOMBREGENERICO": "FUROSEMIDA",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "20MG - 2 ML",
-        "NROLOTE": "14518",
-        "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "11200"
-    },
-    {
         "CODARTICULO": "I0701051",
         "NOMBREGENERICO": "JERINGA P/MEDIO DE CONTRASTE",
         "PRESENTACION": "UNIDAD",
@@ -2630,6 +2420,16 @@
         "STOCKEXISTENTE": "7"
     },
     {
+        "CODARTICULO": "M3629162",
+        "NOMBREGENERICO": "LEVOTIROXINA SODICA 50 MGR",
+        "PRESENTACION": "COMPRIMIDO",
+        "FORMA": "FORMA FARMACÃ‰UTICA COMPRIMIDO",
+        "CONCENTRACION": "",
+        "NROLOTE": "G01PWJ",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "1250"
+    },
+    {
         "CODARTICULO": "M0308151",
         "NOMBREGENERICO": "LIDOCAINA",
         "PRESENTACION": "",
@@ -2637,7 +2437,7 @@
         "CONCENTRACION": "2 % - 50 ML",
         "NROLOTE": "3570",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "150"
     },
     {
         "CODARTICULO": "M0314127",
@@ -2647,17 +2447,7 @@
         "CONCENTRACION": "2 % - 1:50000",
         "NROLOTE": "108424",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "1365"
-    },
-    {
-        "CODARTICULO": "M0314134",
-        "NOMBREGENERICO": "LIDOCAINA S/EPINEFRINA-S/CONSERVADORES",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS POLIPROPILENO",
-        "CONCENTRACION": "2% - 5 ML",
-        "NROLOTE": "14522",
-        "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "1800"
+        "STOCKEXISTENTE": "915"
     },
     {
         "CODARTICULO": "M0301135",
@@ -2670,6 +2460,16 @@
         "STOCKEXISTENTE": "700"
     },
     {
+        "CODARTICULO": "M0314134",
+        "NOMBREGENERICO": "LIDOCAINA S/EPINEFRINA-S/CONSERVADORES",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS POLIPROPILENO",
+        "CONCENTRACION": "2% - 5 ML",
+        "NROLOTE": "14522",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "2000"
+    },
+    {
         "CODARTICULO": "M3315111",
         "NOMBREGENERICO": "MAGNESIO SULFATO",
         "PRESENTACION": "5 ML",
@@ -2677,7 +2477,7 @@
         "CONCENTRACION": "25 % -",
         "NROLOTE": "14489",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M3007113",
@@ -2700,6 +2500,16 @@
         "STOCKEXISTENTE": "130"
     },
     {
+        "CODARTICULO": "M2301062",
+        "NOMBREGENERICO": "MESALAZINA",
+        "PRESENTACION": "",
+        "FORMA": "SUPOSITORIOS",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "V15220A",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "84"
+    },
+    {
         "CODARTICULO": "M1403124",
         "NOMBREGENERICO": "METOCLOPRAMIDA",
         "PRESENTACION": "AMPOLLA",
@@ -2707,7 +2517,7 @@
         "CONCENTRACION": "10 MG",
         "NROLOTE": "14527",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "16300"
+        "STOCKEXISTENTE": "10900"
     },
     {
         "CODARTICULO": "M1802113",
@@ -2737,7 +2547,7 @@
         "CONCENTRACION": "10MG/ML",
         "NROLOTE": "14TA29",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "40"
+        "STOCKEXISTENTE": "20"
     },
     {
         "CODARTICULO": "M3316112",
@@ -2747,7 +2557,7 @@
         "CONCENTRACION": "15MEQ-500MG - 5 ML",
         "NROLOTE": "190193",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "2900"
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M3316112",
@@ -2760,6 +2570,16 @@
         "STOCKEXISTENTE": "7000"
     },
     {
+        "CODARTICULO": "M3316112",
+        "NOMBREGENERICO": "POTASIO CLORURO-SODIO ASCORBATO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "15MEQ-500MG - 5 ML",
+        "NROLOTE": "14532",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "600"
+    },
+    {
         "CODARTICULO": "KI299007",
         "NOMBREGENERICO": "SAL GRUESA",
         "PRESENTACION": "",
@@ -2767,7 +2587,7 @@
         "CONCENTRACION": "50 KGS",
         "NROLOTE": "0",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "150"
     },
     {
         "CODARTICULO": "M3601040",
@@ -2785,9 +2605,19 @@
         "PRESENTACION": "",
         "FORMA": "AMPOLLAS",
         "CONCENTRACION": "20% - 10 ML",
+        "NROLOTE": "14560",
+        "FECHAVTO": "31/12/2025",
+        "STOCKEXISTENTE": "600"
+    },
+    {
+        "CODARTICULO": "M3318120",
+        "NOMBREGENERICO": "SODIO CLORURO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "20% - 10 ML",
         "NROLOTE": "14559",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "900"
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M4528209",
@@ -2797,17 +2627,7 @@
         "CONCENTRACION": "10% X 500 ML.- SIN BOLSA DE PROTECCION.",
         "NROLOTE": "DB0231S1",
         "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "300"
-    },
-    {
-        "CODARTICULO": "M4528219",
-        "NOMBREGENERICO": "SOLUCION RINGER CON LACTATO",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "",
-        "CONCENTRACION": "ENVASE X 500ML.CON 1 BOLSA DE PROTECCION",
-        "NROLOTE": "15404",
-        "FECHAVTO": "31/12/2025",
-        "STOCKEXISTENTE": "504"
+        "STOCKEXISTENTE": "210"
     },
     {
         "CODARTICULO": "M2534241",
@@ -2827,7 +2647,7 @@
         "CONCENTRACION": "96% -",
         "NROLOTE": "CB1924438",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "102"
+        "STOCKEXISTENTE": "90"
     },
     {
         "CODARTICULO": "M2523121",
@@ -2847,7 +2667,7 @@
         "CONCENTRACION": "200MCG/DOSIS",
         "NROLOTE": "274",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "375"
     },
     {
         "CODARTICULO": "M0717111",
@@ -2857,7 +2677,7 @@
         "CONCENTRACION": "1 GR",
         "NROLOTE": "66576",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M4606112",
@@ -2867,7 +2687,7 @@
         "CONCENTRACION": "",
         "NROLOTE": "701",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "4560"
+        "STOCKEXISTENTE": "2460"
     },
     {
         "CODARTICULO": "M1701068",
@@ -2897,7 +2717,17 @@
         "CONCENTRACION": "75MG -",
         "NROLOTE": "10024/100153",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "3800"
+        "STOCKEXISTENTE": "2400"
+    },
+    {
+        "CODARTICULO": "M3801011",
+        "NOMBREGENERICO": "FLUMAZENIL",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "0.5MG - 5 ML",
+        "NROLOTE": "FLM083",
+        "FECHAVTO": "31/01/2026",
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M0501118",
@@ -2907,17 +2737,17 @@
         "CONCENTRACION": "100MG - 5 ML",
         "NROLOTE": "8495",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "250"
+        "STOCKEXISTENTE": "150"
     },
     {
-        "CODARTICULO": "M1200111",
-        "NOMBREGENERICO": "OLANZAPINA",
+        "CODARTICULO": "M2516112",
+        "NOMBREGENERICO": "LOSARTAN",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "313850",
+        "CONCENTRACION": "50 MG",
+        "NROLOTE": "V9401",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "5040"
+        "STOCKEXISTENTE": "2400"
     },
     {
         "CODARTICULO": "M1200121",
@@ -2935,9 +2765,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "50 MG",
-        "NROLOTE": "TM065",
+        "NROLOTE": "TM067",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "9000"
+        "STOCKEXISTENTE": "21000"
     },
     {
         "CODARTICULO": "M0201162",
@@ -2945,9 +2775,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "50 MG",
-        "NROLOTE": "TM067",
+        "NROLOTE": "TM065",
         "FECHAVTO": "31/01/2026",
-        "STOCKEXISTENTE": "21000"
+        "STOCKEXISTENTE": "9000"
     },
     {
         "CODARTICULO": "M1246168",
@@ -2960,6 +2790,16 @@
         "STOCKEXISTENTE": "4500"
     },
     {
+        "CODARTICULO": "M2501092",
+        "NOMBREGENERICO": "VALSARTAN",
+        "PRESENTACION": "",
+        "FORMA": "CAPSULAS",
+        "CONCENTRACION": "80 MG",
+        "NROLOTE": "14061",
+        "FECHAVTO": "31/01/2026",
+        "STOCKEXISTENTE": "1500"
+    },
+    {
         "CODARTICULO": "M4208121",
         "NOMBREGENERICO": "ACICLOVIR",
         "PRESENTACION": "",
@@ -2970,14 +2810,14 @@
         "STOCKEXISTENTE": "1400"
     },
     {
-        "CODARTICULO": "M4528227",
-        "NOMBREGENERICO": "AGUA ESTERIL PARA USO PARENTERAL",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "",
-        "CONCENTRACION": "ENVASE X 500 ML- SIN BOLSA DE PROTECCION",
-        "NROLOTE": "0",
+        "CODARTICULO": "M50AP023",
+        "NOMBREGENERICO": "ALIMENTACIÃ“N PARENTERAL TOTAL ESTABLE VOLUMEN 1000 A 2000 ML-BOLSA TRICOMPARTIMENTADA-MEZCLA ENDOVENOSA",
+        "PRESENTACION": "1500-2500KCAL-BOLSA Y FILTRO",
+        "FORMA": "CONTENIENDO AMINOACIDOS, HIDRATOS DE CARBONO Y",
+        "CONCENTRACION": "LIPIDOS, CONTENIDO CALORICO ENTRE",
+        "NROLOTE": "10TC3666",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "800"
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M50AP023",
@@ -2985,7 +2825,7 @@
         "PRESENTACION": "1500-2500KCAL-BOLSA Y FILTRO",
         "FORMA": "CONTENIENDO AMINOACIDOS, HIDRATOS DE CARBONO Y",
         "CONCENTRACION": "LIPIDOS, CONTENIDO CALORICO ENTRE",
-        "NROLOTE": "10TC3666",
+        "NROLOTE": "10TC4478",
         "FECHAVTO": "28/02/2026",
         "STOCKEXISTENTE": "300"
     },
@@ -3017,17 +2857,7 @@
         "CONCENTRACION": "50 MG",
         "NROLOTE": "A806A",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "360"
-    },
-    {
-        "CODARTICULO": "M1501123",
-        "NOMBREGENERICO": "ATROPINA",
-        "PRESENTACION": "AMPOLLA - UNIDAD",
-        "FORMA": "SOLUCIÃ“N INYECTABLE",
-        "CONCENTRACION": "1MG/1ML",
-        "NROLOTE": "7893/9131",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "325"
+        "STOCKEXISTENTE": "150"
     },
     {
         "CODARTICULO": "M0701127",
@@ -3037,7 +2867,7 @@
         "CONCENTRACION": "1 GR",
         "NROLOTE": "14825",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M2701123",
@@ -3047,7 +2877,7 @@
         "CONCENTRACION": "40 MG",
         "NROLOTE": "LN132",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "3800"
+        "STOCKEXISTENTE": "1800"
     },
     {
         "CODARTICULO": "M1238111",
@@ -3087,7 +2917,7 @@
         "CONCENTRACION": "2 MG",
         "NROLOTE": "16923",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "24000"
+        "STOCKEXISTENTE": "15120"
     },
     {
         "CODARTICULO": "M2501019",
@@ -3097,7 +2927,17 @@
         "CONCENTRACION": "0.150MG - 1 ML",
         "NROLOTE": "82059",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "900"
+    },
+    {
+        "CODARTICULO": "M2615123",
+        "NOMBREGENERICO": "CLOPIDOGREL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "75 MG",
+        "NROLOTE": "ID259-1",
+        "FECHAVTO": "28/02/2026",
+        "STOCKEXISTENTE": "166"
     },
     {
         "CODARTICULO": "LIM03009",
@@ -3127,27 +2967,17 @@
         "CONCENTRACION": "50MG-4MG",
         "NROLOTE": "BC091",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "2000"
     },
     {
-        "CODARTICULO": "M1201161",
-        "NOMBREGENERICO": "ETOSUXIMIDA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "250 MG",
-        "NROLOTE": "1227A",
+        "CODARTICULO": "M2615141",
+        "NOMBREGENERICO": "DIPIRIDAMOL",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "10MG - 2 ML",
+        "NROLOTE": "43777",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "300"
-    },
-    {
-        "CODARTICULO": "M1201056",
-        "NOMBREGENERICO": "FENITOINA (DIFENILHIDANTOINA)",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS/CÃPSULAS",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "FS236",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "2610"
+        "STOCKEXISTENTE": "75"
     },
     {
         "CODARTICULO": "M5003001",
@@ -3157,17 +2987,7 @@
         "CONCENTRACION": "1 CAL/ML",
         "NROLOTE": "101323897",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "200"
-    },
-    {
-        "CODARTICULO": "M1601028",
-        "NOMBREGENERICO": "LORATADINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10MG",
-        "NROLOTE": "71102",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "152"
     },
     {
         "CODARTICULO": "M1211121",
@@ -3177,17 +2997,7 @@
         "CONCENTRACION": "4 MG",
         "NROLOTE": "31052",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "1000"
-    },
-    {
-        "CODARTICULO": "M1211112",
-        "NOMBREGENERICO": "LORAZEPAM",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "2.5MG",
-        "NROLOTE": "601117",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "4000"
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M0200106",
@@ -3197,7 +3007,7 @@
         "CONCENTRACION": "10 MG",
         "NROLOTE": "6024",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "2950"
+        "STOCKEXISTENTE": "1950"
     },
     {
         "CODARTICULO": "M1236111",
@@ -3207,7 +3017,7 @@
         "CONCENTRACION": "5MG/ML - 3 ML",
         "NROLOTE": "14553",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "16400"
+        "STOCKEXISTENTE": "7300"
     },
     {
         "CODARTICULO": "M3316112",
@@ -3220,16 +3030,6 @@
         "STOCKEXISTENTE": "1200"
     },
     {
-        "CODARTICULO": "M1200175",
-        "NOMBREGENERICO": "PREGABALINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "75MG",
-        "NROLOTE": "PRE001",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "13400"
-    },
-    {
         "CODARTICULO": "M2401071",
         "NOMBREGENERICO": "SALBUTAMOL",
         "PRESENTACION": "",
@@ -3237,7 +3037,7 @@
         "CONCENTRACION": "100MCG/ML",
         "NROLOTE": "1427",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "1200"
+        "STOCKEXISTENTE": "1026"
     },
     {
         "CODARTICULO": "M1201126",
@@ -3257,17 +3057,7 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "113892",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "4000"
-    },
-    {
-        "CODARTICULO": "M3318120",
-        "NOMBREGENERICO": "SODIO CLORURO",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "20% - 10 ML",
-        "NROLOTE": "125-020",
-        "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "3000"
     },
     {
         "CODARTICULO": "M3318120",
@@ -3280,14 +3070,14 @@
         "STOCKEXISTENTE": "1500"
     },
     {
-        "CODARTICULO": "M1201143",
-        "NOMBREGENERICO": "ZOLPIDEM",
+        "CODARTICULO": "M3318120",
+        "NOMBREGENERICO": "SODIO CLORURO",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "1D50545",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "20% - 10 ML",
+        "NROLOTE": "125-020",
         "FECHAVTO": "28/02/2026",
-        "STOCKEXISTENTE": "2000"
+        "STOCKEXISTENTE": "400"
     },
     {
         "CODARTICULO": "M2701111",
@@ -3310,6 +3100,16 @@
         "STOCKEXISTENTE": "2"
     },
     {
+        "CODARTICULO": "M3312112",
+        "NOMBREGENERICO": "CALCIO GLUCONATO",
+        "PRESENTACION": "AMPOLLA 10 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "10 % -",
+        "NROLOTE": "14506",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "200"
+    },
+    {
         "CODARTICULO": "M2501017",
         "NOMBREGENERICO": "CARVEDILOL",
         "PRESENTACION": "",
@@ -3317,7 +3117,7 @@
         "CONCENTRACION": "25 MG",
         "NROLOTE": "CU152",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "6992"
+        "STOCKEXISTENTE": "5592"
     },
     {
         "CODARTICULO": "M3629166",
@@ -3327,17 +3127,37 @@
         "CONCENTRACION": "30 MG",
         "NROLOTE": "OC49C",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1170"
+        "STOCKEXISTENTE": "570"
     },
     {
-        "CODARTICULO": "M0901111",
-        "NOMBREGENERICO": "COLISTINA",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "100MG",
-        "NROLOTE": "42669F1",
+        "CODARTICULO": "M1101999",
+        "NOMBREGENERICO": "CLINDAMICINA 600 MG",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "AMPOLLA",
+        "CONCENTRACION": "",
+        "NROLOTE": "31073",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1050"
+        "STOCKEXISTENTE": "500"
+    },
+    {
+        "CODARTICULO": "M2615123",
+        "NOMBREGENERICO": "CLOPIDOGREL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "75 MG",
+        "NROLOTE": "73935",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "4000"
+    },
+    {
+        "CODARTICULO": "M2501003",
+        "NOMBREGENERICO": "CLORHIDRATO DE LABETALOL",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "5MG/ML - 4 ML",
+        "NROLOTE": "3579",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "400"
     },
     {
         "CODARTICULO": "M0901111",
@@ -3347,7 +3167,27 @@
         "CONCENTRACION": "100MG",
         "NROLOTE": "42624F1",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1071"
+        "STOCKEXISTENTE": "421"
+    },
+    {
+        "CODARTICULO": "M0901111",
+        "NOMBREGENERICO": "COLISTINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "100MG",
+        "NROLOTE": "42669F1",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "900"
+    },
+    {
+        "CODARTICULO": "M1703121",
+        "NOMBREGENERICO": "DICLOFENAC",
+        "PRESENTACION": "AMPOLLA - 3 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "75MG -",
+        "NROLOTE": "14509",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "3600"
     },
     {
         "CODARTICULO": "M1601132",
@@ -3357,7 +3197,7 @@
         "CONCENTRACION": "10MG/ML",
         "NROLOTE": "31084",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1200"
+        "STOCKEXISTENTE": "1600"
     },
     {
         "CODARTICULO": "M1200135",
@@ -3395,19 +3235,9 @@
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDO",
         "CONCENTRACION": "12.5 MG",
-        "NROLOTE": "C7MF",
+        "NROLOTE": "C76K",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1260"
-    },
-    {
-        "CODARTICULO": "M0724115",
-        "NOMBREGENERICO": "IMIPENEM-CILASTATINA",
-        "PRESENTACION": "INYECTABLE",
-        "FORMA": "FRASCO AMPOLLA",
-        "CONCENTRACION": "500MG-500MG",
-        "NROLOTE": "14711",
-        "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1100"
+        "STOCKEXISTENTE": "6270"
     },
     {
         "CODARTICULO": "M0724115",
@@ -3418,6 +3248,16 @@
         "NROLOTE": "14712",
         "FECHAVTO": "31/03/2026",
         "STOCKEXISTENTE": "550"
+    },
+    {
+        "CODARTICULO": "M0724115",
+        "NOMBREGENERICO": "IMIPENEM-CILASTATINA",
+        "PRESENTACION": "INYECTABLE",
+        "FORMA": "FRASCO AMPOLLA",
+        "CONCENTRACION": "500MG-500MG",
+        "NROLOTE": "14711",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "450"
     },
     {
         "CODARTICULO": "M1101063",
@@ -3450,6 +3290,16 @@
         "STOCKEXISTENTE": "500"
     },
     {
+        "CODARTICULO": "M1221111",
+        "NOMBREGENERICO": "LITIO CARBONATO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "300 MG",
+        "NROLOTE": "KA240",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "3500"
+    },
+    {
         "CODARTICULO": "M1211121",
         "NOMBREGENERICO": "LORAZEPAM",
         "PRESENTACION": "",
@@ -3467,7 +3317,7 @@
         "CONCENTRACION": "25 % -",
         "NROLOTE": "14546",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "1500"
     },
     {
         "CODARTICULO": "M3007113",
@@ -3495,9 +3345,9 @@
         "PRESENTACION": "INYECTABLE",
         "FORMA": "FRANCO AMPOLLA",
         "CONCENTRACION": "1 GR",
-        "NROLOTE": "14707",
+        "NROLOTE": "14709",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "450"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M0701173",
@@ -3505,9 +3355,9 @@
         "PRESENTACION": "INYECTABLE",
         "FORMA": "FRANCO AMPOLLA",
         "CONCENTRACION": "1 GR",
-        "NROLOTE": "14709",
+        "NROLOTE": "14707",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1150"
+        "STOCKEXISTENTE": "450"
     },
     {
         "CODARTICULO": "M1901016",
@@ -3517,17 +3367,7 @@
         "CONCENTRACION": "500MG/100ML - 100 ML",
         "NROLOTE": "14685",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "550"
-    },
-    {
-        "CODARTICULO": "M2501116",
-        "NOMBREGENERICO": "NORADRENALINA",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "1MG/ML - 4 ML",
-        "NROLOTE": "31080",
-        "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1100"
+        "STOCKEXISTENTE": "350"
     },
     {
         "CODARTICULO": "M3601015",
@@ -3538,16 +3378,6 @@
         "NROLOTE": "7895/9723",
         "FECHAVTO": "31/03/2026",
         "STOCKEXISTENTE": "105"
-    },
-    {
-        "CODARTICULO": "M1403122",
-        "NOMBREGENERICO": "ONDANSETRON",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "8 MG",
-        "NROLOTE": "330024",
-        "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "YA264228",
@@ -3567,7 +3397,7 @@
         "CONCENTRACION": "1%-10ML",
         "NROLOTE": "31109",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "4300"
+        "STOCKEXISTENTE": "200"
     },
     {
         "CODARTICULO": "M0301163",
@@ -3587,7 +3417,17 @@
         "CONCENTRACION": "50MG - 5 ML",
         "NROLOTE": "14693",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "7900"
+        "STOCKEXISTENTE": "2400"
+    },
+    {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "LZQ11-0",
+        "FECHAVTO": "31/03/2026",
+        "STOCKEXISTENTE": "40"
     },
     {
         "CODARTICULO": "M1201126",
@@ -3607,7 +3447,7 @@
         "CONCENTRACION": "100MG/ML- 1 ML",
         "NROLOTE": "7904/9433",
         "FECHAVTO": "31/03/2026",
-        "STOCKEXISTENTE": "1220"
+        "STOCKEXISTENTE": "1020"
     },
     {
         "CODARTICULO": "M0110021",
@@ -3630,14 +3470,14 @@
         "STOCKEXISTENTE": "5"
     },
     {
-        "CODARTICULO": "M1243112",
-        "NOMBREGENERICO": "ALPRAZOLAM",
+        "CODARTICULO": "M2501137",
+        "NOMBREGENERICO": "BISOPROLOL",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "1 MG",
-        "NROLOTE": "44256",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "2,5 MG",
+        "NROLOTE": "23",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "60"
     },
     {
         "CODARTICULO": "M0101101",
@@ -3657,7 +3497,7 @@
         "CONCENTRACION": "200MG - 100 ML",
         "NROLOTE": "08403-B",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "1450"
+        "STOCKEXISTENTE": "350"
     },
     {
         "CODARTICULO": "M1101006",
@@ -3667,17 +3507,7 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "443126",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "21000"
-    },
-    {
-        "CODARTICULO": "M1109142",
-        "NOMBREGENERICO": "CLINDAMICINA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "600MG",
-        "NROLOTE": "CLN069",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "150"
+        "STOCKEXISTENTE": "16000"
     },
     {
         "CODARTICULO": "M0901111",
@@ -3710,16 +3540,6 @@
         "STOCKEXISTENTE": "3195"
     },
     {
-        "CODARTICULO": "M1701082",
-        "NOMBREGENERICO": "DIPIRONA",
-        "PRESENTACION": "AMPOLLA - 2 ML",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "1GR - 2 ML",
-        "NROLOTE": "14516/14751",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "1000"
-    },
-    {
         "CODARTICULO": "M2501035",
         "NOMBREGENERICO": "DOPAMINA",
         "PRESENTACION": "AMPOLLA",
@@ -3728,16 +3548,6 @@
         "NROLOTE": "76103",
         "FECHAVTO": "30/04/2026",
         "STOCKEXISTENTE": "100"
-    },
-    {
-        "CODARTICULO": "M1201161",
-        "NOMBREGENERICO": "ETOSUXIMIDA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "250 MG",
-        "NROLOTE": "1228",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M5003007",
@@ -3750,34 +3560,14 @@
         "STOCKEXISTENTE": "192"
     },
     {
-        "CODARTICULO": "M1222112",
-        "NOMBREGENERICO": "HALOPERIDOL",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "19543",
+        "CODARTICULO": "M3629137",
+        "NOMBREGENERICO": "LEVOTIROXINA SODICA 125 MCG",
+        "PRESENTACION": "COMPRIMIDO",
+        "FORMA": "FORMA FARMACÃ‰UTICA COMPRIMIDO",
+        "CONCENTRACION": "",
+        "NROLOTE": "G0YG8",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "3300"
-    },
-    {
-        "CODARTICULO": "M2601031",
-        "NOMBREGENERICO": "HEPARINA BAJO PESO MOLECULAR (ENOXAPARINA)",
-        "PRESENTACION": "",
-        "FORMA": "JERINGA PRELLENADA",
-        "CONCENTRACION": "80MG - 0.8 ML",
-        "NROLOTE": "43907",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "40"
-    },
-    {
-        "CODARTICULO": "M0314136",
-        "NOMBREGENERICO": "LIDOCAINA S/EPINEFRINA-S/CONSERVADORES",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS DE POLIPROPILENO",
-        "CONCENTRACION": "1% - 20 ML",
-        "NROLOTE": "14401",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "30"
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M1901016",
@@ -3810,6 +3600,26 @@
         "STOCKEXISTENTE": "360"
     },
     {
+        "CODARTICULO": "M1200175",
+        "NOMBREGENERICO": "PREGABALINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "75MG",
+        "NROLOTE": "673980",
+        "FECHAVTO": "30/04/2026",
+        "STOCKEXISTENTE": "8200"
+    },
+    {
+        "CODARTICULO": "M1246170",
+        "NOMBREGENERICO": "QUETIAPINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "200 MG",
+        "NROLOTE": "263965",
+        "FECHAVTO": "30/04/2026",
+        "STOCKEXISTENTE": "1000"
+    },
+    {
         "CODARTICULO": "YDZ46406",
         "NOMBREGENERICO": "ROLLO BILAMINADO DE TYVEK",
         "PRESENTACION": "UNIDAD",
@@ -3820,16 +3630,6 @@
         "STOCKEXISTENTE": "3"
     },
     {
-        "CODARTICULO": "M2401071",
-        "NOMBREGENERICO": "SALBUTAMOL",
-        "PRESENTACION": "",
-        "FORMA": "AEROSOL 250 DOSIS",
-        "CONCENTRACION": "100MCG/ML",
-        "NROLOTE": "1446",
-        "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "500"
-    },
-    {
         "CODARTICULO": "M2401072",
         "NOMBREGENERICO": "SALBUTAMOL",
         "PRESENTACION": "",
@@ -3838,6 +3638,16 @@
         "NROLOTE": "008T064B/S107A",
         "FECHAVTO": "30/04/2026",
         "STOCKEXISTENTE": "1320"
+    },
+    {
+        "CODARTICULO": "M2401071",
+        "NOMBREGENERICO": "SALBUTAMOL",
+        "PRESENTACION": "",
+        "FORMA": "AEROSOL 250 DOSIS",
+        "CONCENTRACION": "100MCG/ML",
+        "NROLOTE": "1446",
+        "FECHAVTO": "30/04/2026",
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M2401043",
@@ -3880,14 +3690,14 @@
         "STOCKEXISTENTE": "20"
     },
     {
-        "CODARTICULO": "M4528219",
-        "NOMBREGENERICO": "SOLUCION RINGER CON LACTATO",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "",
-        "CONCENTRACION": "ENVASE X 500ML.CON 1 BOLSA DE PROTECCION",
-        "NROLOTE": "16447",
+        "CODARTICULO": "M4101040",
+        "NOMBREGENERICO": "SUCCINILCOLINA",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "100MG - 5 ML",
+        "NROLOTE": "76",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "504"
+        "STOCKEXISTENTE": "240"
     },
     {
         "CODARTICULO": "M4101040",
@@ -3897,7 +3707,7 @@
         "CONCENTRACION": "100MG - 5 ML",
         "NROLOTE": "24468",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M1101076",
@@ -3910,6 +3720,26 @@
         "STOCKEXISTENTE": "250"
     },
     {
+        "CODARTICULO": "M4001040",
+        "NOMBREGENERICO": "TOBRAMICINA",
+        "PRESENTACION": "",
+        "FORMA": "GOTAS",
+        "CONCENTRACION": "0.3% - 5 ML",
+        "NROLOTE": "220",
+        "FECHAVTO": "30/04/2026",
+        "STOCKEXISTENTE": "3"
+    },
+    {
+        "CODARTICULO": "M4001040",
+        "NOMBREGENERICO": "TOBRAMICINA",
+        "PRESENTACION": "",
+        "FORMA": "GOTAS",
+        "CONCENTRACION": "0.3% - 5 ML",
+        "NROLOTE": "T2401",
+        "FECHAVTO": "30/04/2026",
+        "STOCKEXISTENTE": "7"
+    },
+    {
         "CODARTICULO": "M1101056",
         "NOMBREGENERICO": "VANCOMICINA",
         "PRESENTACION": "INYECTABLE",
@@ -3917,7 +3747,7 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "59854",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "900"
+        "STOCKEXISTENTE": "800"
     },
     {
         "CODARTICULO": "M1201148",
@@ -3927,7 +3757,17 @@
         "CONCENTRACION": "200MG/ML - 1ML",
         "NROLOTE": "2774555",
         "FECHAVTO": "30/04/2026",
-        "STOCKEXISTENTE": "121"
+        "STOCKEXISTENTE": "51"
+    },
+    {
+        "CODARTICULO": "M3006111",
+        "NOMBREGENERICO": "ACETAZOLAMIDA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "250 MG",
+        "NROLOTE": "235",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "200"
     },
     {
         "CODARTICULO": "M4104111",
@@ -3937,27 +3777,7 @@
         "CONCENTRACION": "1MG(0.1%-1%.)- 1 ML",
         "NROLOTE": "9695",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "900"
-    },
-    {
-        "CODARTICULO": "M2501009",
-        "NOMBREGENERICO": "AMLODIPINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "AMOO26B",
-        "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "1500"
-    },
-    {
-        "CODARTICULO": "M2501151",
-        "NOMBREGENERICO": "BISOPROLOL",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "5 MG",
-        "NROLOTE": "PI0043",
-        "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "1070"
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M2501151",
@@ -3967,7 +3787,17 @@
         "CONCENTRACION": "5 MG",
         "NROLOTE": "PIOO43",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "2770"
+        "STOCKEXISTENTE": "1530"
+    },
+    {
+        "CODARTICULO": "M2501017",
+        "NOMBREGENERICO": "CARVEDILOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "25 MG",
+        "NROLOTE": "53917",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "189"
     },
     {
         "CODARTICULO": "M0711111",
@@ -3977,7 +3807,7 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "349",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "6680"
+        "STOCKEXISTENTE": "4200"
     },
     {
         "CODARTICULO": "M1101034",
@@ -4000,24 +3830,24 @@
         "STOCKEXISTENTE": "140"
     },
     {
-        "CODARTICULO": "M0801005",
-        "NOMBREGENERICO": "CLARITROMICINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "1852023/4",
+        "CODARTICULO": "M1232121",
+        "NOMBREGENERICO": "CLORPROMAZINA",
+        "PRESENTACION": "AMPOLLA I.V. - 2 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "2.5% - 2ML",
+        "NROLOTE": "041-148",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "584"
+        "STOCKEXISTENTE": "350"
     },
     {
-        "CODARTICULO": "M2000046",
-        "NOMBREGENERICO": "CLORHEXIDINA -XILITOL",
-        "PRESENTACION": "200 ML",
-        "FORMA": "COLUTORIO",
-        "CONCENTRACION": ".12%-10%",
-        "NROLOTE": "23101/2",
+        "CODARTICULO": "M1232113",
+        "NOMBREGENERICO": "CLORPROMAZINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "098-177",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "42"
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M4606121",
@@ -4027,7 +3857,7 @@
         "CONCENTRACION": "2 ML",
         "NROLOTE": "F1394-2",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "1500"
+        "STOCKEXISTENTE": "1260"
     },
     {
         "CODARTICULO": "M1109165",
@@ -4045,16 +3875,6 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "4MG/ML - 2 ML",
-        "NROLOTE": "29769",
-        "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "2200"
-    },
-    {
-        "CODARTICULO": "M2701040",
-        "NOMBREGENERICO": "DEXAMETASONA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "4MG/ML - 2 ML",
         "NROLOTE": "29769/7",
         "FECHAVTO": "31/05/2026",
         "STOCKEXISTENTE": "1600"
@@ -4065,9 +3885,19 @@
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "4MG/ML - 2 ML",
+        "NROLOTE": "29769",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "1100"
+    },
+    {
+        "CODARTICULO": "M2701040",
+        "NOMBREGENERICO": "DEXAMETASONA",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "4MG/ML - 2 ML",
         "NROLOTE": "374-146",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "6200"
+        "STOCKEXISTENTE": "3900"
     },
     {
         "CODARTICULO": "M1201017",
@@ -4086,6 +3916,16 @@
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "1GR - 2 ML",
         "NROLOTE": "14777",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "900"
+    },
+    {
+        "CODARTICULO": "M1701082",
+        "NOMBREGENERICO": "DIPIRONA",
+        "PRESENTACION": "AMPOLLA - 2 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1GR - 2 ML",
+        "NROLOTE": "14791",
         "FECHAVTO": "31/05/2026",
         "STOCKEXISTENTE": "1000"
     },
@@ -4127,7 +3967,7 @@
         "CONCENTRACION": "50MCG/ML - 5 ML",
         "NROLOTE": "65133/29",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "15000"
+        "STOCKEXISTENTE": "7100"
     },
     {
         "CODARTICULO": "M3701019",
@@ -4140,14 +3980,24 @@
         "STOCKEXISTENTE": "7"
     },
     {
-        "CODARTICULO": "M2706112",
-        "NOMBREGENERICO": "HIDROCORTISONA",
-        "PRESENTACION": "FRASCO AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "500MG - 5 ML",
-        "NROLOTE": "36945",
+        "CODARTICULO": "M1901007",
+        "NOMBREGENERICO": "HIDROXICLOROQUINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "200 MG",
+        "NROLOTE": "2CBIL",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "100"
+        "STOCKEXISTENTE": "2400"
+    },
+    {
+        "CODARTICULO": "M1708127",
+        "NOMBREGENERICO": "KETOROLAC TROMETAMINA",
+        "PRESENTACION": "1 ML",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "30MG/ML -",
+        "NROLOTE": "38696",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M1708127",
@@ -4167,7 +4017,7 @@
         "CONCENTRACION": "30MG/ML -",
         "NROLOTE": "38695",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M2501007",
@@ -4187,7 +4037,17 @@
         "CONCENTRACION": "60O MG",
         "NROLOTE": "42809F1",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "510"
+        "STOCKEXISTENTE": "380"
+    },
+    {
+        "CODARTICULO": "M1211111",
+        "NOMBREGENERICO": "LORAZEPAM",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "1 MG",
+        "NROLOTE": "974010",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M2000034",
@@ -4207,17 +4067,7 @@
         "CONCENTRACION": "1GR",
         "NROLOTE": "32",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "2080"
-    },
-    {
-        "CODARTICULO": "M0701179",
-        "NOMBREGENERICO": "PIPERACILINA SODICA-TAZOBACTAM",
-        "PRESENTACION": "INYECTABLE",
-        "FORMA": "FRASCO AMPOLLA",
-        "CONCENTRACION": "4GR-500MG",
-        "NROLOTE": "14817",
-        "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "800"
     },
     {
         "CODARTICULO": "M1201119",
@@ -4227,7 +4077,27 @@
         "CONCENTRACION": "3 MG",
         "NROLOTE": "693062",
         "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "3250"
+        "STOCKEXISTENTE": "1250"
+    },
+    {
+        "CODARTICULO": "M0201162",
+        "NOMBREGENERICO": "TRAMADOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "50 MG",
+        "NROLOTE": "TM069",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "20000"
+    },
+    {
+        "CODARTICULO": "M0114011",
+        "NOMBREGENERICO": "VASELINA LIQUIDA",
+        "PRESENTACION": "ENVASE X 1 LITRO",
+        "FORMA": "SOLUCION",
+        "CONCENTRACION": "LITRO",
+        "NROLOTE": "24004VL04",
+        "FECHAVTO": "31/05/2026",
+        "STOCKEXISTENTE": "42"
     },
     {
         "CODARTICULO": "M0114011",
@@ -4240,14 +4110,14 @@
         "STOCKEXISTENTE": "80"
     },
     {
-        "CODARTICULO": "M0114011",
-        "NOMBREGENERICO": "VASELINA LIQUIDA",
-        "PRESENTACION": "ENVASE X 1 LITRO",
-        "FORMA": "SOLUCION",
-        "CONCENTRACION": "LITRO",
-        "NROLOTE": "24004VL04",
-        "FECHAVTO": "31/05/2026",
-        "STOCKEXISTENTE": "54"
+        "CODARTICULO": "M2601007",
+        "NOMBREGENERICO": "ACTIVADOR TISULAR DEL PLASMINOGENO",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "50MG - 50 ML",
+        "NROLOTE": "305607",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "2"
     },
     {
         "CODARTICULO": "M0110021",
@@ -4258,6 +4128,16 @@
         "NROLOTE": "L027/24BA2088727",
         "FECHAVTO": "30/06/2026",
         "STOCKEXISTENTE": "100"
+    },
+    {
+        "CODARTICULO": "M2501010",
+        "NOMBREGENERICO": "AMLODIPINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "5 MG",
+        "NROLOTE": "KN031-0",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "900"
     },
     {
         "CODARTICULO": "M12UEP01",
@@ -4280,6 +4160,16 @@
         "STOCKEXISTENTE": "175"
     },
     {
+        "CODARTICULO": "M1201152",
+        "NOMBREGENERICO": "BACLOFENO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "103",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "1020"
+    },
+    {
         "CODARTICULO": "M3201054",
         "NOMBREGENERICO": "BEVACIZUMAB",
         "PRESENTACION": "",
@@ -4290,6 +4180,16 @@
         "STOCKEXISTENTE": "5"
     },
     {
+        "CODARTICULO": "M2534163",
+        "NOMBREGENERICO": "BISOPROLOL",
+        "PRESENTACION": "30 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "53990",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "12"
+    },
+    {
         "CODARTICULO": "M0306112",
         "NOMBREGENERICO": "BUPIVACAINA HIPERBARICA",
         "PRESENTACION": "AMPOLLA",
@@ -4297,7 +4197,7 @@
         "CONCENTRACION": "0.5% - 4 ML",
         "NROLOTE": "14837",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M3312112",
@@ -4337,7 +4237,7 @@
         "CONCENTRACION": "1 GR",
         "NROLOTE": "66587",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "1469"
+        "STOCKEXISTENTE": "969"
     },
     {
         "CODARTICULO": "M4606121",
@@ -4367,7 +4267,7 @@
         "CONCENTRACION": "4MG/ML - 2 ML",
         "NROLOTE": "29770",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "5200"
+        "STOCKEXISTENTE": "4700"
     },
     {
         "CODARTICULO": "M1601111",
@@ -4377,7 +4277,7 @@
         "CONCENTRACION": "50 MG",
         "NROLOTE": "X7404",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "7950"
+        "STOCKEXISTENTE": "6900"
     },
     {
         "CODARTICULO": "M2501035",
@@ -4397,7 +4297,7 @@
         "CONCENTRACION": "100MG - 2 ML",
         "NROLOTE": "6401/02",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "2500"
+        "STOCKEXISTENTE": "1800"
     },
     {
         "CODARTICULO": "M1801024",
@@ -4407,7 +4307,7 @@
         "CONCENTRACION": "200MG - 100ML",
         "NROLOTE": "14803",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "100"
+        "STOCKEXISTENTE": "50"
     },
     {
         "CODARTICULO": "M2701022",
@@ -4420,14 +4320,24 @@
         "STOCKEXISTENTE": "500"
     },
     {
-        "CODARTICULO": "M1701024",
-        "NOMBREGENERICO": "NAPROXENO",
+        "CODARTICULO": "M1701075",
+        "NOMBREGENERICO": "IBUPROFENO",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "542283",
+        "CONCENTRACION": "400 MG",
+        "NROLOTE": "IBU012",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "5000"
+        "STOCKEXISTENTE": "21600"
+    },
+    {
+        "CODARTICULO": "M3605111",
+        "NOMBREGENERICO": "LEVOTIROXINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "0.1 MG",
+        "NROLOTE": "G01YFW",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "20700"
     },
     {
         "CODARTICULO": "M1403122",
@@ -4437,7 +4347,7 @@
         "CONCENTRACION": "8 MG",
         "NROLOTE": "64136",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M3102112",
@@ -4467,7 +4377,7 @@
         "CONCENTRACION": "10GR-100ML",
         "NROLOTE": "6384",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "84"
+        "STOCKEXISTENTE": "126"
     },
     {
         "CODARTICULO": "M0701179",
@@ -4477,17 +4387,7 @@
         "CONCENTRACION": "4GR-500MG",
         "NROLOTE": "14858",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "2150"
-    },
-    {
-        "CODARTICULO": "M3318126",
-        "NOMBREGENERICO": "SODIO CLORURO",
-        "PRESENTACION": "",
-        "FORMA": "AMPOLLAS",
-        "CONCENTRACION": "20% - 10 ML",
-        "NROLOTE": "14836",
-        "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "1950"
     },
     {
         "CODARTICULO": "M3318122",
@@ -4500,6 +4400,16 @@
         "STOCKEXISTENTE": "100"
     },
     {
+        "CODARTICULO": "M3318126",
+        "NOMBREGENERICO": "SODIO CLORURO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "20% - 10 ML",
+        "NROLOTE": "14836",
+        "FECHAVTO": "30/06/2026",
+        "STOCKEXISTENTE": "400"
+    },
+    {
         "CODARTICULO": "M4528182",
         "NOMBREGENERICO": "SOLUCION FISIOLOGICA DE CLORURO SODIO.",
         "PRESENTACION": "UNIDAD",
@@ -4507,7 +4417,7 @@
         "CONCENTRACION": "0.9% X 500 ML - SIN BOLSA DE PROTECCION.",
         "NROLOTE": "1058/1059",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "9000"
+        "STOCKEXISTENTE": "3888"
     },
     {
         "CODARTICULO": "M0114021",
@@ -4527,7 +4437,7 @@
         "CONCENTRACION": "X",
         "NROLOTE": "24009VS03",
         "FECHAVTO": "30/06/2026",
-        "STOCKEXISTENTE": "32"
+        "STOCKEXISTENTE": "21"
     },
     {
         "CODARTICULO": "M2022228",
@@ -4537,7 +4447,37 @@
         "CONCENTRACION": "70%",
         "NROLOTE": "D07/24",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "700"
+        "STOCKEXISTENTE": "365"
+    },
+    {
+        "CODARTICULO": "M0314120",
+        "NOMBREGENERICO": "BUPIVACAINA C/EPINEFRINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "0.5% - 20 ML",
+        "NROLOTE": "25246/4598",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "180"
+    },
+    {
+        "CODARTICULO": "M2501017",
+        "NOMBREGENERICO": "CARVEDILOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "25 MG",
+        "NROLOTE": "3112",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "84"
+    },
+    {
+        "CODARTICULO": "M0717111",
+        "NOMBREGENERICO": "CEFTRIAXONA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "14903",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "800"
     },
     {
         "CODARTICULO": "M1201029",
@@ -4547,7 +4487,17 @@
         "CONCENTRACION": "0.5 MG",
         "NROLOTE": "22773",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "7000"
+        "STOCKEXISTENTE": "3300"
+    },
+    {
+        "CODARTICULO": "M2501003",
+        "NOMBREGENERICO": "CLORHIDRATO DE LABETALOL",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "5MG/ML - 4 ML",
+        "NROLOTE": "801679732",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "170"
     },
     {
         "CODARTICULO": "M2901037",
@@ -4557,7 +4507,17 @@
         "CONCENTRACION": "0.6UI-10MG/GR - 50GR",
         "NROLOTE": "1211350/445",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "45"
+        "STOCKEXISTENTE": "40"
+    },
+    {
+        "CODARTICULO": "M1201056",
+        "NOMBREGENERICO": "FENITOINA (DIFENILHIDANTOINA)",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS/CÃPSULAS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "FS242",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "21610"
     },
     {
         "CODARTICULO": "M1801006",
@@ -4567,7 +4527,7 @@
         "CONCENTRACION": "200 MG",
         "NROLOTE": "42964F1",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "200"
     },
     {
         "CODARTICULO": "M2601031",
@@ -4577,7 +4537,7 @@
         "CONCENTRACION": "80MG - 0.8 ML",
         "NROLOTE": "610144",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "160"
+        "STOCKEXISTENTE": "120"
     },
     {
         "CODARTICULO": "M2601031",
@@ -4590,6 +4550,16 @@
         "STOCKEXISTENTE": "700"
     },
     {
+        "CODARTICULO": "M2706112",
+        "NOMBREGENERICO": "HIDROCORTISONA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "500MG - 5 ML",
+        "NROLOTE": "36948",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "100"
+    },
+    {
         "CODARTICULO": "M0141269",
         "NOMBREGENERICO": "HIERRO SULFATO FERROSO",
         "PRESENTACION": "ENVASE X 30 COMPRIMIDOS",
@@ -4597,7 +4567,17 @@
         "CONCENTRACION": "",
         "NROLOTE": "3864",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "11000"
+        "STOCKEXISTENTE": "10000"
+    },
+    {
+        "CODARTICULO": "M0701028",
+        "NOMBREGENERICO": "IMIPENEM-CILASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "FCO. AMPOLLA I.M (LIOF.)",
+        "CONCENTRACION": "500MG-500MG - 20 ML",
+        "NROLOTE": "14878",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M2000026",
@@ -4610,6 +4590,16 @@
         "STOCKEXISTENTE": "148"
     },
     {
+        "CODARTICULO": "M1246299",
+        "NOMBREGENERICO": "LEVETIRACETAM",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "SOLUCIÃ“N INYECTABLE",
+        "CONCENTRACION": "500MG/5ML",
+        "NROLOTE": "OP60C",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "100"
+    },
+    {
         "CODARTICULO": "M0314136",
         "NOMBREGENERICO": "LIDOCAINA S/EPINEFRINA-S/CONSERVADORES",
         "PRESENTACION": "",
@@ -4617,7 +4607,17 @@
         "CONCENTRACION": "1% - 20 ML",
         "NROLOTE": "14402",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "70"
+    },
+    {
+        "CODARTICULO": "M1901037",
+        "NOMBREGENERICO": "METRONIDAZOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "101098",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M3000033",
@@ -4627,7 +4627,7 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "DFJX",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "468"
+        "STOCKEXISTENTE": "288"
     },
     {
         "CODARTICULO": "M2201123",
@@ -4637,7 +4637,7 @@
         "CONCENTRACION": "20 MG",
         "NROLOTE": "OM0146",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "53412"
+        "STOCKEXISTENTE": "39202"
     },
     {
         "CODARTICULO": "M0701179",
@@ -4650,6 +4650,16 @@
         "STOCKEXISTENTE": "1000"
     },
     {
+        "CODARTICULO": "M1246174",
+        "NOMBREGENERICO": "QUETIAPINA COMP. 25 MG",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "25 MG",
+        "NROLOTE": "1632023",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "500"
+    },
+    {
         "CODARTICULO": "M3201130",
         "NOMBREGENERICO": "RITUXIMAB",
         "PRESENTACION": "",
@@ -4658,6 +4668,26 @@
         "NROLOTE": "20123",
         "FECHAVTO": "31/07/2026",
         "STOCKEXISTENTE": "2"
+    },
+    {
+        "CODARTICULO": "M2534221",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "28 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "40 MG",
+        "NROLOTE": "8",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "21"
+    },
+    {
+        "CODARTICULO": "M4101040",
+        "NOMBREGENERICO": "SUCCINILCOLINA",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "100MG - 5 ML",
+        "NROLOTE": "54126",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "350"
     },
     {
         "CODARTICULO": "M2301034",
@@ -4670,6 +4700,16 @@
         "STOCKEXISTENTE": "30"
     },
     {
+        "CODARTICULO": "M0501125",
+        "NOMBREGENERICO": "SULFATO FERROSO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "200 MG",
+        "NROLOTE": "77450",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "10000"
+    },
+    {
         "CODARTICULO": "M3000011",
         "NOMBREGENERICO": "TAMSULOSINA",
         "PRESENTACION": "",
@@ -4677,7 +4717,17 @@
         "CONCENTRACION": "0.4 MG",
         "NROLOTE": "43035F1",
         "FECHAVTO": "31/07/2026",
-        "STOCKEXISTENTE": "4800"
+        "STOCKEXISTENTE": "3000"
+    },
+    {
+        "CODARTICULO": "M1226112",
+        "NOMBREGENERICO": "TRIFLUOPERAZINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "70",
+        "FECHAVTO": "31/07/2026",
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M1201148",
@@ -4697,17 +4747,17 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "6390",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "2000"
+        "STOCKEXISTENTE": "12000"
     },
     {
-        "CODARTICULO": "M4502211",
-        "NOMBREGENERICO": "AGUA DESTILADA ESTERIL",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "INYECTABLE.AMPOLLA - FRASCO AMPOLLA",
-        "CONCENTRACION": "5 ML",
-        "NROLOTE": "14372",
+        "CODARTICULO": "M1201006",
+        "NOMBREGENERICO": "AMITRIPTILINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "75 MG",
+        "NROLOTE": "A0462",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "100"
+        "STOCKEXISTENTE": "7000"
     },
     {
         "CODARTICULO": "M0720113",
@@ -4715,9 +4765,9 @@
         "PRESENTACION": "FRASCO AMPOLLA",
         "FORMA": "INYECTABLE",
         "CONCENTRACION": "1GR-500MG",
-        "NROLOTE": "14915",
+        "NROLOTE": "14911",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "1600"
     },
     {
         "CODARTICULO": "M0720113",
@@ -4727,7 +4777,7 @@
         "CONCENTRACION": "1GR-500MG",
         "NROLOTE": "14948",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "2200"
     },
     {
         "CODARTICULO": "M0301007",
@@ -4740,6 +4790,26 @@
         "STOCKEXISTENTE": "225"
     },
     {
+        "CODARTICULO": "M1109142",
+        "NOMBREGENERICO": "CLINDAMICINA",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "600MG",
+        "NROLOTE": "89094",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "1800"
+    },
+    {
+        "CODARTICULO": "M1109142",
+        "NOMBREGENERICO": "CLINDAMICINA",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "600MG",
+        "NROLOTE": "I2411",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "200"
+    },
+    {
         "CODARTICULO": "M2022112",
         "NOMBREGENERICO": "CLORHEXIDINA",
         "PRESENTACION": "500 ML",
@@ -4747,7 +4817,7 @@
         "CONCENTRACION": "4% -",
         "NROLOTE": "2083",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "464"
     },
     {
         "CODARTICULO": "LIM03009",
@@ -4770,6 +4840,26 @@
         "STOCKEXISTENTE": "100"
     },
     {
+        "CODARTICULO": "M2501038",
+        "NOMBREGENERICO": "ENALAPRIL",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1.25 MG",
+        "NROLOTE": "160",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "32"
+    },
+    {
+        "CODARTICULO": "M4001014",
+        "NOMBREGENERICO": "FENILEFRINA-TROPICAMIDA",
+        "PRESENTACION": "",
+        "FORMA": "GOTAS",
+        "CONCENTRACION": "5%-0.5% - 5 ML",
+        "NROLOTE": "406/2",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "8"
+    },
+    {
         "CODARTICULO": "M1201059",
         "NOMBREGENERICO": "FENITOINA (DIFENILHIDANTOINA)",
         "PRESENTACION": "AMPOLLA",
@@ -4777,7 +4867,27 @@
         "CONCENTRACION": "100MG - 2 ML",
         "NROLOTE": "31189",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "3000"
+        "STOCKEXISTENTE": "2300"
+    },
+    {
+        "CODARTICULO": "M0216124",
+        "NOMBREGENERICO": "FENTANILO CITRATO",
+        "PRESENTACION": "AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "50MCG/ML - 5 ML",
+        "NROLOTE": "65132",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "300"
+    },
+    {
+        "CODARTICULO": "M1805112",
+        "NOMBREGENERICO": "FLUCONAZOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "FLA003",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M1201075",
@@ -4787,7 +4897,17 @@
         "CONCENTRACION": "20 MG",
         "NROLOTE": "F8401",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "3015"
+        "STOCKEXISTENTE": "1010"
+    },
+    {
+        "CODARTICULO": "M1104111",
+        "NOMBREGENERICO": "FOSFOMICINA",
+        "PRESENTACION": "",
+        "FORMA": "FCO. AMPOLLA I.V.",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "A0457",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "400"
     },
     {
         "CODARTICULO": "M0603114",
@@ -4797,7 +4917,17 @@
         "CONCENTRACION": "80MG/ EN 2ML -",
         "NROLOTE": "31192",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "700"
+        "STOCKEXISTENTE": "600"
+    },
+    {
+        "CODARTICULO": "M0604214",
+        "NOMBREGENERICO": "GENTAMICINA SULFATO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "80 MG",
+        "NROLOTE": "31192",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M1246152",
@@ -4807,37 +4937,7 @@
         "CONCENTRACION": "5MG -",
         "NROLOTE": "30606",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "400"
-    },
-    {
-        "CODARTICULO": "M2601053",
-        "NOMBREGENERICO": "HEPARINA SODICA",
-        "PRESENTACION": "5 ML",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "5.000U.I/ML -",
-        "NROLOTE": "15992",
-        "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "1150"
-    },
-    {
-        "CODARTICULO": "M2601053",
-        "NOMBREGENERICO": "HEPARINA SODICA",
-        "PRESENTACION": "5 ML",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "5.000U.I/ML -",
-        "NROLOTE": "376-343",
-        "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "800"
-    },
-    {
-        "CODARTICULO": "M2601053",
-        "NOMBREGENERICO": "HEPARINA SODICA",
-        "PRESENTACION": "5 ML",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "5.000U.I/ML -",
-        "NROLOTE": "376-343/375-342",
-        "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "3100"
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M2601053",
@@ -4850,14 +4950,24 @@
         "STOCKEXISTENTE": "800"
     },
     {
-        "CODARTICULO": "M2706121",
-        "NOMBREGENERICO": "HIDROCORTISONA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "9401",
+        "CODARTICULO": "M2601053",
+        "NOMBREGENERICO": "HEPARINA SODICA",
+        "PRESENTACION": "5 ML",
+        "FORMA": "FCO. AMPOLLA",
+        "CONCENTRACION": "5.000U.I/ML -",
+        "NROLOTE": "376-343/375-342",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "1005"
+        "STOCKEXISTENTE": "3000"
+    },
+    {
+        "CODARTICULO": "M2601053",
+        "NOMBREGENERICO": "HEPARINA SODICA",
+        "PRESENTACION": "5 ML",
+        "FORMA": "FCO. AMPOLLA",
+        "CONCENTRACION": "5.000U.I/ML -",
+        "NROLOTE": "376-343",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "800"
     },
     {
         "CODARTICULO": "M2000026",
@@ -4880,6 +4990,16 @@
         "STOCKEXISTENTE": "900"
     },
     {
+        "CODARTICULO": "M0701173",
+        "NOMBREGENERICO": "MEROPENEM",
+        "PRESENTACION": "INYECTABLE",
+        "FORMA": "FRANCO AMPOLLA",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "14921",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "350"
+    },
+    {
         "CODARTICULO": "M1236111",
         "NOMBREGENERICO": "MIDAZOLAM",
         "PRESENTACION": "",
@@ -4890,6 +5010,26 @@
         "STOCKEXISTENTE": "2100"
     },
     {
+        "CODARTICULO": "M2201005",
+        "NOMBREGENERICO": "OMEPRAZOL",
+        "PRESENTACION": "",
+        "FORMA": "FCO. AMPOLLA I.V.",
+        "CONCENTRACION": "40 MG",
+        "NROLOTE": "T9454",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "800"
+    },
+    {
+        "CODARTICULO": "M1701064",
+        "NOMBREGENERICO": "PARACETAMOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "500 MG",
+        "NROLOTE": "PAR011",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "37600"
+    },
+    {
         "CODARTICULO": "M0705112",
         "NOMBREGENERICO": "PENICILINA G. BENZATINICA",
         "PRESENTACION": "INYECTABLE",
@@ -4897,7 +5037,7 @@
         "CONCENTRACION": "2.400.000U.I.",
         "NROLOTE": "C9SB",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "505"
     },
     {
         "CODARTICULO": "M2901105",
@@ -4907,7 +5047,27 @@
         "CONCENTRACION": "1% - 30 ML",
         "NROLOTE": "3946",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "90"
+        "STOCKEXISTENTE": "48"
+    },
+    {
+        "CODARTICULO": "M2534221",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "28 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "40 MG",
+        "NROLOTE": "43",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "60"
+    },
+    {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "LZ013-1",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "1780"
     },
     {
         "CODARTICULO": "M3318120",
@@ -4947,7 +5107,7 @@
         "CONCENTRACION": "25% - 10 ML",
         "NROLOTE": "14976",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "1000"
+        "STOCKEXISTENTE": "900"
     },
     {
         "CODARTICULO": "M3601117",
@@ -4957,7 +5117,27 @@
         "CONCENTRACION": "",
         "NROLOTE": "66708",
         "FECHAVTO": "31/08/2026",
-        "STOCKEXISTENTE": "35"
+        "STOCKEXISTENTE": "34"
+    },
+    {
+        "CODARTICULO": "M2601059",
+        "NOMBREGENERICO": "VITAMINA K (FITOMENADIONA)",
+        "PRESENTACION": "AMPOLLA X 1 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "10MG - 1 ML",
+        "NROLOTE": "8072/9931",
+        "FECHAVTO": "31/08/2026",
+        "STOCKEXISTENTE": "100"
+    },
+    {
+        "CODARTICULO": "M3006111",
+        "NOMBREGENERICO": "ACETAZOLAMIDA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "250 MG",
+        "NROLOTE": "273",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "250"
     },
     {
         "CODARTICULO": "M0110021",
@@ -4967,7 +5147,7 @@
         "CONCENTRACION": "96% -",
         "NROLOTE": "L041/24",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "242"
+        "STOCKEXISTENTE": "86"
     },
     {
         "CODARTICULO": "M0701011",
@@ -4977,7 +5157,7 @@
         "CONCENTRACION": "875MG-125MG",
         "NROLOTE": "492/1",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "11460"
+        "STOCKEXISTENTE": "5720"
     },
     {
         "CODARTICULO": "M2615135",
@@ -4987,7 +5167,17 @@
         "CONCENTRACION": "20MG",
         "NROLOTE": "56",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "58711"
+        "STOCKEXISTENTE": "42561"
+    },
+    {
+        "CODARTICULO": "M2534163",
+        "NOMBREGENERICO": "BISOPROLOL",
+        "PRESENTACION": "30 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "323",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "90"
     },
     {
         "CODARTICULO": "M0711111",
@@ -4997,7 +5187,17 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "354",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "20000"
+        "STOCKEXISTENTE": "18560"
+    },
+    {
+        "CODARTICULO": "M0714111",
+        "NOMBREGENERICO": "CEFALOTINA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "241123",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M1109166",
@@ -5007,7 +5207,17 @@
         "CONCENTRACION": "",
         "NROLOTE": "23K05348",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "110"
+        "STOCKEXISTENTE": "30"
+    },
+    {
+        "CODARTICULO": "M0717111",
+        "NOMBREGENERICO": "CEFTRIAXONA",
+        "PRESENTACION": "FRASCO AMPOLLA",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "1 GR",
+        "NROLOTE": "G2431",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M2022112",
@@ -5020,24 +5230,24 @@
         "STOCKEXISTENTE": "56"
     },
     {
-        "CODARTICULO": "M2709125",
-        "NOMBREGENERICO": "HIDROCORTISONA",
-        "PRESENTACION": "",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "100 MG",
-        "NROLOTE": "424",
+        "CODARTICULO": "M1201077",
+        "NOMBREGENERICO": "GABAPENTIN 300 MG",
+        "PRESENTACION": "COMPRIMIDO",
+        "FORMA": "FORMA FARMACÃ‰UTICA COMPRIMIDO",
+        "CONCENTRACION": "",
+        "NROLOTE": "1512033",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "600"
+        "STOCKEXISTENTE": "11500"
     },
     {
-        "CODARTICULO": "M2000028",
-        "NOMBREGENERICO": "IODOPOVIDONA",
-        "PRESENTACION": "",
-        "FORMA": "JABON LIQUIDO",
-        "CONCENTRACION": "5% - 1 LT.",
-        "NROLOTE": "1396",
+        "CODARTICULO": "M1246152",
+        "NOMBREGENERICO": "HALOPERIDOL",
+        "PRESENTACION": "AMPOLLA 1 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "5MG -",
+        "NROLOTE": "30721",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "251"
+        "STOCKEXISTENTE": "300"
     },
     {
         "CODARTICULO": "M2000028",
@@ -5048,6 +5258,16 @@
         "NROLOTE": "7468",
         "FECHAVTO": "30/09/2026",
         "STOCKEXISTENTE": "99"
+    },
+    {
+        "CODARTICULO": "M2000028",
+        "NOMBREGENERICO": "IODOPOVIDONA",
+        "PRESENTACION": "",
+        "FORMA": "JABON LIQUIDO",
+        "CONCENTRACION": "5% - 1 LT.",
+        "NROLOTE": "1396",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "251"
     },
     {
         "CODARTICULO": "M2000026",
@@ -5065,19 +5285,19 @@
         "PRESENTACION": "",
         "FORMA": "JARABE",
         "CONCENTRACION": "65GR/100ML - 120 ML",
-        "NROLOTE": "3993",
+        "NROLOTE": "153",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "62"
+        "STOCKEXISTENTE": "40"
     },
     {
-        "CODARTICULO": "I0106001",
-        "NOMBREGENERICO": "MEDIO DE CONTRASTE P/RESONANCIA. GADOLINIO",
-        "PRESENTACION": "FCO. AMPOLLA 15 ML O VOLUMEN EQUIVALENTE",
-        "FORMA": "",
-        "CONCENTRACION": "",
-        "NROLOTE": "KTOL5PF",
+        "CODARTICULO": "M1200185",
+        "NOMBREGENERICO": "LEVETIRACETAM",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "1GR",
+        "NROLOTE": "R0547",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "920"
+        "STOCKEXISTENTE": "1780"
     },
     {
         "CODARTICULO": "I0106001",
@@ -5087,7 +5307,27 @@
         "CONCENTRACION": "",
         "NROLOTE": "KT0L5PF",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "760"
+        "STOCKEXISTENTE": "690"
+    },
+    {
+        "CODARTICULO": "I0106001",
+        "NOMBREGENERICO": "MEDIO DE CONTRASTE P/RESONANCIA. GADOLINIO",
+        "PRESENTACION": "FCO. AMPOLLA 15 ML O VOLUMEN EQUIVALENTE",
+        "FORMA": "",
+        "CONCENTRACION": "",
+        "NROLOTE": "KTOL5PF",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "900"
+    },
+    {
+        "CODARTICULO": "M3007119",
+        "NOMBREGENERICO": "MESALAZINA",
+        "PRESENTACION": "30 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "1000 MG",
+        "NROLOTE": "V22700A",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "660"
     },
     {
         "CODARTICULO": "M1236111",
@@ -5100,6 +5340,16 @@
         "STOCKEXISTENTE": "15000"
     },
     {
+        "CODARTICULO": "M1236111",
+        "NOMBREGENERICO": "MIDAZOLAM",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "5MG/ML - 3 ML",
+        "NROLOTE": "370094",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "24300"
+    },
+    {
         "CODARTICULO": "M2501116",
         "NOMBREGENERICO": "NORADRENALINA",
         "PRESENTACION": "",
@@ -5110,14 +5360,24 @@
         "STOCKEXISTENTE": "5000"
     },
     {
-        "CODARTICULO": "M0102043",
-        "NOMBREGENERICO": "POLIETILENGLICOL",
+        "CODARTICULO": "M2401044",
+        "NOMBREGENERICO": "SALBUTAMOL",
         "PRESENTACION": "",
-        "FORMA": "POLVO",
-        "CONCENTRACION": "70GR",
-        "NROLOTE": "8922",
+        "FORMA": "FCO. GOTERO",
+        "CONCENTRACION": "0.5% - 10 ML",
+        "NROLOTE": "S155",
         "FECHAVTO": "30/09/2026",
-        "STOCKEXISTENTE": "97"
+        "STOCKEXISTENTE": "100"
+    },
+    {
+        "CODARTICULO": "M3318120",
+        "NOMBREGENERICO": "SODIO CLORURO",
+        "PRESENTACION": "",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "20% - 10 ML",
+        "NROLOTE": "14979",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "500"
     },
     {
         "CODARTICULO": "M3318122",
@@ -5138,6 +5398,46 @@
         "NROLOTE": "2337479060",
         "FECHAVTO": "30/09/2026",
         "STOCKEXISTENTE": "480"
+    },
+    {
+        "CODARTICULO": "M4528182",
+        "NOMBREGENERICO": "SOLUCION FISIOLOGICA DE CLORURO SODIO.",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "",
+        "CONCENTRACION": "0.9% X 500 ML - SIN BOLSA DE PROTECCION.",
+        "NROLOTE": "NA4545-S1",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "4212"
+    },
+    {
+        "CODARTICULO": "M4528188",
+        "NOMBREGENERICO": "SOLUCION FISIOLOGICA DE CLORURO SODIO.",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "",
+        "CONCENTRACION": "0.9% X 100 ML - SIN BOLSA DE PROTECCION.",
+        "NROLOTE": "40982/981",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "6000"
+    },
+    {
+        "CODARTICULO": "M2708113",
+        "NOMBREGENERICO": "TRIAMCINOLONA HEXACETONIDA",
+        "PRESENTACION": "",
+        "FORMA": "FCO AMPOLLA",
+        "CONCENTRACION": "8MG/ML-5ML",
+        "NROLOTE": "43198F1",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "10"
+    },
+    {
+        "CODARTICULO": "M1101036",
+        "NOMBREGENERICO": "TRIMETOPRIMA-SULFAMETOXAZOL (COTRIMOXAZOL)",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "160MG-800MG",
+        "NROLOTE": "242-828",
+        "FECHAVTO": "30/09/2026",
+        "STOCKEXISTENTE": "7000"
     },
     {
         "CODARTICULO": "M1101055",
@@ -5170,6 +5470,26 @@
         "STOCKEXISTENTE": "3000"
     },
     {
+        "CODARTICULO": "M1201075",
+        "NOMBREGENERICO": "FLUOXETINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "20 MG",
+        "NROLOTE": "251089",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "14000"
+    },
+    {
+        "CODARTICULO": "M1246152",
+        "NOMBREGENERICO": "HALOPERIDOL",
+        "PRESENTACION": "AMPOLLA 1 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "5MG -",
+        "NROLOTE": "30789",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "500"
+    },
+    {
         "CODARTICULO": "M2601031",
         "NOMBREGENERICO": "HEPARINA BAJO PESO MOLECULAR (ENOXAPARINA)",
         "PRESENTACION": "",
@@ -5177,7 +5497,7 @@
         "CONCENTRACION": "80MG - 0.8 ML",
         "NROLOTE": "3L64OF",
         "FECHAVTO": "31/10/2026",
-        "STOCKEXISTENTE": "900"
+        "STOCKEXISTENTE": "810"
     },
     {
         "CODARTICULO": "M2601053",
@@ -5190,6 +5510,26 @@
         "STOCKEXISTENTE": "1500"
     },
     {
+        "CODARTICULO": "M1201162",
+        "NOMBREGENERICO": "LAMOTRIGINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "66997",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "11920"
+    },
+    {
+        "CODARTICULO": "M1211112",
+        "NOMBREGENERICO": "LORAZEPAM",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "2.5MG",
+        "NROLOTE": "601121",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "31000"
+    },
+    {
         "CODARTICULO": "I0108002",
         "NOMBREGENERICO": "MEDIO DE CONTRASTE IODADO IONICO (OXITALAMATO DE MEGLUMINA-OXITALAMATO DE SODIO//IOTALAMATO DE",
         "PRESENTACION": "FCO AMPOLLA 50 ML O VOLUMEN EQUIVALENTE",
@@ -5200,6 +5540,26 @@
         "STOCKEXISTENTE": "200"
     },
     {
+        "CODARTICULO": "I0106001",
+        "NOMBREGENERICO": "MEDIO DE CONTRASTE P/RESONANCIA. GADOLINIO",
+        "PRESENTACION": "FCO. AMPOLLA 15 ML O VOLUMEN EQUIVALENTE",
+        "FORMA": "",
+        "CONCENTRACION": "",
+        "NROLOTE": "KT0LABS",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "450"
+    },
+    {
+        "CODARTICULO": "I0106001",
+        "NOMBREGENERICO": "MEDIO DE CONTRASTE P/RESONANCIA. GADOLINIO",
+        "PRESENTACION": "FCO. AMPOLLA 15 ML O VOLUMEN EQUIVALENTE",
+        "FORMA": "",
+        "CONCENTRACION": "",
+        "NROLOTE": "KT0LASS",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "500"
+    },
+    {
         "CODARTICULO": "M3601011",
         "NOMBREGENERICO": "METIMAZOL",
         "PRESENTACION": "",
@@ -5207,15 +5567,15 @@
         "CONCENTRACION": "5 MG",
         "NROLOTE": "52120",
         "FECHAVTO": "31/10/2026",
-        "STOCKEXISTENTE": "2990"
+        "STOCKEXISTENTE": "1990"
     },
     {
-        "CODARTICULO": "M4110111",
-        "NOMBREGENERICO": "PIRIDOSTIGMINA",
+        "CODARTICULO": "M1236111",
+        "NOMBREGENERICO": "MIDAZOLAM",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "60 MG",
-        "NROLOTE": "8150017",
+        "FORMA": "AMPOLLAS",
+        "CONCENTRACION": "5MG/ML - 3 ML",
+        "NROLOTE": "370134",
         "FECHAVTO": "31/10/2026",
         "STOCKEXISTENTE": "2700"
     },
@@ -5230,6 +5590,36 @@
         "STOCKEXISTENTE": "5100"
     },
     {
+        "CODARTICULO": "M4110111",
+        "NOMBREGENERICO": "PIRIDOSTIGMINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "60 MG",
+        "NROLOTE": "8150017",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "1200"
+    },
+    {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "DBJQ",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "4"
+    },
+    {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "03130/1",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "95"
+    },
+    {
         "CODARTICULO": "KI299007",
         "NOMBREGENERICO": "SAL GRUESA",
         "PRESENTACION": "",
@@ -5238,6 +5628,16 @@
         "NROLOTE": "LI",
         "FECHAVTO": "31/10/2026",
         "STOCKEXISTENTE": "6"
+    },
+    {
+        "CODARTICULO": "M2401043",
+        "NOMBREGENERICO": "SALBUTAMOL",
+        "PRESENTACION": "",
+        "FORMA": "AEROSOL 200 DOSIS",
+        "CONCENTRACION": "100MCG/DOSIS",
+        "NROLOTE": "008T194A",
+        "FECHAVTO": "31/10/2026",
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M3318122",
@@ -5277,17 +5677,17 @@
         "CONCENTRACION": "ENVASE X 500 ML- SIN BOLSA DE PROTECCION",
         "NROLOTE": "2402379061",
         "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "550"
+        "STOCKEXISTENTE": "210"
     },
     {
-        "CODARTICULO": "M1201006",
-        "NOMBREGENERICO": "AMITRIPTILINA",
+        "CODARTICULO": "M3301006",
+        "NOMBREGENERICO": "CALCIO CARBONATO",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "75 MG",
-        "NROLOTE": "333800",
+        "CONCENTRACION": "1.25 GR (EQ.500MGDE CALCIO)",
+        "NROLOTE": "6457",
         "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "500"
+        "STOCKEXISTENTE": "4400"
     },
     {
         "CODARTICULO": "I0701006",
@@ -5317,17 +5717,7 @@
         "CONCENTRACION": "5 MG",
         "NROLOTE": "31039",
         "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "1000"
-    },
-    {
-        "CODARTICULO": "M1201067",
-        "NOMBREGENERICO": "DIMENHIDRINATO",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "50 MG",
-        "NROLOTE": "AA0731",
-        "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "100"
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M1201067",
@@ -5340,6 +5730,16 @@
         "STOCKEXISTENTE": "300"
     },
     {
+        "CODARTICULO": "M1201067",
+        "NOMBREGENERICO": "DIMENHIDRINATO",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "50 MG",
+        "NROLOTE": "AA0731",
+        "FECHAVTO": "30/11/2026",
+        "STOCKEXISTENTE": "100"
+    },
+    {
         "CODARTICULO": "M2304111",
         "NOMBREGENERICO": "FOSFATO MONOSODICO-FOSFATO DISODICO",
         "PRESENTACION": "",
@@ -5350,14 +5750,14 @@
         "STOCKEXISTENTE": "100"
     },
     {
-        "CODARTICULO": "M3201128",
-        "NOMBREGENERICO": "METOTREXATO",
+        "CODARTICULO": "M1200172",
+        "NOMBREGENERICO": "LEVETIRACETAM",
         "PRESENTACION": "",
         "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "45680",
+        "CONCENTRACION": "500MG",
+        "NROLOTE": "EABB6A",
         "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "4240"
     },
     {
         "CODARTICULO": "M3301015",
@@ -5367,7 +5767,17 @@
         "CONCENTRACION": "600MG (8 MEQ)",
         "NROLOTE": "4957",
         "FECHAVTO": "30/11/2026",
-        "STOCKEXISTENTE": "180"
+        "STOCKEXISTENTE": "120"
+    },
+    {
+        "CODARTICULO": "M2601055",
+        "NOMBREGENERICO": "TERLIPRESINA ACETATO-MANITOL",
+        "PRESENTACION": "",
+        "FORMA": "FCO. AMPOLLA + AMPOLLA DILUYENTE",
+        "CONCENTRACION": "1MG-10MG - 5ML",
+        "NROLOTE": "V19506E",
+        "FECHAVTO": "30/11/2026",
+        "STOCKEXISTENTE": "25"
     },
     {
         "CODARTICULO": "M4502211",
@@ -5377,7 +5787,7 @@
         "CONCENTRACION": "5 ML",
         "NROLOTE": "14502",
         "FECHAVTO": "31/12/2026",
-        "STOCKEXISTENTE": "800"
+        "STOCKEXISTENTE": "600"
     },
     {
         "CODARTICULO": "M0301135",
@@ -5397,7 +5807,7 @@
         "CONCENTRACION": "500 MG",
         "NROLOTE": "31159",
         "FECHAVTO": "31/12/2026",
-        "STOCKEXISTENTE": "4500"
+        "STOCKEXISTENTE": "2500"
     },
     {
         "CODARTICULO": "YA253308",
@@ -5407,7 +5817,7 @@
         "CONCENTRACION": "140 X 330 X 50 MM",
         "NROLOTE": "3",
         "FECHAVTO": "31/12/2026",
-        "STOCKEXISTENTE": "11882"
+        "STOCKEXISTENTE": "10882"
     },
     {
         "CODARTICULO": "M0101110",
@@ -5440,14 +5850,24 @@
         "STOCKEXISTENTE": "1100"
     },
     {
-        "CODARTICULO": "M2501009",
-        "NOMBREGENERICO": "AMLODIPINA",
+        "CODARTICULO": "M2534221",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "28 UNIDADES",
+        "FORMA": "COMPRIMIDOS/PASTILLAS/TABLETAS/GRAGEAS",
+        "CONCENTRACION": "40 MG",
+        "NROLOTE": "NM96C",
+        "FECHAVTO": "31/12/2026",
+        "STOCKEXISTENTE": "30"
+    },
+    {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
+        "FORMA": "COMPRIMIDOS",
         "CONCENTRACION": "10 MG",
-        "NROLOTE": "432093",
-        "FECHAVTO": "31/01/2027",
-        "STOCKEXISTENTE": "1000"
+        "NROLOTE": "EAB81A/82A",
+        "FECHAVTO": "31/12/2026",
+        "STOCKEXISTENTE": "90"
     },
     {
         "CODARTICULO": "M2501010",
@@ -5460,14 +5880,14 @@
         "STOCKEXISTENTE": "3000"
     },
     {
-        "CODARTICULO": "M1801005",
-        "NOMBREGENERICO": "FLUCONAZOL",
+        "CODARTICULO": "M1200135",
+        "NOMBREGENERICO": "DIVALPROATO DE SODIO",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDOS",
-        "CONCENTRACION": "150 MG",
-        "NROLOTE": "40357",
+        "FORMA": "COMPRIMIDO",
+        "CONCENTRACION": "250 MG",
+        "NROLOTE": "61792QA",
         "FECHAVTO": "31/01/2027",
-        "STOCKEXISTENTE": "400"
+        "STOCKEXISTENTE": "4000"
     },
     {
         "CODARTICULO": "YH301302",
@@ -5507,27 +5927,17 @@
         "CONCENTRACION": "3 MG",
         "NROLOTE": "693065",
         "FECHAVTO": "31/01/2027",
-        "STOCKEXISTENTE": "13000"
+        "STOCKEXISTENTE": "10000"
     },
     {
-        "CODARTICULO": "M1219111",
-        "NOMBREGENERICO": "AMITRIPTILINA",
+        "CODARTICULO": "M1201031",
+        "NOMBREGENERICO": "CLONAZEPAM",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "25 MG",
-        "NROLOTE": "323900",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "2 MG",
+        "NROLOTE": "193868",
         "FECHAVTO": "28/02/2027",
-        "STOCKEXISTENTE": "2000"
-    },
-    {
-        "CODARTICULO": "M3601005",
-        "NOMBREGENERICO": "DESMOPRESINA",
-        "PRESENTACION": "AMPOLLA",
-        "FORMA": "INYECTABLE",
-        "CONCENTRACION": "4MCG/ML - 1 ML",
-        "NROLOTE": "V00009E",
-        "FECHAVTO": "28/02/2027",
-        "STOCKEXISTENTE": "30"
+        "STOCKEXISTENTE": "1000"
     },
     {
         "CODARTICULO": "M2601029",
@@ -5537,17 +5947,7 @@
         "CONCENTRACION": "40MG - 0.4 ML",
         "NROLOTE": "4L200C",
         "FECHAVTO": "28/02/2027",
-        "STOCKEXISTENTE": "800"
-    },
-    {
-        "CODARTICULO": "M2501009",
-        "NOMBREGENERICO": "AMLODIPINA",
-        "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "10 MG",
-        "NROLOTE": "432097",
-        "FECHAVTO": "31/03/2027",
-        "STOCKEXISTENTE": "3210"
+        "STOCKEXISTENTE": "330"
     },
     {
         "CODARTICULO": "M1701003",
@@ -5557,7 +5957,7 @@
         "CONCENTRACION": "75 MG",
         "NROLOTE": "43504",
         "FECHAVTO": "31/03/2027",
-        "STOCKEXISTENTE": "24110"
+        "STOCKEXISTENTE": "20095"
     },
     {
         "CODARTICULO": "M3002112",
@@ -5567,17 +5967,17 @@
         "CONCENTRACION": "100 MG",
         "NROLOTE": "40203",
         "FECHAVTO": "31/03/2027",
-        "STOCKEXISTENTE": "2000"
+        "STOCKEXISTENTE": "1000"
     },
     {
-        "CODARTICULO": "M2501072",
-        "NOMBREGENERICO": "NIMODIPINA",
+        "CODARTICULO": "M1227112",
+        "NOMBREGENERICO": "LEVOMEPROMAZINA",
         "PRESENTACION": "",
-        "FORMA": "COMPRIMIDO",
-        "CONCENTRACION": "60 MG",
-        "NROLOTE": "6001",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "25 MG",
+        "NROLOTE": "772062",
         "FECHAVTO": "31/03/2027",
-        "STOCKEXISTENTE": "300"
+        "STOCKEXISTENTE": "10000"
     },
     {
         "CODARTICULO": "YA264205",
@@ -5607,7 +6007,7 @@
         "CONCENTRACION": "200 MM X 200M",
         "NROLOTE": "200/402",
         "FECHAVTO": "31/03/2027",
-        "STOCKEXISTENTE": "24"
+        "STOCKEXISTENTE": "22"
     },
     {
         "CODARTICULO": "M0301154",
@@ -5630,6 +6030,26 @@
         "STOCKEXISTENTE": "1000"
     },
     {
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "67971",
+        "FECHAVTO": "31/03/2027",
+        "STOCKEXISTENTE": "30"
+    },
+    {
+        "CODARTICULO": "M2534129",
+        "NOMBREGENERICO": "CARVEDILOL",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "12.5 MG",
+        "NROLOTE": "3119",
+        "FECHAVTO": "30/04/2027",
+        "STOCKEXISTENTE": "840"
+    },
+    {
         "CODARTICULO": "M2000043",
         "NOMBREGENERICO": "CLORHEXIDINA-XILITOL",
         "PRESENTACION": "1000 ML",
@@ -5648,6 +6068,16 @@
         "NROLOTE": "24042",
         "FECHAVTO": "30/04/2027",
         "STOCKEXISTENTE": "15"
+    },
+    {
+        "CODARTICULO": "M3701018",
+        "NOMBREGENERICO": "GAMMAGLOBULINA HUMANA (IGG)",
+        "PRESENTACION": "FCO. AMPOLLA I.V.",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "5.000MG - 100 ML",
+        "NROLOTE": "247610",
+        "FECHAVTO": "30/04/2027",
+        "STOCKEXISTENTE": "100"
     },
     {
         "CODARTICULO": "M3601020",
@@ -5670,6 +6100,16 @@
         "STOCKEXISTENTE": "25"
     },
     {
+        "CODARTICULO": "M4001052",
+        "NOMBREGENERICO": "ACIDO POLIACRILICO",
+        "PRESENTACION": "UNIDAD",
+        "FORMA": "GEL OFTÃLMICO",
+        "CONCENTRACION": "2MG/1GR - 10GR",
+        "NROLOTE": "849",
+        "FECHAVTO": "31/05/2027",
+        "STOCKEXISTENTE": "20"
+    },
+    {
         "CODARTICULO": "E0350323",
         "NOMBREGENERICO": "AEROCAMARA",
         "PRESENTACION": "UNIDAD",
@@ -5687,7 +6127,17 @@
         "CONCENTRACION": "10 MG",
         "NROLOTE": "432099",
         "FECHAVTO": "31/05/2027",
-        "STOCKEXISTENTE": "27840"
+        "STOCKEXISTENTE": "26840"
+    },
+    {
+        "CODARTICULO": "M3002112",
+        "NOMBREGENERICO": "ESPIRONOLACTONA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "100 MG",
+        "NROLOTE": "40321",
+        "FECHAVTO": "31/05/2027",
+        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M0216124",
@@ -5697,7 +6147,7 @@
         "CONCENTRACION": "50MCG/ML - 5 ML",
         "NROLOTE": "FTN841",
         "FECHAVTO": "31/05/2027",
-        "STOCKEXISTENTE": "17000"
+        "STOCKEXISTENTE": "16200"
     },
     {
         "CODARTICULO": "M1101075",
@@ -5708,16 +6158,6 @@
         "NROLOTE": "6002",
         "FECHAVTO": "31/05/2027",
         "STOCKEXISTENTE": "600"
-    },
-    {
-        "CODARTICULO": "YA253304",
-        "NOMBREGENERICO": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "BOLSAS",
-        "CONCENTRACION": "110 X 190 X 30 MM",
-        "NROLOTE": "E4",
-        "FECHAVTO": "31/05/2027",
-        "STOCKEXISTENTE": "2000"
     },
     {
         "CODARTICULO": "M3301021",
@@ -5740,14 +6180,14 @@
         "STOCKEXISTENTE": "125"
     },
     {
-        "CODARTICULO": "M0200125",
-        "NOMBREGENERICO": "REMIFENTANILO",
+        "CODARTICULO": "M2601076",
+        "NOMBREGENERICO": "ROSUVASTATINA",
         "PRESENTACION": "",
-        "FORMA": "FCO. AMPOLLA",
-        "CONCENTRACION": "5MG - 10 ML",
-        "NROLOTE": "42801F3",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "10 MG",
+        "NROLOTE": "LZ015-0",
         "FECHAVTO": "31/05/2027",
-        "STOCKEXISTENTE": "270"
+        "STOCKEXISTENTE": "1630"
     },
     {
         "CODARTICULO": "M12UEP01",
@@ -5767,7 +6207,7 @@
         "CONCENTRACION": "300 MG",
         "NROLOTE": "42917F1",
         "FECHAVTO": "30/06/2027",
-        "STOCKEXISTENTE": "8652"
+        "STOCKEXISTENTE": "5772"
     },
     {
         "CODARTICULO": "M0216124",
@@ -5790,14 +6230,14 @@
         "STOCKEXISTENTE": "240"
     },
     {
-        "CODARTICULO": "YA312105",
-        "NOMBREGENERICO": "PAPEL USO MEDICO CREPADO AZUL",
+        "CODARTICULO": "YA222105",
+        "NOMBREGENERICO": "PAPEL USO MEDICO LISO BLANCO",
         "PRESENTACION": "BOBINA",
         "FORMA": "BOBINA",
-        "CONCENTRACION": "120 CMS X 100 M DE LARGO",
-        "NROLOTE": "MP7227/B855",
+        "CONCENTRACION": "120 CMS DE ANCHO X 100 M DE LARGO",
+        "NROLOTE": "MP7227/8855",
         "FECHAVTO": "30/06/2027",
-        "STOCKEXISTENTE": "4"
+        "STOCKEXISTENTE": "28"
     },
     {
         "CODARTICULO": "M0200125",
@@ -5807,7 +6247,7 @@
         "CONCENTRACION": "5MG - 10 ML",
         "NROLOTE": "42913F3",
         "FECHAVTO": "30/06/2027",
-        "STOCKEXISTENTE": "1480"
+        "STOCKEXISTENTE": "1230"
     },
     {
         "CODARTICULO": "M1101036",
@@ -5817,7 +6257,17 @@
         "CONCENTRACION": "160MG-800MG",
         "NROLOTE": "255-4/229-8",
         "FECHAVTO": "30/06/2027",
-        "STOCKEXISTENTE": "5000"
+        "STOCKEXISTENTE": "3000"
+    },
+    {
+        "CODARTICULO": "M1201161",
+        "NOMBREGENERICO": "ETOSUXIMIDA",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "250 MG",
+        "NROLOTE": "6104",
+        "FECHAVTO": "31/07/2027",
+        "STOCKEXISTENTE": "315"
     },
     {
         "CODARTICULO": "YH104003",
@@ -5827,17 +6277,27 @@
         "CONCENTRACION": "15-18MM DE ANCHO X 50 METROS DE LARGO",
         "NROLOTE": "60724",
         "FECHAVTO": "31/07/2027",
-        "STOCKEXISTENTE": "46"
+        "STOCKEXISTENTE": "42"
     },
     {
-        "CODARTICULO": "M0216162",
-        "NOMBREGENERICO": "TRAMADOL",
-        "PRESENTACION": "AMPOLLA X 1 ML",
-        "FORMA": "AMPOLLA",
-        "CONCENTRACION": "50 MG/ML",
-        "NROLOTE": "TRC125",
-        "FECHAVTO": "31/07/2027",
-        "STOCKEXISTENTE": "100"
+        "CODARTICULO": "M2501142",
+        "NOMBREGENERICO": "ENALAPRIL",
+        "PRESENTACION": "",
+        "FORMA": "FRASCO AMPOLLA",
+        "CONCENTRACION": "2,5MG - 1 ML",
+        "NROLOTE": "164",
+        "FECHAVTO": "31/08/2027",
+        "STOCKEXISTENTE": "40"
+    },
+    {
+        "CODARTICULO": "M1201078",
+        "NOMBREGENERICO": "HALOPERIDOL DECANOATO",
+        "PRESENTACION": "FRASCO AMPOLLA - 3 ML",
+        "FORMA": "INYECTABLE",
+        "CONCENTRACION": "150MG - 3 ML",
+        "NROLOTE": "40445",
+        "FECHAVTO": "31/08/2027",
+        "STOCKEXISTENTE": "450"
     },
     {
         "CODARTICULO": "YA253308",
@@ -5847,17 +6307,17 @@
         "CONCENTRACION": "140 X 330 X 50 MM",
         "NROLOTE": "NH4",
         "FECHAVTO": "31/08/2027",
-        "STOCKEXISTENTE": "33000"
+        "STOCKEXISTENTE": "27000"
     },
     {
-        "CODARTICULO": "YA253304",
-        "NOMBREGENERICO": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO",
-        "PRESENTACION": "UNIDAD",
-        "FORMA": "BOLSAS",
-        "CONCENTRACION": "110 X 190 X 30 MM",
-        "NROLOTE": "H4",
+        "CODARTICULO": "M0705112",
+        "NOMBREGENERICO": "PENICILINA G. BENZATINICA",
+        "PRESENTACION": "INYECTABLE",
+        "FORMA": "FRASCO AMPOLLA",
+        "CONCENTRACION": "2.400.000U.I.",
+        "NROLOTE": "33A236",
         "FECHAVTO": "31/08/2027",
-        "STOCKEXISTENTE": "4000"
+        "STOCKEXISTENTE": "104"
     },
     {
         "CODARTICULO": "M0301153",
@@ -5870,13 +6330,33 @@
         "STOCKEXISTENTE": "225"
     },
     {
-        "CODARTICULO": "M2701112",
-        "NOMBREGENERICO": "BETA METIL PREDNISOLONA",
+        "CODARTICULO": "M1201031",
+        "NOMBREGENERICO": "CLONAZEPAM",
+        "PRESENTACION": "",
+        "FORMA": "COMPRIMIDOS",
+        "CONCENTRACION": "2 MG",
+        "NROLOTE": "194179",
+        "FECHAVTO": "31/10/2027",
+        "STOCKEXISTENTE": "66000"
+    },
+    {
+        "CODARTICULO": "M1210131",
+        "NOMBREGENERICO": "DIAZEPAM",
         "PRESENTACION": "AMPOLLA",
         "FORMA": "INYECTABLE",
-        "CONCENTRACION": "500 MG",
-        "NROLOTE": "40919F2",
+        "CONCENTRACION": "10MG - 2 ML",
+        "NROLOTE": "12238",
         "FECHAVTO": "31/10/2027",
-        "STOCKEXISTENTE": "200"
+        "STOCKEXISTENTE": "600"
+    },
+    {
+        "CODARTICULO": "YA253305",
+        "NOMBREGENERICO": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO",
+        "PRESENTACION": "BOLSA",
+        "FORMA": "BOLSAS",
+        "CONCENTRACION": "125 X 250 X 50-90 MM",
+        "NROLOTE": "2773/02774",
+        "FECHAVTO": "31/10/2027",
+        "STOCKEXISTENTE": "32000"
     }
 ]
