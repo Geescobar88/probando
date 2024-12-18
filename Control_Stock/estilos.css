@@ -183,6 +183,22 @@ td {
     font-size: 14px;
 }
 
+.navidad {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    top: 100px;
+    border: 5px solid black;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.navidadTxt {
+    display: none;
+}
+
 /* ----------------------------------FILTRO---------------------------------- */
 
 .filtro {
@@ -515,5 +531,9 @@ td {
 
     .nombreArticulo {
         font-size: 24px;
+    }
+
+    .navidadTxt {
+        display: inline;
     }
 }

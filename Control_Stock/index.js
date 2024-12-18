@@ -1042,4 +1042,21 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
     const date = new Date();
     saveAs(blob, 'listado_' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
   })
+
+  //--------------------------- EXTRAS--------------------------------
+
+  const navidad = document.getElementById("navidad")
+  const navidadBtn = document.getElementById("navidadBtn")
+  const navidadOpen = document.getElementById("navidadOpen")
+  
+  navidadOpen.addEventListener("click", () => {
+    navidad.style.display ="flex"
+  })
+
+  navidadBtn.addEventListener("click", () => {
+    navidad.style.display ="none"
+  })
+
+
 }
+
