@@ -1050,7 +1050,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
   const navidadOpen = document.getElementById("navidadOpen")
   
   navidadOpen.addEventListener("click", () => {
-    // navidad.style.display ="flex"
+    navidad.style.display ="flex"
   })
 
   navidadBtn.addEventListener("click", () => {
