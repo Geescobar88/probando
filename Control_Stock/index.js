@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "30-12-2024"
+  const diaActual = "02-01-2025"
   fechaSpan.innerText = diaActual
   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  const diaPrevio = "27-12-2024"
+  const diaPrevio = "30-12-2024"
   cargarDatos(diaActual, diaPrevio);
 
 });
@@ -1045,17 +1045,17 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
   //--------------------------- EXTRAS--------------------------------
 
-  const navidad = document.getElementById("navidad")
-  const navidadBtn = document.getElementById("navidadBtn")
-  const navidadOpen = document.getElementById("navidadOpen")
+  // const festivo = document.getElementById("festivo")
+  // const festivoBtn = document.getElementById("festivoBtn")
+  // const festivoOpen = document.getElementById("festivoOpen")
   
-  navidadOpen.addEventListener("click", () => {
-    navidad.style.display ="flex"
-  })
+  // festivoOpen.addEventListener("click", () => {
+  //   festivo.style.display ="flex"
+  // })
 
-  navidadBtn.addEventListener("click", () => {
-    navidad.style.display ="none"
-  })
+  // festivoBtn.addEventListener("click", () => {
+  //   festivo.style.display ="none"
+  // })
 
 
 }
