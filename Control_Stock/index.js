@@ -3,10 +3,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const fecha = new Date();
   const diaActual = "02-01-2025"
   fechaSpan.innerText = diaActual
-  // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
+
   const diaPrevio = "30-12-2024"
   cargarDatos(diaActual, diaPrevio);
 
+
+
+  const arregloDia = () => {if (fecha.getDate() < 10) {
+    return "0"
+  }}
+
+  const arregloMes = () => {if ((fecha.getMonth() + 1) < 10) {
+    return "0"
+  }}
+
+  const FechaReal = arregloDia() + fecha.getDate() + "-" + arregloMes() + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
+
+  const comprobarFecha = () => {
+    const footerStyle = document.getElementById("footer")
+    const ActText = document.getElementById("ActText")
+    if (FechaReal != diaActual) {
+      footerStyle.style.backgroundColor = "#881515"
+      footerStyle.style.color = "white"
+      footerStyle.style.fontWeight = "bold"
+      ActText.textContent = "DATOS DESACTALIZADOS - "
+    }
+  }
+
+  comprobarFecha()
 });
 
 async function cargarDatos(diaActual, diaPrevio) {
