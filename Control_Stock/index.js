@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "02-01-2025"
+  const diaActual = "03-01-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "30-12-2024"
+  const diaPrevio = "02-01-2025"
   cargarDatos(diaActual, diaPrevio);
-
-
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
     return "0"
@@ -26,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       footerStyle.style.backgroundColor = "#881515"
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
-      ActText.textContent = "DATOS DESACTALIZADOS - "
+      ActText.textContent = "DATOS DESACTUALIZADOS - "
     }
   }
 
@@ -44,6 +42,8 @@ async function cargarDatos(diaActual, diaPrevio) {
   const listadoVto = await vto.json();
   const vtoF = await fetch("./data/vto_F.json")
   const listadoVtoF = await vtoF.json();
+
+
 
   const totalVto = listadoVto.map((array1) => {
     const coincidencia = listadoVtoF.find(
