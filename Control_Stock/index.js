@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "06-01-2025"
+  const diaActual = "07-01-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "03-01-2025"
+  const diaPrevio = "06-01-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
@@ -32,18 +32,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function cargarDatos(diaActual, diaPrevio) {
-  const db = await fetch("./data/DB.json");
-  const dbResponse = await db.json();
+  const cargando = document.getElementById("cargando")
+  const container = document.getElementById("container")
+
+  container.style.visibility = "hidden"
   const listado = await fetch("./data/" + diaActual + ".json")
   const listadoResponse = await listado.json();
   const listadoPrevio = await fetch("./data/" + diaPrevio + ".json")
   const listadoPrevioResponse = await listadoPrevio.json();
-  const vto = await fetch("./data/vto.json")
-  const listadoVto = await vto.json();
-  const vtoF = await fetch("./data/vto_F.json")
-  const listadoVtoF = await vtoF.json();
 
+  const db = await fetch("./data/DB.json");
+  const dbTotal = await db.json();
+  const dbResponse = dbTotal.DB;
+  const listadoVto = dbTotal.VTO;
+  const listadoVtoF = dbTotal.VTO_F;
 
+  container.style.visibility = "visible"
+  cargando.style.display = "none"
 
   const totalVto = listadoVto.map((array1) => {
     const coincidencia = listadoVtoF.find(
