@@ -20,9 +20,7 @@
     </noscript>
     <header>
         <span id="menu_btn" class="menu_btn">☰</span>
-        <h1 class="titulo">
-            <img src="./data/img/navidad/christmas-34-128.png" width="36px" alt="">
-             Control de Stock <img src="./data/img/navidad/christmas-29-128.png" alt="" width="36px"> <span id="navidadOpen" class="navidadTxt" title="Click!">¡Felices Fiestas!</span>  <img src="./data/img/navidad/christmas-41-128.png" alt="" width="36px"></h1>
+        <h1 class="titulo">Control de Stock</h1>
         <div id="menu" class="menu">
             <ul>
                 <li><a href="./index.html" class="menu_i">Control de Stock</a></li>
@@ -37,10 +35,11 @@
         <img src="./data/img/navidad/noel.gif" alt="">
         <button id="festivoBtn" class="bbutton">Cerrar</button>
     </div> -->
-    <div id="cargando">
-        <p>Cargando datos...</p>
+    <div class="cargando" id="cargando">
+        <img src="./data/img/cargando.gif" alt="" width="200px" class="cargandoImg">
+        <p class="cargandoTxt">Cargando datos...</p>
     </div>
-    <div class="container"  id="container">
+    <div class="container" id="container">
 
         <section class="filtro">
             <label class="tituloBuscar">Buscar articulo :</label>
@@ -58,7 +57,7 @@
         </section>
 
         <section class="busqueda" id="busqueda">
-            <input type="text" list="medicacion" id="entrada" class="entrada" disabled autocomplete="off"/>
+            <input type="text" list="medicacion" id="entrada" class="entrada" disabled autocomplete="off" />
             <datalist id="medicacion"></datalist>
             <button class="bbutton" id="borrar">Borrar</button>
         </section>
@@ -95,7 +94,8 @@
             </div>
 
             <div class="vto">
-                <label class="LTextVto" id="LTextVto">Mostrar próximos vencimientos hasta 12/27 (Solo referencia - Ultima actualización 02/01/2025)</label>
+                <label class="LTextVto" id="LTextVto">Mostrar próximos vencimientos hasta 12/27 (Solo referencia -
+                    Ultima actualización 02/01/2025)</label>
 
                 <table id="tabla" class="tablaVto">
                     <tr>
@@ -223,13 +223,15 @@
 
         </div>
 
-        
 
-    <footer id="footer"> <p  class="LText"> <span id="ActText"></span>Ultima actualización: <span id="fecha"></span> 09:20 hs</p>
-    </div></footer>
+
+        <footer id="footer">
+            <p class="LText"> <span id="ActText"></span>Ultima actualización: <span id="fecha"></span> 10:10 hs</p>
+    </div>
+    </footer>
     <script src="https://unpkg.com/export-from-json/dist/umd/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    </body>
+</body>
 
 </html>

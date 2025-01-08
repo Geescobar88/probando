@@ -204,6 +204,21 @@ td {
     cursor: pointer;
 }
 
+.cargando {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.cargandoImg {
+    border-radius: 10px;
+}
+
+.cargandoTxt {
+    font-weight: bold;
+}
 /* ----------------------------------FILTRO---------------------------------- */
 
 .filtro {
