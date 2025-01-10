@@ -9,14 +9,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
     return "0"
-  }}
+  } else {
+    return ""
+  }
+}
 
   const arregloMes = () => {if ((fecha.getMonth() + 1) < 10) {
     return "0"
+  }else {
+    return ""
   }}
 
   const FechaReal = arregloDia() + fecha.getDate() + "-" + arregloMes() + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-
+  console.log(FechaReal)
   const comprobarFecha = () => {
     const footerStyle = document.getElementById("footer")
     const ActText = document.getElementById("ActText")
