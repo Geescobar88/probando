@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "24-01-2025"
+  const diaActual = "27-01-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "23-01-2025"
+  const diaPrevio = "24-01-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
@@ -30,7 +30,21 @@ document.addEventListener('DOMContentLoaded', function () {
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
       ActText.textContent = "DATOS DESACTUALIZADOS - "
+      const contador = setTimeout(actualizar, 60000);
+      function actualizar() {
+        if ('caches' in window) {
+          caches.keys().then((names) => {
+            names.forEach((name) => {
+              caches.delete(name);
+            });
+          });
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        location.reload();
+      }
     }
+
   }
 
   comprobarFecha()

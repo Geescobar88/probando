@@ -1,58 +1,10 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//   const fechaSpan = document.getElementById("fecha")
-//   const fecha = new Date();
-//   const diaActual = "23-01-2025"
-//     fechaSpan.innerText = diaActual
-//   // const diaActual = fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-//   const diaPrevio = "22-01-2025"
-//   cargarDatos(diaActual, diaPrevio);
-// });
-
-// async function cargarDatos(diaActual, diaPrevio) {
-//   const db = await fetch("./data/DB.json");
-//   const dbResponse = await db.json();
-//   const listado = await fetch("./data/"+diaActual+".json")
-//   const listadoResponse = await listado.json();
-//   const listadoPrevio = await fetch("./data/"+diaPrevio+".json")
-//   const listadoPrevioResponse = await listadoPrevio.json();
-//   const vto = await fetch("./data/vto.json")
-//   const listadoVto = await vto.json();
-//   const vtoF = await fetch("./data/vto_F.json")
-//   const listadoVtoF = await vtoF.json();
-
-//   const totalVto = listadoVto.map((array1) => {
-//     const coincidencia = listadoVtoF.find(
-//       (array2) => array2.NROLOTE === array1.NROLOTE
-//     );
-//     if (coincidencia) {
-//       return { ...array1, ...coincidencia };
-//     } else {
-//       return array1;
-//     }
-//   });
-
-//   const totalVto2 = totalVto.map((array1) => {
-//     const coincidencia = dbResponse.find(
-//       (array2) => array2.CODARTICULO === array1.CODARTICULO
-//     );
-//     if (coincidencia) {
-//       return { ...array1, ...coincidencia };
-//     } else {
-//       return array1;
-//     }
-//   });
-
-//   generarTotal(dbResponse, listadoResponse, listadoPrevioResponse, totalVto2);
-//   menubar();
-// }
-
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "24-01-2025"
+  const diaActual = "27-01-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "23-01-2025"
+  const diaPrevio = "24-01-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
