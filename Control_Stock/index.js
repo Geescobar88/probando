@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.clear();
         location.reload();
       }
+    } else {
+      footerStyle.style.backgroundColor ="rgb(6, 99, 75)"
+      footerStyle.style.color = "white"
+      footerStyle.style.fontWeight = "bold"
     }
 
   }
