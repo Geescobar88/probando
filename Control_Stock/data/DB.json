@@ -1,7 +1,7 @@
 {
     "DB": [
         {
-            "CODARTICULO": " M4501085",
+            "CODARTICULO": "M4501085",
             "MEDICACION": "ACEITE DE SOJA-TRIGLICÉRIDOS CADENA MEDIA-FOSF.HUEVO-GLICERINA EMULSION GRASA CON MCT-LCT FA 20% - 500 ML (INTRALIPID)",
             "STOCK_MIN": "1",
             "HABILITADO": "SI",
@@ -41,7 +41,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M4208121",
+            "CODARTICULO": "M4208121",
             "MEDICACION": "ACICLOVIR COMPRIMIDOS 200 MG",
             "STOCK_MIN": "400",
             "HABILITADO": "SI",
@@ -201,7 +201,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M2615168",
+            "CODARTICULO": "M2615168",
             "MEDICACION": "ADHESIVO TISULAR EN BASE A ENBUCRILATO X 0.5 ML (HYSTOACRIL)",
             "STOCK_MIN": "1",
             "HABILITADO": "SI",
@@ -217,7 +217,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " E0350323",
+            "CODARTICULO": "E0350323",
             "MEDICACION": "AEROCAMARA ADULTO VARIAS MEDIDAS",
             "STOCK_MIN": "10",
             "HABILITADO": "SI",
@@ -545,7 +545,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M2601083",
+            "CODARTICULO": "M2601083",
             "MEDICACION": "ATORVASTATINA 10 MG COMPRIMIDOS",
             "STOCK_MIN": "0",
             "HABILITADO": "SI",
@@ -649,7 +649,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M1200149",
+            "CODARTICULO": "M1200149",
             "MEDICACION": "BETAHISTINA 8 MG COMPRIMIDOS",
             "STOCK_MIN": "0",
             "HABILITADO": "SI",
@@ -1073,7 +1073,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M1201015",
+            "CODARTICULO": "M1201015",
             "MEDICACION": "CITALOPRAM 20 MG  COMPRIMIDOS",
             "STOCK_MIN": "300",
             "HABILITADO": "SI",
@@ -1233,7 +1233,7 @@
             "PRIORIDAD": "1"
         },
         {
-            "CODARTICULO": "M1232121 ",
+            "CODARTICULO": "M1232121",
             "MEDICACION": "CLORPROMAZINA AMPOLLAS IV 2.5%-2ML",
             "STOCK_MIN": "100",
             "HABILITADO": "SI",
@@ -1289,7 +1289,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M2901038",
+            "CODARTICULO": "M2901038",
             "MEDICACION": "COLAGENASA + CLORANFENICOL (IRUXOL) CREMA 15 GR",
             "STOCK_MIN": "20",
             "HABILITADO": "SI",
@@ -1337,7 +1337,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M4601012",
+            "CODARTICULO": "M4601012",
             "MEDICACION": "COMPLEJO MULTIVITAMINICOS INYECTABLE FA (TIPO RIVIAL O VI-SYNERAL)",
             "STOCK_MIN": "50",
             "HABILITADO": "SI",
@@ -1857,7 +1857,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " I0108003",
+            "CODARTICULO": "I0108003",
             "MEDICACION": "ESTERES ETILICOS DE ACIDOS GRASOS IODADOS DEL ACEITE DE ADORMIDERA AMPOLLA 48% P/V IODO (LIPIODOL)",
             "STOCK_MIN": "0.5",
             "HABILITADO": "SI",
@@ -2065,7 +2065,7 @@
             "PRIORIDAD": "1"
         },
         {
-            "CODARTICULO": " M4023155",
+            "CODARTICULO": "M4023155",
             "MEDICACION": "FLUORESCEINA 0,25 % GOTAS",
             "STOCK_MIN": "3",
             "HABILITADO": "SI",
@@ -2321,7 +2321,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M2615121",
+            "CODARTICULO": "M2615121",
             "MEDICACION": "GELATINA FLUIDA MODIF.(SUCCINILADA)-SODIO CL.-HIDROXID.SODIO SOLUCION 500 ML 40-7.01-1.36GR/100ML (TIPO GELAFUNDIN O SIMILAR)",
             "STOCK_MIN": "0",
             "HABILITADO": "SI",
@@ -2617,7 +2617,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M1805121",
+            "CODARTICULO": "M1805121",
             "MEDICACION": "ITRACONAZOL 200 MG COMPRIMIDOS",
             "STOCK_MIN": "100",
             "HABILITADO": "SI",
@@ -3377,7 +3377,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M5005005",
+            "CODARTICULO": "M5005005",
             "MEDICACION": "MÓDULO DE MALTODEXTRINA  (POLIMEROSA) 400 GRS. LATA",
             "STOCK_MIN": "",
             "HABILITADO": "SI",
@@ -3641,7 +3641,7 @@
             "PRIORIDAD": "1"
         },
         {
-            "CODARTICULO": " M3301036",
+            "CODARTICULO": "M3301036",
             "MEDICACION": "PAMIDRONATO SODICO 90 MG FA",
             "STOCK_MIN": "8",
             "HABILITADO": "SI",
@@ -3657,7 +3657,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M0216164",
+            "CODARTICULO": "M0216164",
             "MEDICACION": "PARACETAMOL 1 GR FA 10 MG/ML 100 ML (VIDRIO O FLEX)",
             "STOCK_MIN": "150",
             "HABILITADO": "SI",
@@ -3745,7 +3745,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": "M1901023 ",
+            "CODARTICULO": "M1901023",
             "MEDICACION": "PIRIMETAMINA 25 MG COMPRIMIDOS",
             "STOCK_MIN": "60",
             "HABILITADO": "SI",
@@ -3769,7 +3769,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M0102043",
+            "CODARTICULO": "M0102043",
             "MEDICACION": "POLIETILENGLICOL 3350 + ELECTROLITOS 70 GR (BAREX 70) ",
             "STOCK_MIN": "40",
             "HABILITADO": "SI",
@@ -3889,7 +3889,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": "I0701013 ",
+            "CODARTICULO": "I0701013",
             "MEDICACION": "PROLONGADOR (ESPIRALADO) BIFURCADO C/DOBLE CONECTOR EN T HEMBRA 1,5 MTS. P/BOMBA DE INFUSION PARA CONTRASTE DE RESONANCIA MAGNETICA (SIMILAR A MEDRAD® SALIENT).",
             "STOCK_MIN": "100",
             "HABILITADO": "SI",
@@ -3993,7 +3993,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": "M2203112 ",
+            "CODARTICULO": "M2203112",
             "MEDICACION": "RANITIDINA AMPOLLAS 50MG",
             "STOCK_MIN": "5500",
             "HABILITADO": "SI",
@@ -4009,7 +4009,7 @@
             "PRIORIDAD": "1"
         },
         {
-            "CODARTICULO": " M2000115",
+            "CODARTICULO": "M2000115",
             "MEDICACION": "RESINA DE COLOFINA-ESENCIA DE TREMENTINA (ADHESOL)",
             "STOCK_MIN": "10",
             "HABILITADO": "SI",
@@ -4129,7 +4129,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M2401043",
+            "CODARTICULO": "M2401043",
             "MEDICACION": "SALBUTAMOL AEROSOL 250 DOSIS -100MCG",
             "STOCK_MIN": "350",
             "HABILITADO": "SI",
@@ -4217,7 +4217,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " M3601040",
+            "CODARTICULO": "M3601040",
             "MEDICACION": "SILDENAFIL 50 MG COMPRIMIDOS",
             "STOCK_MIN": "10",
             "HABILITADO": "SI",
@@ -4233,7 +4233,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": " LIM03025",
+            "CODARTICULO": "LIM03025",
             "MEDICACION": "SOLUCION ANTI INCRUSTANTE OXIDIAL LITRO \nSolucion estabilizada de fosfonatos envase 1,5 kg como anti incrustante (preventivo) para el sistema de filtro de agua",
             "STOCK_MIN": "0.5",
             "HABILITADO": "SI",
