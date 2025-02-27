@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "26-02-2025"
+  const diaActual = "27-02-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "25-02-2025"
+  const diaPrevio = "26-02-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {if (fecha.getDate() < 10) {
@@ -500,7 +500,9 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
       case 1:
 
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Depósito</th><th>Farmacia</th></tr>";
+        console.log(total)
         total.forEach((articulo) => {
+
           if (articulo.HABILITADO == "SI") {
 
             const row = tablaListados.insertRow();
@@ -554,7 +556,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
-          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+          if (articulo.HABILITADO == "SI" && Number(articulo.STOCKENDEPOSITO) <= Number(articulo.STOCK_MIN)) {
 
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
@@ -606,7 +608,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
 
-          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == 0) {
+          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == "0") {
 
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
