@@ -7,18 +7,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const diaPrevio = "28-02-2025"
   cargarDatos(diaActual, diaPrevio);
 
-  const arregloDia = () => {if (fecha.getDate() < 10) {
-    return "0"
-  } else {
-    return ""
+  const arregloDia = () => {
+    if (fecha.getDate() < 10) {
+      return "0"
+    } else {
+      return ""
+    }
   }
-}
 
-  const arregloMes = () => {if ((fecha.getMonth() + 1) < 10) {
-    return "0"
-  }else {
-    return ""
-  }}
+  const arregloMes = () => {
+    if ((fecha.getMonth() + 1) < 10) {
+      return "0"
+    } else {
+      return ""
+    }
+  }
 
   const FechaReal = arregloDia() + fecha.getDate() + "-" + arregloMes() + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
   console.log(FechaReal)
@@ -30,21 +33,21 @@ document.addEventListener('DOMContentLoaded', function () {
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
       ActText.textContent = "DATOS DESACTUALIZADOS - "
-      const contador = setTimeout(actualizar, 60000);
-      function actualizar() {
-        if ('caches' in window) {
-          caches.keys().then((names) => {
-            names.forEach((name) => {
-              caches.delete(name);
-            });
-          });
-        }
-        localStorage.clear();
-        sessionStorage.clear();
-        location.reload();
-      }
+      // const contador = setTimeout(actualizar, 60000);
+      // function actualizar() {
+      //   if ('caches' in window) {
+      //     caches.keys().then((names) => {
+      //       names.forEach((name) => {
+      //         caches.delete(name);
+      //       });
+      //     });
+      //   }
+      //   localStorage.clear();
+      //   sessionStorage.clear();
+      //   location.reload();
+      // }
     } else {
-      footerStyle.style.backgroundColor ="rgb(6, 99, 75)"
+      footerStyle.style.backgroundColor = "rgb(6, 99, 75)"
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
     }
@@ -465,7 +468,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
         diferencias.forEach((articulo) => {
 
-          if (articulo.DIFERENCIA >= 0 || articulo.VALORACTUAL == 0 ) {
+          if (articulo.DIFERENCIA >= 0 || articulo.VALORACTUAL == 0) {
 
             const row = tablaListados.insertRow();
             const codigoCell = row.insertCell(0);
@@ -514,7 +517,8 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
             codigoCell.innerHTML = articulo.CODARTICULO;
             medicacionCell.innerHTML = articulo.MEDICACION;
-            if (articulo.STOCKENDEPOSITO == 0) {
+
+            if (articulo.STOCKENDEPOSITO == 0 || articulo.STOCKENDEPOSITO == undefined) {
               estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
               estadoCell.style.color = "black"
               estadoCell.style.fontWeight = "bold"
@@ -544,9 +548,19 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               medicacionCell.style.color = "red"
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "red"
+            } 
+
+            if (articulo.STOCKENDEPOSITO == undefined) {
+              stockCell.innerHTML = 0
+            } else {
+              stockCell.innerHTML = articulo.STOCKENDEPOSITO
             }
-            stockCell.innerHTML = articulo.STOCKENDEPOSITO
-            stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+
+            if (articulo.STOCKENDISPENSACION == undefined) {
+              stockFCell.innerHTML = 0
+            } else {
+              stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+            }
           }
 
         })
@@ -1102,7 +1116,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
   // const festivo = document.getElementById("festivo")
   // const festivoBtn = document.getElementById("festivoBtn")
   // const festivoOpen = document.getElementById("festivoOpen")
-  
+
   // festivoOpen.addEventListener("click", () => {
   //   festivo.style.display ="flex"
   // })
