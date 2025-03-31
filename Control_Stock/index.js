@@ -33,19 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
       ActText.textContent = "DATOS DESACTUALIZADOS - "
-      // const contador = setTimeout(actualizar, 60000);
-      // function actualizar() {
-      //   if ('caches' in window) {
-      //     caches.keys().then((names) => {
-      //       names.forEach((name) => {
-      //         caches.delete(name);
-      //       });
-      //     });
-      //   }
-      //   localStorage.clear();
-      //   sessionStorage.clear();
-      //   location.reload();
-      // }
+      const contador = setTimeout(searchUdt, 60000);
+
+      function searchUdt() {
+        const resultado = fetch("https://geescobar88.github.io/probando/Control_Stock/data/" + diaActual + ".json")
+          .then ( actualizar())
+
+      }
+
+      function actualizar() {
+        if ('caches' in window) {
+          caches.keys().then((names) => {
+            names.forEach((name) => {
+              caches.delete(name);
+            });
+          });
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        location.reload();
+      }
     } else {
       footerStyle.style.backgroundColor = "rgb(6, 99, 75)"
       footerStyle.style.color = "white"
