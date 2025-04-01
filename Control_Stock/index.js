@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "31-03-2025"
+  const diaActual = "01-04-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "28-03-2025"
+  const diaPrevio = "31-03-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       function searchUdt() {
         const resultado = fetch("https://geescobar88.github.io/probando/Control_Stock/data/" + diaActual + ".json")
-          .then ( actualizar())
-
+          .then(() => actualizar())
+          .catch((e) => console.log(e))
       }
 
       function actualizar() {
