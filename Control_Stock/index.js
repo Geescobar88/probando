@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "01-04-2025"
+  const diaActual = "03-04-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "31-03-2025"
+  const diaPrevio = "01-04-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const FechaReal = arregloDia() + fecha.getDate() + "-" + arregloMes() + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
-  console.log(FechaReal)
   const comprobarFecha = () => {
     const footerStyle = document.getElementById("footer")
     const ActText = document.getElementById("ActText")

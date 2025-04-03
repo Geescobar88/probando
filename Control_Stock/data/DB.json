@@ -854,7 +854,7 @@
             "STOCK_MIN": "250",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "M4601009",
@@ -3062,7 +3062,7 @@
             "STOCK_MIN": "500",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "M3007113",
@@ -3798,7 +3798,7 @@
             "STOCK_MIN": "2000",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "M3301015",
@@ -4230,7 +4230,7 @@
             "STOCK_MIN": "280",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "LIM03025",
@@ -4294,7 +4294,7 @@
             "STOCK_MIN": "250",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "M4401009",
@@ -4302,7 +4302,7 @@
             "STOCK_MIN": "0",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
-            "PRIORIDAD": "0"
+            "PRIORIDAD": "1"
         },
         {
             "CODARTICULO": "M4528198",
