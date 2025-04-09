@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "07-04-2025"
+  const diaActual = "09-04-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "04-04-2025"
+  const diaPrevio = "07-04-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -1115,6 +1115,20 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
     const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
     saveAs(blob, 'listado_' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
+  })
+
+
+    //--------------------------- BUSCADOR--------------------------------
+  buscadorBtn.addEventListener("click", () => {
+    const buscadorInput = document.getElementById("buscadorInput")
+    window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
+  })
+
+  buscadorInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      const buscadorInput = document.getElementById("buscadorInput")
+      window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
+    }
   })
 
   //--------------------------- EXTRAS--------------------------------

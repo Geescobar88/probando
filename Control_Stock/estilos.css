@@ -100,6 +100,9 @@ margin-bottom: 5px;
     color: var(--terciario);
 }
 
+.buscador {
+    display: none;
+}
 
 /* ----------------------------------GENERAL---------------------------------- */
 
@@ -560,5 +563,10 @@ footer {
 
     .festivoTxt {
         display: inline;
+    }
+
+    .buscador {
+        display: flex;
+        margin-right: 10px;
     }
 }
