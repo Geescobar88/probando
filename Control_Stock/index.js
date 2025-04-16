@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "15-04-2025"
+  const diaActual = "16-04-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "14-04-2025"
+  const diaPrevio = "15-04-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       footerStyle.style.color = "white"
       footerStyle.style.fontWeight = "bold"
       ActText.textContent = "DATOS DESACTUALIZADOS - "
-      const contador = setTimeout(searchUdt, 60000);
+      const contador = setTimeout(searchUdt, 600000);
 
       function searchUdt() {
         const resultado = fetch("https://geescobar88.github.io/probando/Control_Stock/data/" + diaActual + ".json")
