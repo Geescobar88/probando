@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "29-04-2025"
+  const diaActual = "05-05-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "28-04-2025"
+  const diaPrevio = "29-04-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
