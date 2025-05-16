@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "15-05-2025"
+  const diaActual = "16-05-2025"
   fechaSpan.innerText = diaActual
 
   const diaPrevio = "12-05-2025"
