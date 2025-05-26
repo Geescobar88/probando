@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "23-05-2025"
+  const diaActual = "26-05-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "21-05-2025"
+  const diaPrevio = "23-05-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -353,7 +353,8 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       const cantidadFCell = row.insertCell(3);
 
       loteCell.innerHTML = articulo.NROLOTE;
-      vencimientoCell.innerHTML = articulo.FECHAVTO;
+      const dateVto = new Date(articulo.FECHAVTO);
+      vencimientoCell.innerHTML = dateVto.getMonth() + "/" + dateVto.getFullYear()
       cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
       if (articulo.STOCKEXISTENTE_F == undefined) {
         cantidadFCell.innerHTML = "----";
