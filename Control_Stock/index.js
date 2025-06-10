@@ -258,10 +258,10 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       codMinisterial.textContent = articuloEncontrado.CODARTICULO
       stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
       consumo.textContent = articuloEncontrado.STOCK_MIN
-      if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
+      if (Number(articuloEncontrado.STOCKENDEPOSITO) <= Number(articuloEncontrado.STOCK_MIN)) {
         estadoStock.textContent = "Critico"
         estadoStock.style.color = "red";
-      } else if (articuloEncontrado.STOCKENDEPOSITO >= articuloEncontrado.STOCK_MIN * 2) {
+      } else if (Number(articuloEncontrado.STOCKENDEPOSITO) >= Number(articuloEncontrado.STOCK_MIN) * 2) {
         estadoStock.textContent = "En stock"
         estadoStock.style.color = "green";
       } else {
@@ -274,10 +274,10 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
       codMinisterial.textContent = articuloEncontrado.CODARTICULO
       stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
       consumo.textContent = articuloEncontrado.STOCK_MIN
-      if (articuloEncontrado.STOCKENDEPOSITO <= articuloEncontrado.STOCK_MIN) {
+      if (Number(articuloEncontrado.STOCKENDEPOSITO) <= Number(articuloEncontrado.STOCK_MIN)) {
         estadoStock.textContent = "Critico"
         estadoStock.style.color = "red";
-      } else if (articuloEncontrado.STOCKENDEPOSITO >= articuloEncontrado.STOCK_MIN * 2) {
+      } else if (Number(articuloEncontrado.STOCKENDEPOSITO) >= Number(articuloEncontrado.STOCK_MIN) * 2) {
         estadoStock.textContent = "En stock"
         estadoStock.style.color = "green";
       } else {
@@ -354,7 +354,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
       loteCell.innerHTML = articulo.NROLOTE;
       const dateVto = new Date(articulo.FECHAVTO);
-      vencimientoCell.innerHTML = dateVto.getMonth() + "/" + dateVto.getFullYear()
+      vencimientoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
       cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
       if (articulo.STOCKEXISTENTE_F == undefined) {
         cantidadFCell.innerHTML = "----";
@@ -555,7 +555,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               medicacionCell.style.color = "red"
               stockCell.style.fontWeight = "bold"
               stockCell.style.color = "red"
-            } 
+            }
 
             if (articulo.STOCKENDEPOSITO == undefined) {
               stockCell.innerHTML = 0
@@ -1025,7 +1025,8 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
             }
             loteCell.innerHTML = articulo.NROLOTE
-            vtoCell.innerHTML = articulo.FECHAVTO
+            const dateVto = new Date(articulo.FECHAVTO);
+            vtoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
             if (articulo.STOCKEXISTENTE_F == undefined) {
               cantidadFCell.innerHTML = "-----"
@@ -1059,12 +1060,12 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
           const fechaElegida = totalVto.filter(match => {
             const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
             const fiSeparada = fechaInicial.split("/")
-            const fechaInicialP = new Date(fiSeparada[2] + "/" + fiSeparada[1] + "/" + fiSeparada[0])
+            const fechaInicialP = new Date(fiSeparada[0] + "/" + fiSeparada[1] + "/" + fiSeparada[2])
             const fechaFinal = filtrosVencimientoEFM.value + filtrosVencimientoEFY.value
             const ffSeparada = fechaFinal.split("/")
-            const fechaFinalP = new Date(ffSeparada[2] + "/" + ffSeparada[1] + "/" + ffSeparada[0])
+            const fechaFinalP = new Date(ffSeparada[0] + "/" + ffSeparada[1] + "/" + ffSeparada[2])
             const fVtoS = match.FECHAVTO.split("/")
-            const fVto = new Date(fVtoS[2] + "/" + fVtoS[1] + "/" + fVtoS[0])
+            const fVto = new Date(fVtoS[0] + "/" + fVtoS[1] + "/" + fVtoS[2])
             return fVto >= fechaInicialP && fVto <= fechaFinalP
           })
 
@@ -1085,7 +1086,8 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
               medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
             }
             loteCell.innerHTML = articulo.NROLOTE
-            vtoCell.innerHTML = articulo.FECHAVTO
+            const dateVto = new Date(articulo.FECHAVTO);
+            vtoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
             if (articulo.STOCKEXISTENTE_F == undefined) {
               cantidadFCell.innerHTML = "-----"
@@ -1115,11 +1117,46 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
     const tablaHTML = tablaListados.outerHTML
     const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
-    saveAs(blob, 'listado_' + date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '.xls');
+    saveAs(blob, 'listadoXLS_' + date.getDate() + '-' + (date.getMonth() +1) + '-' + date.getFullYear() + '.xls');
   })
 
+  btnPDF.addEventListener("click", () => {
+    const tablaListados = document.getElementById("tablaListados"); // Captura el div que contiene la tabla
 
-    //--------------------------- BUSCADOR--------------------------------
+    html2canvas(tablaListados, {
+      scale: 2 // Aumenta la escala para mejor calidad en el PDF
+    }).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jspdf.jsPDF('p', 'mm', 'a4'); // 'p' para portrait, 'mm' para unidades, 'a4' para tamaño de página
+
+      const imgWidth = 210; // Ancho A4 en mm
+      const pageHeight = 297; // Alto A4 en mm
+
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+      let heightLeft = imgHeight;
+
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      const date = new Date();
+      const fileName = `listadoPDF_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`; // +1 para el mes, ya que es base 0
+
+      pdf.save(fileName);
+    });
+
+
+  })
+
+  //--------------------------- BUSCADOR--------------------------------
   buscadorBtn.addEventListener("click", () => {
     const buscadorInput = document.getElementById("buscadorInput")
     window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
@@ -1131,6 +1168,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
       window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
     }
   })
+
 
   //--------------------------- EXTRAS--------------------------------
 
