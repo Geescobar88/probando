@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "10-06-2025"
+  const diaActual = "11-06-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "09-06-2025"
+  const diaPrevio = "10-06-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -1121,37 +1121,60 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
   })
 
   btnPDF.addEventListener("click", () => {
-    const tablaListados = document.getElementById("tablaListados"); // Captura el div que contiene la tabla
 
-    html2canvas(tablaListados, {
-      scale: 2 // Aumenta la escala para mejor calidad en el PDF
-    }).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jspdf.jsPDF('p', 'mm', 'a4'); // 'p' para portrait, 'mm' para unidades, 'a4' para tamaño de página
+            const doc = new jspdf.jsPDF();
 
-      const imgWidth = 210; // Ancho A4 en mm
-      const pageHeight = 297; // Alto A4 en mm
+            const tablaListados = document.getElementById("tablaListados");
 
-      const imgHeight = canvas.height * imgWidth / canvas.width;
-      let heightLeft = imgHeight;
+            // Extraer encabezados de la tabla HTML
+            const head = [];
+            tablaListados.querySelectorAll('th').forEach(th => {
+                head.push(th.innerText);
+            });
 
-      let position = 0;
+            // Extraer filas de datos de la tabla HTML
+            const body = [];
+            tablaListados.querySelectorAll('tr').forEach(row => {
+                const rowData = [];
+                row.querySelectorAll('td').forEach(td => {
+                    rowData.push(td.innerText);
+                });
+                body.push(rowData);
+            });
 
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
+            // Título del documento
+            doc.setFontSize(18);
+            doc.text("Listado de Artículos", 14, 22);
 
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
+            // Generar la tabla usando jspdf-autotable
+            doc.autoTable({
+                head: [head], // autoTable espera un array de arrays para el head
+                body: body,
+                startY: 30,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: [41, 128, 185],
+                    textColor: [255, 255, 255],
+                    fontStyle: 'bold'
+                },
+                styles: {
+                    fontSize: 10,
+                    cellPadding: 3
+                },
+                columnStyles: {
+                    // Puedes ajustar el ancho de las columnas si lo deseas
+                    // 0: { cellWidth: 30 },
+                    // 1: { cellWidth: 'auto' },
+                    // 2: { cellWidth: 30, halign: 'center' },
+                    // 3: { cellWidth: 35, halign: 'center' }
+                }
+            });
 
-      const date = new Date();
-      const fileName = `listadoPDF_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`; // +1 para el mes, ya que es base 0
+            const date = new Date();
+            const fileName = `listado_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`;
 
-      pdf.save(fileName);
-    });
+            doc.save(fileName);
+        
 
 
   })
