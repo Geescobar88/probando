@@ -5048,6 +5048,14 @@
             "SERVICIO": "ESTERILIZACION",
             "PRIORIDAD": "0"
         },
+                {
+            "CODARTICULO": "YA222105",
+            "MEDICACION": "PAPEL BLANCO LISO - BOBINA - 120 CMS x 100 M",
+            "STOCK_MIN": "undefined",
+            "HABILITADO": "SI",
+            "SERVICIO": "ESTERILIZACION",
+            "PRIORIDAD": "0"
+        },
         {
             "CODARTICULO": "YA253308",
             "MEDICACION": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO - BOLSA - 140 X 330 X 50 MM",
