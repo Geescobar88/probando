@@ -5025,7 +5025,7 @@
             "PRIORIDAD": "0"
         },
         {
-            "CODARTICULO": "YH404005",
+            "CODARTICULO": "YH301303",
             "MEDICACION": "INDICADOR QUIMICO - OXIDO DE ETILENO - CINTA AUTOADHESIVA",
             "STOCK_MIN": "undefined",
             "HABILITADO": "SI",
@@ -5059,6 +5059,14 @@
         {
             "CODARTICULO": "YA253308",
             "MEDICACION": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO - BOLSA - 140 X 330 X 50 MM",
+            "STOCK_MIN": "undefined",
+            "HABILITADO": "SI",
+            "SERVICIO": "ESTERILIZACION",
+            "PRIORIDAD": "0"
+        },
+        {
+            "CODARTICULO": "YA253305",
+            "MEDICACION": "PAPEL USO MEDICO LISO C/INDICADOR QUIMICO - BOLSA - 125 X 250 X 50 MM",
             "STOCK_MIN": "undefined",
             "HABILITADO": "SI",
             "SERVICIO": "ESTERILIZACION",
@@ -5302,6 +5310,14 @@
             "STOCK_MIN": "undefined",
             "HABILITADO": "SI",
             "SERVICIO": "HIV",
+            "PRIORIDAD": "0"
+        },
+        {
+            "CODARTICULO": "KI299007",
+            "MEDICACION": "SAL GRUESA - BOLSA 25 KG",
+            "STOCK_MIN": "undefined",
+            "HABILITADO": "SI",
+            "SERVICIO": "ESTERILIZACION",
             "PRIORIDAD": "0"
         }
     ],
