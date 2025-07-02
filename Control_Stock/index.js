@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "30-06-2025"
+  const diaActual = "02-07-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "26-06-2025"
+  const diaPrevio = "30-06-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -1001,12 +1001,13 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         btnSeleccionar.addEventListener('click', () => {
 
           tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
-          const fechaBtn = filtrosVencimientoM.value + filtrosVencimientoY.value
+          const fechaBtn = new Date(filtrosVencimientoM.value + filtrosVencimientoY.value)
           const fechaElegida = totalVto.filter((match) => {
             const fechaSep = match.FECHAVTO.split("/")
-            const fechaConv = fechaSep[0] + "/" + fechaSep[1] + "/" + fechaSep[2]
-            return fechaConv === fechaBtn
+            const fechaConv = new Date(fechaSep[0] + "/" + fechaSep[1] + "/" + fechaSep[2])
+            return fechaConv == fechaBtn
           })
+          console.log(fechaElegida)
 
           fechaElegida.forEach((articulo) => {
             const row = tablaListados.insertRow();
