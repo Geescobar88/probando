@@ -1,0 +1,207 @@
+/* Estilos generales para la pantalla */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.controls {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.controls h1 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.seleccion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.removeRowBtn {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 25px 0;
+}
+
+.main-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px; /* Ajusta según el tamaño deseado para pantalla */
+    box-sizing: border-box;
+    display: none; /* Oculto por defecto hasta que se muestren los datos */
+}
+
+.main-container h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+.data-display-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los divs bajen si no hay espacio */
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.data-box {
+    background-color: #e9f7ff;
+    border: 1px solid #b3e0ff;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1; /* Permite que los divs ocupen el espacio disponible */
+    min-width: 280px; /* Ancho mínimo para que no se aprieten demasiado */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.data-box p {
+    margin: 8px 0;
+}
+
+.data-box p strong {
+    color: #0056b3;
+}
+
+/* --- Estilos para IMPRESIÓN --- */
+@media print {
+    /* Oculta los controles (formulario, select, botones) al imprimir */
+    .controls {
+        display: none;
+    }
+
+    /* Asegura que el contenedor principal esté visible y ocupe el ancho completo */
+    .main-container {
+        display: block; /* Asegúrate de que el contenedor sea visible al imprimir */
+        width: 100%;
+        box-shadow: none; /* Elimina sombras para la impresión */
+        padding: 0; /* Sin padding en el contenedor principal */
+        margin: 0;
+    }
+
+    .main-container h2 {
+        font-size: 1.5em; /* Ajusta el tamaño del título al imprimir */
+        margin-bottom: 15mm; /* Margen inferior para el título */
+    }
+
+    .data-display-container {
+        flex-direction: row; /* Asegura que estén uno al lado del otro */
+        justify-content: space-around;
+        align-items: flex-start; /* Alinea los ítems al inicio */
+        width: 100%;
+        height: auto; /* La altura se ajustará al contenido */
+        gap: 15mm; /* Espacio entre las cajas */
+    }
+
+    .data-box {
+        background-color: transparent; /* Sin fondo de color al imprimir */
+        border: 1px solid #333; /* Borde oscuro para la impresión */
+        padding: 10mm; /* Padding en milímetros para precisión */
+        width: 70mm; /* Ancho en milímetros, ajusta según necesidad */
+        height: auto; /* Altura se ajusta al contenido */
+        flex-shrink: 0; /* Evita que se encojan */
+        box-sizing: border-box;
+        font-size: 0.9em; /* Ajusta tamaño de fuente para impresión */
+    }
+
+    /* Aquí es donde cambiamos la lógica para @page */
+    /* Definimos las reglas @page directamente en @media print, */
+    /* y el navegador aplicará la más específica o la última definida si hay conflictos. */
+
+    /* Por defecto, si no hay clases específicas, podrías tener un @page general */
+    @page {
+        margin: 15mm; /* Márgenes generales de la página impresa */
+        /* Puedes poner un size por defecto aquí si quieres, por ejemplo: */
+        /* size: A4 portrait; */
+    }
+
+    /* Regla @page para A4 cuando el body tiene la clase 'A4-print' */
+    /* Esta es la forma correcta de aplicarlo: el @page va dentro del @media print */
+    /* y el navegador lo asocia cuando el cuerpo coincide con el selector. */
+    body.A4-print {
+        @page {
+            size: A4 portrait;
+        }
+    }
+
+    /* Regla @page para Oficio cuando el body tiene la clase 'legal-print' */
+    body.legal-print {
+        @page {
+            size: legal portrait;
+        }
+    }
+}

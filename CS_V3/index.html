@@ -1,21 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario e Impresión</title>
     <link rel="stylesheet" href="style.css">
-    <title>Control de Stock</title>
 </head>
+
 <body>
+    <div class="controls">
+        <h1>VALE DE PRESTAMOS</h1>
+        <form id="dataForm">
+            <div>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" required>
 
-    <input type="text" id="fileIdInput" placeholder="ID del archivo de Google Drive">
-    <button onclick="loadExcel()">Cargar Excel</button>
-    <pre id="output"></pre>
+                <label for="institucion">Institución:</label>
+                <input type="text" id="institucion" required>
+            </div>
+
+            <div id="seleccion-container" class="seleccion-container">
+                <h3>Marcar con una X el moviento que corresponda:</h3>
+                <div>
+                    <input type="radio" name="seleccion" id="hpide">
+                    <label for="hpide">Higa pide prestado a institucion.</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="seleccion" id="hdevuelve">
+                    <label for="hdevuelve">Higa devuelve prestado a institucion.</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="seleccion" id="ipide">
+                    <label for="ipide">institucion pide prestado a Higa.</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="seleccion" id="idevuelve">
+                    <label for="idevuelve">institucion devuelve prestado a Higa.</label>
+                </div>
+            </div>
+
+            <div id="tabla-container" class="tabla-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Medicamento</th>
+                            <th>Cantidad</th>
+                            <th>Número de Lote</th>
+                            <th>Fecha de Vencimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="medicamento1" required></td>
+                            <td><input type="text" name="cantidad1" required></td>
+                            <td><input type="text" name="lote1" required></td>
+                            <td><input type="text" name="vencimiento1" required></td>
+                            <td><button type="button" class="removeRowBtn">X</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="addRowBtn">Agregar Fila</button>
+            </div>
 
 
-    <script src="main.js"></script>
-    <!-- Librerias -->
-     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+            <button type="submit">Mostrar Datos</button>
+        </form>
+
+        <hr>
+
+        <label for="pageSize">Seleccione el tamaño de papel:</label>
+        <select id="pageSize">
+            <option value="A4">A4</option>
+            <option value="legal">Oficio (Legal)</option>
+        </select>
+        <button id="printButton">Imprimir Contenedor</button>
+    </div>
+
+    <div class="main-container" id="mainContainer">
+        <span>
+            <h2>VALE DE PRESTAMO ENTRE INSTITUCIONES</h2>
+        </span>
+        <h2>Servicio de Farmacia HIGA Dr. Oscar E. Alende</h2>
+        <div class="data-display-container">
+            <div class="data-box data-box-1">
+            </div>
+            <div class="data-box data-box-2">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
