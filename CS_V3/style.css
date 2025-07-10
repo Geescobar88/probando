@@ -16,7 +16,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     width: 90%;
-    max-width: 500px;
+    max-width: 800px;
     box-sizing: border-box;
 }
 
@@ -32,9 +32,23 @@ form {
     gap: 15px;
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.header-container input[type="text"] {
+    border: 0px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px;
+}
+
 .seleccion-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin-top: 15px;
     border: 2px solid black;
@@ -98,9 +112,11 @@ hr {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 800px; /* Ajusta según el tamaño deseado para pantalla */
+    max-width: 800px;
+    /* Ajusta según el tamaño deseado para pantalla */
     box-sizing: border-box;
-    display: none; /* Oculto por defecto hasta que se muestren los datos */
+    display: none;
+    /* Oculto por defecto hasta que se muestren los datos */
 }
 
 .main-container h2 {
@@ -111,7 +127,9 @@ hr {
 
 .data-display-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que los divs bajen si no hay espacio */
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* Permite que los divs bajen si no hay espacio */
     justify-content: space-around;
     gap: 20px;
 }
@@ -121,8 +139,10 @@ hr {
     border: 1px solid #b3e0ff;
     border-radius: 8px;
     padding: 20px;
-    flex: 1; /* Permite que los divs ocupen el espacio disponible */
-    min-width: 280px; /* Ancho mínimo para que no se aprieten demasiado */
+    flex: 1;
+    /* Permite que los divs ocupen el espacio disponible */
+    min-width: 280px;
+    /* Ancho mínimo para que no se aprieten demasiado */
     box-sizing: border-box;
     text-align: center;
     font-size: 1.1em;
@@ -137,8 +157,29 @@ hr {
     color: #0056b3;
 }
 
+.form-data-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-data-inputRadio{
+    text-transform:uppercase;
+}
+
+.form-data-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-firma {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+}
+
 /* --- Estilos para IMPRESIÓN --- */
 @media print {
+
     /* Oculta los controles (formulario, select, botones) al imprimir */
     .controls {
         display: none;
@@ -146,36 +187,52 @@ hr {
 
     /* Asegura que el contenedor principal esté visible y ocupe el ancho completo */
     .main-container {
-        display: block; /* Asegúrate de que el contenedor sea visible al imprimir */
+        display: block;
+        /* Asegúrate de que el contenedor sea visible al imprimir */
         width: 100%;
-        box-shadow: none; /* Elimina sombras para la impresión */
-        padding: 0; /* Sin padding en el contenedor principal */
+        box-shadow: none;
+        /* Elimina sombras para la impresión */
+        padding: 0;
+        /* Sin padding en el contenedor principal */
         margin: 0;
     }
 
     .main-container h2 {
-        font-size: 1.5em; /* Ajusta el tamaño del título al imprimir */
-        margin-bottom: 15mm; /* Margen inferior para el título */
+        font-size: 1.5em;
+        /* Ajusta el tamaño del título al imprimir */
+        margin-bottom: 15mm;
+        /* Margen inferior para el título */
     }
 
     .data-display-container {
-        flex-direction: row; /* Asegura que estén uno al lado del otro */
+        flex-direction: row;
+        /* Asegura que estén uno al lado del otro */
         justify-content: space-around;
-        align-items: flex-start; /* Alinea los ítems al inicio */
+        align-items: flex-start;
+        /* Alinea los ítems al inicio */
         width: 100%;
-        height: auto; /* La altura se ajustará al contenido */
-        gap: 15mm; /* Espacio entre las cajas */
+        height: auto;
+        /* La altura se ajustará al contenido */
+        gap: 15mm;
+        /* Espacio entre las cajas */
     }
 
     .data-box {
-        background-color: transparent; /* Sin fondo de color al imprimir */
-        border: 1px solid #333; /* Borde oscuro para la impresión */
-        padding: 10mm; /* Padding en milímetros para precisión */
-        width: 70mm; /* Ancho en milímetros, ajusta según necesidad */
-        height: auto; /* Altura se ajusta al contenido */
-        flex-shrink: 0; /* Evita que se encojan */
+        background-color: transparent;
+        /* Sin fondo de color al imprimir */
+        border: 1px solid #333;
+        /* Borde oscuro para la impresión */
+        padding: 10mm;
+        /* Padding en milímetros para precisión */
+        width: 70mm;
+        /* Ancho en milímetros, ajusta según necesidad */
+        height: auto;
+        /* Altura se ajusta al contenido */
+        flex-shrink: 0;
+        /* Evita que se encojan */
         box-sizing: border-box;
-        font-size: 0.9em; /* Ajusta tamaño de fuente para impresión */
+        font-size: 0.9em;
+        /* Ajusta tamaño de fuente para impresión */
     }
 
     /* Aquí es donde cambiamos la lógica para @page */
@@ -184,7 +241,8 @@ hr {
 
     /* Por defecto, si no hay clases específicas, podrías tener un @page general */
     @page {
-        margin: 15mm; /* Márgenes generales de la página impresa */
+        margin: 15mm;
+        /* Márgenes generales de la página impresa */
         /* Puedes poner un size por defecto aquí si quieres, por ejemplo: */
         /* size: A4 portrait; */
     }
@@ -194,14 +252,16 @@ hr {
     /* y el navegador lo asocia cuando el cuerpo coincide con el selector. */
     body.A4-print {
         @page {
-            size: A4 portrait;
+            size: A4 landscape;
+            /* A4 en modo horizontal */
         }
     }
 
     /* Regla @page para Oficio cuando el body tiene la clase 'legal-print' */
     body.legal-print {
         @page {
-            size: legal portrait;
+            size: legal landscape;
         }
     }
+
 }

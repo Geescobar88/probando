@@ -12,7 +12,7 @@
     <div class="controls">
         <h1>VALE DE PRESTAMOS</h1>
         <form id="dataForm">
-            <div>
+            <div id="header-container" class="header-container">
                 <label for="fecha">Fecha:</label>
                 <input type="date" id="fecha" required>
 
@@ -23,24 +23,27 @@
             <div id="seleccion-container" class="seleccion-container">
                 <h3>Marcar con una X el moviento que corresponda:</h3>
                 <div>
-                    <input type="radio" name="seleccion" id="hpide">
+                <div>
+                    <input type="radio" name="seleccion" id="hpide" value="Higa pide prestado a institucion.">
                     <label for="hpide">Higa pide prestado a institucion.</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="seleccion" id="hdevuelve">
+                    <input type="radio" name="seleccion" id="hdevuelve" value="Higa devuelve prestado a institucion.">
                     <label for="hdevuelve">Higa devuelve prestado a institucion.</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="seleccion" id="ipide">
+                    <input type="radio" name="seleccion" id="ipide" value="institucion pide prestado a Higa.">
                     <label for="ipide">institucion pide prestado a Higa.</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="seleccion" id="idevuelve">
+                    <input type="radio" name="seleccion" id="idevuelve" value="institucion devuelve prestado a Higa.">
                     <label for="idevuelve">institucion devuelve prestado a Higa.</label>
                 </div>
+                </div>
+
             </div>
 
             <div id="tabla-container" class="tabla-container">
@@ -49,8 +52,8 @@
                         <tr>
                             <th>Medicamento</th>
                             <th>Cantidad</th>
-                            <th>Número de Lote</th>
-                            <th>Fecha de Vencimiento</th>
+                            <th>Lote</th>
+                            <th>Vencimiento</th>
                         </tr>
                     </thead>
                     <tbody>
