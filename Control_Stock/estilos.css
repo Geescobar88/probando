@@ -355,7 +355,7 @@ td {
 
 /* ----------------------------------LISTAS---------------------------------- */
 
-.listados {
+.listados, .control {
     display: none;
     position: absolute;
     width: 100%;

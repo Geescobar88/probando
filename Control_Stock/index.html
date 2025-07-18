@@ -60,6 +60,7 @@
                     <label for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Todos</label>
                 </div>
                 <span class="bbutton" id="btnListados">Listados</span>
+                <span class="bbutton" id="btnControl">Control</span>
             </div>
         </section>
 
@@ -231,7 +232,24 @@
 
         </div>
 
+        <div class="control" id="control">
+                            <div class="tablaContainer">
+                    <table id="tablaListados" class="tabla thListados">
+                        <tr>
+                            <th>Código</th>
+                            <th>Medicación</th>
+                            <th>Estado</th>
+                            <th>Stock</th>
+                        </tr>
+                    </table>
+                </div>
 
+                <div class="botoneraLista">
+                    <button class="bbutton" id="btnCDescargar">Descargar Excel</button>
+                    <button class="bbutton" id="btnCPDF">Descargar PDF</button>
+                    <button class="bbutton" id="btnCCerrar">Cerrar</button>
+                </div>
+        </div>
 
         <footer id="footer">
             <p class="LText"> <span id="ActText"></span>Ultima actualización: <span id="fecha"></span> 09:13 hs</p>

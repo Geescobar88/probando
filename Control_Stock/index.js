@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "11-07-2025"
+  const diaActual = "18-07-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "08-07-2025"
+  const diaPrevio = "11-07-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -380,7 +380,10 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) {
   const btnListadosAbrir = document.getElementById("btnListados")
   const btnListadosCerrar = document.getElementById("btnCerrar")
+  const btnControlAbrir = document.getElementById("btnControl")
+  const btnControlCerrar = document.getElementById("btnCCerrar")
   const ventanaListados = document.getElementById("listados")
+  const ventanaControl = document.getElementById("control")
   const seleccionFiltros = document.getElementById("seleccionFiltros")
   const filtrosStock = document.getElementById("filtrosStock")
   const filtrosSector = document.getElementById("filtrosSector")
@@ -415,6 +418,15 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
   btnListadosCerrar.addEventListener("click", () => {
     ventanaListados.style.display = "none"
+  })
+
+    //--------------------------Abrir/Cerrar ventana Control---------------------
+  btnControlAbrir.addEventListener("click", () => {
+    ventanaControl.style.display = "inline"
+  })
+
+  btnControlCerrar.addEventListener("click", () => {
+    ventanaControl.style.display = "none"
   })
 
   //------------------------------Mostrar/Ocultar Selects-------------------------
@@ -1114,12 +1126,15 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
   //--------------------------- BOTON DESCARGAS--------------------------------
 
   btnDescargar.addEventListener("click", () => {
-    const tablaListados = document.getElementById("tablaListados")
+    descargar()
+  })
+
+const descargar = () => {
     const tablaHTML = tablaListados.outerHTML
     const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
     saveAs(blob, 'listadoXLS_' + date.getDate() + '-' + (date.getMonth() +1) + '-' + date.getFullYear() + '.xls');
-  })
+}
 
   btnPDF.addEventListener("click", () => {
 
@@ -1192,6 +1207,8 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
       window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
     }
   })
+
+  
 
 
   //--------------------------- EXTRAS--------------------------------

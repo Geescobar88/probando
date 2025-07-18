@@ -778,7 +778,7 @@
         },
         {
             "CODARTICULO": "M0306112",
-            "MEDICACION": "BUPIVACAINA HIPERBARICA-AMPOLLA-INYECTABLE-0.5% - 4 ML",
+            "MEDICACION": "BUPIVACAINA HIPERBARICA INYECTABLE 0.5%-4ML",
             "STOCK_MIN": "100",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
@@ -788,7 +788,7 @@
             "CODARTICULO": "M0301006",
             "MEDICACION": "BUPIVACAINA INYECTABLE 0.5%-10ML",
             "STOCK_MIN": "0",
-            "HABILITADO": "SI",
+            "HABILITADO": "NO",
             "SERVICIO": "DESPACHO",
             "PRIORIDAD": "0"
         },
@@ -842,7 +842,7 @@
         },
         {
             "CODARTICULO": "M3301006",
-            "MEDICACION": "CALCIO CARBONATO COMPRIMIDOS 1250 MG ",
+            "MEDICACION": "CALCIO CARBONATO COMPRIMIDOS 1250 MG",
             "STOCK_MIN": "2200",
             "HABILITADO": "SI",
             "SERVICIO": "DESPACHO",
