@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "30-07-2025"
+  const diaActual = "31-07-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "28-07-2025"
+  const diaPrevio = "30-07-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -522,7 +522,6 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
       case 1:
 
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Depósito</th><th>Farmacia</th></tr>";
-        console.log(total)
         total.forEach((articulo) => {
 
           if (articulo.HABILITADO == "SI") {
@@ -689,7 +688,6 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         break;
       //Control
       case 4:
-        console.log(total)
         tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
         total.forEach((articulo) => {
           if (articulo.PRIORIDAD == 1) {
@@ -1001,65 +999,9 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
 
         })
         break;
-      //Mes
-      case 2:
-        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
-        filtrosVencimientoM.style.display = "inline"
-        filtrosVencimientoY.style.display = "inline"
-        filtrosVencimientoEFM.style.display = "none"
-        filtrosVencimientoEFY.style.display = "none"
-        btnSeleccionar.style.display = "inline"
 
-        btnSeleccionar.addEventListener('click', () => {
-
-          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
-          const fechaBtn = new Date(filtrosVencimientoM.value + filtrosVencimientoY.value)
-          const fechaElegida = totalVto.filter((match) => {
-            const fechaSep = match.FECHAVTO.split("/")
-            const fechaConv = new Date(fechaSep[0] + "/" + fechaSep[1] + "/" + fechaSep[2])
-            return fechaConv == fechaBtn
-          })
-          console.log(fechaElegida)
-
-          fechaElegida.forEach((articulo) => {
-            const row = tablaListados.insertRow();
-            const codigoCell = row.insertCell(0);
-            const medicacionCell = row.insertCell(1);
-            const loteCell = row.insertCell(2);
-            const vtoCell = row.insertCell(3);
-            const cantidadCell = row.insertCell(4);
-            const cantidadFCell = row.insertCell(5);
-            const StockMinCell = row.insertCell(6);
-
-            codigoCell.innerHTML = articulo.CODARTICULO;
-            if (articulo.CONCENTRACION == undefined) {
-              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
-            } else {
-              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
-            }
-            loteCell.innerHTML = articulo.NROLOTE
-            const dateVto = new Date(articulo.FECHAVTO);
-            vtoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
-            cantidadCell.innerHTML = articulo.STOCKEXISTENTE
-            if (articulo.STOCKEXISTENTE_F == undefined) {
-              cantidadFCell.innerHTML = "-----"
-            }
-            else {
-              cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
-            }
-
-            if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
-              StockMinCell.innerHTML = "-----"
-            }
-            else {
-              StockMinCell.innerHTML = articulo.STOCK_MIN
-            }
-
-          })
-        })
-        break;
       //Entre fechas
-      case 3:
+      case 2:
         tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
         filtrosVencimientoM.style.display = "inline"
         filtrosVencimientoY.style.display = "inline"
