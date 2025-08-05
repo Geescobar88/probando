@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "04-08-2025"
+  const diaActual = "05-08-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "01-08-2025"
+  const diaPrevio = "04-08-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -1125,7 +1125,17 @@ const descargar = () => {
                     // 1: { cellWidth: 'auto' },
                     // 2: { cellWidth: 30, halign: 'center' },
                     // 3: { cellWidth: 35, halign: 'center' }
-                }
+                },
+
+                 // Aquí se agrega el pie de página
+            didDrawPage: function (data) {
+            // Posición en Y para el pie de página
+            const y = doc.internal.pageSize.getHeight() - 10;
+            // Posición en X para centrar el texto
+            const x = doc.internal.pageSize.getWidth() / 2;
+            doc.setFontSize(10);
+            doc.text(`Página ${data.pageNumber}`, x, y, { align: 'center' });
+        }
             });
 
             const date = new Date();
