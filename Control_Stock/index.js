@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "06-08-2025"
+  const diaActual = "11-08-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "04-08-2025"
+  const diaPrevio = "06-08-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -354,7 +354,7 @@ function seleccionarArticulo(total, totalVto, listadoResponse) {
 
       loteCell.innerHTML = articulo.NROLOTE;
       const dateVto = new Date(articulo.FECHAVTO);
-      vencimientoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
+      vencimientoCell.innerHTML = (dateVto.getMonth() + 1) + "/" + dateVto.getFullYear()
       cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
       if (articulo.STOCKEXISTENTE_F == undefined) {
         cantidadFCell.innerHTML = "----";
@@ -420,7 +420,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
     ventanaListados.style.display = "none"
   })
 
-    //--------------------------Abrir/Cerrar ventana Control---------------------
+  //--------------------------Abrir/Cerrar ventana Control---------------------
   btnControlAbrir.addEventListener("click", () => {
     ventanaControl.style.display = "inline"
   })
@@ -1042,7 +1042,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
             }
             loteCell.innerHTML = articulo.NROLOTE
             const dateVto = new Date(articulo.FECHAVTO);
-            vtoCell.innerHTML = (dateVto.getMonth() +1) + "/" + dateVto.getFullYear()
+            vtoCell.innerHTML = (dateVto.getMonth() + 1) + "/" + dateVto.getFullYear()
             cantidadCell.innerHTML = articulo.STOCKEXISTENTE
             if (articulo.STOCKEXISTENTE_F == undefined) {
               cantidadFCell.innerHTML = "-----"
@@ -1071,78 +1071,78 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
     descargar()
   })
 
-const descargar = () => {
+  const descargar = () => {
     const tablaHTML = tablaListados.outerHTML
     const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
     const date = new Date();
-    saveAs(blob, 'listadoXLS_' + date.getDate() + '-' + (date.getMonth() +1) + '-' + date.getFullYear() + '.xls');
-}
+    saveAs(blob, 'listadoXLS_' + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + '.xls');
+  }
 
   btnPDF.addEventListener("click", () => {
 
-            const doc = new jspdf.jsPDF();
+    const doc = new jspdf.jsPDF();
 
-            const tablaListados = document.getElementById("tablaListados");
+    const tablaListados = document.getElementById("tablaListados");
 
-            // Extraer encabezados de la tabla HTML
-            const head = [];
-            tablaListados.querySelectorAll('th').forEach(th => {
-                head.push(th.innerText);
-            });
+    // Extraer encabezados de la tabla HTML
+    const head = [];
+    tablaListados.querySelectorAll('th').forEach(th => {
+      head.push(th.innerText);
+    });
 
-            // Extraer filas de datos de la tabla HTML
-            const body = [];
-            tablaListados.querySelectorAll('tr').forEach(row => {
-                const rowData = [];
-                row.querySelectorAll('td').forEach(td => {
-                    rowData.push(td.innerText);
-                });
-                body.push(rowData);
-            });
+    // Extraer filas de datos de la tabla HTML
+    const body = [];
+    tablaListados.querySelectorAll('tr').forEach(row => {
+      const rowData = [];
+      row.querySelectorAll('td').forEach(td => {
+        rowData.push(td.innerText);
+      });
+      body.push(rowData);
+    });
 
-            // Título del documento
-            doc.setFontSize(18);
-            doc.text("Listado de Artículos", 14, 22);
+    // Título del documento
+    doc.setFontSize(18);
+    doc.text("Listado de Artículos", 14, 22);
 
-            // Generar la tabla usando jspdf-autotable
-            doc.autoTable({
-                head: [head], // autoTable espera un array de arrays para el head
-                body: body,
-                startY: 30,
-                theme: 'striped',
-                headStyles: {
-                    fillColor: [41, 128, 185],
-                    textColor: [255, 255, 255],
-                    fontStyle: 'bold'
-                },
-                styles: {
-                    fontSize: 10,
-                    cellPadding: 3
-                },
-                columnStyles: {
-                    // Puedes ajustar el ancho de las columnas si lo deseas
-                    // 0: { cellWidth: 30 },
-                    // 1: { cellWidth: 'auto' },
-                    // 2: { cellWidth: 30, halign: 'center' },
-                    // 3: { cellWidth: 35, halign: 'center' }
-                },
+    // Generar la tabla usando jspdf-autotable
+    doc.autoTable({
+      head: [head], // autoTable espera un array de arrays para el head
+      body: body,
+      startY: 30,
+      theme: 'striped',
+      headStyles: {
+        fillColor: [41, 128, 185],
+        textColor: [255, 255, 255],
+        fontStyle: 'bold'
+      },
+      styles: {
+        fontSize: 10,
+        cellPadding: 3
+      },
+      columnStyles: {
+        // Puedes ajustar el ancho de las columnas si lo deseas
+        // 0: { cellWidth: 30 },
+        // 1: { cellWidth: 'auto' },
+        // 2: { cellWidth: 30, halign: 'center' },
+        // 3: { cellWidth: 35, halign: 'center' }
+      },
 
-                 // Aquí se agrega el pie de página
-            didDrawPage: function (data) {
-            // Posición en Y para el pie de página
-            const y = doc.internal.pageSize.getHeight() - 10;
-            // Posición en X para centrar el texto
-            const x = doc.internal.pageSize.getWidth() / 2;
-            doc.setFontSize(10);
-            doc.text(`Página ${data.pageNumber}`, x, y, { align: 'center' });
-        }
-            });
+      // Aquí se agrega el pie de página
+      didDrawPage: function (data) {
+        // Posición en Y para el pie de página
+        const y = doc.internal.pageSize.getHeight() - 10;
+        // Posición en X para centrar el texto
+        const x = doc.internal.pageSize.getWidth() / 2;
+        doc.setFontSize(10);
+        doc.text(`Página ${data.pageNumber}`, x, y, { align: 'center' });
+      }
+    });
 
-            const date = new Date();
-            const fileName = `listado_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`;
+    const date = new Date();
+    const fileName = `listado_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`;
 
-            doc.save(fileName);
-        
+    doc.save(fileName);
+
 
 
   })
@@ -1160,7 +1160,7 @@ const descargar = () => {
     }
   })
 
-  
+
 
 
   //--------------------------- EXTRAS--------------------------------
