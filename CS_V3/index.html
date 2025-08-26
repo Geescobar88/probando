@@ -2,101 +2,2027 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario e Impresión</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./data/img/favicon.ico">
+    <title>Control de Stock</title>
 </head>
 
-<body>
-    <div class="controls">
-        <h1>VALE DE PRESTAMOS</h1>
-        <form id="dataForm">
-            <div id="header-container" class="header-container">
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" required>
+<style>
 
-                <label for="institucion">Institución:</label>
-                <input type="text" id="institucion" required>
-            </div>
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-            <div id="seleccion-container" class="seleccion-container">
-                <h3>Marcar con una X el moviento que corresponda:</h3>
-                <div>
-                <div>
-                    <input type="radio" name="seleccion" id="hpide" value="Higa pide prestado a institucion.">
-                    <label for="hpide">Higa pide prestado a institucion.</label>
-                </div>
+}
 
-                <div>
-                    <input type="radio" name="seleccion" id="hdevuelve" value="Higa devuelve prestado a institucion.">
-                    <label for="hdevuelve">Higa devuelve prestado a institucion.</label>
-                </div>
+:root {
+    --fondoOscuro: #0A0A0A;
+    --primario: #c6d4e1;
+    --secundario: #ebe7e0;
+    --terciario: #94a8e6;
+    --fuerte: #44749d;
+    --claro: #ffffff;
+    --oscuro: #bdb8ad;
+}
 
-                <div>
-                    <input type="radio" name="seleccion" id="ipide" value="institucion pide prestado a Higa.">
-                    <label for="ipide">institucion pide prestado a Higa.</label>
-                </div>
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: VAR(--primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
 
-                <div>
-                    <input type="radio" name="seleccion" id="idevuelve" value="institucion devuelve prestado a Higa.">
-                    <label for="idevuelve">institucion devuelve prestado a Higa.</label>
-                </div>
-                </div>
-
-            </div>
-
-            <div id="tabla-container" class="tabla-container">
-                <table id="dataTable">
-                    <thead>
-                        <tr>
-                            <th>Medicamento</th>
-                            <th>Cantidad</th>
-                            <th>Lote</th>
-                            <th>Vencimiento</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" name="medicamento1" required></td>
-                            <td><input type="text" name="cantidad1" required></td>
-                            <td><input type="text" name="lote1" required></td>
-                            <td><input type="text" name="vencimiento1" required></td>
-                            <td><button type="button" class="removeRowBtn">X</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button type="button" id="addRowBtn">Agregar Fila</button>
-            </div>
+button, input, select {
+    font-size: 20px;
+}
 
 
-            <button type="submit">Mostrar Datos</button>
-        </form>
 
-        <hr>
+/* ----------------------------------HEADER---------------------------------- */
+header {
+    background-color: var(--fondoOscuro);
+    color: var(--claro);
+    display: flex;
+    height: 8%;
+    align-items: center;
+    width: 100%;
+    }
 
-        <label for="pageSize">Seleccione el tamaño de papel:</label>
-        <select id="pageSize">
-            <option value="A4">A4</option>
-            <option value="legal">Oficio (Legal)</option>
-        </select>
-        <button id="printButton">Imprimir Contenedor</button>
+header>span {
+    font-size: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.titulo {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------------MENU---------------------------------- */
+
+.menu {
+    width: 300px;
+    background-color: #0A0A0A;
+    border: 1px solid white;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0;
+    padding: 2%;
+    z-index: 1;
+}
+
+.menu_btn:hover {
+    color: var(--terciario);
+}
+
+.menu_close {
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid white;
+}
+
+.menu_close:hover {
+    border: 1px solid var(--terciario);
+    color: var(--terciario);
+}
+
+.menu > ul {
+    list-style: none;
+}
+
+.menu > ul > li{
+margin-bottom: 5px;
+}
+
+.menu_i{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu_i:hover {
+    color: var(--terciario);
+}
+
+.buscador {
+    display: none;
+}
+
+/* ----------------------------------GENERAL---------------------------------- */
+
+a {
+    color: white;
+}
+
+section, .linea {
+    width: 90%;
+}
+
+.container {
+    height: 100%;
+    max-height: 65ch;
+    width: 100%;
+    max-width: 1400px;
+    background-color: VAR(--primario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.bbutton {
+    border: 2px solid var(--fuerte);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: var(--fuerte);
+    color: var(--claro);
+    font-weight: bolder;   
+    font-size: 16px;
+}
+
+.bbutton:hover {
+    background-color: var(--terciario);
+}
+
+select {
+    border: none;
+    border-radius: 5px;
+    height: 48px;
+    width: 100%;
+}
+
+/*-------Tabla-------*/
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tablaVto {
+    border-collapse: collapse;
+    width: 100%;
+    visibility: hidden;
+}
+
+th, td {
+    border: 1px solid var(--fuerte);
+    background-color: var(--secundario);
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--fuerte);
+    border-right-color: var(--oscuro) ;
+    color: var(--claro);
+
+}
+
+.thListados th {
+    border: 0px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+}
+
+td {
+    font-size: 14px;
+}
+
+.festivo {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    top: 100px;
+    border: 5px solid black;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.festivoTxt {
+    display: none;
+}
+
+.festivoTxt:hover {
+    color: rgb(54, 170, 83);
+    cursor: pointer;
+}
+
+.cargando {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.cargandoImg {
+    border-radius: 10px;
+}
+
+.cargandoTxt {
+    font-weight: bold;
+}
+/* ----------------------------------FILTRO---------------------------------- */
+
+.filtro {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+.radioBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.inputR {
+    display: none;
+}
+
+.filtroCheck {
+    border: 2px solid var(--terciario);
+    color: var(--terciario);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: var(--claro);
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.inputR:checked+.filtroCheck {
+    color: var(--claro);
+    background-color: var(--terciario);
+}
+
+/* ----------------------------------BUSQUEDA---------------------------------- */
+
+.busqueda {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.entrada {
+    width: 90%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--fuerte);
+    background-color: var(--secundario);
+}
+
+.entrada_p {
+    width: 15%;
+    /* text-transform: uppercase; */
+    border-radius: 3px;
+    border: 2px solid var(--fuerte);
+    background-color: var(--secundario);
+}
+
+.entrada_art_p{
+    width: 50%;
+    border-radius: 3px;
+    border: 2px solid var(--fuerte);
+    background-color: var(--secundario);
+}
+
+/* ----------------------------------DATOS---------------------------------- */
+
+.datos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Descripcion {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nombreArticulo {
+    font-weight: bold;
+}
+
+.stock {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.stockInner {
+    width: 30%;
+    height: 120px;
+    background-color: var(--secundario);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.inner {
+    font-weight: bold;
+}
+
+/* ----------------------------------VENCIMIENTOS---------------------------------- */
+
+.vto {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LTextVto {
+    font-size: 16px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------LISTAS---------------------------------- */
+
+.listados, .control {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-width: 1400px;
+    height: 90%;
+    border: 2px solid var(--fuerte);
+    border-radius: 5px;
+    background-color: var(--primario);
+}
+
+.listadosContainer {
+    padding: 0 5% ;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.listadosContainer>.titulo {
+ margin-bottom: 20px;
+}
+
+.botoneraFiltros {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.botoneraLista {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtrosOcultos {
+    display: none;
+}
+
+.filtrosVencimientoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filtrosFechas {
+    display: flex;
+    gap: 5px;
+}
+
+.tablaContainer {
+    height: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    border: 1px solid var(--fuerte);
+}
+
+/* **********************
+********ONCOLOGIA********
+*********************  */
+
+/*-------------------------------------EQTIQUETAS_PEQUEÑAS-------------------------------------*/
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario {
+    border-radius: 5px;
+    padding: 15%;
+    gap: 5px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hoja {
+    display: none;
+    max-width: 3508px;
+    max-height: 2480px;
+}
+
+.muestra {
+    border: 1px solid black;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+}
+
+.fila {
+    display: flex;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.mtop {
+    margin-top: 4px;
+}
+.center {
+    font-size: 10px;
+    text-align: center;
+}
+
+.volver {
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.bbutton_p {
+    width: 300px;
+}
+
+.input_peq {
+    border-radius: 5px;
+    width: 300px;
+    padding: 3px;
+}
+
+
+
+/*-------------------------------------PLANILLAS-------------------------------------*/
+
+
+
+.card {
+    display: flex;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.imgPdf{
+    height: 100px;
+    width: 100px;
+}
+
+/*-------------------------------------EQTIQUETAS_ONCO-------------------------------------*/
+
+.etiqueta {
+    width: 300px;
+    height: 200px;
+    border: solid 1px black;
+}
+
+/*-------------------------------------BOTONERA-------------------------------------*/
+
+.botonera {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+/*  *******************************RESPONSIVE*******************************  */
+/*  *******************************RESPONSIVE*******************************  */
+/*  *******************************RESPONSIVE*******************************  */
+
+@media (min-width: 1024px){
+
+    section, .linea {
+        width: 80%;
+    }
+
+    .filtro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .bbutton {
+        font-size: 20px;
+    }
+
+    .filtroCheck {
+        font-size: 20px;
+    }
+
+
+    .radioBtn {
+        width: 30%;
+        justify-content: space-between;
+    }
+
+    td {
+        font-size: 18px;
+    }
+
+    .nombreArticulo {
+        font-size: 24px;
+    }
+
+    .festivoTxt {
+        display: inline;
+    }
+
+    .buscador {
+        display: flex;
+        margin-right: 10px;
+    }
+}
+
+</style>
+
+<body id="body">
+    <noscript>
+        <p>Lo sentimos, su navegador no soporta JavaScript o lo ha deshabilitado.</p>
+        <p>Para ver el contenido de esta página, por favor habilite JavaScript en su navegador.</p>
+    </noscript>
+    <header>
+        <span id="menu_btn" class="menu_btn">☰</span>
+        <h1 class="titulo">Control de Stock</h1>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="./index.html" class="menu_i">Control de Stock</a></li>
+                <li><a href="./etiquetas.html" class="menu_i">Etiquetas</a></li>
+                <li><a href="./planillas.html" class="menu_i">Planillas</a></li>
+            </ul>
+            <div class="menu_close" id="menu_close">x</div>
+        </div>
+        <div id="buscador" class="buscador">
+            <input type="text" id="buscadorInput" class="buscadorInput" placeholder="Buscar en Kairos..."
+                autocomplete="off">
+            <button id="buscadorBtn">🔍︎</button>
+        </div>
+
+        </div>
+    </header>
+
+    <!-- <div id="festivo" class="festivo">
+        <img src="./data/img/navidad/noel.gif" alt="">
+        <button id="festivoBtn" class="bbutton">Cerrar</button>
+    </div> -->
+    <div class="cargando" id="cargando">
+        <img src="./data/img/cargando.gif" alt="" width="200px" class="cargandoImg">
+        <p class="cargandoTxt">Cargando datos...</p>
     </div>
+    <div class="container" id="container">
 
-    <div class="main-container" id="mainContainer">
-        <span>
-            <h2>VALE DE PRESTAMO ENTRE INSTITUCIONES</h2>
-        </span>
-        <h2>Servicio de Farmacia HIGA Dr. Oscar E. Alende</h2>
-        <div class="data-display-container">
-            <div class="data-box data-box-1">
+        <section class="filtro">
+            <label class="tituloBuscar">Buscar articulo :</label>
+            <div class="radioBtn">
+                <div>
+                    <input type="radio" name="filtro" id="fNombre" class="inputR" value="Articulos" />
+                    <label for="fNombre" class="filtroCheck" id="filtroCheckArt">Habilitados</label>
+                </div>
+                <div>
+                    <input type="radio" name="filtro" id="fCodigoMin" class="inputR" value="Codigo Ministerial" />
+                    <label for="fCodigoMin" class="filtroCheck" id="filtroCheckCm">Todos</label>
+                </div>
+                <span class="bbutton" id="btnListados">Listados</span>
+                <span class="bbutton" id="btnControl" style="display: none;">Control</span>
             </div>
-            <div class="data-box data-box-2">
+        </section>
+
+        <section class="busqueda" id="busqueda">
+            <input type="text" list="medicacion" id="entrada" class="entrada" disabled autocomplete="off" />
+            <datalist id="medicacion"></datalist>
+            <button class="bbutton" id="borrar">Borrar</button>
+        </section>
+
+        <hr class="linea" />
+
+        <section class="datos">
+            <div class="Descripcion">
+                <span id="nombreArticulo" class="nombreArticulo">
+                    -----
+                </span>
+
+                <span id="codMinisterial" class="codMinisterial">
+                    -----
+                </span>
+
+            </div>
+
+            <div class="stock">
+                <div class="stockInner" id="stockDepositoContainer">
+                    <span class="inner" id="stockDepositoLabel"> Stock en Depósito </span>
+                    <span id="stockDeposito"> ----- </span>
+                </div>
+
+                <div class="stockInner">
+                    <span class="inner"> Estado </span>
+                    <span id="estadoStock"> ----- </span>
+                </div>
+
+                <div class="stockInner">
+                    <span class="inner"> Consumo mensual </span>
+                    <span id="consumo"> ----- </span>
+                </div>
+            </div>
+
+            <div class="vto">
+                <label class="LTextVto" id="LTextVto">Mostrar próximos vencimientos hasta 12/28 (Solo referencia -
+                    Ultima actualización 11/08/2025)</label>
+
+                <table id="tabla" class="tablaVto">
+                    <tr>
+                        <th>Lote</th>
+                        <th>Vencimiento</th>
+                        <th>Deposito</th>
+                        <th>Farmacia</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="listados" id="listados">
+            <h1 class="titulo">Listados</h1>
+            <div class="listadosContainer">
+                <div class="botoneraFiltros">
+                    <select name="tipoFiltros" id="seleccionFiltros">
+                        <option value="" selected disabled>Filtrar por:</option>
+                        <option value="Stock" id="optionselect">Stock</option>
+                        <option value="Servicio">Sector</option>
+                        <option value="vencimiento">Vencimiento</option>
+                        <option value="ultimosCambios">Últimos cambios</option>
+                    </select>
+
+                    <select name="filtrosStock" id="filtrosStock" class="filtrosOcultos">
+                        <option value="" selected disabled>Seleccionar listado:</option>
+                        <option value="Lista completa" id="lCompleta">Lista Completa</option>
+                        <option value="En Stock minimo">En Stock mínimo</option>
+                        <option value="Agotados">Agotados</option>
+                        <option value="control">Control</option>
+                        <option value="Completo (Sin filtrar)">Completo (Sin filtrar)</option>
+                    </select>
+
+                    <select name="filtrosSector" id="filtrosSector" class="filtrosOcultos">
+                        <option value="" selected disabled>Seleccionar Sector</option>
+                        <option value="Esterilizacion">Esterilización</option>
+                        <option value="Alimentacion">Alimentación</option>
+                        <option value="Sueros">Sueros</option>
+                        <option value="Programas">Programas</option>
+                    </select>
+
+                    <select name="filtrosProgramas" id="filtrosProgramas" class="filtrosOcultos">
+                        <option value="" selected disabled>Seleccionar Programa</option>
+                        <option value="proepi">PROEPI</option>
+                        <option value="tbc">TBC</option>
+                        <option value="hiv">HIV</option>
+                    </select>
+
+
+                    <div class="filtrosVencimientoContainer">
+                        <select name="filtrosVencimiento" id="filtrosVencimiento" class="filtrosOcultos">
+                            <option value="" selected disabled>Seleccionar opcion</option>
+                            <option value="Listado completo">Listado completo</option>
+                            <option value="Entre fechas">Entre fechas</option>
+                        </select>
+                        <div class="filtrosFechas">
+                            <select name="filtrosVencimientoM" id="filtrosVencimientoM" class="filtrosOcultos">
+                                <option value="01/31">Enero</option>
+                                <option value="02/30">Febrero</option>
+                                <option value="03/31">Marzo</option>
+                                <option value="04/30">Abril</option>
+                                <option value="05/31">Mayo</option>
+                                <option value="06/30">Junio</option>
+                                <option value="07/31">Julio</option>
+                                <option value="08/31">Agosto</option>
+                                <option value="09/30">Septiembre</option>
+                                <option value="10/31">Octubre</option>
+                                <option value="11/30">Noviembre</option>
+                                <option value="12/31">Diciembre</option>
+                            </select>
+
+                            <select name="filtrosVencimientoY" id="filtrosVencimientoY" class="filtrosOcultos">
+                                <option value="/2025">2025</option>
+                                <option value="/2026">2026</option>
+                                <option value="/2027">2027</option>
+                                <option value="/2028">2028</option>
+                            </select>
+
+                            <select name="filtrosVencimientoEFM" id="filtrosVencimientoEFM" class="filtrosOcultos">
+                                <option value="01/31">Enero</option>
+                                <option value="02/30">Febrero</option>
+                                <option value="03/31">Marzo</option>
+                                <option value="04/30">Abril</option>
+                                <option value="05/31">Mayo</option>
+                                <option value="06/30">Junio</option>
+                                <option value="07/31">Julio</option>
+                                <option value="08/31">Agosto</option>
+                                <option value="09/30">Septiembre</option>
+                                <option value="10/31">Octubre</option>
+                                <option value="11/30">Noviembre</option>
+                                <option value="12/31">Diciembre</option>
+                            </select>
+
+                            <select name="filtrosVencimientoEFY" id="filtrosVencimientoEFY" class="filtrosOcultos">
+                                <option value="/2025">2025</option>
+                                <option value="/2026">2026</option>
+                                <option value="/2027">2027</option>
+                                <option value="/2028">2028</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button class="bbutton filtrosOcultos" id="btnSeleccionar">Seleccionar</button>
+                </div>
+
+                <div class="tablaContainer">
+                    <table id="tablaListados" class="tabla thListados">
+                        <tr>
+                            <th>Código</th>
+                            <th>Medicación</th>
+                            <th>Estado</th>
+                            <th>Stock</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="botoneraLista">
+                    <button class="bbutton" id="btnDescargar">Descargar Excel</button>
+                    <button class="bbutton" id="btnPDF">Descargar PDF</button>
+                    <button class="bbutton" id="btnCerrar">Cerrar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="control" id="control">
+            <div class="tablaContainer">
+                <table id="tablaListados" class="tabla thListados">
+                    <tr>
+                        <th>Código</th>
+                        <th>Medicación</th>
+                        <th>Estado</th>
+                        <th>Stock</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="botoneraLista">
+                <button class="bbutton" id="btnCDescargar">Descargar Excel</button>
+                <button class="bbutton" id="btnCPDF">Descargar PDF</button>
+                <button class="bbutton" id="btnCCerrar">Cerrar</button>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <footer id="footer">
+            <p class="LText"> <span id="ActText"></span>Ultima actualización: <span id="fecha"></span> 09:13 hs</p>
+    </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.4/FileSaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const fechaSpan = document.getElementById("fecha")
+  const fecha = new Date();
+  const diaActual = "26-08-2025"
+  fechaSpan.innerText = diaActual
+
+  const diaPrevio = "19-08-2025"
+  cargarDatos(diaActual, diaPrevio);
+
+  const arregloDia = () => {
+    if (fecha.getDate() < 10) {
+      return "0"
+    } else {
+      return ""
+    }
+  }
+
+  const arregloMes = () => {
+    if ((fecha.getMonth() + 1) < 10) {
+      return "0"
+    } else {
+      return ""
+    }
+  }
+
+  const FechaReal = arregloDia() + fecha.getDate() + "-" + arregloMes() + (fecha.getMonth() + 1) + "-" + fecha.getFullYear();
+  const comprobarFecha = () => {
+    const footerStyle = document.getElementById("footer")
+    const ActText = document.getElementById("ActText")
+    if (FechaReal != diaActual) {
+      footerStyle.style.backgroundColor = "#881515"
+      footerStyle.style.color = "white"
+      footerStyle.style.fontWeight = "bold"
+      ActText.textContent = "DATOS DESACTUALIZADOS - "
+      const contador = setTimeout(searchUdt, 600000);
+
+      function searchUdt() {
+        const resultado = fetch("https://geescobar88.github.io/probando/Control_Stock/data/" + diaActual + ".json")
+          .then(() => actualizar())
+          .catch((e) => console.log(e))
+      }
+
+      function actualizar() {
+        if ('caches' in window) {
+          caches.keys().then((names) => {
+            names.forEach((name) => {
+              caches.delete(name);
+            });
+          });
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        location.reload();
+      }
+    } else {
+      footerStyle.style.backgroundColor = "rgb(6, 99, 75)"
+      footerStyle.style.color = "white"
+      footerStyle.style.fontWeight = "bold"
+    }
+
+  }
+
+  comprobarFecha()
+});
+
+async function cargarDatos(diaActual, diaPrevio) {
+  const cargando = document.getElementById("cargando")
+  const container = document.getElementById("container")
+
+  container.style.visibility = "hidden"
+  const listado = await fetch("./data/" + diaActual + ".json")
+  const listadoResponse = await listado.json();
+  const listadoPrevio = await fetch("./data/" + diaPrevio + ".json")
+  const listadoPrevioResponse = await listadoPrevio.json();
+
+  const db = await fetch("./data/DB.json");
+  const dbTotal = await db.json();
+  const dbResponse = dbTotal.DB;
+  const listadoVto = dbTotal.VTO;
+  const listadoVtoF = dbTotal.VTO_F;
+
+  container.style.visibility = "visible"
+  cargando.style.display = "none"
+
+  const totalVto = listadoVto.map((array1) => {
+    const coincidencia = listadoVtoF.find(
+      (array2) => array2.NROLOTE === array1.NROLOTE
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
+
+  const totalVto2 = totalVto.map((array1) => {
+    const coincidencia = dbResponse.find(
+      (array2) => array2.CODARTICULO === array1.CODARTICULO
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
+
+  generarTotal(dbResponse, listadoResponse, listadoPrevioResponse, totalVto2);
+  menubar();
+}
+
+///////////////////////////////////////MENU/////////////////////////////////////////
+
+function menubar() {
+  menu = document.getElementById("menu")
+  menu_btn = document.getElementById("menu_btn")
+  menu_close = document.getElementById("menu_close")
+
+  menu_btn.addEventListener("click", () => {
+    menu.style.display = "flex"
+  })
+
+  menu_close.addEventListener("click", () => {
+    menu.style.display = "none"
+  })
+
+}
+
+//////////////////////////////////GENERANDO TOTAL///////////////////////////////////
+
+function generarTotal(dbResponse, listadoResponse, listadoPrevioResponse, totalVto) {
+  const total = dbResponse.map((array1) => {
+    const coincidencia = listadoResponse.find(
+      (array2) => array2.CODARTICULO === array1.CODARTICULO
+    );
+    if (coincidencia) {
+      return { ...array1, ...coincidencia };
+    } else {
+      return array1;
+    }
+  });
+
+  filtrarDatos(total, listadoResponse);
+  seleccionarArticulo(total, totalVto, listadoResponse)
+  crearListados(total, totalVto, listadoResponse, listadoPrevioResponse);
+}
+
+///////////////////////////////////FILTRANDO DATOS//////////////////////////////////
+
+function filtrarDatos(total, listadoResponse) {
+  const filtroArt = document.getElementById("fNombre");
+  const filtroCm = document.getElementById("fCodigoMin");
+  const entrada = document.getElementById("entrada");
+  const datalist = document.getElementById("medicacion");
+  const borrar = document.getElementById("borrar")
+  const busqueda = document.getElementById("busqueda")
+  const nomArticulo = document.getElementById("nombreArticulo");
+  const codMinisterial = document.getElementById("codMinisterial");
+  const stockDeposito = document.getElementById("stockDeposito");
+  const estadoStock = document.getElementById("estadoStock")
+  const consumo = document.getElementById("consumo")
+
+  const tabla = document.getElementById("tabla");
+
+  //--------------------------Filtro por articulos---------------------
+  filtroArt.addEventListener("change", () => {
+    borrar.click();
+    if (filtroArt.checked) {
+      datalist.innerHTML = "";
+      entrada.value = "";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+      total.forEach((item) => {
+        const newOption = document.createElement("option");
+        const atribValue = document.createAttribute("value");
+        const atribLabel = document.createAttribute("label");
+        if (item.HABILITADO == "SI") {
+          atribValue.value = item.MEDICACION;
+          atribLabel.value = item.MEDICACION;
+        } else {
+          atribValue.value = item.DESCRIPCION;
+          atribLabel.value = item.DESCRIPCION;
+        }
+        newOption.setAttributeNode(atribValue);
+        newOption.setAttributeNode(atribLabel);
+        datalist.appendChild(newOption);
+      });
+    }
+  });
+
+  //--------------------------Filtro por Codigo ministerial---------------------
+
+  filtroCm.addEventListener("change", () => {
+    borrar.click();
+    if (filtroCm.checked) {
+      datalist.innerHTML = "";
+      entrada.value = "";
+      tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+      listadoResponse.forEach((item) => {
+        const newOption = document.createElement("option");
+        const atribValue = document.createAttribute("value");
+        atribValue.value = item.DESCRIPCION;
+        newOption.setAttributeNode(atribValue);
+        datalist.appendChild(newOption);
+      });
+    }
+  });
+
+  //--------------------------Otras funcionalidades---------------------
+
+  borrar.addEventListener("click", () => {
+    entrada.value = "";
+    nomArticulo.textContent = "-----";
+    codMinisterial.textContent = "-----";
+    stockDeposito.textContent = "-----"
+    estadoStock.textContent = "-----"
+    estadoStock.style.color = "black"
+    consumo.textContent = "-----"
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+  })
+
+  busqueda.addEventListener("click", () => {
+    if (entrada.disabled) {
+      entrada.disabled = false;
+      filtroArt.click();
+    }
+  })
+
+  busqueda.addEventListener("dblclick", () => {
+    borrar.click();
+  })
+}
+
+//////////////////////////////////SELECCIONANDO ARTICULO////////////////////////////
+
+function seleccionarArticulo(total, totalVto, listadoResponse) {
+  const filtroArt = document.getElementById("fNombre");
+  const entrada = document.getElementById("entrada");
+  const nomArticulo = document.getElementById("nombreArticulo");
+  const codMinisterial = document.getElementById("codMinisterial");
+  const stockDepositoContainer = document.getElementById("stockDepositoContainer");
+  const stockDeposito = document.getElementById("stockDeposito");
+  const stockDepositoLabel = document.getElementById('stockDepositoLabel')
+  const estadoStock = document.getElementById("estadoStock")
+  const consumo = document.getElementById("consumo")
+
+  const LTextVto = document.getElementById("LTextVto")
+
+  const tabla = document.getElementById("tabla");
+
+
+
+  entrada.addEventListener('change', () => {
+
+    //--------------------------Filtrar un articulo---------------------
+
+    if (filtroArt.checked) {
+      const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      nomArticulo.textContent = articuloEncontrado.MEDICACION + " - (" + articuloEncontrado.SERVICIO + ")"
+      codMinisterial.textContent = articuloEncontrado.CODARTICULO
+      stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+      consumo.textContent = articuloEncontrado.STOCK_MIN
+      if (Number(articuloEncontrado.STOCKENDEPOSITO) <= Number(articuloEncontrado.STOCK_MIN)) {
+        estadoStock.textContent = "Critico"
+        estadoStock.style.color = "red";
+      } else if (Number(articuloEncontrado.STOCKENDEPOSITO) >= Number(articuloEncontrado.STOCK_MIN) * 2) {
+        estadoStock.textContent = "En stock"
+        estadoStock.style.color = "green";
+      } else {
+        estadoStock.textContent = "Minimo"
+        estadoStock.style.color = "black";
+      }
+    } else {
+      const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      nomArticulo.textContent = articuloEncontrado.DESCRIPCION
+      codMinisterial.textContent = articuloEncontrado.CODARTICULO
+      stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+      consumo.textContent = articuloEncontrado.STOCK_MIN
+      if (Number(articuloEncontrado.STOCKENDEPOSITO) <= Number(articuloEncontrado.STOCK_MIN)) {
+        estadoStock.textContent = "Critico"
+        estadoStock.style.color = "red";
+      } else if (Number(articuloEncontrado.STOCKENDEPOSITO) >= Number(articuloEncontrado.STOCK_MIN) * 2) {
+        estadoStock.textContent = "En stock"
+        estadoStock.style.color = "green";
+      } else {
+        estadoStock.textContent = "Minimo"
+        estadoStock.style.color = "black";
+      }
+    }
+
+
+
+
+    //--------------------------Alternar Deposito/Farmacia---------------------
+
+
+
+    if (filtroArt.checked) {
+      const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      let aux = 0;
+      stockDepositoContainer.addEventListener("click", () => {
+        if (aux == 0) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
+          stockDepositoLabel.textContent = "Stock en Farmacia"
+          stockDepositoLabel.style.color = "#ffffff"
+          stockDepositoContainer.style.backgroundColor = "#94a8e6"
+          aux = + 1
+        } else if (aux == 1) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+          stockDepositoLabel.textContent = "Stock en Deposito"
+          stockDepositoLabel.style.color = "#0A0A0A"
+          stockDepositoContainer.style.backgroundColor = "#ebe7e0"
+          aux = aux - 1
+        }
+      })
+    } else {
+      const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+      let aux = 0;
+      stockDepositoContainer.addEventListener("click", () => {
+        if (aux == 0) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDISPENSACION
+          stockDepositoLabel.textContent = "Stock en Farmacia"
+          stockDepositoLabel.style.color = "#ffffff"
+          stockDepositoContainer.style.backgroundColor = "#94a8e6"
+          aux = + 1
+        } else if (aux == 1) {
+          stockDeposito.textContent = articuloEncontrado.STOCKENDEPOSITO
+          stockDepositoLabel.textContent = "Stock en Deposito"
+          stockDepositoLabel.style.color = "white"
+          stockDepositoContainer.style.backgroundColor = "#ebe7e0"
+          aux = aux - 1
+        }
+      })
+    }
+
+
+    //--------------------------Tabla de vencimientos---------------------
+
+    const filtroArtVto = totalVto.filter((match) => {
+      if (filtroArt.checked) {
+        const articuloEncontrado = total.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+        return articuloEncontrado.CODARTICULO === match.CODARTICULO
+      } else {
+        const articuloEncontrado = listadoResponse.find((match) => match.MEDICACION === entrada.value || match.CODARTICULO === entrada.value || match.DESCRIPCION === entrada.value)
+        return articuloEncontrado.CODARTICULO === match.CODARTICULO
+      }
+    })
+
+    tabla.innerHTML = "<tr><th>Lote</th><th>Vencimiento</th><th>Deposito</th><th>Farmacia</th></tr>";
+    filtroArtVto.forEach((articulo) => {
+      const row = tabla.insertRow();
+      const loteCell = row.insertCell(0);
+      const vencimientoCell = row.insertCell(1);
+      const cantidadCell = row.insertCell(2);
+      const cantidadFCell = row.insertCell(3);
+
+      loteCell.innerHTML = articulo.NROLOTE;
+      const dateVto = new Date(articulo.FECHAVTO);
+      vencimientoCell.innerHTML = (dateVto.getMonth() + 1) + "/" + dateVto.getFullYear()
+      cantidadCell.innerHTML = articulo.STOCKEXISTENTE;
+      if (articulo.STOCKEXISTENTE_F == undefined) {
+        cantidadFCell.innerHTML = "----";
+      } else {
+        cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F;
+      }
+    })
+  })
+
+  LTextVto.addEventListener("click", () => {
+    tabla.style.visibility = "visible"
+    LTextVto.style.backgroundColor = "#44749d"
+    LTextVto.style.color = "#ebe7e0"
+    LTextVto.style.fontWeight = "bold"
+
+  })
+}
+
+
+
+/////////////////////////////////////////LISTADOS///////////////////////////////////
+
+function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) {
+  const btnListadosAbrir = document.getElementById("btnListados")
+  const btnListadosCerrar = document.getElementById("btnCerrar")
+  const btnControlAbrir = document.getElementById("btnControl")
+  const btnControlCerrar = document.getElementById("btnCCerrar")
+  const ventanaListados = document.getElementById("listados")
+  const ventanaControl = document.getElementById("control")
+  const seleccionFiltros = document.getElementById("seleccionFiltros")
+  const filtrosStock = document.getElementById("filtrosStock")
+  const filtrosSector = document.getElementById("filtrosSector")
+  const filtrosSectorProgramas = document.getElementById("filtrosProgramas")
+  const filtrosVencimiento = document.getElementById("filtrosVencimiento")
+  const filtrosVencimientoM = document.getElementById("filtrosVencimientoM")
+  const filtrosVencimientoY = document.getElementById("filtrosVencimientoY")
+  const filtrosVencimientoEFM = document.getElementById("filtrosVencimientoEFM")
+  const filtrosVencimientoEFY = document.getElementById("filtrosVencimientoEFY")
+  const btnSeleccionar = document.getElementById("btnSeleccionar")
+  const tablaListados = document.getElementById("tablaListados")
+
+  const diferencias = listadoResponse.filter((obj1) => {
+    return listadoPrevioResponse.some((obj2) => {
+      return obj1.CODARTICULO === obj2.CODARTICULO && obj1.STOCKENDEPOSITO != obj2.STOCKENDEPOSITO;
+    });
+  }).map((obj1) => {
+    const obj2 = listadoPrevioResponse.find((obj) => obj.CODARTICULO === obj1.CODARTICULO);
+    return {
+      CODARTICULO: obj1.CODARTICULO,
+      DESCRIPCION: obj1.DESCRIPCION,
+      VALORANTERIOR: obj2.STOCKENDEPOSITO,
+      VALORACTUAL: obj1.STOCKENDEPOSITO,
+      DIFERENCIA: obj1.STOCKENDEPOSITO - obj2.STOCKENDEPOSITO,
+    };
+  });
+
+  //--------------------------Abrir/Cerrar ventana Listados---------------------
+  btnListadosAbrir.addEventListener("click", () => {
+    ventanaListados.style.display = "inline"
+  })
+
+  btnListadosCerrar.addEventListener("click", () => {
+    ventanaListados.style.display = "none"
+  })
+
+  //--------------------------Abrir/Cerrar ventana Control---------------------
+  btnControlAbrir.addEventListener("click", () => {
+    ventanaControl.style.display = "inline"
+  })
+
+  btnControlCerrar.addEventListener("click", () => {
+    ventanaControl.style.display = "none"
+  })
+
+  //------------------------------Mostrar/Ocultar Selects-------------------------
+
+  seleccionFiltros.addEventListener("change", (event) => {
+    switch (event.target.selectedIndex) {
+      //Stock
+      case 1:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosStock.style.display = "inline"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+      //Servicio
+      case 2:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "inline"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+      //Vencimiento
+      case 3:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Lote</th><th>Vto</th><th>Cantidad</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "inline"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+        break;
+      //Ultimos cambios
+      case 4:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Stock Anterior</th><th>Stock Actual</th><th>Diferencia</th></tr>";
+        filtrosStock.style.display = "none"
+        filtrosSector.style.display = "none"
+        filtrosSectorProgramas.style.display = "none"
+        filtrosVencimiento.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        filtrosVencimientoEFM.style.display = "none"
+        filtrosVencimientoEFY.style.display = "none"
+        btnSeleccionar.style.display = "none"
+
+        diferencias.forEach((articulo) => {
+
+          if (articulo.DIFERENCIA >= 0 || articulo.VALORACTUAL == 0) {
+
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const valorAnteriorCell = row.insertCell(2);
+            const valorActualCell = row.insertCell(3);
+            const diferenciaCell = row.insertCell(4)
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.DESCRIPCION;
+            valorAnteriorCell.innerHTML = articulo.VALORANTERIOR;
+            valorActualCell.innerHTML = articulo.VALORACTUAL;
+            diferenciaCell.innerHTML = articulo.DIFERENCIA;
+            diferenciaCell.style.fontWeight = "bold"
+
+            if (articulo.DIFERENCIA > 0) {
+              diferenciaCell.style.color = "green"
+              medicacionCell.style.color = "green"
+            } else {
+              diferenciaCell.style.color = "red"
+              medicacionCell.style.color = "red"
+            }
+          }
+        })
+        break;
+    }
+  })
+
+  filtrosStock.addEventListener("change", (event) => {
+    switch (event.target.selectedIndex) {
+      //Listado Completo
+      case 1:
+
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Depósito</th><th>Farmacia</th></tr>";
+        total.forEach((articulo) => {
+
+          if (articulo.HABILITADO == "SI") {
+
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+            const stockFCell = row.insertCell(4)
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+
+            if (articulo.STOCKENDEPOSITO == 0 || articulo.STOCKENDEPOSITO == undefined) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+
+            if (articulo.STOCKENDEPOSITO == undefined) {
+              stockCell.innerHTML = 0
+            } else {
+              stockCell.innerHTML = articulo.STOCKENDEPOSITO
+            }
+
+            if (articulo.STOCKENDISPENSACION == undefined) {
+              stockFCell.innerHTML = 0
+            } else {
+              stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+            }
+          }
+
+        })
+        break;
+      //Stock Critico
+      case 2:
+
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.HABILITADO == "SI" && Number(articulo.STOCKENDEPOSITO) <= Number(articulo.STOCK_MIN)) {
+
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Agotado
+      case 3:
+
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+
+          if (articulo.HABILITADO == "SI" && articulo.STOCKENDEPOSITO == "0") {
+
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Control
+      case 4:
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.PRIORIDAD == 1) {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+
+      //Completo sin filtrar
+
+      case 5:
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Depósito</th><th>Farmacia</th></tr>";
+        listadoResponse.forEach((articulo) => {
+          const row = tablaListados.insertRow();
+          const codigoCell = row.insertCell(0);
+          const medicacionCell = row.insertCell(1);
+          const stockCell = row.insertCell(2);
+          const stockFCell = row.insertCell(3)
+
+          codigoCell.innerHTML = articulo.CODARTICULO;
+          medicacionCell.innerHTML = articulo.DESCRIPCION;
+          stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+
+        })
+        break;
+
+
+    }
+  })
+
+  filtrosSector.addEventListener("change", (event) => {
+    switch (event.target.selectedIndex) {
+      //Esterilizacion
+      case 1:
+
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "ESTERILIZACION") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Alimentacion
+      case 2:
+
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "ALIMENTACION") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Sueros
+      case 3:
+
+        filtrosSectorProgramas.style.display = "none"
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.SERVICIO == "SUEROS") {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            estadoCell.innerHTML = "-----";
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado";
+              estadoCell.style.color = "black"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Critico";
+              estadoCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
+
+        })
+        break;
+      //Programas
+      case 4:
+
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+        filtrosSectorProgramas.style.display = "inline"
+        filtrosSectorProgramas.addEventListener("change", (event) => {
+          switch (event.target.selectedIndex) {
+            case 1:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "PROEPI") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDEPOSITO == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDEPOSITO
+                }
+
+              })
+              break;
+
+            case 2:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "TBC") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+
+              })
+              break;
+
+            case 3:
+              tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicacion</th><th>Estado</th><th>Stock</th></tr>";
+              total.forEach((articulo) => {
+                if (articulo.SERVICIO == "HIV") {
+                  const row = tablaListados.insertRow();
+                  const codigoCell = row.insertCell(0);
+                  const medicacionCell = row.insertCell(1);
+                  const estadoCell = row.insertCell(2);
+                  const stockCell = row.insertCell(3);
+
+                  codigoCell.innerHTML = articulo.CODARTICULO;
+                  medicacionCell.innerHTML = articulo.MEDICACION;
+                  estadoCell.innerHTML = "-----";
+                  if (articulo.STOCKENDISPENSACION == 0) {
+                    estadoCell.innerHTML = "Agotado";
+                    estadoCell.style.color = "black"
+                  } else if (articulo.STOCKENDISPENSACION >= articulo.STOCK_MIN * 2) {
+                    estadoCell.innerHTML = "Normal";
+                    estadoCell.style.color = "green"
+                  } else if (articulo.STOCKENDISPENSACION <= articulo.STOCK_MIN) {
+                    estadoCell.innerHTML = "Critico";
+                    estadoCell.style.color = "red"
+                  }
+                  stockCell.innerHTML = articulo.STOCKENDISPENSACION
+                }
+
+              })
+              break;
+          }
+        })
+        break;
+
+    }
+  })
+
+  filtrosVencimiento.addEventListener("change", (event) => {
+    data = [];
+    switch (event.target.selectedIndex) {
+      //Lista completa
+      case 1:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
+        btnSeleccionar.style.display = "none"
+        filtrosVencimientoM.style.display = "none"
+        filtrosVencimientoY.style.display = "none"
+        totalVto.forEach((articulo) => {
+          const row = tablaListados.insertRow();
+          const codigoCell = row.insertCell(0);
+          const medicacionCell = row.insertCell(1);
+          const loteCell = row.insertCell(2);
+          const vtoCell = row.insertCell(3);
+          const cantidadCell = row.insertCell(4);
+          const cantidadFCell = row.insertCell(5);
+          const StockMinCell = row.insertCell(6);
+
+          codigoCell.innerHTML = articulo.CODARTICULO;
+          if (articulo.CONCENTRACION == undefined) {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+          } else {
+            medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+          }
+          loteCell.innerHTML = articulo.NROLOTE
+          vtoCell.innerHTML = articulo.FECHAVTO
+          cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+
+          if (articulo.STOCKEXISTENTE_F == undefined) {
+            cantidadFCell.innerHTML = "-----"
+          }
+          else {
+            cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+          }
+
+          if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
+            StockMinCell.innerHTML = "-----"
+          }
+          else {
+            StockMinCell.innerHTML = articulo.STOCK_MIN
+          }
+
+        })
+        break;
+
+      //Entre fechas
+      case 2:
+        tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
+        filtrosVencimientoM.style.display = "inline"
+        filtrosVencimientoY.style.display = "inline"
+        filtrosVencimientoEFM.style.display = "inline"
+        filtrosVencimientoEFY.style.display = "inline"
+        btnSeleccionar.style.display = "inline"
+
+        btnSeleccionar.addEventListener('click', () => {
+
+          tablaListados.innerHTML = "<tr><th>Codigo</th><th>Medicación</th><th>Lote</th><th>Vto</th><th>Deposito</th><th>Farmacia</th><th>Consumo</th></tr>";
+          const fechaElegida = totalVto.filter(match => {
+            const fechaInicial = filtrosVencimientoM.value + filtrosVencimientoY.value
+            const fiSeparada = fechaInicial.split("/")
+            const fechaInicialP = new Date(fiSeparada[0] + "/" + fiSeparada[1] + "/" + fiSeparada[2])
+            const fechaFinal = filtrosVencimientoEFM.value + filtrosVencimientoEFY.value
+            const ffSeparada = fechaFinal.split("/")
+            const fechaFinalP = new Date(ffSeparada[0] + "/" + ffSeparada[1] + "/" + ffSeparada[2])
+            const fVtoS = match.FECHAVTO.split("/")
+            const fVto = new Date(fVtoS[0] + "/" + fVtoS[1] + "/" + fVtoS[2])
+            return fVto >= fechaInicialP && fVto <= fechaFinalP
+          })
+
+          fechaElegida.forEach((articulo) => {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const loteCell = row.insertCell(2);
+            const vtoCell = row.insertCell(3);
+            const cantidadCell = row.insertCell(4);
+            const cantidadFCell = row.insertCell(5);
+            const StockMinCell = row.insertCell(6);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            if (articulo.CONCENTRACION == undefined) {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.FORMA;
+            } else {
+              medicacionCell.innerHTML = articulo.NOMBREGENERICO + " - " + articulo.CONCENTRACION + " - " + articulo.FORMA;
+            }
+            loteCell.innerHTML = articulo.NROLOTE
+            const dateVto = new Date(articulo.FECHAVTO);
+            vtoCell.innerHTML = (dateVto.getMonth() + 1) + "/" + dateVto.getFullYear()
+            cantidadCell.innerHTML = articulo.STOCKEXISTENTE
+            if (articulo.STOCKEXISTENTE_F == undefined) {
+              cantidadFCell.innerHTML = "-----"
+            }
+            else {
+              cantidadFCell.innerHTML = articulo.STOCKEXISTENTE_F
+            }
+
+            if (articulo.STOCK_MIN == undefined || articulo.STOCK_MIN == "undefined") {
+              StockMinCell.innerHTML = "-----"
+            }
+            else {
+              StockMinCell.innerHTML = articulo.STOCK_MIN
+            }
+
+          })
+
+        })
+        break;
+    }
+  })
+
+  //--------------------------- BOTON DESCARGAS--------------------------------
+
+  btnDescargar.addEventListener("click", () => {
+    descargar()
+  })
+
+  const descargar = () => {
+    const tablaHTML = tablaListados.outerHTML
+    const blob = new Blob([tablaHTML], { type: 'application/vnd.ms-excel;charset=utf-8' });
+    const date = new Date();
+    saveAs(blob, 'listadoXLS_' + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + '.xls');
+  }
+
+  btnPDF.addEventListener("click", () => {
+
+    const doc = new jspdf.jsPDF();
+
+    const tablaListados = document.getElementById("tablaListados");
+
+    // Extraer encabezados de la tabla HTML
+    const head = [];
+    tablaListados.querySelectorAll('th').forEach(th => {
+      head.push(th.innerText);
+    });
+
+    // Extraer filas de datos de la tabla HTML
+    const body = [];
+    tablaListados.querySelectorAll('tr').forEach(row => {
+      const rowData = [];
+      row.querySelectorAll('td').forEach(td => {
+        rowData.push(td.innerText);
+      });
+      body.push(rowData);
+    });
+
+    // Título del documento
+    doc.setFontSize(18);
+    doc.text("Listado de Artículos", 14, 22);
+
+    // Generar la tabla usando jspdf-autotable
+    doc.autoTable({
+      head: [head], // autoTable espera un array de arrays para el head
+      body: body,
+      startY: 30,
+      theme: 'striped',
+      headStyles: {
+        fillColor: [41, 128, 185],
+        textColor: [255, 255, 255],
+        fontStyle: 'bold'
+      },
+      styles: {
+        fontSize: 10,
+        cellPadding: 3
+      },
+      columnStyles: {
+        // Puedes ajustar el ancho de las columnas si lo deseas
+        // 0: { cellWidth: 30 },
+        // 1: { cellWidth: 'auto' },
+        // 2: { cellWidth: 30, halign: 'center' },
+        // 3: { cellWidth: 35, halign: 'center' }
+      },
+
+      // Aquí se agrega el pie de página
+      didDrawPage: function (data) {
+        // Posición en Y para el pie de página
+        const y = doc.internal.pageSize.getHeight() - 10;
+        // Posición en X para centrar el texto
+        const x = doc.internal.pageSize.getWidth() / 2;
+        doc.setFontSize(10);
+        doc.text(`Página ${data.pageNumber}`, x, y, { align: 'center' });
+      }
+    });
+
+    const date = new Date();
+    const fileName = `listado_${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}.pdf`;
+
+    doc.save(fileName);
+
+
+
+  })
+
+  //--------------------------- BUSCADOR--------------------------------
+  buscadorBtn.addEventListener("click", () => {
+    const buscadorInput = document.getElementById("buscadorInput")
+    window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
+  })
+
+  buscadorInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      const buscadorInput = document.getElementById("buscadorInput")
+      window.open("https://ar.kairosweb.com/?s=" + buscadorInput.value, "_blank")
+    }
+  })
+
+
+
+
+  //--------------------------- EXTRAS--------------------------------
+
+  // const festivo = document.getElementById("festivo")
+  // const festivoBtn = document.getElementById("festivoBtn")
+  // const festivoOpen = document.getElementById("festivoOpen")
+
+  // festivoOpen.addEventListener("click", () => {
+  //   festivo.style.display ="flex"
+  // })
+
+  // festivoBtn.addEventListener("click", () => {
+  //   festivo.style.display ="none"
+  // })
+
+
+}
+
+
+
+    </script>
+
 </body>
 
 </html>
