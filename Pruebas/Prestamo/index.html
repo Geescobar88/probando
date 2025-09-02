@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vale de Préstamo / Devolución</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- We will use jsPDF for direct PDF creation and html2canvas for more complex elements if needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --fondoClaro: #f4f7f9;
+            --primarioFuerte: #2d5a81;
+            --secundarioCalido: #e8e4d3;
+            --acento: #4fc3c4;
+            --textoOscuro: #333d45;
+            --sombra: #d8e2ea;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--fondoClaro);
+        }
+        .container {
+            max-width: 900px;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        /* Styles for PDF generation (optional as we will use programmatic generation) */
+        .pdf-page table {
+            border-collapse: collapse;
+        }
+        .pdf-page th, .pdf-page td {
+            border: 1px solid #4a5568; /* dark-gray-700 */
+            padding: 8px;
+            font-size: 0.875rem; /* text-sm */
+            min-height: 2rem; /* h-8 */
+        }
+
+        /* Custom styles for the responsive menu */
+        /* We use `translate-x-full` to hide it off-screen and `translate-x-0` to show it */
+        .nav-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-backdrop {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .nav-menu.hidden {
+            transform: translateX(100%);
+        }
+        .nav-backdrop.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="p-0">
+
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 flex items-center justify-between p-4 shadow-lg" style="background-color: var(--primarioFuerte);">
+        <h1 class="text-xl font-bold text-white">HIGA - Servicio de Farmacia</h1>
+        
+        <!-- Hamburger Menu Button -->
+        <button id="menu-button" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Full-screen Backdrop for closing the menu -->
+    <div id="backdrop" class="fixed inset-0 z-40 hidden bg-black opacity-50 nav-backdrop"></div>
+
+    <!-- Responsive Navigation Menu -->
+    <nav id="nav-menu" class="fixed top-0 right-0 z-50 w-64 h-full p-4 transform translate-x-full shadow-lg nav-menu" style="background-color: var(--primarioFuerte);">
+        
+        <!-- Close Button -->
+        <div class="flex justify-end">
+            <button id="close-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu Options -->
+        <ul class="mt-8 space-y-4">
+            <li>
+                <a href="#" class="block px-4 py-2 text-white transition duration-200 rounded-md hover:bg-gray-700">Inicio</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-white transition duration-200 rounded-md hover:bg-gray-700">Control de Stock</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-white transition duration-200 rounded-md hover:bg-gray-700">Etiquetas</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-white transition duration-200 rounded-md hover:bg-gray-700">Planillas</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-white transition duration-200 rounded-md hover:bg-gray-700">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+ 
+    <!-- Main Application Container -->
+    <div class="p-8">
+        <div class="container mx-auto p-8 rounded-xl shadow-lg border mb-8" style="background-color: var(--secundarioCalido); border-color: var(--sombra);">
+            <h1 class="text-3xl font-bold text-center mb-6" style="color: var(--primarioFuerte);">Generador de Vale de Préstamo/Devolución</h1>
+
+            <!-- Form Section -->
+            <div class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fecha" class="block text-sm font-medium" style="color: var(--primarioFuerte);">Fecha:</label>
+                        <input type="date" id="fecha" class="mt-1 block w-full rounded-md shadow-sm p-3 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                    </div>
+                    <div>
+                        <label for="institucion" class="block text-sm font-medium" style="color: var(--primarioFuerte);">Institución:</label>
+                        <input type="text" id="institucion" placeholder="Ingrese nombre de la institución" class="mt-1 block w-full rounded-md shadow-sm p-3 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium" style="color: var(--primarioFuerte);">Movimiento (marcar con una X):</label>
+                    <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4" onchange="handleRadioChange(event)">
+                        <div class="flex items-center">
+                            <input id="higaPide" name="movimiento" type="radio" value="1" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label id="labelHigaPide" for="higaPide" class="ml-3 block text-sm font-medium" style="color: var(--textoOscuro);">1) HIGA PIDE PRESTADO A INSTITUCIÓN</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="higaDevuelve" name="movimiento" type="radio" value="2" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label id="labelHigaDevuelve" for="higaDevuelve" class="ml-3 block text-sm font-medium" style="color: var(--textoOscuro);">2) HIGA DEVUELVE A INSTITUCIÓN</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="institucionPide" name="movimiento" type="radio" value="3" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label id="labelInstitucionPide" for="institucionPide" class="ml-3 block text-sm font-medium" style="color: var(--textoOscuro);">3) INSTITUCIÓN PIDE PRÉSTAMO A HIGA</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="institucionDevuelve" name="movimiento" type="radio" value="4" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label id="labelInstitucionDevuelve" for="institucionDevuelve" class="ml-3 block text-sm font-medium" style="color: var(--textoOscuro);">4) INSTITUCIÓN DEVUELVE A HIGA</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dynamic Products Table -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--primarioFuerte);">Productos</h3>
+                    <div class="flex flex-col">
+                        <div class="overflow-x-auto">
+                            <div class="inline-block min-w-full">
+                                <div class="shadow-sm overflow-hidden rounded-lg">
+                                    <table class="min-w-full divide-y" style="background-color: var(--fondoClaro); border-color: var(--sombra);">
+                                        <thead style="background-color: var(--sombra);">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--textoOscuro);">Descripción del producto</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--textoOscuro);">Cantidad</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--textoOscuro);">Lote</th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider" style="color: var(--textoOscuro);">Vencimiento</th>
+                                                <th scope="col" class="relative px-6 py-3"><span class="sr-only">Eliminar</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productos-body" class="divide-y" style="border-color: var(--sombra);">
+                                            <!-- Rows will be added here dynamically -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="agregarProducto()" class="mt-4 w-full text-white font-semibold py-3 px-4 rounded-md hover:bg-opacity-80 transition duration-200 shadow-lg" style="background-color: var(--acento);">
+                        + Agregar Producto
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- PDF Download Button -->
+            <div class="mt-8 flex justify-center">
+                <button id="downloadPdfBtn" class="text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-opacity-80 transition duration-300 shadow-xl" style="background-color: var(--primarioFuerte);">
+                    Descargar Vale en PDF (2 copias)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Template Container (Hidden) -->
+    <div id="pdf-content" class="p-8" style="display:none;">
+        <!-- The PDF content will be dynamically generated here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Set current date on page load
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months start at 0!
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('fecha').value = `${yyyy}-${mm}-${dd}`;
+            agregarProducto(); // Add one row by default
+
+            // Get menu elements
+            const menuButton = document.getElementById('menu-button');
+            const closeButton = document.getElementById('close-button');
+            const navMenu = document.getElementById('nav-menu');
+            const backdrop = document.getElementById('backdrop');
+
+            // Function to toggle the menu state
+            function toggleMenu() {
+                navMenu.classList.toggle('translate-x-full');
+                navMenu.classList.toggle('translate-x-0');
+                backdrop.classList.toggle('hidden');
+            }
+
+            // Add event listeners for the menu
+            menuButton.addEventListener('click', toggleMenu);
+            closeButton.addEventListener('click', toggleMenu);
+            backdrop.addEventListener('click', toggleMenu);
+        });
+
+        /**
+         * Handles the change event for the radio buttons.
+         * Toggles bold font for the selected label.
+         */
+        function handleRadioChange(event) {
+            const allLabels = document.querySelectorAll('label[for^="higaPide"], label[for^="institucion"]');
+            allLabels.forEach(label => {
+                label.classList.remove('font-bold');
+            });
+
+            if (event.target.checked) {
+                const labelId = `label${event.target.id.charAt(0).toUpperCase() + event.target.id.slice(1)}`;
+                const selectedLabel = document.getElementById(labelId);
+                if (selectedLabel) {
+                    selectedLabel.classList.add('font-bold');
+                }
+            }
+        }
+
+        /**
+         * Adds a new product row to the table.
+         * We have changed the 'Vencimiento' input to 'text' with a pattern
+         * to allow 'mm/yyyy' format, as a specific HTML input type for this format doesn't exist.
+         * We have also changed 'Cantidad' to 'text' to remove the spinner arrows.
+         */
+        function agregarProducto() {
+            const tableBody = document.getElementById('productos-body');
+            const newRow = document.createElement('tr');
+            newRow.classList.add('hover:bg-gray-50');
+            newRow.innerHTML = `
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <input type="text" placeholder="Descripción" class="w-full rounded-md shadow-sm p-2 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <input type="text" placeholder="Cantidad" class="w-24 rounded-md shadow-sm p-2 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <input type="text" placeholder="Lote" class="w-24 rounded-md shadow-sm p-2 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <input type="text" placeholder="mm/aaaa" pattern="\\d{2}/\\d{4}" class="w-full rounded-md shadow-sm p-2 border-2 transition duration-200" style="background-color: var(--fondoClaro); border-color: var(--sombra); color: var(--textoOscuro);">
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <button onclick="eliminarFila(this)" class="font-semibold" style="color: var(--primarioFuerte);">Eliminar</button>
+                </td>
+            `;
+            tableBody.appendChild(newRow);
+        }
+
+        /**
+         * Removes a product row from the table.
+         * @param {HTMLElement} btn The delete button element.
+         */
+        function eliminarFila(btn) {
+            if (document.getElementById('productos-body').rows.length > 1) {
+                const row = btn.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            } else {
+                showCustomAlert("Debe haber al menos un producto.");
+            }
+        }
+
+        // Add event listener to the download button
+        document.getElementById('downloadPdfBtn').addEventListener('click', generarPDF);
+
+        /**
+         * Generates the PDF document using jsPDF.
+         */
+        function generarPDF() {
+            // Get form data
+            const fecha = document.getElementById('fecha').value;
+            const institucion = document.getElementById('institucion').value.trim();
+            const movimientoRadios = document.getElementsByName('movimiento');
+            let movimientoSeleccionado = '';
+            
+            // Validation check
+            let errorMessage = '';
+
+            // Check if 'Institucion' is filled
+            if (institucion === '') {
+                errorMessage += "El campo 'Institución' es obligatorio.\n";
+            }
+
+            // Check if a 'Movimiento' radio button is selected
+            let isMovimientoSelected = false;
+            for (const radio of movimientoRadios) {
+                if (radio.checked) {
+                    isMovimientoSelected = true;
+                    movimientoSeleccionado = radio.value;
+                    break;
+                }
+            }
+            if (!isMovimientoSelected) {
+                errorMessage += "Debe seleccionar un 'Movimiento'.\n";
+            }
+            
+            // Check if at least one product row is complete
+            const rows = document.getElementById('productos-body').rows;
+            const firstProductInputs = rows[0].querySelectorAll('input');
+            const descripcion = firstProductInputs[0].value.trim();
+            const cantidad = firstProductInputs[1].value.trim();
+            const lote = firstProductInputs[2].value.trim();
+            const vencimiento = firstProductInputs[3].value.trim();
+
+            if (descripcion === '' || cantidad === '' || lote === '' || vencimiento === '') {
+                errorMessage += "Los campos de la primera fila de la tabla ('Descripción', 'Cantidad', 'Lote' y 'Vencimiento') son obligatorios.";
+            }
+
+            if (errorMessage !== '') {
+                showCustomAlert(errorMessage.trim());
+                return;
+            }
+
+            // Get all product data
+            const productos = [];
+            for (const row of rows) {
+                const inputs = row.querySelectorAll('input');
+                productos.push({
+                    descripcion: inputs[0].value || '',
+                    cantidad: inputs[1].value || '',
+                    lote: inputs[2].value || '',
+                    vencimiento: inputs[3].value || ''
+                });
+            }
+
+            // Create a new jsPDF instance
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            /**
+             * Adds a single copy of the document at a specific Y position.
+             * @param {object} pdfDoc The jsPDF document object.
+             * @param {number} startY The starting Y position.
+             * @returns {number} The final Y position after drawing the content.
+             */
+            const addPageContent = (pdfDoc, startY) => {
+                pdfDoc.setFontSize(16);
+                pdfDoc.text("SERVICIO DE FARMACIA HIGA DR. OSCAR E. ALENDE", 105, startY, { align: "center" });
+                let y = startY + 10;
+                pdfDoc.setFontSize(10);
+                pdfDoc.text(`Fecha: ${fecha}`, 20, y);
+                pdfDoc.text(`Institución: ${institucion}`, 190, y, { align: "right" });
+                y += 10;
+                pdfDoc.text("(marcar con una X el movimiento que corresponda)", 105, y, { align: "center" });
+                y += 10;
+
+                const labels = {
+                    '1': '1) HIGA PIDE PRESTADO A INSTITUCIÓN',
+                    '2': '2) HIGA DEVUELVE A INSTITUCIÓN',
+                    '3': '3) INSTITUCIÓN PIDE PRÉSTAMO A HIGA',
+                    '4': '4) INSTITUCIÓN DEVUELVE A HIGA'
+                };
+                
+                // Draw all four options, with the selected one in bold
+                const opciones = ['1', '2', '3', '4'];
+                opciones.forEach(opcion => {
+                    const text = labels[opcion];
+                    const xPos = (opcion === '1' || opcion === '2') ? 20 : 105;
+                    const yPos = (opcion === '1' || opcion === '3') ? y : y + 5;
+                    
+                    if (movimientoSeleccionado === opcion) {
+                        pdfDoc.setFont('Helvetica', 'bold');
+                        pdfDoc.text(`[X] ${text}`, xPos, yPos);
+                    } else {
+                        pdfDoc.setFont('Helvetica', 'normal');
+                        pdfDoc.text(`[ ] ${text}`, xPos, yPos);
+                    }
+                });
+                
+                pdfDoc.setFont('Helvetica', 'normal'); // Reset font to normal
+                y += 15;
+
+                const tableData = productos.map(p => [p.descripcion, p.cantidad, p.lote, p.vencimiento]);
+                
+                // Add empty rows for consistent table size
+                const minRows = 5;
+                while (tableData.length < minRows) {
+                    tableData.push(['', '', '', '']);
+                }
+
+                pdfDoc.autoTable({
+                    startY: y,
+                    head: [['Descripción del producto', 'Cantidad', 'Lote', 'Vencimiento']],
+                    body: tableData,
+                    theme: 'grid',
+                    styles: { fontSize: 8, cellPadding: 2, overflow: 'linebreak', borderColor: [55, 65, 81] },
+                    headStyles: { fillColor: [57, 60, 65] }, 
+                    columnStyles: {
+                        0: { cellWidth: 90 },
+                        1: { cellWidth: 20 },
+                        2: { cellWidth: 20 },
+                        3: { cellWidth: 30 },
+                    },
+                });
+                y = pdfDoc.autoTable.previous.finalY + 10;
+
+                pdfDoc.setFontSize(10);
+                pdfDoc.text("HIGA", 20, y);
+                pdfDoc.text("Institución", 105, y);
+                y += 5;
+                pdfDoc.setFontSize(8);
+                pdfDoc.text("Autorizado por: ___________________", 20, y);
+                pdfDoc.text("Entrega / Recibe: ___________________", 105, y);
+                y += 10;
+                pdfDoc.text("Firma: ________________________", 20, y);
+                pdfDoc.text("Firma: ____________________________", 105, y);
+                
+                return y; // Return the final Y position
+            };
+
+            // Draw the first copy and get its final Y position
+            const finalYCopy1 = addPageContent(doc, 10);
+            
+            // Heuristic check to see if the second copy will fit.
+            const pageHeight = doc.internal.pageSize.height;
+            const requiredHeightForSecondCopy = finalYCopy1 - 10; 
+            
+            // Add a dotted line for cutting
+            doc.setLineDash([2, 2]);
+            doc.line(10, finalYCopy1 + 10, 200, finalYCopy1 + 10);
+            doc.setLineDash([]); // Reset line style
+
+            // If the remaining space is not enough for a second copy, add a new page.
+            if (finalYCopy1 + 20 + requiredHeightForSecondCopy > pageHeight) {
+                doc.addPage();
+                addPageContent(doc, 10); // Draw at the top of the new page
+            } else {
+                addPageContent(doc, finalYCopy1 + 20); // Add a 20mm margin between copies on the same page
+            }
+
+            // Save the document
+            doc.save(`Vale_Higa_${fecha}.pdf`);
+        }
+
+        /**
+         * Custom alert function to avoid window.alert() in the iframe.
+         * @param {string} message The message to display.
+         */
+        function showCustomAlert(message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.id = 'customAlert';
+            alertDiv.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50';
+            alertDiv.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+                    <p class="text-gray-700 text-lg font-semibold mb-4 whitespace-pre-wrap">${message}</p>
+                    <button onclick="document.getElementById('customAlert').remove()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Aceptar</button>
+                </div>
+            `;
+            document.body.appendChild(alertDiv);
+        }
+    </script>
+</body>
+</html>
