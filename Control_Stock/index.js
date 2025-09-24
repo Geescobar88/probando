@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
   comprobarFecha()
 });
 
+
+
 async function cargarDatos(diaActual, diaPrevio) {
   const cargando = document.getElementById("cargando")
   const container = document.getElementById("container")
