@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fechaSpan = document.getElementById("fecha")
   const fecha = new Date();
-  const diaActual = "06-10-2025"
+  const diaActual = "07-10-2025"
   fechaSpan.innerText = diaActual
 
-  const diaPrevio = "03-10-2025"
+  const diaPrevio = "06-10-2025"
   cargarDatos(diaActual, diaPrevio);
 
   const arregloDia = () => {
@@ -737,6 +737,7 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
         })
         break;
 
+      
       //Completo sin filtrar
 
       case 5:
@@ -752,6 +753,55 @@ function crearListados(total, totalVto, listadoResponse, listadoPrevioResponse) 
           medicacionCell.innerHTML = articulo.DESCRIPCION;
           stockCell.innerHTML = articulo.STOCKENDEPOSITO
           stockFCell.innerHTML = articulo.STOCKENDISPENSACION
+
+        })
+        break;
+
+        case 6:
+        tablaListados.innerHTML = "<tr><th>Código</th><th>Medicación</th><th>Estado(Consumo)</th><th>Stock</th></tr>";
+        total.forEach((articulo) => {
+          if (articulo.ESTUPEFACIENTE == 1) {
+            const row = tablaListados.insertRow();
+            const codigoCell = row.insertCell(0);
+            const medicacionCell = row.insertCell(1);
+            const estadoCell = row.insertCell(2);
+            const stockCell = row.insertCell(3);
+
+            codigoCell.innerHTML = articulo.CODARTICULO;
+            medicacionCell.innerHTML = articulo.MEDICACION;
+            if (articulo.STOCKENDEPOSITO == 0) {
+              estadoCell.innerHTML = "Agotado " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "black"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              medicacionCell.style.fontWeight = "bold"
+              stockCell.style.fontWeight = "bold"
+            } else if (articulo.STOCKENDEPOSITO >= articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Normal " + "(" + articulo.STOCK_MIN + ")";
+              estadoCell.style.color = "green"
+            } else if (articulo.STOCKENDEPOSITO > articulo.STOCK_MIN && articulo.STOCKENDEPOSITO < articulo.STOCK_MIN * 2) {
+              estadoCell.innerHTML = "Mínimo " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "orange"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "orange"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "orange"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "orange"
+            } else if (articulo.STOCKENDEPOSITO <= articulo.STOCK_MIN) {
+              estadoCell.innerHTML = "Crítico " + "(" + articulo.STOCK_MIN + ")";;
+              estadoCell.style.color = "red"
+              estadoCell.style.fontWeight = "bold"
+              codigoCell.style.fontWeight = "bold"
+              codigoCell.style.color = "red"
+              medicacionCell.style.fontWeight = "bold"
+              medicacionCell.style.color = "red"
+              stockCell.style.fontWeight = "bold"
+              stockCell.style.color = "red"
+            }
+            stockCell.innerHTML = articulo.STOCKENDEPOSITO
+          }
 
         })
         break;
